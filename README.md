@@ -1,3 +1,5 @@
+(You may need to use VS Code to run this as is)
+
 Some of the **key features** of this game are:
   1) __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
   2) Full map and mini-map displays.
