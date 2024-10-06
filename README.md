@@ -27,4 +27,5 @@ Instructions:
   * To equip a different weapon or shield: open your inventory and press ENTER on the weapon/shield you want to equip.
   * Equip the lantern to light up your surroundings at night.
   * To sleep through the night, select the Tent item from your inventory
+  * The peasant class is like the wretch class from Elden Ring: you start with terrible items as a challenge.
 
