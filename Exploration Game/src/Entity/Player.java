@@ -476,6 +476,7 @@ public class Player extends Entity{
 				guarding = false;
 			}
 		}
+
 		if(playerClass.equals("Knight") == false) {
 			if(gp.keyH.shotKeyPressed == true && projectile.alive == false 
 					&& shotAvailableCounter == 30 && projectile.haveResource(this) == true) {

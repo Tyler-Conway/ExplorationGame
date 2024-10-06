@@ -7,15 +7,18 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import main.GamePanel;
+import objects.Arrow;
 import objects.Axe;
 import objects.Bark;
 import objects.BlueKey;
+import objects.Fireball;
 import objects.Lance;
 import objects.Lantern;
 import objects.MetalShield;
 import objects.PaperClip;
 import objects.RedKey;
 import objects.RedPotion;
+import objects.Rock;
 import objects.Shield;
 import objects.Staff;
 import objects.Tent;
@@ -122,6 +125,12 @@ public class SaveLoad {
 			gp.player.playerClass = dataStorage.playerClass;
 			gp.player.worldX = dataStorage.worldX;
 			gp.player.worldY = dataStorage.worldY;
+
+			switch(gp.player.playerClass){
+				case "Fighter": gp.player.projectile = new Arrow(gp); break;
+				case "Wizard": gp.player.projectile = new Fireball(gp); break;
+				case "Peasant": gp.player.projectile = new Rock(gp); break;
+			}
 
 			//Inventory:
 			gp.player.inventory.clear();
