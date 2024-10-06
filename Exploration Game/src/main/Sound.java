@@ -1,7 +1,6 @@
 package main;
 
 import java.net.URL;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -33,7 +32,7 @@ public class Sound {
 		soundURL[9] = getClass().getResource("/Sound/Healing.wav");
 		soundURL[10] = getClass().getResource("/Sound/Fireball.wav");
 		soundURL[11] = getClass().getResource("/Sound/CutTree.wav");
-		soundURL[12] = getClass().getResource("/Sound/PianoExplorationGameMusic.wav");
+		soundURL[12] = getClass().getResource("/Sound/ExplorationGameSong(Piano).wav");
 		soundURL[13] = getClass().getResource("/Sound/Death.wav");
 		soundURL[14] = getClass().getResource("/Sound/Entered.wav");
 		soundURL[15] = getClass().getResource("/Sound/Block.wav");
