@@ -1,6 +1,7 @@
 package GameData;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class GameDataStorage implements Serializable{
 
@@ -19,7 +20,22 @@ public class GameDataStorage implements Serializable{
 	int nextLevelExp;
 	int coin;
 	int exp;
-	
+	int worldX;
+	int worldY;
+	String playerClass;
+
+	//Item Inventory Data:
+	ArrayList<String> itemNames = new ArrayList<>();
+	ArrayList<Integer> itemAmmounts = new ArrayList<>();
+
+	int currentWeaponSlot;
+	int currentShieldSlot;
+
+	//Map items:
+	//TODO
+
+
+
 	
 	
 	public GameDataStorage() {

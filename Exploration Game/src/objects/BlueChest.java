@@ -10,8 +10,6 @@ import main.GamePanel;
 public class BlueChest extends Entity{
 
 	GamePanel gp;
-	Entity loot;
-	boolean opened = false;
 	
 	public BlueChest(GamePanel gp, Entity loot) {
 		super(gp);

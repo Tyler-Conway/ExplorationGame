@@ -1,5 +1,6 @@
 package main;
 
+import Entity.Entity;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -11,16 +12,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
 import objects.Arrow;
-import objects.BlueKey;
 import objects.CoinBronze;
-import objects.RedKey;
-import objects.Rock;
-import objects.YellowKey;
 import objects.Heart;
 import objects.ManaCrystal;
-import Entity.Entity;
+import objects.Rock;
 
 public class UI {
 
@@ -652,7 +648,7 @@ public class UI {
 		int textX = frameX + gp.tileSize;
 		int textY = frameY + gp.tileSize;
 		
-		currentDialogue = "Quit the game and \nreturn to the title screen?";
+		currentDialogue = "Save & Quit the game and \nreturn to the title screen?";
 		for(String line: currentDialogue.split("\n")) {
 			g2.drawString(line, textX, textY);
 			textY += 40;
@@ -666,6 +662,7 @@ public class UI {
 		if(commandNum == 0) {
 			g2.drawString(">", textX - 25, textY);
 			if(gp.keyH.enterPressed == true) {
+				gp.saveLoad.save();
 				substate = 0;
 				gp.gameState = gp.titleState;
 				titleScreenState = 0;

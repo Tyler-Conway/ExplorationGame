@@ -1,25 +1,20 @@
 package main;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.util.ArrayList;
-import java.util.Collections;
-
-import javax.swing.JPanel;
-
 import Entity.Entity;
 import Entity.Player;
 import GameData.SaveLoad;
 import InteractiveTiles.InteractiveTile;
 import enviornment.EnviornmentManager;
-import pathfinding.PathFinder;
-import tile.TileManager;
-import java.io.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.lang.*;
-import java.util.*;
+import java.util.ArrayList;
+import javax.swing.JPanel;
+import pathfinding.PathFinder;
 import tile.Map;
+import tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable{
 	
@@ -115,28 +110,17 @@ public class GamePanel extends JPanel implements Runnable{
 		gameState = titleState;
 	}
 	
-	public void retry() {
-		currentMap = world01;
+	public void resetGame(boolean restart){
 		player.setDefaultPositions();
 		player.restoreLifeAndProjectiles();
 		assetSetter.setNPC();
 		assetSetter.setMonster();
-		update();
-	}
-	
-	public void restart() {
-		currentMap = world01;
-		player.setDefaultValues();
-		player.inventory.clear();
-		player.currentShield = null;
-		player.currentWeapon = null;
-		player.setDefaultPositions();
-		player.restoreLifeAndProjectiles();
-		player.setItems();
-		assetSetter.setObjects();
-		assetSetter.setNPC();
-		assetSetter.setMonster();
-		assetSetter.setInteractiveTiles();
+
+		if(restart == true){
+			player.setDefaultValues();
+			assetSetter.setObjects();
+			assetSetter.setInteractiveTiles();
+		}
 	}
 	
 	public void startGameThread() {

@@ -1,24 +1,15 @@
 package Entity;
 
 import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-
 import main.GamePanel;
 import main.KeyHandler;
-import main.UtilityTool;
-import objects.Arrow;
-import objects.Axe;
 import objects.Bark;
-import objects.Fireball;
 import objects.Lance;
 import objects.MetalShield;
 import objects.PaperClip;
-import objects.Rock;
 import objects.Shield;
 import objects.Staff;
 import objects.YellowKey;
@@ -48,10 +39,6 @@ public class Player extends Entity{
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		setDefaultValues();
-		getPlayerImage();
-		getPlayerAttackImage();
-		getPlayerGuardImage();
-		setItems();
 	}
 
 	public void setDefaultValues() {
@@ -75,6 +62,7 @@ public class Player extends Entity{
 		coin = 500;
 		direction = "down";
 		alreadyPlayedAttackSound = false;
+		currentLight = null;
 		
 		switch(playerClass) {
 		case "Fighter":
@@ -123,6 +111,10 @@ public class Player extends Entity{
 		
 		attack = getAttack(); // total attack = strength * weapon.
 		defense = getDefense(); //total defense = shield * dexterity.
+		getPlayerImage();
+		getPlayerAttackImage();
+		getPlayerGuardImage();
+		setItems();
 	}
 	
 	public void setDefaultPositions() {
@@ -145,6 +137,10 @@ public class Player extends Entity{
 		invincible = false;
 		transparent = false;
 		life = maxLife;
+		attacking = false;
+		guarding = false;
+		knockBack = false;
+		lightUpdated = true;
 		
 	}
 	
@@ -155,6 +151,28 @@ public class Player extends Entity{
 		inventory.add(new YellowKey(gp));
 		//equipInitialObjects();
 
+	}
+
+	public int getCurrentWeaponSlot(){
+		int slot = 0;
+		
+		for(int i = 0; i < inventory.size(); i++){
+			if(inventory.get(i) == currentWeapon){
+				slot = i;
+			}
+		}
+		return slot;
+	}
+
+	public int getCurrentShieldSlot(){
+		int slot = 0;
+		
+		for(int i = 0; i < inventory.size(); i++){
+			if(inventory.get(i) == currentShield){
+				slot = i;
+			}
+		}
+		return slot;
 	}
 	 
 	public int getAttack() {

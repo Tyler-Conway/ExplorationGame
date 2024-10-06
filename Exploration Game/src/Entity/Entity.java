@@ -7,9 +7,7 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
-
 import main.GamePanel;
 import main.UtilityTool;
 
@@ -98,6 +96,8 @@ public class Entity {
 	public int amount = 1;
 	public int lightRadius;
 	public boolean isProjectile = false;
+	public Entity loot;
+	public boolean opened = false;
 	
 	//Type:
 	public int type;

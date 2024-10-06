@@ -2,7 +2,6 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
 import objects.Arrow;
 import objects.Fireball;
 import objects.Rock;
@@ -79,7 +78,19 @@ public class KeyHandler implements KeyListener{
 				}
 				//Load Game
 				else if(gp.ui.commandNum == 1) {
-					//TODO
+					
+					gp.assetSetter.setObjects();
+					//Set Player's Images and initial eqipment:
+					gp.player.setDefaultValues();
+					gp.player.getPlayerImage();
+					gp.player.getPlayerAttackImage();
+					gp.player.setItems();
+					//EQUIP Initial Objects:
+					gp.player.equipInitialObjects();
+					//Load the player's previous stats:
+					gp.saveLoad.load();
+					gp.playMusic(12);
+					gp.gameState = gp.playState;
 				}
 				//Exit Program
 				else if(gp.ui.commandNum == 2) {
@@ -127,7 +138,7 @@ public class KeyHandler implements KeyListener{
 			gp.player.getPlayerImage();
 			
 			if(code == KeyEvent.VK_ENTER) {
-				
+
 				gp.enviornmentManager.lighting.resetEnviornmentLighting();
 				
 				gp.playMusic(12);
@@ -309,8 +320,6 @@ public class KeyHandler implements KeyListener{
 		
 		if(code == KeyEvent.VK_ENTER) {
 			if(gp.ui.substate == 2 && gp.ui.commandNum == 0) {
-				gp.currentMap = gp.world01;
-				gp.restart();
 				gp.stopMusic();
 			}
 		} 
@@ -414,14 +423,14 @@ public class KeyHandler implements KeyListener{
 			if(code == KeyEvent.VK_ENTER) {
 				if(gp.ui.commandNum == 0) {
 					gp.gameState = gp.playState;
-					gp.retry();
+					gp.resetGame(false);
 					gp.playMusic(12);
 				}
 				else if(gp.ui.commandNum == 1) {
 					gp.ui.titleScreenState = 0;
 					gp.gameState = gp.titleState;
 					
-					gp.restart();
+					gp.resetGame(true);
 					
 				}
 			}

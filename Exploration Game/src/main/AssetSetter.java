@@ -303,6 +303,8 @@ public class AssetSetter {
 	
 	
 	public void setClassSpecificObjects(int mapNum, int i) {
+
+		System.out.println("Class Specific Objects method called - assetSetter");
 		//CLASS SPECIFIC OBJECTS (They are all placed on the same tiles, and are changed depending on playerClass): 
 		if(gp.player.playerClass.equals("Knight") == false) {
 			if(gp.player.playerClass.contentEquals("Fighter")) {

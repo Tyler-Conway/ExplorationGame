@@ -26,6 +26,10 @@ public class Tent extends Entity{
 			gp.gameState = gp.sleepState;
 			gp.playSoundEffect(14);
 			gp.player.restoreLifeAndProjectiles();
+
+			//Save Game: 
+			gp.saveLoad.save();
+			gp.ui.addMessage("Your progress has been saved");
 			return true;
 		}
 		else {
