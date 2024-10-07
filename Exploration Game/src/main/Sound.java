@@ -32,7 +32,7 @@ public class Sound {
 		soundURL[9] = getClass().getResource("/Sound/Healing.wav");
 		soundURL[10] = getClass().getResource("/Sound/Fireball.wav");
 		soundURL[11] = getClass().getResource("/Sound/CutTree.wav");
-		soundURL[12] = getClass().getResource("/Sound/PianoExplorationGameMusic (1).wav");
+		soundURL[12] = getClass().getResource("/Sound/PianoExplorationGameMusic.wav");
 		soundURL[13] = getClass().getResource("/Sound/Death.wav");
 		soundURL[14] = getClass().getResource("/Sound/Entered.wav");
 		soundURL[15] = getClass().getResource("/Sound/Block.wav");
