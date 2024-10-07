@@ -42,12 +42,12 @@ public class Player extends Entity{
 	}
 
 	public void setDefaultValues() {
-//		worldX = gp.tileSize * 12;
-//		worldY = gp.tileSize * 44;
+		worldX = gp.tileSize * 12;
+		worldY = gp.tileSize * 44;
 //		
-//		Testing the Buildings:
-		worldX = gp.tileSize * 38;
-		worldY = gp.tileSize * 46;
+// //		Testing the Buildings:
+// 		worldX = gp.tileSize * 38;
+// 		worldY = gp.tileSize * 46;
 		
 		//Player Status:
 		maxMana = 4;
