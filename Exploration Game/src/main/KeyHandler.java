@@ -138,7 +138,8 @@ public class KeyHandler implements KeyListener{
 			gp.player.getPlayerImage();
 			
 			if(code == KeyEvent.VK_ENTER) {
-
+				
+				gp.currentMap = gp.world01;
 				gp.enviornmentManager.lighting.resetEnviornmentLighting();
 				
 				gp.playMusic(12);

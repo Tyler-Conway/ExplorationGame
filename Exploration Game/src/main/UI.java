@@ -599,7 +599,7 @@ public class UI {
  			g2.drawString(">", textX-25, textY);
  		}
 		textY += gp.tileSize;
-		g2.drawString("Character Screen", textX, textY);
+		g2.drawString("Inventory Screen", textX, textY);
 		if(commandNum == 3) {
  			g2.drawString(">", textX-25, textY);
  		}
