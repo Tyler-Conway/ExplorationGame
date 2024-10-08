@@ -146,6 +146,15 @@ public class KeyHandler implements KeyListener{
 				//New Character:
 				if(gp.ui.commandNum != 4) {
 					gp.gameState = gp.playState;
+					//Set Player's Images and initial eqipment:
+					gp.player.setDefaultValues();
+					gp.player.getPlayerImage();
+					gp.player.getPlayerAttackImage();
+					gp.player.setItems();
+					//EQUIP Initial Objects:
+					gp.player.equipInitialObjects();
+					//Setup ClassSpecific objects once a playerClass is selcted in the menu:
+					gp.assetSetter.setClassSpecificObjects(gp.currentMap, gp.assetSetter.a);
 				}
 				//Exit to title:
 				else if(gp.ui.commandNum == 4) {
@@ -153,15 +162,6 @@ public class KeyHandler implements KeyListener{
 					gp.ui.titleScreenState = 0;
 					gp.ui.commandNum = 0;
 				}	
-				//Set Player's Images and initial eqipment:
-				gp.player.setDefaultValues();
-				gp.player.getPlayerImage();
-				gp.player.getPlayerAttackImage();
-				gp.player.setItems();
-				//EQUIP Initial Objects:
-				gp.player.equipInitialObjects();
-				//Setup ClassSpecific objects once a playerClass is selcted in the menu:
-				gp.assetSetter.setClassSpecificObjects(gp.currentMap, gp.assetSetter.a);
 			}
 		}
 	}
