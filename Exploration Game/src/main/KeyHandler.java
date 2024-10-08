@@ -141,11 +141,11 @@ public class KeyHandler implements KeyListener{
 				
 				gp.currentMap = gp.world01;
 				gp.enviornmentManager.lighting.resetEnviornmentLighting();
-				gp.playMusic(12);
 
 				//New Character:
 				if(gp.ui.commandNum != 4) {
 					gp.gameState = gp.playState;
+					gp.playMusic(12);
 					//Set Player's Images and initial eqipment:
 					gp.player.setDefaultValues();
 					gp.player.getPlayerImage();
