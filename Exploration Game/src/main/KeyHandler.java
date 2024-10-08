@@ -141,25 +141,10 @@ public class KeyHandler implements KeyListener{
 				
 				gp.currentMap = gp.world01;
 				gp.enviornmentManager.lighting.resetEnviornmentLighting();
-				
 				gp.playMusic(12);
-				//New Fighter:
-				if(gp.ui.commandNum == 0) {
-					gp.gameState = gp.playState;
-				}
-				//New Knight:
-				else if(gp.ui.commandNum == 1) {
-					//TODO
-					gp.gameState = gp.playState;
-				}
-				//New Wizard:
-				else if(gp.ui.commandNum == 2) {
-					//TODO
-					gp.gameState = gp.playState;
-				}
-				//New Peasant:
-				else if(gp.ui.commandNum == 3) {
-					//TODO
+
+				//New Character:
+				if(gp.ui.commandNum != 4) {
 					gp.gameState = gp.playState;
 				}
 				//Exit to title:
