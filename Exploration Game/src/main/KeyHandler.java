@@ -409,6 +409,8 @@ public class KeyHandler implements KeyListener{
 			if(code == KeyEvent.VK_ENTER) {
 				if(gp.ui.commandNum == 0) {
 					gp.gameState = gp.playState;
+					gp.currentMap = gp.world01;
+					gp.player.speed = gp.player.defaultSpeed;
 					gp.resetGame(false);
 					gp.playMusic(12);
 				}

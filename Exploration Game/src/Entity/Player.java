@@ -12,7 +12,6 @@ import objects.MetalShield;
 import objects.PaperClip;
 import objects.Shield;
 import objects.Staff;
-import objects.YellowKey;
 
 public class Player extends Entity{
 
@@ -148,7 +147,6 @@ public class Player extends Entity{
 		inventory.clear();
 		inventory.add(currentWeapon);
 		inventory.add(currentShield);
-		inventory.add(new YellowKey(gp));
 		//equipInitialObjects();
 
 	}

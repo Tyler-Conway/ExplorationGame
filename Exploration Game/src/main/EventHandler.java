@@ -1,7 +1,5 @@
 package main;
 
-import java.awt.Rectangle;
-
 import Entity.Entity;
 
 public class EventHandler {
@@ -62,7 +60,7 @@ public class EventHandler {
 					damagePit(mapNum,7,45,gp.dialogueState);
 				}
 				else if(hit(mapNum,17,42, "any") == true) {
-					damagePit(mapNum,7,45,gp.dialogueState);
+					damagePit(mapNum,17,42,gp.dialogueState);
 				}
 				else if(hit(mapNum,9,10, "left") == true) {
 					healingPool(mapNum,9,10,gp.dialogueState);

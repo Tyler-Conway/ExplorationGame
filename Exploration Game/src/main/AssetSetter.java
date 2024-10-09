@@ -304,7 +304,6 @@ public class AssetSetter {
 	
 	public void setClassSpecificObjects(int mapNum, int i) {
 
-		System.out.println("Class Specific Objects method called - assetSetter");
 		//CLASS SPECIFIC OBJECTS (They are all placed on the same tiles, and are changed depending on playerClass): 
 		if(gp.player.playerClass.equals("Knight") == false) {
 			if(gp.player.playerClass.contentEquals("Fighter")) {
@@ -412,10 +411,10 @@ public class AssetSetter {
 		gp.monster[mapNum][i].worldX = gp.tileSize * 43;
 		gp.monster[mapNum][i].worldY = gp.tileSize * 11;
 		i++;
-		gp.monster[mapNum][i] = new Oger(gp);
-		gp.monster[mapNum][i].worldX = gp.tileSize * 47;
-		gp.monster[mapNum][i].worldY = gp.tileSize * 13;
-		i++;
+		// gp.monster[mapNum][i] = new Oger(gp);
+		// gp.monster[mapNum][i].worldX = gp.tileSize * 47;
+		// gp.monster[mapNum][i].worldY = gp.tileSize * 13;
+		// i++;
 //		gp.monster[mapNum][i] = new Oger(gp);
 //		gp.monster[mapNum][i].worldX = gp.tileSize * 47;
 //		gp.monster[mapNum][i].worldY = gp.tileSize * 12;
