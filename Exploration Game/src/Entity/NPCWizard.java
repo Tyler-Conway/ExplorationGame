@@ -6,12 +6,15 @@ import main.GamePanel;
 
 public class NPCWizard extends Entity{
 
+	Random random;
+
 	public NPCWizard(GamePanel gp) {
 		super(gp);
 		
 		direction = "down";
 		speed = 1;
 		name = "NPCWizard";
+		random = new Random();
 		getImage();
 		setDialogue();
 	}
