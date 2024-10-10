@@ -7,7 +7,7 @@
   * To equip a different weapon or shield: open your inventory and press ENTER on the weapon/shield you want to equip.
   * Equip the lantern to light up your surroundings at night.
   * To sleep through the night, select the Tent item from your inventory
-  * The peasant class is like the wretch/deprived class from Elden Ring/Dark Souls: you start off with a weak character.
+  * The peasant class is like the wretch/deprived class from Elden Ring/Dark Souls: it's a weak character class.
 
 ____
 
