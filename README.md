@@ -11,7 +11,7 @@
 
 ____
 
-### Some of the **key features** of this game are:
+### Some of the key features of this game are:
   1) __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
   2) Full map and mini-map displays.
   3) NPC's that the player can trade with and talk to.
