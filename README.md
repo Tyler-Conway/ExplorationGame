@@ -12,13 +12,13 @@
 ____
 
 ### Some of the key features of this game are:
-  1) __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
-  2) Full map and mini-map displays.
-  3) NPC's that the player can trade with and talk to.
-  4) **Buildings** to enter, and **map transitions**.
-  5) An 8 minute **day/night cycle**.
-  6) Player **inventory system** and **interactive objects**.
-  7) Player and monster **combat system**.
+  * __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
+  * Full map and mini-map displays.
+  * PC's to **trade** and **talk** to.
+  * Buildings** to enter, and **map transitions**.
+  * An 8-minute **day/night cycle**.
+  * Player **inventory system** and **interactive objects**.
+  * Player and monster **combat system**.
 
 ### Controls: 
   * WASD to move
