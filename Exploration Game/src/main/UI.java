@@ -1012,7 +1012,7 @@ public class UI {
 			}
 			
 			g2.setFont(g2.getFont().deriveFont(16F));
-			text = "(Press Up, Down, W, S, ESC, and Enter to Navigate)";
+			text = "(Press W, A, S, D, ESC, and Enter to Navigate)";
 			x = getXForCenteredText(text);
 			y += gp.tileSize;
 			g2.drawString(text, x, y);
