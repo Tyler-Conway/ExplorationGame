@@ -9,7 +9,7 @@ Instructions:
   * To sleep through the night, select the Tent item from your inventory
   * The peasant class is like the wretch/deprived class from Elden Ring/Dark Souls: you start off with a weak character.
 
-----
+____
 
 Some of the **key features** of this game are:
   1) __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
