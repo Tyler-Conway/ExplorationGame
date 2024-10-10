@@ -1,6 +1,6 @@
 (You may need to use VS Code to run this as is)
 
-Instructions:
+### Instructions:
   * To open normal doors: go up to the door and press ENTER.
   * To open colorful doors: go up to the door, open your inventory, and press ENTER on the key that matches the door's color.
   * To parry a monster's attacks: press SPACE just before they attack. You will knock them back and can do extra damage following a parry.
