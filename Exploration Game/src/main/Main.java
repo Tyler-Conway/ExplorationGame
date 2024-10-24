@@ -15,12 +15,10 @@ public class Main {
 		frame.add(gamePanel);
 		
 		gamePanel.config.loadConfig();
-		
 		gamePanel.setupGame();
 		gamePanel.startGameThread();
 		
 		frame.pack();
-		
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}

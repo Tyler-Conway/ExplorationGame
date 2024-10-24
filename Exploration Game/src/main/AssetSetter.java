@@ -419,6 +419,13 @@ public class AssetSetter {
 //		gp.monster[mapNum][i].worldX = gp.tileSize * 47;
 //		gp.monster[mapNum][i].worldY = gp.tileSize * 12;
 //		i++;
+		mapNum = gp.world03;
+		// i = 0;
+		// gp.monster[mapNum][i] = new Oger(gp);
+		// gp.monster[mapNum][i].worldX = gp.tileSize * 38;
+		// gp.monster[mapNum][i].worldY = gp.tileSize * 6;
+		// i++;
+
 	}
 
 	public void setInteractiveTiles() {
