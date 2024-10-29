@@ -35,3 +35,4 @@ ____
 
 ### Resources Utilized:
 * [RyiSnow's Java Gamemaking Tutorial Series](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq) (This was a fantastic resource for learning how to build a video game from scratch)
+* [Sebastian Lague - A* Pathfinding Series](https://www.youtube.com/playlist?list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW) (Lague's videos do a great job at explaining the A* pathfinding algorithm and they helped me understand how this works in code)
