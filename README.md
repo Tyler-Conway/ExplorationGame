@@ -34,4 +34,4 @@ ____
 ____
 
 ### Resources Utilized:
-* [RyiSnow's Java Gamemaking Tutorial Series](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq)
+* [RyiSnow's Java Gamemaking Tutorial Series](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq) (This was a fantastic resource for learning how to build a video game)
