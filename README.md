@@ -30,3 +30,8 @@ ____
   * SPACE to bring up your shield/parry
   * ENTER to select/use/attack
   * ESCAPE to bring up the options menu/go back
+
+____
+
+### Resources Utilized:
+* [RyiSnow's Java Gamemaking Tutorial Series](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq)
