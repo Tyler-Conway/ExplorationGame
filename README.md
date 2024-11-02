@@ -1,4 +1,4 @@
-<img width="1240" alt="Screenshot 2024-11-02 at 1 11 50 AM" src="https://github.com/user-attachments/assets/c3aafc26-97a6-4a27-b515-d6318bbd8281">
+<img width="1240" alt="Game Menu Image" src="https://github.com/user-attachments/assets/c3aafc26-97a6-4a27-b515-d6318bbd8281">
 
 ### Instructions:
   * To open normal doors: go up to the door and press ENTER.
