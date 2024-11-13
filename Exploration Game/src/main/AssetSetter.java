@@ -197,6 +197,44 @@ public class AssetSetter {
 		i++;
 		
 		setupLootCabin(gp.lootCabin01);
+
+		i = 0;
+		mapNum = gp.world03;
+		gp.obj[mapNum][a] = new RedDoor(gp);
+		gp.obj[mapNum][a].worldX = gp.tileSize * 7;
+		gp.obj[mapNum][a].worldY = gp.tileSize * 39;
+		i++;
+		gp.obj[mapNum][i] = new CoinGold(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 6;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 36;
+		i++;
+		gp.obj[mapNum][i] = new CoinGold(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 6;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 38;
+		i++;
+		gp.obj[mapNum][i] = new CoinGold(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 8;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 38;
+		i++;
+		gp.obj[mapNum][i] = new CoinGold(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 8;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 36;
+		i++;
+		gp.obj[mapNum][i] = new CoinGold(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 7;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 37;
+		i++;
+
+		setupLootCabin(gp.lootCabin02);
+
+		//LootCabin02:
+		i = 0;
+		mapNum = gp.lootCabin02;
+
+		gp.obj[mapNum][a] = new RedKey(gp);
+		gp.obj[mapNum][a].worldX = gp.tileSize * 24;
+		gp.obj[mapNum][a].worldY = gp.tileSize * 23;
+		a++;
 		
 	}
 	
@@ -377,7 +415,7 @@ public class AssetSetter {
 	public void setMonster() {
 		
 		//increment mapNum to place assets on different maps:
-		int mapNum = 0;
+		int mapNum = gp.world01;
 		int i = 0;
 		gp.monster[mapNum][i] = new Slime(gp);
 		gp.monster[mapNum][i].worldX = gp.tileSize * 12;
@@ -411,20 +449,27 @@ public class AssetSetter {
 		gp.monster[mapNum][i].worldX = gp.tileSize * 43;
 		gp.monster[mapNum][i].worldY = gp.tileSize * 11;
 		i++;
-		// gp.monster[mapNum][i] = new Oger(gp);
-		// gp.monster[mapNum][i].worldX = gp.tileSize * 47;
-		// gp.monster[mapNum][i].worldY = gp.tileSize * 13;
-		// i++;
-//		gp.monster[mapNum][i] = new Oger(gp);
-//		gp.monster[mapNum][i].worldX = gp.tileSize * 47;
-//		gp.monster[mapNum][i].worldY = gp.tileSize * 12;
-//		i++;
+
+
+
 		mapNum = gp.world03;
-		// i = 0;
-		// gp.monster[mapNum][i] = new Oger(gp);
-		// gp.monster[mapNum][i].worldX = gp.tileSize * 38;
-		// gp.monster[mapNum][i].worldY = gp.tileSize * 6;
-		// i++;
+		i = 0;
+		gp.monster[mapNum][i] = new Oger(gp);
+		gp.monster[mapNum][i].worldX = gp.tileSize * 42;
+		gp.monster[mapNum][i].worldY = gp.tileSize * 15;
+		i++;
+		gp.monster[mapNum][i] = new Slime(gp);
+		gp.monster[mapNum][i].worldX = gp.tileSize * 21;
+		gp.monster[mapNum][i].worldY = gp.tileSize * 29;
+		i++;
+		gp.monster[mapNum][i] = new Slime(gp);
+		gp.monster[mapNum][i].worldX = gp.tileSize * 24;
+		gp.monster[mapNum][i].worldY = gp.tileSize * 31;
+		i++;
+		gp.monster[mapNum][i] = new Slime(gp);
+		gp.monster[mapNum][i].worldX = gp.tileSize * 26;
+		gp.monster[mapNum][i].worldY = gp.tileSize * 36;
+		i++;
 
 	}
 
@@ -476,6 +521,15 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 29, 16);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 30, 16);i++;
 		
+
+
+		//world03:
+		mapNum = gp.world03;
+		i = 0;
+		gp.iTile[mapNum][i] = new DryTree(gp, 35, 22);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 42, 19);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 42, 12);i++;
+
 		
 		
 		

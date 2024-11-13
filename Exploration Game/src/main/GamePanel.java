@@ -59,6 +59,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int beach02 = 9;
 	public final int cabin03 = 10;
 	public final int lootCabin01 = 11;
+	public final int lootCabin02 = 12;
 	
 	//GAME STATES
 	public int gameState;
@@ -317,6 +318,7 @@ public class GamePanel extends JPanel implements Runnable{
 		case beach02: tileM.loadMap("/maps/Beach02.txt", beach02); break;
 		case cabin03: tileM.loadMap("/maps/Cabin03.txt", cabin03); break;
 		case lootCabin01: tileM.loadMap("/maps/lootCabin01.txt", lootCabin01); break;
+		case lootCabin02: tileM.loadMap("/maps/lootCabin01.txt", lootCabin02); break;
 		}
 	}
 	

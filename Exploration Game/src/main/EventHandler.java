@@ -208,6 +208,10 @@ public class EventHandler {
 					// mapNum, col, row:
 					changeMap(gp.world01,2,7);
 				}
+				else if(isOnTheTile(mapNum, 42, 9) == true) {
+					// mapNum, col, row:
+					changeMap(gp.lootCabin02,24,26);
+				}
 				break;
 			//Beach01 Events:
 			case 8:
@@ -279,6 +283,14 @@ public class EventHandler {
 					// mapNum,new col, new row:
 					changeMap(gp.world02,38,17);
 				}
+				break;
+			//LootCabin02:
+			case 12:
+				if(hit(mapNum, 24, 28, "any") == true) {
+					// mapNum,new col, new row:
+					changeMap(gp.world03,42,11);
+				}
+				break;
 			}
 		}
 	}

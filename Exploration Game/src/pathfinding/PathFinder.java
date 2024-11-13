@@ -1,7 +1,6 @@
 package pathfinding;
 
 import java.util.ArrayList;
-
 import main.GamePanel;
 
 public class PathFinder {
@@ -146,11 +145,11 @@ public class PathFinder {
 				openNode(nodes[col-1][row]);
 			}
 			//Open the Down Node:
-			if(row + 1 <= gp.maxWorldRow) {
+			if(row + 1 <= (gp.maxWorldRow - 1)) {
 				openNode(nodes[col][row+1]);
 			}
 			//Open the Right Node:
-			if(col + 1 <= gp.maxWorldCol) {
+			if(col + 1 <= (gp.maxWorldCol - 1)) {
 				openNode(nodes[col+1][row]);
 			}
 			

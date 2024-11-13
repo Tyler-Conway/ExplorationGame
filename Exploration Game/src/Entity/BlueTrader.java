@@ -1,13 +1,11 @@
 package Entity;
 
-import java.util.Random;
-
 import main.GamePanel;
-import objects.RedPotion;
-import objects.Tent;
 import objects.BlueKey;
 import objects.Lantern;
 import objects.MetalShield;
+import objects.RedPotion;
+import objects.Tent;
 
 public class BlueTrader extends Entity{
 

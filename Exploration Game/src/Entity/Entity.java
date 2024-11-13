@@ -203,7 +203,7 @@ public class Entity {
 	public void checkInBounds(Entity entity) {
 		entity.collisionOn = false;
 		//Checks if non-player entity tries to walk outside the map it's in:
-		if(entity.getCol() == 0 || entity.getCol() == 49 || entity.getRow() == 0 || entity.getRow() == 49){
+		if(entity.getCol() == 1 || entity.getCol() == 48 || entity.getRow() == 1 || entity.getRow() == 48){
 			entity.collisionOn = true;
 		}
 	}

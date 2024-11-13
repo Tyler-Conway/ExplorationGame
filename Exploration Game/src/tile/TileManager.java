@@ -35,6 +35,7 @@ public class TileManager {
 		loadMap("/maps/Beach02.txt", gp.beach02);
 		loadMap("/maps/Cabin03.txt", gp.cabin03);
 		loadMap("/maps/lootCabin01.txt", gp.lootCabin01);
+		loadMap("/maps/lootCabin01.txt", gp.lootCabin02);
 		
 	}
 	
