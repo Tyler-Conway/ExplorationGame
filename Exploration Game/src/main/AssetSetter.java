@@ -108,7 +108,7 @@ public class AssetSetter {
 		gp.obj[mapNum][a].worldX = gp.tileSize * 21;
 		gp.obj[mapNum][a].worldY = gp.tileSize * 35;
 		a++;
-		
+
 		i = 0;
 		mapNum = gp.stoneBuilding01;
 		gp.obj[mapNum][i] = new RedChest(gp, new RedKey(gp));
@@ -224,6 +224,16 @@ public class AssetSetter {
 		gp.obj[mapNum][i].worldX = gp.tileSize * 7;
 		gp.obj[mapNum][i].worldY = gp.tileSize * 37;
 		i++;
+		gp.obj[mapNum][i] = new RedPotion(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 3;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 48;
+		i++;
+		gp.obj[mapNum][i] = new RedKey(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize * 4;
+		gp.obj[mapNum][i].worldY = gp.tileSize * 48;
+		i++;
+
+		
 
 		setupLootCabin(gp.lootCabin02);
 
@@ -469,6 +479,14 @@ public class AssetSetter {
 		gp.monster[mapNum][i] = new Slime(gp);
 		gp.monster[mapNum][i].worldX = gp.tileSize * 26;
 		gp.monster[mapNum][i].worldY = gp.tileSize * 36;
+		i++;
+		gp.monster[mapNum][i] = new Slime(gp);
+		gp.monster[mapNum][i].worldX = gp.tileSize * 10;
+		gp.monster[mapNum][i].worldY = gp.tileSize * 46;
+		i++;
+		gp.monster[mapNum][i] = new Slime(gp);
+		gp.monster[mapNum][i].worldX = gp.tileSize * 6;
+		gp.monster[mapNum][i].worldY = gp.tileSize * 46;
 		i++;
 
 	}
