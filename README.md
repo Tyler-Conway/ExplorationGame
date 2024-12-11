@@ -8,7 +8,7 @@
   * Equip the lantern to light up your surroundings at night.
   * To sleep through the night, select the Tent item from your inventory
   * The peasant class is like the wretch/deprived class from Elden Ring/Dark Souls: it's a weak character class.
-  * You can see more about this project on my [personal website](https://github.com/Tyler-Conway/Personal-Website).
+  * You can see more about this project on my [personal website repo](https://github.com/Tyler-Conway/Personal-Website).
 
 ____
 
