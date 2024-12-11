@@ -137,27 +137,12 @@ public class AssetSetter {
 	}
 	
 	public void setNPC() {
-		
-		int mapNum = gp.world01;
 		int i = 0;
-		placeAsset(gp.npc, mapNum, i, new NPCWizard(gp), 12, 42); i++;
-		
-		mapNum = gp.cabin01;
-		i = 0;
-		placeAsset(gp.npc, mapNum, i, new BlueTrader(gp), 24, 19); i++;
-		
-		mapNum = gp.cabin02;
-		i = 0;
-		placeAsset(gp.npc, mapNum, i, new RedTrader(gp), 24, 19); i++;
-
-		mapNum = gp.cabin03;
-		i = 0;
-		placeAsset(gp.npc, mapNum, i, new YellowTrader(gp), 24, 19); i++;
-		
-		mapNum = gp.stoneBuilding02;
-		i = 0;
-		placeAsset(gp.npc, mapNum, i, new GreenNPC(gp), 24, 19); i++;
-
+		placeAsset(gp.npc, gp.world01, i, new NPCWizard(gp), 12, 42); i++; i = 0;
+		placeAsset(gp.npc, gp.cabin01, i, new BlueTrader(gp), 24, 19); i++; i = 0;
+		placeAsset(gp.npc, gp.cabin02, i, new RedTrader(gp), 24, 19); i++; i = 0;
+		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
+		placeAsset(gp.npc, gp.stoneBuilding02, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 	}
 	
 	public void setMonster() {
