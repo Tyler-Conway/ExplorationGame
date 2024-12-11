@@ -473,7 +473,7 @@ public class KeyHandler implements KeyListener{
 			if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
 				gp.ui.commandNum--;
 				if(gp.ui.commandNum < 0) {
-					gp.ui.commandNum = 2;
+					gp.ui.commandNum = 1;
 				}
 				gp.playSoundEffect(8);
 			}
