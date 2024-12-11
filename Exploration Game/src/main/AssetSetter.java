@@ -2,8 +2,6 @@ package main;
 
 import Entity.Entity;
 
-import javax.security.auth.callback.TextInputCallback;
-
 import Entity.BlueTrader;
 import Entity.GreenNPC;
 import Entity.NPCWizard;
