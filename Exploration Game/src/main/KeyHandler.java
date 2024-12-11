@@ -1,5 +1,6 @@
 package main;
 
+import Entity.Entity;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import objects.Arrow;
@@ -151,10 +152,10 @@ public class KeyHandler implements KeyListener{
 					gp.player.getPlayerImage();
 					gp.player.getPlayerAttackImage();
 					gp.player.setItems();
+					gp.assetSetter.setNPC();
 					//EQUIP Initial Objects:
 					gp.player.equipInitialObjects();
-					//Setup ClassSpecific objects once a playerClass is selcted in the menu:
-					gp.assetSetter.setClassSpecificObjects(gp.currentMap, gp.assetSetter.a);
+					gp.assetSetter.setObjects();
 				}
 				//Exit to title:
 				else if(gp.ui.commandNum == 4) {
@@ -167,38 +168,18 @@ public class KeyHandler implements KeyListener{
 	}
 	
 	public void playState(int code) {
-		
-		//MOVEMENTS
-		if(code == KeyEvent.VK_W) {
-			upPressed = true;
-		}
-		if(code == KeyEvent.VK_S) {
-			downPressed = true;
-		}
-		if(code == KeyEvent.VK_A) {
-			leftPressed = true;
-		}
-		if(code == KeyEvent.VK_D) {
-			rightPressed = true;
-		}
-		if(code == KeyEvent.VK_C || code == KeyEvent.VK_E) {
-			gp.gameState = gp.characterState;
-		}
-		if(code == KeyEvent.VK_ENTER) {
-			enterPressed = true;
-		}
-		if(code == KeyEvent.VK_SPACE) {
-			spacePressed = true;
-		}
-		if(code == KeyEvent.VK_F) {
-			shotKeyPressed = true;
-		}
-		if(code == KeyEvent.VK_P) {
-			gp.gameState = gp.pauseState;
-		}
-		if(code == KeyEvent.VK_M) {
-			gp.gameState = gp.mapState;
-		}
+		//MOVEMENTS and SPECIAL KEYS
+		if(code == KeyEvent.VK_W) {upPressed = true;}
+		if(code == KeyEvent.VK_S) {downPressed = true;}
+		if(code == KeyEvent.VK_A) {leftPressed = true;}
+		if(code == KeyEvent.VK_D) {rightPressed = true;}
+		if(code == KeyEvent.VK_C || code == KeyEvent.VK_E) {gp.gameState = gp.characterState;}
+		if(code == KeyEvent.VK_ENTER) {enterPressed = true;}
+		if(code == KeyEvent.VK_SPACE) {spacePressed = true;}
+		if(code == KeyEvent.VK_F) {shotKeyPressed = true;}
+		if(code == KeyEvent.VK_P) {gp.gameState = gp.pauseState;}
+		if(code == KeyEvent.VK_M) {gp.gameState = gp.mapState;}
+		if(code == KeyEvent.VK_ESCAPE) {gp.gameState = gp.optionsState;}
 		if(code == KeyEvent.VK_X) {
 			if(gp.map.miniMapOn == false) {
 				gp.map.miniMapOn = true;
@@ -207,10 +188,6 @@ public class KeyHandler implements KeyListener{
 				gp.map.miniMapOn = false;
 			}
 		}
-		if(code == KeyEvent.VK_ESCAPE) {
-			gp.gameState = gp.optionsState;
-		}
-		
 		
 		//DEBUG
 		if(code == KeyEvent.VK_T) {
@@ -225,6 +202,15 @@ public class KeyHandler implements KeyListener{
 		if(code == KeyEvent.VK_R) {
 			gp.assetSetter.setNPC();
 			gp.assetSetter.setMonster();
+			gp.ReloadCurrentMap();
+
+			//I dont want to deal with monsters all the time:
+			//(and I'll want to refresh the objects as I'm adding them into the game to test them out)
+			if(showDebugText == true){
+				gp.obj = new Entity[gp.maxMap][50];
+				gp.assetSetter.setObjects();
+				gp.monster = new Entity[gp.maxMap][20];
+			}
 		}
 	}
 	

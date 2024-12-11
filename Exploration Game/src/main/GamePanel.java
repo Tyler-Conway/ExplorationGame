@@ -215,7 +215,6 @@ public class GamePanel extends JPanel implements Runnable{
 		enviornmentManager.update();
 	}
 	
-	//drawToTempScreen:
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g); //invokes the paintComponent method in JPanel
 		
@@ -303,8 +302,7 @@ public class GamePanel extends JPanel implements Runnable{
 		}
 	}
 	
-	public void getCurrentMap(){
-		//Maps also need to be setup in tileManager:
+	public void ReloadCurrentMap(){
 		switch(currentMap) {
 		case world01: tileM.loadMap("/maps/World01.txt", world01); break;
 		case cabin01: tileM.loadMap("/maps/Cabin01.txt", cabin01); break;
