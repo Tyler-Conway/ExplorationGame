@@ -103,7 +103,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	
 	public void setupGame() {
-		assetSetter.setObjects();
+		//assetSetter.setObjects();
 		assetSetter.setNPC();
 		assetSetter.setMonster();
 		assetSetter.setInteractiveTiles();
@@ -119,7 +119,7 @@ public class GamePanel extends JPanel implements Runnable{
 
 		if(restart == true){
 			player.setDefaultValues();
-			assetSetter.setObjects();
+			//assetSetter.setObjects();
 			assetSetter.setInteractiveTiles();
 		}
 	}
