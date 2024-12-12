@@ -80,7 +80,6 @@ public class KeyHandler implements KeyListener{
 				//Load Game
 				else if(gp.ui.commandNum == 1) {
 					
-					gp.assetSetter.setObjects();
 					//Set Player's Images and initial eqipment:
 					gp.player.setDefaultValues();
 					gp.player.getPlayerImage();

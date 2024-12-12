@@ -91,7 +91,15 @@ public class SaveLoad {
 
 
 			//Map Items:
-
+			for(int i = 0; i < gp.maxMap ; i++){
+				for(int j = 0; j < 50; j++){
+					if(gp.obj[i][j] != null){
+						dataStorage.savedObjects[i][j] = gp.obj[i][j].name;
+						dataStorage.savedObjectsWorldX[i][j] = gp.obj[i][j].worldX;
+						dataStorage.savedObjectsWorldY[i][j] = gp.obj[i][j].worldY;
+					}
+				}
+			}
 
 			OS.writeObject(dataStorage);
 			
@@ -147,9 +155,20 @@ public class SaveLoad {
 			gp.player.getPlayerAttackImage();
 
 			//Map items:
+			for(int i = 0; i < gp.maxMap; i++){
+				for(int j = 0; j < 50; j++){
+					if(dataStorage.savedObjects[i][j] != null){
+						gp.obj[i][j] = getObject(dataStorage.savedObjects[i][j]);
+						//gp.obj[i][j].worldX = gp.tileSize * dataStorage.savedObjectsWorldX[i][j];
+						//gp.obj[i][j].worldY = gp.tileSize * dataStorage.savedObjectsWorldY[i][j];
+					}
+				}
+
+			}
 		
 			
 		} catch (Exception e) {
+			System.out.println("Load Error.");
 			e.printStackTrace();
 		}
 	}

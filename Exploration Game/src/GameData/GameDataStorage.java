@@ -2,6 +2,8 @@ package GameData;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import Entity.Entity;
+
 
 public class GameDataStorage implements Serializable{
 
@@ -33,6 +35,9 @@ public class GameDataStorage implements Serializable{
 
 	//Map items:
 	//TODO
+	String savedObjects[][] = new String[20][50];
+	int savedObjectsWorldX[][] = new int[20][50];
+	int savedObjectsWorldY[][] = new int [20][50];
 
 
 
