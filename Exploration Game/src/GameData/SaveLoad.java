@@ -10,6 +10,7 @@ import main.GamePanel;
 import objects.Arrow;
 import objects.Axe;
 import objects.Bark;
+import objects.BlueChest;
 import objects.BlueKey;
 import objects.Fireball;
 import objects.Lance;
@@ -28,23 +29,52 @@ public class SaveLoad {
 
 	GamePanel gp;
 	
-	public Entity getObject(String itemName){
+	public Entity getInventoryObject(String itemName){
 		Entity object = null;
-
+		//case "": object = new (gp); break;
 		switch(itemName){
-			case "Old Axe": object = new Axe(gp); break;
+
+			case "Axe": object = new Axe(gp); break;
 			case "Bark": object = new Bark(gp); break;
 			case "BlueKey": object = new BlueKey(gp); break;
 			case "Lance": object = new Lance(gp); break;
 			case "Lantern": object = new Lantern(gp); break;
-			case "Metal Shield": object = new MetalShield(gp); break;
+			case "MetalShield": object = new MetalShield(gp); break;
 			case "PaperClip": object = new PaperClip(gp); break;
 			case "RedKey": object = new RedKey(gp); break;
-			case "Red Potion": object = new RedPotion(gp); break;
-			case "WoodShield": object = new Shield(gp); break;
+			case "RedPotion": object = new RedPotion(gp); break;
+			case "Shield": object = new Shield(gp); break;
 			case "Staff": object = new Staff(gp); break;
 			case "Tent": object = new Tent(gp); break;
 			case "YellowKey": object = new YellowKey(gp); break;
+		}
+
+		return object;
+	}
+
+
+	//Need to take Doors and Chests out of the Gampanel "obj" array.
+	public Entity getMapObjects(int itemID){
+		Entity object = null;
+
+		switch (itemID) {
+			case 0: object = new Axe(gp); break;
+			case 1: object = new Bark(gp); break;
+			case 2: object = new BlueKey(gp); break;
+			case 3: object = new Lance(gp); break;
+			case 4: object = new Lantern(gp); break;
+			case 5: object = new MetalShield(gp); break;
+			case 6: object = new PaperClip(gp); break;
+			case 7: object = new RedKey(gp); break;
+			case 8: object = new RedPotion(gp); break;
+			case 9: object = new Shield(gp); break;
+			case 10: object = new Staff(gp); break;
+			case 11: object = new Arrow(gp); break;
+
+
+
+			default:
+				break;
 		}
 
 		return object;
@@ -91,15 +121,12 @@ public class SaveLoad {
 
 
 			//Map Items:
-			for(int i = 0; i < gp.maxMap ; i++){
-				for(int j = 0; j < 50; j++){
-					if(gp.obj[i][j] != null){
-						dataStorage.savedObjects[i][j] = gp.obj[i][j].name;
-						dataStorage.savedObjectsWorldX[i][j] = gp.obj[i][j].worldX;
-						dataStorage.savedObjectsWorldY[i][j] = gp.obj[i][j].worldY;
-					}
-				}
-			}
+			// for(int i = 0; i < gp.maxMap ; i++){
+			// 	for(int j = 0; j < 50; j++){
+			// 	}
+			// }
+
+			//System.out.println(dataStorage.savedObjects[0][0]);
 
 			OS.writeObject(dataStorage);
 			
@@ -143,7 +170,7 @@ public class SaveLoad {
 			//Inventory:
 			gp.player.inventory.clear();
 			for(int i = 0; i < dataStorage.itemNames.size(); i++){
-				gp.player.inventory.add(getObject(dataStorage.itemNames.get(i)));
+				gp.player.inventory.add(getInventoryObject(dataStorage.itemNames.get(i)));
 				gp.player.inventory.get(i).amount = dataStorage.itemAmmounts.get(i);
 			}
 
@@ -154,17 +181,22 @@ public class SaveLoad {
 			gp.player.getDefense();
 			gp.player.getPlayerAttackImage();
 
-			//Map items:
-			for(int i = 0; i < gp.maxMap; i++){
-				for(int j = 0; j < 50; j++){
-					if(dataStorage.savedObjects[i][j] != null){
-						gp.obj[i][j] = getObject(dataStorage.savedObjects[i][j]);
-						//gp.obj[i][j].worldX = gp.tileSize * dataStorage.savedObjectsWorldX[i][j];
-						//gp.obj[i][j].worldY = gp.tileSize * dataStorage.savedObjectsWorldY[i][j];
-					}
-				}
 
-			}
+			//System.out.println("first Item: " + getObject(dataStorage.savedObjects[0][3]));
+			// //Map items:
+			// for(int i = 0; i < gp.maxMap; i++){
+			// 	for(int j = 0; j < 50; j++){
+			// 		if(dataStorage.savedObjects[i][j] != null){
+			// 			gp.obj[i][j] = getObject(dataStorage.savedObjects[i][j]);
+			// 			gp.obj[i][j].worldX = gp.tileSize * dataStorage.savedObjectsWorldX[i][j];
+			// 			gp.obj[i][j].worldY = gp.tileSize * dataStorage.savedObjectsWorldY[i][j];
+			// 		}
+			// 		if(gp.obj == null){
+			// 			System.out.println("Load Error: GamePanel Object Array is Null");
+			// 		}
+			// 	}
+
+			// }
 		
 			
 		} catch (Exception e) {

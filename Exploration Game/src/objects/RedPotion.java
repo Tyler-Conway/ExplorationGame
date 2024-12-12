@@ -12,7 +12,7 @@ public class RedPotion extends Entity{
 		this.gp = gp;
 		
 		type = type_Consumable;
-		name = "Red Potion";
+		name = "RedPotion";
 		price = 25;
 		value = 5;
 		down1 = setup("/objects/RedPotion", gp.tileSize, gp.tileSize);

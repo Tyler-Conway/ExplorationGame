@@ -9,7 +9,7 @@ public class Axe extends Entity{
 		super(gp);
 		
 		type = type_Axe;
-		name = "Old Axe";
+		name = "Axe";
 		down1 = setup("/objects/axe", gp.tileSize, gp.tileSize);
 		attackValue = 2;
 		attackArea.width = gp.tileSize - (gp.tileSize/2);

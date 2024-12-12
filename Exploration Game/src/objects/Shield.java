@@ -9,7 +9,7 @@ public class Shield extends Entity{
 		super(gp);
 		
 		type = type_Shield;
-		name = "WoodShield";
+		name = "Shield";
 		price = 35;
 		down1 = setup("/objects/shield_wood", gp.tileSize, gp.tileSize);
 		defenseValue = 1;

@@ -83,6 +83,7 @@ public class Entity {
 	public boolean monsterHasWeapon = false;
 	
 	//Item Attributes:
+	public int ID = -1;
 	public int attackValue;
 	public int defenseValue;
 	public String description = "";
@@ -113,6 +114,9 @@ public class Entity {
 		
 	}
 	
+	public String getName(){
+		return name;
+	}
 	public int getLeftX() {
 		return worldX + solidArea.x;
 	}
