@@ -21,10 +21,10 @@ public class AssetSetter {
 		this.gp = gp;
 	}
 	
-	public void placeAsset(Entity ObjectArray[][], int mapNum, int index, Entity object, int x, int y){
-		ObjectArray[mapNum][index] = object;
-		ObjectArray[mapNum][index].worldX = gp.tileSize * x;
-		ObjectArray[mapNum][index].worldY = gp.tileSize * y;
+	public void placeAsset(Entity AssetArray[][], int mapNum, int index, Entity object, int x, int y){
+		AssetArray[mapNum][index] = object;
+		AssetArray[mapNum][index].worldX = gp.tileSize * x;
+		AssetArray[mapNum][index].worldY = gp.tileSize * y;
 	}
 
 	public void setObjects() {
@@ -72,20 +72,38 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 38, 46), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 19, 17); i++;
 		
-		
 		i = 0;
 		mapNum = gp.stoneBuilding02;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 47, 46), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 18); i++;
 		
-		
 		i = 0;
 		mapNum = gp.stoneBuilding03;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 30, 31), 24, 25); i++;	
 
 		i = 0;
+		mapNum = gp.stoneBuilding04;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 5, 5), 24, 25); i++;	
+
+		i = 0;
+		mapNum = gp.stoneBuilding05;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 11, 5), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 19); i++;
+		placeAsset(gp.obj, mapNum, i, new BlueChest(gp, new BlueKey(gp)), 29, 14); i++;	
+		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 28, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 18, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 25, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 25, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 18, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 22, 16); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 21, 16); i++;
+		
+		i = 0;
 		mapNum = gp.world03;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding04, 24, 24), 5, 3); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding05, 24, 24), 11, 3); i++;
 		placeAsset(gp.obj, mapNum, i, new RedDoor(gp), 7, 39); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 36); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 38); i++;
@@ -94,6 +112,25 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 7, 37); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 3, 48); i++;
 		placeAsset(gp.obj, mapNum, i, new RedKey(gp), 29, 26); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 42, 46); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 43, 46); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 46); i++;
+		placeAsset(gp.obj, mapNum, i, new YellowChest(gp, new BlueKey(gp)), 47, 40); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 1, 5); i++;
+		switch(gp.player.playerClass){
+			case "Fighter": 
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 1, 6); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 1, 7); i++;
+				break;
+			case "Wizard":
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 1, 6); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 1, 7); i++;
+				break;
+			case "Peasant":
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 1, 6); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 1, 7); i++;
+				break;
+		}
 
 
 		i = 0;
@@ -143,6 +180,7 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.cabin02, i, new RedTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding02, i, new GreenNPC(gp), 24, 19); i++; i = 0;
+		placeAsset(gp.npc, gp.stoneBuilding05, i, new GreenNPC(gp), 24, 20); i++; i = 0;
 	}
 	
 	public void setMonster() {
@@ -156,11 +194,9 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 47, 7); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 43, 5); i++;
 		
-		
 		mapNum = gp.world02;
 		i = 0;
 		placeAsset(gp.monster, mapNum, i, new Oger(gp), 43, 11); i++;
-
 
 		mapNum = gp.world03;
 		i = 0;
@@ -199,18 +235,19 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 18, 45);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 19, 45);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 20, 45);i++;
-		
 		//non-tree tile dry trees:
 		gp.iTile[mapNum][i] = new DryTree(gp, 12, 13);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 12, 12);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 15, 33);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 15, 32);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 15, 31);i++;
-		
+
+		gp.iTile[mapNum][i] = new DryTree(gp, 2, 7);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 2, 5);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 2, 6);i++;
 		
 		mapNum = gp.world02;
 		i = 0;
-		
 		gp.iTile[mapNum][i] = new DryTree(gp, 45, 7);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 26, 16);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 27, 16);i++;
@@ -218,7 +255,6 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 29, 16);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 30, 16);i++;
 		
-
 		mapNum = gp.world03;
 		i = 0;
 		gp.iTile[mapNum][i] = new DryTree(gp, 35, 22);i++;

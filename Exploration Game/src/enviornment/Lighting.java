@@ -114,7 +114,7 @@ public class Lighting {
 			gp.player.lightUpdated = false;
 		}
 		
-		if(gp.gameState == gp.playState) {
+		if(gp.gameState == gp.playState && gp.keyH.showDebugText == false) {
 			//Check dayState
 			if(dayState == day) {
 				dayCounter++;

@@ -204,11 +204,11 @@ public class KeyHandler implements KeyListener{
 			gp.ReloadCurrentMap();
 
 			//I dont want to deal with monsters all the time:
-			//(and I'll want to refresh the objects as I'm adding them into the game to test them out)
 			if(showDebugText == true){
 				gp.obj = new Entity[gp.maxMap][50];
 				gp.assetSetter.setObjects();
 				gp.monster = new Entity[gp.maxMap][20];
+				
 			}
 		}
 	}

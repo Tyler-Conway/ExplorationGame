@@ -52,6 +52,8 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int stoneBuilding01 = 2;
 	public final int stoneBuilding02 = 3;
 	public final int stoneBuilding03 = 4;
+	public final int stoneBuilding04 = 13;
+	public final int stoneBuilding05 = 14;
 	public final int world02 = 5;
 	public final int cabin02 = 6;
 	public final int world03 = 7;
@@ -77,6 +79,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int travelState = 11;
 	
 	//SYSTEM
+	public String worldName = "N/A";
 	public TileManager tileM = new TileManager(this);
 	Thread gameThread;
 	Config config = new Config(this);
@@ -103,7 +106,6 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	
 	public void setupGame() {
-		//assetSetter.setObjects();
 		assetSetter.setNPC();
 		assetSetter.setMonster();
 		assetSetter.setInteractiveTiles();
@@ -119,7 +121,6 @@ public class GamePanel extends JPanel implements Runnable{
 
 		if(restart == true){
 			player.setDefaultValues();
-			//assetSetter.setObjects();
 			assetSetter.setInteractiveTiles();
 		}
 	}
@@ -127,8 +128,6 @@ public class GamePanel extends JPanel implements Runnable{
 	public void startGameThread() {
 		gameThread = new Thread(this);
 		gameThread.start();
-		//uncomment to turn on music:d
-		//playMusic(0);
 	}
 
 	//This is the game loop:
@@ -166,6 +165,7 @@ public class GamePanel extends JPanel implements Runnable{
 		if(gameState == playState) {
 
 			player.update();
+			worldName = getWorldname(currentMap);
 			
 			for(int i = 0; i < npc[0].length; i++) {
 				if(npc[currentMap][i] != null) {
@@ -291,7 +291,8 @@ public class GamePanel extends JPanel implements Runnable{
 				g2.setColor(Color.white);
 				
 				int x = 10, y = 400, lineHeight = 20;
-				g2.drawString("WorldX: " + player.worldX, x, y);
+				g2.drawString("Current Map: " + worldName, x, y);
+				g2.drawString("WorldX: " + player.worldX, x, y += lineHeight);
 				g2.drawString("WorldY: " + player.worldY, x, y += lineHeight);
 				g2.drawString("Col: " + (player.worldX + player.solidArea.x) / tileSize, x, y += lineHeight);
 				g2.drawString("Row: " + (player.worldY + player.solidArea.y) / tileSize, x, y += lineHeight);
@@ -309,6 +310,8 @@ public class GamePanel extends JPanel implements Runnable{
 		case stoneBuilding01: tileM.loadMap("/maps/StoneBuilding01.txt", stoneBuilding01); break;
 		case stoneBuilding02: tileM.loadMap("/maps/StoneBuilding02.txt", stoneBuilding02); break;
 		case stoneBuilding03: tileM.loadMap("/maps/StoneBuilding03.txt", stoneBuilding03); break;
+		case stoneBuilding04: tileM.loadMap("/maps/StoneBuilding04.txt", stoneBuilding04); break;
+		case stoneBuilding05: tileM.loadMap("/maps/StoneBuilding05.txt", stoneBuilding05); break;
 		case world02: tileM.loadMap("/maps/World02.txt", world02); break;
 		case cabin02: tileM.loadMap("/maps/Cabin02.txt", cabin02); break;
 		case world03: tileM.loadMap("/maps/World03.txt", world03); break;
@@ -333,6 +336,29 @@ public class GamePanel extends JPanel implements Runnable{
 	public void playSoundEffect(int i) {
 		sound.setFile(i);
 		sound.play();
+	}
+
+	public String getWorldname(int worldNum){
+		String worldName = "   ???   ";
+		switch (worldNum) {
+			case world01: worldName = "World01"; break;
+			case world02: worldName = "World02"; break;
+			case world03: worldName = "World03"; break;
+			case stoneBuilding01: worldName = "StoneBuilding01"; break;
+			case stoneBuilding02: worldName = "StoneBuilding02"; break;
+			case stoneBuilding03: worldName = "StoneBuilding03"; break;
+			case stoneBuilding04: worldName = "StoneBuilding04"; break;
+			case stoneBuilding05: worldName = "StoneBuilding05"; break;
+			case cabin01: worldName = "Cabin01"; break;
+			case cabin02: worldName = "Cabin02"; break;
+			case cabin03: worldName = "Cabin03"; break;
+			case lootCabin01: worldName = "LootCabin01"; break;
+			case lootCabin02: worldName = "LootCabin02"; break;
+			case beach01: worldName = "Beach01"; break;
+			case beach02: worldName = "Beach02"; break;
+			default: worldName = "   ???   "; break;
+		}
+		return worldName;
 	}
 	
 }

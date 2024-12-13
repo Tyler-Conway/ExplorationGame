@@ -6,8 +6,7 @@ public class EventHandler {
 
 	GamePanel gp;
 	EventRect eventRect[][][];
-	int tempMap, tempCol, tempRow, previousMap;
-	
+	int tempMap, tempCol, tempRow, previousMap;	
 	int previousEventX, previousEventY;
 	boolean canTouchEvent = true;
 	
@@ -35,7 +34,6 @@ public class EventHandler {
 				}
 			}
 		}
-		
 	}
 	
 	public void checkEvent() {
@@ -53,244 +51,101 @@ public class EventHandler {
 			int mapNum = gp.currentMap;
 			
 			
-			//MAP01 EVENTS:
 			switch(mapNum) {
+		//MAP01 EVENTS:
 			case 0:
-				if(hit(mapNum,7,45, "left") == true) {
-					damagePit(mapNum,7,45,gp.dialogueState);
-				}
-				else if(hit(mapNum,17,42, "any") == true) {
-					damagePit(mapNum,17,42,gp.dialogueState);
-				}
-				else if(hit(mapNum,9,10, "left") == true) {
-					healingPool(mapNum,9,10,gp.dialogueState);
-				}
-				else if(hit(mapNum,9,11, "left") == true) {
-					healingPool(mapNum,9,11,gp.dialogueState);
-				}
-				else if(hit(mapNum,9,12, "left") == true) {
-					healingPool(mapNum,9,12,gp.dialogueState);
-				}
-				else if(hit(mapNum,9,13, "left") == true) {
-					healingPool(mapNum,9,13,gp.dialogueState);
-				}
-				else if(hit(mapNum,9,14, "left") == true) {
-					healingPool(mapNum,9,14,gp.dialogueState);
-				}
-				else if(hit(mapNum,16, 48, "right") == true) {
-					// new col, new row:
-					teleport(10, 9);
-				}
-				else if(hit(mapNum,8, 48, "left") == true) {
-					// new col, new row:
-					teleport(45, 32);
-				}
+				if(hit(mapNum,7,45, "left") == true) {damagePit(mapNum,7,45,gp.dialogueState);}
+				else if(hit(mapNum,17,42, "any") == true) {damagePit(mapNum,17,42,gp.dialogueState);}
+				else if(hit(mapNum,9,10, "left") == true) {healingPool(mapNum,9,10,gp.dialogueState);}
+				else if(hit(mapNum,9,11, "left") == true) {healingPool(mapNum,9,11,gp.dialogueState);}
+				else if(hit(mapNum,9,12, "left") == true) {healingPool(mapNum,9,12,gp.dialogueState);}
+				else if(hit(mapNum,9,13, "left") == true) {healingPool(mapNum,9,13,gp.dialogueState);}
+				else if(hit(mapNum,9,14, "left") == true) {healingPool(mapNum,9,14,gp.dialogueState);}
+				else if(hit(mapNum,16, 48, "right") == true) {teleport(10, 9);}
+				else if(hit(mapNum,8, 48, "left") == true) {teleport(45, 32);}
 				//World01 Blue Trader Cabin:
-				else if(isOnTheTile(mapNum, 16, 3) == true) {
-					// mapNum, col, row:
-					changeMap(gp.cabin01,24,26);
-				}
+				else if(isOnTheTile(mapNum, 16, 3) == true) {changeMap(gp.cabin01,24,26);}
 				//road to map 02:
-				else if(hit(mapNum, 49, 33, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world02,2,32);
-				}
-				//road to map 02:
-				else if(hit(mapNum, 49, 32, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world02,2,32);
-				}
-				//road to map 02:
-				else if(hit(mapNum, 49, 31, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world02,2,32);
-				}
+				else if(hit(mapNum, 49, 33, "any") == true) {changeMap(gp.world02,2,32);}
+				else if(hit(mapNum, 49, 32, "any") == true) {changeMap(gp.world02,2,32);}
+				else if(hit(mapNum, 49, 31, "any") == true) {changeMap(gp.world02,2,32);}
+				//^^^road to map 02:
 				//road to map 03:
-				else if(hit(mapNum, 0, 5, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world03,47,5);
-				}
-				//road to map 03:
-				else if(hit(mapNum, 0, 6, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world03,47,6);
-				}
-				//road to map 03:
-				else if(hit(mapNum, 0, 7, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world03,47,7);
-				}
+				else if(hit(mapNum, 0, 5, "any") == true) {changeMap(gp.world03,47,5);}
+				else if(hit(mapNum, 0, 6, "any") == true) {changeMap(gp.world03,47,6);}
+				else if(hit(mapNum, 0, 7, "any") == true) {changeMap(gp.world03,47,7);}
+				//^^^road to map 03:
 				break;
-				
+		//CABIN01 EVNENTS:	
 			case 1:
-				//CABIN01 EVNENTS:
-				if(hit(mapNum, 24, 28, "any") == true) {
-					// mapNum,new col, new row:
-					changeMap(gp.world01,16,5);
-				}
-				else if(hit(mapNum,24,21,"up") == true) {
-					speak(gp.npc[mapNum][0]);
-				}
+				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world01,16,5);}
+				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
 				break;
-			//StoneBuilding02:
+		//StoneBuilding02:
 			case 3:
-				if(hit(mapNum,24,21,"up") == true) {
-					speak(gp.npc[mapNum][0]);
-				}
+				if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
 				break;
-				
-				//World02 Events:
+		//World02 Events:
 			case 5:
 				//road to map 01:
-				if(hit(mapNum, 0, 33, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world01,47,32);
-				}
-				//road to map 01:
-				else if(hit(mapNum, 0, 32, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world01,47,32);
-				}
-				//road to map 01:
-				else if(hit(mapNum, 0, 31, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world01,47,32);
-				}
+				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world01,47,32);}
+				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world01,47,32);}
+				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world01,47,32);}
+				//^^^road to map 01:
 				//Enter Cabin02
-				else if(isOnTheTile(mapNum, 4, 27) == true) {
-					// mapNum, col, row:
-					changeMap(gp.cabin02,24,26);
-				}
+				else if(isOnTheTile(mapNum, 4, 27) == true) {changeMap(gp.cabin02,24,26);}
 				//Enter the loot cabin:
-				else if(isOnTheTile(mapNum, 38, 15) == true) {
-					// mapNum, col, row:
-					changeMap(gp.lootCabin01,24,26);
-				}
+				else if(isOnTheTile(mapNum, 38, 15) == true) {changeMap(gp.lootCabin01,24,26);}
 				//road to Beach01:
-				else if(hit(mapNum, 20, 49, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach01,23,2);
-				}
-				//road to Beach01:
-				else if(hit(mapNum, 21, 49, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach01,24,2);
-				}
-				//road toBeach01:
-				else if(hit(mapNum, 22, 49, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach01,25,2);
-				}
+				else if(hit(mapNum, 20, 49, "any") == true) {changeMap(gp.beach01,23,2);}
+				else if(hit(mapNum, 21, 49, "any") == true) {changeMap(gp.beach01,24,2);}
+				else if(hit(mapNum, 22, 49, "any") == true) {changeMap(gp.beach01,25,2);}
+				//^^^road toBeach01:
 				break;
-			//Cabin02 Events:
+		//Cabin02 Events:
 			case 6: 
-				if(hit(mapNum, 24, 28, "any") == true) {
-					// mapNum,new col, new row:
-					changeMap(gp.world02,4,29);
-				}
-				else if(hit(mapNum,24,21,"up") == true) {
-					speak(gp.npc[mapNum][0]);
-				}
+				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,4,29);}
+				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
 				break;
-			//World03 Events:
+		//World03 Events:
 			case 7: 
-				if(hit(mapNum, 49, 5, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world01,2,5);
-				}
+				if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.world01,2,5);}
 				//road to map 01:
-				else if(hit(mapNum, 49, 6, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world01,2,6);
-				}
+				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.world01,2,6);}
 				//road to map 01:
-				else if(hit(mapNum, 49, 7, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world01,2,7);
-				}
-				else if(isOnTheTile(mapNum, 42, 9) == true) {
-					// mapNum, col, row:
-					changeMap(gp.lootCabin02,24,26);
-				}
+				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.world01,2,7);}
+				else if(isOnTheTile(mapNum, 42, 9) == true) {changeMap(gp.lootCabin02,24,26);}
 				break;
-			//Beach01 Events:
+		//Beach01 Events:
 			case 8:
 				//road to World02:
-				if(hit(mapNum, 23, 0, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world02,20,47);
-				}
-				//road to World02:
-				else if(hit(mapNum, 24, 0, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world02,21,47);
-				}
-				//road World02:
-				else if(hit(mapNum, 25, 0, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.world02,22,47);
-				}
+				if(hit(mapNum, 23, 0, "any") == true) {changeMap(gp.world02,20,47);}
+				else if(hit(mapNum, 24, 0, "any") == true) {changeMap(gp.world02,21,47);}
+				else if(hit(mapNum, 25, 0, "any") == true) {changeMap(gp.world02,22,47);}
+				//^^^Road to World02
 				//road to Beach02:
-				else if(hit(mapNum, 49, 5, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach02,2,5);
-				}
-				//road to Beach02:
-				else if(hit(mapNum, 49, 6, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach02,2,6);
-				}
-				//road Beach02:
-				else if(hit(mapNum, 49, 7, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach02,2,7);
-				}
-				break;
-			//Beach02 Events:
+				else if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.beach02,2,5);}
+				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.beach02,2,6);}
+				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.beach02,2,7);}break;
+				//^^^Road to Beach02
+		//Beach02 Events:
 			case 9:
 				//road to Beach01:
-				if(hit(mapNum, 0, 5, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach01,47,5);
-				}
-				//road to Beach01:
-				else if(hit(mapNum, 0, 6, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach01,47,6);
-				}
-				//road to Beach01:
-				else if(hit(mapNum, 0, 7, "any") == true) {
-					// mapNum, col, row:
-					changeMap(gp.beach01,47,7);
-				}
-				else if(hit(mapNum, 10, 0, "any") == true) {
-					changeMap(gp.cabin03, 24, 26);
-				}
-				break;
-			//Cabin03 Events:
+				if(hit(mapNum, 0, 5, "any") == true) {changeMap(gp.beach01,47,5);}
+				else if(hit(mapNum, 0, 6, "any") == true) {changeMap(gp.beach01,47,6);}
+				else if(hit(mapNum, 0, 7, "any") == true) {changeMap(gp.beach01,47,7);}
+				//^^^ Road to Beach01:
+				else if(hit(mapNum, 10, 0, "any") == true) {changeMap(gp.cabin03, 24, 26);} break;
+		//Cabin03 Events:
 			case 10:
-				if(hit(mapNum, 24, 28, "any") == true) {
-					// mapNum,new col, new row:
-					changeMap(gp.beach02,10,2);
-				}
-				else if(hit(mapNum,24,21,"up") == true) {
-					speak(gp.npc[mapNum][0]);
-				}
-				break;
+				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.beach02,10,2);}
+				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);} break;
 			//LootCabin01:
-			case 11:
-				if(hit(mapNum, 24, 28, "any") == true) {
-					// mapNum,new col, new row:
-					changeMap(gp.world02,38,17);
-				}
-				break;
+			case 11: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,38,17);} break;
 			//LootCabin02:
-			case 12:
-				if(hit(mapNum, 24, 28, "any") == true) {
-					// mapNum,new col, new row:
-					changeMap(gp.world03,42,11);
-				}
-				break;
+			case 12: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world03,42,11);} break;
+			//StoneBuilding05:
+			case 14: if(hit(mapNum,24,22,"up") == true) {speak(gp.npc[mapNum][0]);} break;
 			}
 		}
 	}
@@ -308,10 +163,8 @@ public class EventHandler {
 			if(gp.player.solidArea.intersects(eventRect[map][col][row]) && (eventRect[map][col][row].eventDone) == false) {
 				if(gp.player.direction.contentEquals(reqDirection) || reqDirection.contentEquals("any")) {
 					hit = true;
-					
 					previousEventX = gp.player.worldX;
 					previousEventY = gp.player.worldY;
-					
 				}
 			}
 			//reset values:
@@ -332,7 +185,6 @@ public class EventHandler {
 				result = true;
 			}
 		}
-		
 		return result;
 	}
 	
@@ -380,6 +232,10 @@ public class EventHandler {
 		tempRow = row;
 		gp.playSoundEffect(14);
 		canTouchEvent = false;
+
+		String text = "";
+		text = gp.getWorldname(map);
+		gp.ui.addMessage(text);
 	}
 	
 	public void speak(Entity entity) {
