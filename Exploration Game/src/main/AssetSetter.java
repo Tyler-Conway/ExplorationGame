@@ -84,8 +84,14 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.stoneBuilding04;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 5, 5), 24, 25); i++;	
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 5, 5), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new BlueDoor(gp), 24, 21); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 28, 18); i++;
+		
 
+
+		
 		i = 0;
 		mapNum = gp.stoneBuilding05;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 11, 5), 24, 25); i++;
@@ -113,10 +119,15 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 3, 48); i++;
 		placeAsset(gp.obj, mapNum, i, new RedKey(gp), 29, 26); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 42, 46); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 9, 1); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 43, 46); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 46); i++;
-		placeAsset(gp.obj, mapNum, i, new YellowChest(gp, new BlueKey(gp)), 47, 40); i++;
+		placeAsset(gp.obj, mapNum, i, new BlueChest(gp, new BlueKey(gp)), 47, 40); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 1, 5); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 8, 23); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 20); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 10, 20); i++;
+		placeAsset(gp.obj, mapNum, i, new Tent(gp), 4, 28); i++;
 		switch(gp.player.playerClass){
 			case "Fighter": 
 				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 1, 6); i++;
@@ -134,6 +145,8 @@ public class AssetSetter {
 
 
 		i = 0;
+		mapNum = gp.lootCabin01;
+		//Any additional objects in a loot cabin should come first:
 		setupLootCabin(gp.lootCabin01, i);
 
 		i = 0;
@@ -206,6 +219,7 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 26, 36); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 10, 46); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 6, 46); i++;
+		placeAsset(gp.monster, mapNum, i, new Oger(gp), 8, 20); i++;
 	}
 
 	public void setInteractiveTiles() {
@@ -260,5 +274,6 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 35, 22);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 42, 19);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 42, 12);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 8, 17);i++;
 	}
 }
