@@ -13,10 +13,10 @@ public class RedChest extends Entity{
 	Entity loot;
 	boolean opened = false;
 	
-	public RedChest(GamePanel gp, Entity loot) {
+	public RedChest(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
-		this.loot = loot;
+		this.loot = new RedKey(gp);
 		
 		type = type_Obstacle;
 		name = "RedChest";

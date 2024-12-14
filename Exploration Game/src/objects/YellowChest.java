@@ -13,10 +13,10 @@ public class YellowChest extends Entity{
 	Entity loot;
 	boolean opened = false;
 	
-	public YellowChest(GamePanel gp, Entity loot) {
+	public YellowChest(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
-		this.loot = loot;
+		this.loot = new YellowKey(gp);
 		
 		type = type_Obstacle;
 		name = "YellowChest";

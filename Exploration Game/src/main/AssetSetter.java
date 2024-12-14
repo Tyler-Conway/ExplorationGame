@@ -2,6 +2,8 @@ package main;
 
 import Entity.Entity;
 
+import java.util.GregorianCalendar;
+
 import Entity.BlueTrader;
 import Entity.GreenNPC;
 import Entity.NPCWizard;
@@ -28,7 +30,6 @@ public class AssetSetter {
 	}
 
 	public void setObjects() {
-
 		//placeAsset(gp.obj, mapNum, i, new ); i++;
 
 		int mapNum = gp.world01;
@@ -39,8 +40,8 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new Tent(gp), 24, 39); i++;
 		placeAsset(gp.obj, mapNum, i, new Lantern(gp), 12, 46); i++;
 		placeAsset(gp.obj, mapNum, i, new YellowDoor(gp), 5, 4); i++;
-		placeAsset(gp.obj, mapNum, i, new YellowChest(gp, new YellowKey(gp)), 16, 35); i++;
-		placeAsset(gp.obj, mapNum, i, new YellowKey(gp), 16, 45); i++;
+		placeAsset(gp.obj, mapNum, i, new YellowChest(gp), 16, 35); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 16, 45); i++;
 		placeAsset(gp.obj, mapNum, i, new Axe(gp), 4, 1); i++;
 		placeAsset(gp.obj, mapNum, i, new MetalShield(gp), 6, 1); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 6, 3); i++;
@@ -54,10 +55,9 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 7, 37); i++;
 		placeAsset(gp.obj, mapNum, i, new Heart(gp), 21, 35); i++;
 
-
 		i = 0;
 		mapNum = gp.stoneBuilding01;
-		placeAsset(gp.obj, mapNum, i, new RedChest(gp, new RedKey(gp)), 19, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new RedChest(gp), 19, 14); i++;
 		placeAsset(gp.obj, mapNum, i, new BlueDoor(gp), 26, 19); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 22, 14); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 22, 17); i++;
@@ -77,7 +77,14 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 47, 46), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 18); i++;
-		
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 18, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 23, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new YellowChest(gp), 30, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new MetalShield(gp), 25, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 25, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 30, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 18, 17); i++;
+
 		i = 0;
 		mapNum = gp.stoneBuilding03;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 30, 31), 24, 25); i++;	
@@ -88,16 +95,39 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new BlueDoor(gp), 24, 21); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 28, 18); i++;
-		
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 18, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new YellowChest(gp), 30, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 25, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 25, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 30, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 27, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 18, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 21, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 30, 17); i++;
+		switch(gp.player.playerClass){
+			case "Fighter": 
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 23, 17); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 22, 17); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 23, 16); i++;
+				break;
+			case "Wizard":
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 23, 17); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 22, 17); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 23, 16); i++;
+				break;
+			case "Peasant":
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 23, 17); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 22, 17); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 23, 16); i++;
+				break;
+		}
 
-
-		
 		i = 0;
 		mapNum = gp.stoneBuilding05;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 11, 5), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 17); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 19); i++;
-		placeAsset(gp.obj, mapNum, i, new BlueChest(gp, new BlueKey(gp)), 29, 14); i++;	
+		placeAsset(gp.obj, mapNum, i, new BlueChest(gp), 29, 14); i++;	
 		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 28, 14); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 18, 14); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 25, 14); i++;
@@ -117,12 +147,12 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 8, 36); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 7, 37); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 3, 48); i++;
-		placeAsset(gp.obj, mapNum, i, new RedKey(gp), 29, 26); i++;
+		placeAsset(gp.obj, mapNum, i, new RedChest(gp), 29, 24); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 42, 46); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 9, 1); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 43, 46); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 46); i++;
-		placeAsset(gp.obj, mapNum, i, new BlueChest(gp, new BlueKey(gp)), 47, 40); i++;
+		placeAsset(gp.obj, mapNum, i, new BlueChest(gp), 47, 40); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 1, 5); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 8, 23); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 20); i++;
@@ -143,7 +173,6 @@ public class AssetSetter {
 				break;
 		}
 
-
 		i = 0;
 		mapNum = gp.lootCabin01;
 		//Any additional objects in a loot cabin should come first:
@@ -152,9 +181,8 @@ public class AssetSetter {
 		i = 0;
 		mapNum = gp.lootCabin02;
 		//Any additional objects in a loot cabin should come first:
-		placeAsset(gp.obj, mapNum, i, new RedKey(gp), 24, 23); i++;
+		placeAsset(gp.obj, mapNum, i, new RedChest(gp), 24, 23); i++;
 		setupLootCabin(gp.lootCabin02, i);
-		
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {

@@ -21,7 +21,10 @@ public class TileManager {
 		tile = new Tile[50];
 		mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
 		getTileImage();
-		
+		setUpMaps();
+	}
+
+	public void setUpMaps(){
 		//This Creates the Full and Mini maps:
 		loadMap("/maps/World01.txt", gp.world01);
 		loadMap("/maps/Cabin01.txt", gp.cabin01);
@@ -38,7 +41,7 @@ public class TileManager {
 		loadMap("/maps/Cabin03.txt", gp.cabin03);
 		loadMap("/maps/lootCabin01.txt", gp.lootCabin01);
 		loadMap("/maps/lootCabin01.txt", gp.lootCabin02);
-		
+		loadMap("/maps/World04.txt", gp.world04);
 	}
 	
 	public void setup(int index, String imageName, boolean collision) {

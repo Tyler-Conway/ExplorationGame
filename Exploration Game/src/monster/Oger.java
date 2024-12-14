@@ -72,7 +72,7 @@ public class Oger extends Entity{
 	public void setAction() {
 		
 		if(onPath == true) {
-			checkStopChasing(gp.player, 15, 100);
+			checkStopChasing(gp.player, 10, 1);
 			searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
 		}
 		else {

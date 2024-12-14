@@ -6,6 +6,8 @@ import Entity.Entity;
 import main.GamePanel;
 import objects.Arrow;
 import objects.CoinBronze;
+import objects.CoinGold;
+import objects.CoinSilver;
 import objects.Heart;
 import objects.ManaCrystal;
 import objects.Rock;
@@ -54,7 +56,7 @@ public class Slime extends Entity{
 	public void setAction() {
 		
 		if(onPath == true) {
-			checkStopChasing(gp.player, 15, 100);
+			checkStopChasing(gp.player, 10, 100);
 			searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
 			checkShootProjectile(200, 120);
 		}
@@ -72,17 +74,11 @@ public class Slime extends Entity{
 	}
 	
 	public void checkDrop() {
-		//Cast a die
 		int i = new Random().nextInt(100)+1;
 		
-		//Set Monster Drops
-		if(i < 50) {
-			dropItem(new CoinBronze(gp));
-		}
-		if(i >= 50 && i < 75) {
-			dropItem(new Heart(gp));
-		}
-		if(i >= 75 && i < 100) {
+		if(i < 25) {dropItem(new CoinGold(gp));}
+		if(i >= 25 && i < 50) {dropItem(new Heart(gp));}
+		if(i >= 50 && i < 100) {
 			if(gp.player.playerClass.equals("Fighter")) {
 				dropItem(new Arrow(gp));
 			}
@@ -92,8 +88,6 @@ public class Slime extends Entity{
 			if(gp.player.playerClass.equals("Peasant")) {
 				dropItem(new Rock(gp));
 			}
-			
 		}
-	}
-	
+	}	
 }

@@ -11,10 +11,10 @@ public class BlueChest extends Entity{
 
 	GamePanel gp;
 	
-	public BlueChest(GamePanel gp, Entity loot) {
+	public BlueChest(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
-		this.loot = loot;
+		this.loot = new BlueKey(gp);
 		
 		type = type_Obstacle;
 		name = "BlueChest";

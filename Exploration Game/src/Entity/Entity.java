@@ -365,7 +365,7 @@ public class Entity {
 		if(getTileDistance(target) > distance) {
 			int i = new Random().nextInt(rate);
 			if(i == 0) {
-				//onPath = false;
+				onPath = false;
 			}
 		}
 	}

@@ -101,6 +101,10 @@ public class EventHandler {
 				else if(hit(mapNum, 21, 49, "any") == true) {changeMap(gp.beach01,24,2);}
 				else if(hit(mapNum, 22, 49, "any") == true) {changeMap(gp.beach01,25,2);}
 				//^^^road toBeach01:
+				//Road to World04: 
+				else if(hit(mapNum, 49, 33, "any") == true) {changeMap(gp.world04,3,33);}
+				else if(hit(mapNum, 49, 32, "any") == true) {changeMap(gp.world04,3,32);}
+				else if(hit(mapNum, 49, 31, "any") == true) {changeMap(gp.world04,3,31);}
 				break;
 		//Cabin02 Events:
 			case 6: 
@@ -146,6 +150,11 @@ public class EventHandler {
 			case 12: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world03,42,11);} break;
 			//StoneBuilding05:
 			case 14: if(hit(mapNum,24,22,"up") == true) {speak(gp.npc[mapNum][0]);} break;
+			case 15:
+				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world02,46,33);}
+				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world02,46,32);}
+				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world02,46,31);}
+				break;
 			}
 		}
 	}
