@@ -19,7 +19,7 @@ ____
   * **Buildings** to enter, and **map transitions**.
   * An 8-minute **day/night cycle**.
   * Player **inventory system** and **interactive objects**.
-  * Player and monster **combat system**.
+  * Fight monsters.
 
 ### Controls: 
   * WASD to move
