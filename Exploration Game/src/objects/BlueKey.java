@@ -30,7 +30,7 @@ public class BlueKey extends Entity{
 		int objIndex = getDetected(entity, gp.obj, "BlueDoor");
 		
 		if(objIndex != 999) {
-			gp.ui.currentDialogue = "You use the key ["+name+"] to open the door";
+			gp.ui.currentDialogue = "You used the key ["+name+"] to open the door";
 			gp.playSoundEffect(1);
 			gp.obj[gp.currentMap][objIndex] = null;
 			return true;

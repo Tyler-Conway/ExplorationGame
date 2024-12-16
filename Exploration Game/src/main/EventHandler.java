@@ -150,10 +150,17 @@ public class EventHandler {
 			case 12: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world03,42,11);} break;
 			//StoneBuilding05:
 			case 14: if(hit(mapNum,24,22,"up") == true) {speak(gp.npc[mapNum][0]);} break;
+			//World04
 			case 15:
 				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world02,46,33);}
 				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world02,46,32);}
 				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world02,46,31);}
+				break;
+			//World05
+			case 16:
+				if(hit(mapNum, 19, 48, "any") == true) {changeMap(gp.world04,19,3);}
+				else if(hit(mapNum, 18, 48, "any") == true) {changeMap(gp.world04,18,3);}
+				else if(hit(mapNum, 20, 48, "any") == true) {changeMap(gp.world04,20,3);}
 				break;
 			}
 		}

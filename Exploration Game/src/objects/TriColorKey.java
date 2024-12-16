@@ -7,18 +7,36 @@ import javax.imageio.ImageIO;
 import Entity.Entity;
 import main.GamePanel;
 
-public class YellowKey extends Entity{
+public class TriColorKey extends Entity{
 
 	GamePanel gp;
 	
-	public YellowKey(GamePanel gp) {
+	public TriColorKey(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "YellowKey";
+		name = "BlueKey";
 		type = type_Consumable;
 		price = 100;
-		down1 = setup("/objects/YellowKey", gp.tileSize, gp.tileSize);
+
+
+
+
+
+
+
+
+        //TODO
+		//down1 = setup("/objects/BlueKey", gp.tileSize, gp.tileSize);
+        //TODO
+
+
+
+
+
+
+
+
 		collision = true;
 		description = "[" + name + "]\nIt opens a door.";
 		stackable = true;
@@ -27,7 +45,7 @@ public class YellowKey extends Entity{
 	public boolean use(Entity entity) {
 		gp.gameState = gp.dialogueState;
 		
-		int objIndex = getDetected(entity, gp.obj, "YellowDoor");
+		int objIndex = getDetected(entity, gp.obj, "ColorfulDoor");
 		
 		if(objIndex != 999) {
 			gp.ui.currentDialogue = "You used the key ["+name+"] to open the door";
@@ -38,7 +56,6 @@ public class YellowKey extends Entity{
 		else {
 			gp.ui.currentDialogue = "What are you trying to unlock?";
 			return false;
-			
 		}
 	}
 }

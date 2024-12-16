@@ -87,7 +87,43 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.stoneBuilding03;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 30, 31), 24, 25); i++;	
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 30, 31), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 28, 20); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 30, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 24, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 25, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 30, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new Heart(gp), 20, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new Heart(gp), 22, 16); i++;
+		placeAsset(gp.obj, mapNum, i, new Heart(gp), 18, 16); i++;
+		placeAsset(gp.obj, mapNum, i, new BlueChest(gp), 27, 14); i++;
+		switch(gp.player.playerClass){
+			case "Fighter": 
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 24, 16); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 30, 19); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 29, 19); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 18, 24); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 19, 24); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 18, 23); i++;
+				break;
+			case "Wizard":
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 24, 16); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 30, 19); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 29, 19); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 18, 24); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 19, 24); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 18, 23); i++;
+				break;
+			case "Peasant":
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 24, 16); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 30, 19); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 29, 19); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 18, 24); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 19, 24); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 18, 23); i++;
+				break;
+		}
 
 		i = 0;
 		mapNum = gp.stoneBuilding04;
@@ -172,6 +208,14 @@ public class AssetSetter {
 				placeAsset(gp.obj, mapNum, i, new Rock(gp), 1, 7); i++;
 				break;
 		}
+
+		i = 0;
+		mapNum = gp.world04;
+		placeAsset(gp.obj, mapNum, i, new ColorfulDoor(gp, gp.world05 ,19, 47), 19, 0); i++;
+
+		i = 0;
+		mapNum = gp.world05;
+
 
 		i = 0;
 		mapNum = gp.lootCabin01;

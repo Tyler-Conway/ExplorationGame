@@ -63,6 +63,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int stoneBuilding04 = 13;
 	public final int stoneBuilding05 = 14;
 	public final int world04 = 15;
+	public final int world05 = 16;
 	
 	//GAME STATES
 	public int gameState;
@@ -322,6 +323,7 @@ public class GamePanel extends JPanel implements Runnable{
 		case lootCabin01: tileM.loadMap("/maps/lootCabin01.txt", lootCabin01); break;
 		case lootCabin02: tileM.loadMap("/maps/lootCabin01.txt", lootCabin02); break;
 		case world04: tileM.loadMap("/maps/World04.txt", world04); break;
+		case world05: tileM.loadMap("/maps/World05.txt", world05); break;
 		}
 	}
 	
@@ -347,6 +349,7 @@ public class GamePanel extends JPanel implements Runnable{
 			case world02: worldName = "World02"; break;
 			case world03: worldName = "World03"; break;
 			case world04: worldName = "World04"; break;
+			case world05: worldName = "World05"; break;
 			case stoneBuilding01: worldName = "StoneBuilding01"; break;
 			case stoneBuilding02: worldName = "StoneBuilding02"; break;
 			case stoneBuilding03: worldName = "StoneBuilding03"; break;

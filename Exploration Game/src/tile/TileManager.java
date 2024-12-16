@@ -42,6 +42,7 @@ public class TileManager {
 		loadMap("/maps/lootCabin01.txt", gp.lootCabin01);
 		loadMap("/maps/lootCabin01.txt", gp.lootCabin02);
 		loadMap("/maps/World04.txt", gp.world04);
+		loadMap("/maps/World05.txt", gp.world05);
 	}
 	
 	public void setup(int index, String imageName, boolean collision) {

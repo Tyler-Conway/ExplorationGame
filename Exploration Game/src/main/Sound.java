@@ -7,7 +7,6 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
 public class Sound {
-	
 	Clip clip;
 	URL soundURL[] = new URL[30];
 	FloatControl fc;
@@ -17,9 +16,7 @@ public class Sound {
 	public final int beachMusic = 17;
 	public final int cabinMusic = 18;
 
-	
 	public Sound() {
-		
 		soundURL[0] = getClass().getResource("/Sound/PickUp1.wav");
 		soundURL[1] = getClass().getResource("/Sound/Door.wav");
 		soundURL[2] = getClass().getResource("/Sound/ColorfulDoorOpen.wav");
@@ -39,13 +36,10 @@ public class Sound {
 		soundURL[16] = getClass().getResource("/Sound/Parry.wav");
 		soundURL[17] = getClass().getResource("/Sound/BeachSounds(Louder).wav");
 		soundURL[18] = getClass().getResource("/Sound/TraderSong(Simple).wav");
-		
 	}
 
 	public void setFile(int i) {
-		
 		try {
-			
 			AudioInputStream ais = AudioSystem.getAudioInputStream(soundURL[i]);
 			clip = AudioSystem.getClip();
 			clip.open(ais);
@@ -54,11 +48,9 @@ public class Sound {
 				System.out.println(i);
 			}
 			checkVolume();
-			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
-		
 	}
 	
 	public void play() {
@@ -67,7 +59,6 @@ public class Sound {
 	
 	public void loop() {
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
-		
 	}
 	
 	public void stop() {
@@ -76,25 +67,12 @@ public class Sound {
 	
  	public void checkVolume() {
 		switch(volumeScale) {
-		case 0:
-			volume = -80f;
-			break;
-		case 1:
-			volume = -20f;
-			break;
-		case 2: 
-			volume = -12f;
-			break;
-		case 3: 
-			volume = -5f;
-			break;
-		case 4:
-			volume = 1f;
-			break;
-		case 5: 
-			volume = 6f;
-			break;
-		}
+		case 0:volume = -80f; break;
+		case 1:volume = -20f; break;
+		case 2: volume = -12f; break;
+		case 3: volume = -5f; break;
+		case 4: volume = 1f; break;
+		case 5: volume = 6f; break;}
 		fc.setValue(volume);
 	}
 }

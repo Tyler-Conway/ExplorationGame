@@ -20,6 +20,7 @@ public class Player extends Entity{
 	public boolean attackCanceled = false;
 	public boolean lightUpdated = false;
 	public boolean debuggingMode = false;
+	public boolean hasTriColorKey = false;
 	int originalDexterity;
 	
 	public KeyHandler keyH;
