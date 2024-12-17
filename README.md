@@ -1,5 +1,6 @@
 <img width="1240" alt="Game Menu Image" src="https://github.com/user-attachments/assets/c3aafc26-97a6-4a27-b515-d6318bbd8281">
-<img width="1245" alt="Game Screenshot" src="https://github.com/user-attachments/assets/e90a951c-d6d4-49ff-93da-130f14adcb2b" />
+<img width="1245" alt="Game Screenshot 1" src="https://github.com/user-attachments/assets/e90a951c-d6d4-49ff-93da-130f14adcb2b" />
+<img width="1113" alt="Game Screenshot 2" src="https://github.com/user-attachments/assets/389d9058-7aa8-42ae-8713-77dfb5de146f"/>
 
 ### Instructions:
   * To open normal doors: go up to the door and press ENTER.
