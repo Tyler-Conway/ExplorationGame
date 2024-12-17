@@ -1,4 +1,5 @@
 <img width="1240" alt="Game Menu Image" src="https://github.com/user-attachments/assets/c3aafc26-97a6-4a27-b515-d6318bbd8281">
+<img width="1245" alt="Game Screenshot" src="https://github.com/user-attachments/assets/e90a951c-d6d4-49ff-93da-130f14adcb2b" />
 
 ### Instructions:
   * To open normal doors: go up to the door and press ENTER.
@@ -19,7 +20,7 @@ ____
   * **Buildings** to enter, and **map transitions**.
   * An 8-minute **day/night cycle**.
   * Player **inventory system** and **interactive objects**.
-  * Fight monsters.
+  * Fighting monsters.
 
 ### Controls: 
   * WASD to move
@@ -36,4 +37,4 @@ ____
 
 ### Resources Utilized:
 * [RyiSnow's Java Gamemaking Tutorial Series](https://www.youtube.com/playlist?list=PL_QPQmz5C6WUF-pOQDsbsKbaBZqXj4qSq) (This was a fantastic resource for learning how to build a game from scratch)
-* [Sebastian Lague - A* Pathfinding Series](https://www.youtube.com/playlist?list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW) (Lague's videos do a great job at explaining the A* pathfinding algorithm and they helped me understand how this works in code)
+* [Sebastian Lague - A* Pathfinding Series](https://www.youtube.com/playlist?list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW) (Lague's videos do a great job at explaining how the A* pathfinding algorithm works in code)
