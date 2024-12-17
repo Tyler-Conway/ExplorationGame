@@ -8,10 +8,12 @@ import main.GamePanel;
 import main.KeyHandler;
 import objects.Bark;
 import objects.Lance;
+import objects.Lantern;
 import objects.MetalShield;
 import objects.PaperClip;
 import objects.Shield;
 import objects.Staff;
+import objects.TriColorKey;
 
 public class Player extends Entity{
 
@@ -20,7 +22,6 @@ public class Player extends Entity{
 	public boolean attackCanceled = false;
 	public boolean lightUpdated = false;
 	public boolean debuggingMode = false;
-	public boolean hasTriColorKey = false;
 	int originalDexterity;
 	
 	public KeyHandler keyH;
@@ -44,11 +45,6 @@ public class Player extends Entity{
 	public void setDefaultValues() {
 		worldX = gp.tileSize * 12;
 		worldY = gp.tileSize * 44;
-//		
-// //		Testing the Buildings:
-// 		worldX = gp.tileSize * 38;
-// 		worldY = gp.tileSize * 46;
-		
 		//Player Status:
 		maxMana = 4;
 		mana = maxMana;
@@ -107,8 +103,6 @@ public class Player extends Entity{
 			break;
 		}
 		
-		
-		
 		attack = getAttack(); // total attack = strength * weapon.
 		defense = getDefense(); //total defense = shield * dexterity.
 		getPlayerImage();
@@ -141,15 +135,14 @@ public class Player extends Entity{
 		guarding = false;
 		knockBack = false;
 		lightUpdated = true;
-		
 	}
 	
 	public void setItems() {
 		inventory.clear();
 		inventory.add(currentWeapon);
 		inventory.add(currentShield);
+		inventory.add(new TriColorKey(gp));
 		//equipInitialObjects();
-
 	}
 
 	public int getCurrentWeaponSlot(){

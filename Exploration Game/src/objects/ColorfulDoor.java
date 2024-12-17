@@ -34,13 +34,13 @@ public class ColorfulDoor extends Entity{
 	
 	public void interact() {
 
-		if(gp.player.hasTriColorKey == true){
+		if(locked == false){
 			gp.playSoundEffect(1);
 			gp.eventHandler.changeMap(targetMapNum, newCol, newRow);
 		}
 		else{
 			gp.gameState = gp.dialogueState;
-			gp.ui.currentDialogue = "You must use the Tricolor Key to enter.";
+			gp.ui.currentDialogue = "You must use the TriColorKey to unlock this door.";
 		}
 	}
 

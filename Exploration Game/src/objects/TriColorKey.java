@@ -15,30 +15,12 @@ public class TriColorKey extends Entity{
 		super(gp);
 		this.gp = gp;
 		
-		name = "BlueKey";
+		name = "TriColorKey";
 		type = type_Consumable;
 		price = 100;
-
-
-
-
-
-
-
-
-        //TODO
-		//down1 = setup("/objects/BlueKey", gp.tileSize, gp.tileSize);
-        //TODO
-
-
-
-
-
-
-
-
+		down1 = setup("/objects/TriColorKey", gp.tileSize, gp.tileSize);
 		collision = true;
-		description = "[" + name + "]\nIt opens a door.";
+		description = "[" + name + "]\nIt opens the TriColorDoor door.";
 		stackable = true;
 	}
 
@@ -48,9 +30,9 @@ public class TriColorKey extends Entity{
 		int objIndex = getDetected(entity, gp.obj, "ColorfulDoor");
 		
 		if(objIndex != 999) {
-			gp.ui.currentDialogue = "You used the key ["+name+"] to open the door";
+			gp.ui.currentDialogue = "You used the "+name+" to unlock the door";
 			gp.playSoundEffect(1);
-			gp.obj[gp.currentMap][objIndex] = null;
+			gp.obj[gp.currentMap][objIndex].locked = false;
 			return true;
 		}
 		else {
