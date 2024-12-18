@@ -16,7 +16,7 @@
 ____
 
 ### Key features:
-  * Player Classes (The Fighter, Knight, Wizard, and Peasant Classes).
+  * **Player Classes** (The Fighter, Knight, Wizard, and Peasant Classes).
   * __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
   * **Full map** and **mini-map** displays.
   * NPC's to **trade** and **talk** to.
