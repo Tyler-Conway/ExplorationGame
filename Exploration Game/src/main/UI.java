@@ -484,15 +484,9 @@ public class UI {
  		drawSubWindow(frameX, frameY, frameWidth, frameHeight);
  		
  		switch(substate) {
- 		case 0:
- 			optionsTop(frameX, frameY);
- 			break;
- 		case 1:
- 			optionsControl(frameX, frameY);
- 			break;
- 		case 2:
- 			optionsEndGameConfirmation(frameX, frameY);
- 			break;
+ 		case 0: optionsTop(frameX, frameY); break;
+ 		case 1: optionsControl(frameX, frameY); break;
+ 		case 2: optionsEndGameConfirmation(frameX, frameY); break;
  		}
  		gp.keyH.enterPressed = false;
  	}
@@ -519,9 +513,9 @@ public class UI {
  		if(commandNum == 1) {
  			g2.drawString(">", textX-(gp.tileSize/2), textY);
  		}
- 		//Control:
+ 		//Controls:
  		textY += gp.tileSize;
- 		g2.drawString("Control", textX, textY);
+ 		g2.drawString("Controls", textX, textY);
  		if(commandNum == 2) {
  			g2.drawString(">", textX-(gp.tileSize/2), textY);
  			if(gp.keyH.enterPressed == true) {
@@ -564,9 +558,6 @@ public class UI {
  		g2.drawRect(textX, textY, (int)(gp.tileSize*2.5), gp.tileSize/2);
  		int soundWidth = (gp.tileSize/2)*gp.sound.volumeScale;
  		g2.fillRect(textX, textY, soundWidth, (gp.tileSize/2));
- 		
- 		
- 		
  		gp.config.saveConfig();
  	}
  	
@@ -585,39 +576,25 @@ public class UI {
 		textY += gp.tileSize/2;
 		
 		g2.drawString("Move", textX, textY);
-		if(commandNum == 0) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 0) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("Confirm/Attack", textX, textY);
-		if(commandNum == 1) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 1) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("Shoot/Cast", textX, textY);
-		if(commandNum == 2) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 2) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("Inventory Screen", textX, textY);
-		if(commandNum == 3) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 3) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("Pause", textX, textY);
-		if(commandNum == 4) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 4) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("Options", textX, textY);
-		if(commandNum == 5) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 5) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("MiniMap/Map", textX, textY);
-		if(commandNum == 6) {
- 			g2.drawString(">", textX-25, textY);
- 		}
+		if(commandNum == 6) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		
 		textX = frameX + gp.tileSize*6;

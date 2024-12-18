@@ -20,7 +20,7 @@ public class TriColorKey extends Entity{
 		price = 100;
 		down1 = setup("/objects/TriColorKey", gp.tileSize, gp.tileSize);
 		collision = true;
-		description = "[" + name + "]\nIt opens the TriColorDoor door.";
+		description = "[" + name + "]\nIt opens the TriColorDoor.";
 		stackable = true;
 	}
 

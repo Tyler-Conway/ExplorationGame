@@ -42,8 +42,7 @@ public class Player extends Entity{
 	}
 
 	public void setDefaultValues() {
-		worldX = gp.tileSize * 12;
-		worldY = gp.tileSize * 44;
+		setDefaultPositions();
 		//Player Status:
 		maxMana = 4;
 		mana = maxMana;
@@ -55,16 +54,14 @@ public class Player extends Entity{
 		exp = 0;
 		nextLevelExp = 5;
 		coin = 500;
-		direction = "down";
 		alreadyPlayedAttackSound = false;
 		currentLight = null;
-		
+
+		//Default Player Stats and Items:
 		switch(playerClass) {
 		case "Fighter":
 			defaultSpeed = 5;
-			speed = defaultSpeed;
 			maxLife = 8;
-			life = maxLife;
 			strength = 1; //More Strength = more attack damage.
 			dexterity = 1; //More Dexterity = less damage taken.
 			currentWeapon = new Lance(gp);
@@ -72,9 +69,7 @@ public class Player extends Entity{
 			break;
 		case "Knight":
 			defaultSpeed = 4;
-			speed = defaultSpeed;
 			maxLife = 10;
-			life = maxLife;
 			strength = 1; //More Strength = more attack damage.
 			dexterity = 2; //More Dexterity = less damage taken.
 			currentWeapon = new Lance(gp);
@@ -82,9 +77,7 @@ public class Player extends Entity{
 			break;
 		case "Wizard":
 			defaultSpeed = 5;
-			speed = defaultSpeed;
 			maxLife = 6;
-			life = maxLife;
 			strength = 1; //More Strength = more attack damage.
 			dexterity = 1; //More Dexterity = less damage taken.
 			currentWeapon = new Staff(gp);
@@ -92,16 +85,15 @@ public class Player extends Entity{
 			break;
 		case "Peasant":
 			defaultSpeed = 5;
-			speed = defaultSpeed;
 			maxLife = 6;
-			life = maxLife;
 			strength = 1; //More Strength = more attack damage.
 			dexterity = 1; //More Dexterity = less damage taken.
 			currentWeapon = new PaperClip(gp);
 			currentShield = new Bark(gp);
 			break;
 		}
-		
+		speed = defaultSpeed;
+		life = maxLife;
 		attack = getAttack(); // total attack = strength * weapon.
 		defense = getDefense(); //total defense = shield * dexterity.
 		getPlayerImage();
@@ -167,7 +159,7 @@ public class Player extends Entity{
 		
 		//Default Image for Title Screen:
 		down1 = setup("/player/FighterDown1", gp.tileSize, gp.tileSize);
-		
+		//Get the movement images for the Player:
 		switch(playerClass) {
 		case "Fighter":
 			up1 = setup("/player/FighterUp1", gp.tileSize, gp.tileSize);

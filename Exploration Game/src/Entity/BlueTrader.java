@@ -43,7 +43,6 @@ public class BlueTrader extends Entity{
 		inventory.add(new Bark(gp));
 		inventory.add(new PaperClip(gp));
 		inventory.add(new Staff(gp));
-		inventory.add(new Bark(gp));
 
 	}
 	

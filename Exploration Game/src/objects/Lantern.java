@@ -12,7 +12,7 @@ public class Lantern extends Entity{
 		type = type_Light;
 		name = "Lantern";
 		down1 = setup("/objects/Lantern1", gp.tileSize, gp.tileSize);
-		description = "[" + name + "]\nProvides light";
+		description = "[" + name + "]\nProvides light.";
 		price = 200;
 		lightRadius = 576;
 	}

@@ -97,8 +97,6 @@ public class GamePanel extends JPanel implements Runnable{
 	public SaveLoad saveLoad = new SaveLoad(this);
 	
 	
-	
-	
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
 		this.setBackground(Color.black);
