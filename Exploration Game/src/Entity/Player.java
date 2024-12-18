@@ -326,18 +326,97 @@ public class Player extends Entity{
 	public void getPlayerGuardImage() {
 		switch(playerClass) {
 		case "Fighter":
-			guardUp = setup("/player/FighterGuardUp", gp.tileSize, gp.tileSize);
-			guardDown = setup("/player/FighterGuardDown", gp.tileSize, gp.tileSize);
-			guardLeft = setup("/player/FighterGuardLeft", gp.tileSize, gp.tileSize);
-			guardRight = setup("/player/FighterGuardRight", gp.tileSize, gp.tileSize);
+			if(currentShield.name.equals("Shield")){
+				guardUp = setup("/player/FighterGuardUp", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/FighterGuardDown", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/FighterGuardLeft", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/FighterGuardRight", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("MetalShield")){
+				guardUp = setup("/player/FighterGuardUpMetal", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/FighterGuardDownMetal", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/FighterGuardLeftMetal", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/FighterGuardRightMetal", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("Bark")){
+				guardUp = setup("/player/FighterGuardUpBark", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/FighterGuardDownBark", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/FighterGuardLeftBark", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/FighterGuardRightBark", gp.tileSize, gp.tileSize);
+			}
+			else{displayErrorGuardImages();}
 			break;
 		case "Knight":
+			if(currentShield.name.equals("Shield")){
+				guardUp = setup("/player/KnightGuardUp", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/KnightGuardDown", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/KnightGuardLeft", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/KnightGuardRight", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("MetalShield")){
+				guardUp = setup("/player/KnightGuardUpMetal", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/KnightGuardDownMetal", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/KnightGuardLeftMetal", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/KnightGuardRightMetal", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("Bark")){
+				guardUp = setup("/player/KnightGuardUpBark", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/KnightGuardDownBark", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/KnightGuardLeftBark", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/KnightGuardRightBark", gp.tileSize, gp.tileSize);
+			}
+			else{displayErrorGuardImages();}
 			break;
 		case "Wizard":
+			if(currentShield.name.equals("Shield")){
+				guardUp = setup("/player/WizardGuardUp", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/WizardGuardDown", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/WizardGuardLeft", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/WizardGuardRight", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("MetalShield")){
+				guardUp = setup("/player/WizardGuardUpMetal", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/WizardGuardDownMetal", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/WizardGuardLeftMetal", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/WizardGuardRightMetal", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("Bark")){
+				guardUp = setup("/player/WizardGuardUpBark", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/WizardGuardDownBark", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/WizardGuardLeftBark", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/WizardGuardRightBark", gp.tileSize, gp.tileSize);
+			}
+			else{displayErrorGuardImages();}
 			break;
 		case "Peasant":
+			if(currentShield.name.equals("Shield")){
+				guardUp = setup("/player/PeasantGuardUp", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/PeasantGuardDown", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/PeasantGuardLeft", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/PeasantGuardRight", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("MetalShield")){
+				guardUp = setup("/player/PeasantGuardUpMetal", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/PeasantGuardDownMetal", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/PeasantGuardLeftMetal", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/PeasantGuardRightMetal", gp.tileSize, gp.tileSize);
+			}
+			else if(currentShield.name.equals("Bark")){
+				guardUp = setup("/player/PeasantGuardUpBark", gp.tileSize, gp.tileSize);
+				guardDown = setup("/player/PeasantGuardDownBark", gp.tileSize, gp.tileSize);
+				guardLeft = setup("/player/PeasantGuardLeftBark", gp.tileSize, gp.tileSize);
+				guardRight = setup("/player/PeasantGuardRightBark", gp.tileSize, gp.tileSize);
+			}
+			else{displayErrorGuardImages();}
 			break;
 		}
+	}
+
+	private void displayErrorGuardImages(){
+		guardUp = setup("/player/PlayerUp", gp.tileSize, gp.tileSize);
+		guardDown = setup("/player/PlayerDown", gp.tileSize, gp.tileSize);
+		guardLeft = setup("/player/PlayerLeft", gp.tileSize, gp.tileSize);
+		guardRight = setup("/player/PlayerRight", gp.tileSize, gp.tileSize);
 	}
 	
 	//Movement, Collision, attacking, etc:
@@ -568,6 +647,7 @@ public class Player extends Entity{
 			if(selectedItem.type == type_Shield) {
 				currentShield = selectedItem;
 				defense = getDefense();
+				getPlayerGuardImage();
 			}
 			if(selectedItem.type == type_Light) {
 				if(currentLight == selectedItem) {currentLight = null;}

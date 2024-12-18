@@ -1,10 +1,14 @@
 package Entity;
 
 import main.GamePanel;
+import objects.Bark;
 import objects.BlueKey;
 import objects.Lantern;
 import objects.MetalShield;
+import objects.PaperClip;
 import objects.RedPotion;
+import objects.Shield;
+import objects.Staff;
 import objects.Tent;
 
 public class BlueTrader extends Entity{
@@ -35,6 +39,11 @@ public class BlueTrader extends Entity{
 		inventory.add(new MetalShield(gp));
 		inventory.add(new Tent(gp));
 		inventory.add(new Lantern(gp));
+		inventory.add(new Shield(gp));
+		inventory.add(new Bark(gp));
+		inventory.add(new PaperClip(gp));
+		inventory.add(new Staff(gp));
+		inventory.add(new Bark(gp));
 
 	}
 	
@@ -42,6 +51,5 @@ public class BlueTrader extends Entity{
 		super.speak();
 		gp.gameState = gp.tradeState;
 		gp.ui.trader = this;
-		
 	}
 }
