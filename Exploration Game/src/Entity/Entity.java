@@ -101,6 +101,8 @@ public class Entity {
 	public boolean isProjectile = false;
 	public Entity loot;
 	public boolean opened = false;
+	public int doorMapNum = 999;
+	public int doorObjectIndex = 999;
 	
 	//Entity Types:
 	public int type;

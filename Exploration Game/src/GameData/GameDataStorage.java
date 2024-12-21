@@ -39,11 +39,11 @@ public class GameDataStorage implements Serializable{
 	int savedObjectsWorldX[][];
 	int savedObjectsWorldY[][];
 	boolean mapObjectOpened[][];
+	int doorObjectIndex[][];
 
+	int mapNums[][];
 	int TeleportDoorCol[][];
 	int TeleportDoorRow[][];
-	int TeleportDoorNewCol[][];
-	int TeleportDoorNewRow[][];
 
 
 

@@ -15,6 +15,8 @@ public class Door extends Entity{
 	public Door(GamePanel gp, int mapNum, int objectIndex) {
 		super(gp);
 		this.gp = gp;
+		this.doorMapNum = mapNum;
+		this.doorObjectIndex = objectIndex;
 		
 		name = "Door";
 		down1 = setup("/objects/Door", gp.tileSize, gp.tileSize);
