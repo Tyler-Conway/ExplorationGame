@@ -124,12 +124,16 @@ public class SaveLoad {
 			dataStorage.savedObjectNames = new String[gp.maxMap][gp.obj[1].length];
 			dataStorage.savedObjectsWorldX = new int[gp.maxMap][gp.obj[1].length];
 			dataStorage.savedObjectsWorldY = new int[gp.maxMap][gp.obj[1].length];
+			dataStorage.mapNums = new int[gp.maxMap][gp.obj[1].length];
+			dataStorage.TeleportDoorCol = new int[gp.maxMap][gp.obj[1].length];
+			dataStorage.TeleportDoorRow = new int[gp.maxMap][gp.obj[1].length];
 			dataStorage.mapObjectOpened = new boolean[gp.maxMap][gp.obj[1].length];
+			dataStorage.doorObjectIndex = new int[gp.maxMap][gp.obj[1].length];
 
 
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
 				for(int i = 0; i < gp.obj[1].length; i++){
-					if(gp.obj[mapNum][i] == null || gp.obj[mapNum][i].name.equals("TeleportDoor") || gp.obj[mapNum][i].name.equals("Door") 
+					if(gp.obj[mapNum][i] == null || gp.obj[mapNum][i].name.equals("TeleportDoor")
 					|| gp.obj[mapNum][i].name.equals("ColorfulDoor")){
 						dataStorage.savedObjectNames[mapNum][i] = "NA";
 					}
@@ -138,6 +142,10 @@ public class SaveLoad {
 						dataStorage.savedObjectsWorldX[mapNum][i] = gp.obj[mapNum][i].worldX;
 						dataStorage.savedObjectsWorldY[mapNum][i] = gp.obj[mapNum][i].worldY;
 						dataStorage.mapObjectOpened[mapNum][i] = gp.obj[mapNum][i].opened;
+						if(gp.obj[mapNum][i].name.equals("Door")){
+							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
+							dataStorage.doorObjectIndex[mapNum][i] = gp.obj[mapNum][i].doorObjectIndex;
+						}
 					}
 				}
 			}
@@ -200,9 +208,9 @@ public class SaveLoad {
 			gp.player.getPlayerAttackImage();
 
 
-			// for(int i = 0; i < gp.obj[1].length; i++){
-			// 	System.out.println("("+i+") "+dataStorage.mapObjectOpened[0][i]);
-			// }
+			for(int i = 0; i < gp.obj[1].length; i++){
+				System.out.println("("+i+") "+dataStorage.savedObjectNames[0][i]);
+			}
 
 			//Map Objects:
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
@@ -225,7 +233,15 @@ public class SaveLoad {
 					}
 					//It is a Door:
 					else{
+						if(dataStorage.savedObjectNames[mapNum][i].equals("Door")){
+							gp.obj[mapNum][i] = new Entity(gp);
+							gp.obj[mapNum][i] = new Door(gp, dataStorage.mapNums[mapNum][i], dataStorage.doorObjectIndex[mapNum][i]);
+							gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
+							gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];
+						}
+						else{
 
+						}
 					}
 				}
 			}
