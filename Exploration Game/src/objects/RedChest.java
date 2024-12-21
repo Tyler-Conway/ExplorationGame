@@ -11,7 +11,6 @@ public class RedChest extends Entity{
 
 	GamePanel gp;
 	Entity loot;
-	boolean opened = false;
 	
 	public RedChest(GamePanel gp) {
 		super(gp);
@@ -20,6 +19,7 @@ public class RedChest extends Entity{
 		
 		type = type_Obstacle;
 		name = "RedChest";
+		opened = false;
 		image = setup("/objects/RedChest", gp.tileSize, gp.tileSize);
 		image2 = setup("/objects/RedChestOpen", gp.tileSize, gp.tileSize);
 		down1 = image;

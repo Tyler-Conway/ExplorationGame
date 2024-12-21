@@ -18,6 +18,7 @@ public class BlueChest extends Entity{
 		
 		type = type_Obstacle;
 		name = "BlueChest";
+		opened = false;
 		image = setup("/objects/BlueChest", gp.tileSize, gp.tileSize);
 		image2 = setup("/objects/BlueChestOpen", gp.tileSize, gp.tileSize);
 		down1 = image;

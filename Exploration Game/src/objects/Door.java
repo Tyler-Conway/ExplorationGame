@@ -10,7 +10,7 @@ import main.GamePanel;
 public class Door extends Entity{
 	
 	GamePanel gp; 
-	int mapNum, objectIndex;
+	public int mapNum, objectIndex;
 	
 	public Door(GamePanel gp, int mapNum, int objectIndex) {
 		super(gp);
@@ -21,7 +21,6 @@ public class Door extends Entity{
 		image = setup("/objects/Blank", gp.tileSize, gp.tileSize);
 		collision = true;
 		type = type_Obstacle;
-		this.mapNum = mapNum;
 		this.objectIndex = objectIndex;
 		
 		solidArea.x = 0;

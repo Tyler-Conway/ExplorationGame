@@ -10,7 +10,7 @@ import main.GamePanel;
 public class TeleportDoor extends Entity{
 	
 	GamePanel gp; 
-	int targetMapNum, newCol, newRow;
+	public int targetMapNum, newCol, newRow;
 	
 	public TeleportDoor(GamePanel gp, int targetMapNum, int newCol, int newRow) {
 		super(gp);

@@ -35,9 +35,15 @@ public class GameDataStorage implements Serializable{
 
 	//Map items:
 	//TODO
-	int savedObjectsID[][] = new int[20][50];
-	int savedObjectsWorldX[][] = new int[20][50];
-	int savedObjectsWorldY[][] = new int [20][50];
+	String savedObjectNames[][];
+	int savedObjectsWorldX[][];
+	int savedObjectsWorldY[][];
+	boolean mapObjectOpened[][];
+
+	int TeleportDoorCol[][];
+	int TeleportDoorRow[][];
+	int TeleportDoorNewCol[][];
+	int TeleportDoorNewRow[][];
 
 
 

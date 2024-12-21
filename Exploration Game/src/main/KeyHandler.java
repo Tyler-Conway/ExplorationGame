@@ -88,6 +88,7 @@ public class KeyHandler implements KeyListener{
 					//EQUIP Initial Objects:
 					gp.player.equipInitialObjects();
 					//Load the player's previous stats:
+					//gp.assetSetter.setObjects();
 					gp.saveLoad.load();
 					gp.playMusic(12);
 					gp.gameState = gp.playState;

@@ -11,29 +11,41 @@ import objects.Arrow;
 import objects.Axe;
 import objects.Bark;
 import objects.BlueChest;
+import objects.BlueDoor;
 import objects.BlueKey;
+import objects.CoinBronze;
+import objects.CoinGold;
+import objects.CoinSilver;
+import objects.Door;
 import objects.Fireball;
+import objects.Heart;
 import objects.Lance;
 import objects.Lantern;
+import objects.ManaCrystal;
 import objects.MetalShield;
 import objects.PaperClip;
+import objects.RedChest;
+import objects.RedDoor;
 import objects.RedKey;
 import objects.RedPotion;
 import objects.Rock;
 import objects.Shield;
 import objects.Staff;
 import objects.Tent;
+import objects.TriColorKey;
+import objects.YellowChest;
+import objects.YellowDoor;
 import objects.YellowKey;
 
 public class SaveLoad {
 
 	GamePanel gp;
 	
-	public Entity getInventoryObject(String itemName){
+	//Cant Handle TP Doors:
+	public Entity getObject(String itemName){
 		Entity object = null;
 		//case "": object = new (gp); break;
 		switch(itemName){
-
 			case "Axe": object = new Axe(gp); break;
 			case "Bark": object = new Bark(gp); break;
 			case "BlueKey": object = new BlueKey(gp); break;
@@ -47,36 +59,24 @@ public class SaveLoad {
 			case "Staff": object = new Staff(gp); break;
 			case "Tent": object = new Tent(gp); break;
 			case "YellowKey": object = new YellowKey(gp); break;
+			case "BlueChest": object = new BlueChest(gp); break;
+			case "RedChest": object = new RedChest(gp); break;
+			case "YellowChest": object = new YellowChest(gp); break;
+			case "YellowDoor": object = new YellowDoor(gp); break;
+			case "TriColorKey": object = new TriColorKey(gp); break;
+			case "RedDoor": object = new RedDoor(gp); break;
+			case "BlueDoor": object = new BlueDoor(gp); break;
+			case "Arrow": object = new Arrow(gp); break;
+			case "Bronze Coin": object = new CoinBronze(gp); break;
+			case "Gold Coin": object = new CoinGold(gp); break;
+			case "Silver Coin": object = new CoinSilver(gp); break;
+			case "Heart": object = new Heart(gp); break;
+			case "ManaCrystal": object = new ManaCrystal(gp); break;
+			case "Rock": object = new Rock(gp); break;
 		}
-
-		return object;
-	}
-
-
-	//Need to take Doors and Chests out of the Gampanel "obj" array.
-	public Entity getMapObjects(int itemID){
-		Entity object = null;
-
-		switch (itemID) {
-			case 0: object = new Axe(gp); break;
-			case 1: object = new Bark(gp); break;
-			case 2: object = new BlueKey(gp); break;
-			case 3: object = new Lance(gp); break;
-			case 4: object = new Lantern(gp); break;
-			case 5: object = new MetalShield(gp); break;
-			case 6: object = new PaperClip(gp); break;
-			case 7: object = new RedKey(gp); break;
-			case 8: object = new RedPotion(gp); break;
-			case 9: object = new Shield(gp); break;
-			case 10: object = new Staff(gp); break;
-			case 11: object = new Arrow(gp); break;
-
-
-
-			default:
-				break;
+		if(object == null){
+			System.out.println("Returning a Null Object for: " + itemName);
 		}
-
 		return object;
 	}
 
@@ -121,12 +121,30 @@ public class SaveLoad {
 
 
 			//Map Items:
-			// for(int i = 0; i < gp.maxMap ; i++){
-			// 	for(int j = 0; j < 50; j++){
-			// 	}
-			// }
+			dataStorage.savedObjectNames = new String[gp.maxMap][gp.obj[1].length];
+			dataStorage.savedObjectsWorldX = new int[gp.maxMap][gp.obj[1].length];
+			dataStorage.savedObjectsWorldY = new int[gp.maxMap][gp.obj[1].length];
+			dataStorage.mapObjectOpened = new boolean[gp.maxMap][gp.obj[1].length];
 
-			//System.out.println(dataStorage.savedObjects[0][0]);
+
+			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
+				for(int i = 0; i < gp.obj[1].length; i++){
+					if(gp.obj[mapNum][i] == null || gp.obj[mapNum][i].name.equals("TeleportDoor") || gp.obj[mapNum][i].name.equals("Door") 
+					|| gp.obj[mapNum][i].name.equals("ColorfulDoor")){
+						dataStorage.savedObjectNames[mapNum][i] = "NA";
+					}
+					else{
+						dataStorage.savedObjectNames[mapNum][i] = gp.obj[mapNum][i].name;
+						dataStorage.savedObjectsWorldX[mapNum][i] = gp.obj[mapNum][i].worldX;
+						dataStorage.savedObjectsWorldY[mapNum][i] = gp.obj[mapNum][i].worldY;
+						dataStorage.mapObjectOpened[mapNum][i] = gp.obj[mapNum][i].opened;
+					}
+				}
+			}
+
+			// for(int i = 0; i < gp.obj[1].length; i++){
+			// 	System.out.println("("+i+") "+dataStorage.mapObjectOpened[0][i]);
+			// }
 
 			OS.writeObject(dataStorage);
 			
@@ -170,7 +188,7 @@ public class SaveLoad {
 			//Inventory:
 			gp.player.inventory.clear();
 			for(int i = 0; i < dataStorage.itemNames.size(); i++){
-				gp.player.inventory.add(getInventoryObject(dataStorage.itemNames.get(i)));
+				gp.player.inventory.add(getObject(dataStorage.itemNames.get(i)));
 				gp.player.inventory.get(i).amount = dataStorage.itemAmmounts.get(i);
 			}
 
@@ -182,23 +200,35 @@ public class SaveLoad {
 			gp.player.getPlayerAttackImage();
 
 
-			//System.out.println("first Item: " + getObject(dataStorage.savedObjects[0][3]));
-			// //Map items:
-			// for(int i = 0; i < gp.maxMap; i++){
-			// 	for(int j = 0; j < 50; j++){
-			// 		if(dataStorage.savedObjects[i][j] != null){
-			// 			gp.obj[i][j] = getObject(dataStorage.savedObjects[i][j]);
-			// 			gp.obj[i][j].worldX = gp.tileSize * dataStorage.savedObjectsWorldX[i][j];
-			// 			gp.obj[i][j].worldY = gp.tileSize * dataStorage.savedObjectsWorldY[i][j];
-			// 		}
-			// 		if(gp.obj == null){
-			// 			System.out.println("Load Error: GamePanel Object Array is Null");
-			// 		}
-			// 	}
-
+			// for(int i = 0; i < gp.obj[1].length; i++){
+			// 	System.out.println("("+i+") "+dataStorage.mapObjectOpened[0][i]);
 			// }
-		
-			
+
+			//Map Objects:
+			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
+				for(int i = 0; i < gp.obj[1].length; i++){
+					if(dataStorage.savedObjectNames[mapNum][i].equals("NA")){
+						gp.obj[mapNum][i] = null;
+					}
+					//If Its not a door:
+					else if(!dataStorage.savedObjectNames[mapNum][i].equals("Door") && 
+					!dataStorage.savedObjectNames[mapNum][i].equals("TeleportDoor") && 
+					!dataStorage.savedObjectNames[mapNum][i].equals("ColorfulDoor")){
+						gp.obj[mapNum][i] = new Entity(gp);
+						gp.obj[mapNum][i] = getObject(dataStorage.savedObjectNames[mapNum][i]);
+						gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
+						gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];
+						gp.obj[mapNum][i].opened = dataStorage.mapObjectOpened[mapNum][i];
+						if(gp.obj[mapNum][i].opened == true){
+							gp.obj[mapNum][i].down1 = gp.obj[mapNum][i].image2; //the Open Image
+						}
+					}
+					//It is a Door:
+					else{
+
+					}
+				}
+			}
 		} catch (Exception e) {
 			System.out.println("Load Error.");
 			e.printStackTrace();

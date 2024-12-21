@@ -37,6 +37,9 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding01, 24, 23), 38, 44); i++;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding03, 24, 23), 31, 28); i++;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding02, 24, 23), 47, 44); i++;
+
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 12, 36); i++;
+
 		placeAsset(gp.obj, mapNum, i, new Tent(gp), 24, 39); i++;
 		placeAsset(gp.obj, mapNum, i, new Lantern(gp), 12, 46); i++;
 		placeAsset(gp.obj, mapNum, i, new YellowDoor(gp), 5, 4); i++;
@@ -55,6 +58,10 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 7, 37); i++;
 		placeAsset(gp.obj, mapNum, i, new Heart(gp), 21, 35); i++;
 
+		i = 0;
+		mapNum = gp.world02;
+		placeAsset(gp.obj, mapNum, i, new YellowChest(gp), 45, 2); i++;
+		
 		i = 0;
 		mapNum = gp.stoneBuilding01;
 		placeAsset(gp.obj, mapNum, i, new RedChest(gp), 19, 14); i++;
