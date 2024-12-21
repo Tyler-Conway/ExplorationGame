@@ -94,7 +94,7 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.stoneBuilding03;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 30, 31), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 31, 31), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 17); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 28, 20); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 30, 14); i++;

@@ -16,6 +16,7 @@ import objects.BlueKey;
 import objects.CoinBronze;
 import objects.CoinGold;
 import objects.CoinSilver;
+import objects.ColorfulDoor;
 import objects.Door;
 import objects.Fireball;
 import objects.Heart;
@@ -31,6 +32,7 @@ import objects.RedPotion;
 import objects.Rock;
 import objects.Shield;
 import objects.Staff;
+import objects.TeleportDoor;
 import objects.Tent;
 import objects.TriColorKey;
 import objects.YellowChest;
@@ -90,7 +92,7 @@ public class SaveLoad {
 			ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
 			GameDataStorage dataStorage = new GameDataStorage();
 			
-			//Player's Stats
+			//Player's Stats && Position:
 			dataStorage.life = gp.player.life;
 			dataStorage.maxLife = gp.player.maxLife;
 			dataStorage.coin = gp.player.coin;
@@ -108,6 +110,7 @@ public class SaveLoad {
 			dataStorage.playerClass = gp.player.playerClass;
 			dataStorage.worldX = gp.player.worldX;
 			dataStorage.worldY = gp.player.worldY;
+			dataStorage.currentMap = gp.currentMap;
 
 			//Player's Items:
 			for (int i = 0; i < gp.player.inventory.size(); i++) {
@@ -133,8 +136,7 @@ public class SaveLoad {
 
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
 				for(int i = 0; i < gp.obj[1].length; i++){
-					if(gp.obj[mapNum][i] == null || gp.obj[mapNum][i].name.equals("TeleportDoor")
-					|| gp.obj[mapNum][i].name.equals("ColorfulDoor")){
+					if(gp.obj[mapNum][i] == null){
 						dataStorage.savedObjectNames[mapNum][i] = "NA";
 					}
 					else{
@@ -146,16 +148,21 @@ public class SaveLoad {
 							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
 							dataStorage.doorObjectIndex[mapNum][i] = gp.obj[mapNum][i].doorObjectIndex;
 						}
+						else if(gp.obj[mapNum][i].name.equals("TeleportDoor")){
+							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
+							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
+							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+						}
+						else if(gp.obj[mapNum][i].name.equals("ColorfulDoor")){
+							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
+							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
+							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+						}
 					}
 				}
 			}
 
-			// for(int i = 0; i < gp.obj[1].length; i++){
-			// 	System.out.println("("+i+") "+dataStorage.mapObjectOpened[0][i]);
-			// }
-
 			OS.writeObject(dataStorage);
-			
 		} catch (Exception e) {
 			System.out.println("Save Error.");
 			e.printStackTrace();
@@ -186,6 +193,7 @@ public class SaveLoad {
 			gp.player.playerClass = dataStorage.playerClass;
 			gp.player.worldX = dataStorage.worldX;
 			gp.player.worldY = dataStorage.worldY;
+			gp.currentMap = dataStorage.currentMap;
 
 			switch(gp.player.playerClass){
 				case "Fighter": gp.player.projectile = new Arrow(gp); break;
@@ -208,9 +216,9 @@ public class SaveLoad {
 			gp.player.getPlayerAttackImage();
 
 
-			for(int i = 0; i < gp.obj[1].length; i++){
-				System.out.println("("+i+") "+dataStorage.savedObjectNames[0][i]);
-			}
+			// for(int i = 0; i < gp.obj[1].length; i++){
+			// 	System.out.println("("+i+") "+dataStorage.TeleportDoorCol[0][i]+", "+dataStorage.TeleportDoorRow[0][i]);
+			// }
 
 			//Map Objects:
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
@@ -233,15 +241,20 @@ public class SaveLoad {
 					}
 					//It is a Door:
 					else{
+						gp.obj[mapNum][i] = new Entity(gp);
 						if(dataStorage.savedObjectNames[mapNum][i].equals("Door")){
-							gp.obj[mapNum][i] = new Entity(gp);
 							gp.obj[mapNum][i] = new Door(gp, dataStorage.mapNums[mapNum][i], dataStorage.doorObjectIndex[mapNum][i]);
-							gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
-							gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];
 						}
-						else{
-
+						else if(dataStorage.savedObjectNames[mapNum][i].equals("TeleportDoor")){
+							gp.obj[mapNum][i] = new TeleportDoor(gp, dataStorage.mapNums[mapNum][i], 
+								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i]);
 						}
+						else if(dataStorage.savedObjectNames[mapNum][i].equals("ColorfulDoor")){
+							gp.obj[mapNum][i] = new ColorfulDoor(gp, dataStorage.mapNums[mapNum][i], 
+								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i]);
+						}
+						gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
+						gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];
 					}
 				}
 			}
@@ -250,5 +263,4 @@ public class SaveLoad {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -24,6 +24,7 @@ public class GameDataStorage implements Serializable{
 	int exp;
 	int worldX;
 	int worldY;
+	int currentMap;
 	String playerClass;
 
 	//Item Inventory Data:

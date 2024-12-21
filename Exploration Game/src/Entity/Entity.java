@@ -102,6 +102,8 @@ public class Entity {
 	public Entity loot;
 	public boolean opened = false;
 	public int doorMapNum = 999;
+	public int tpNewCol = 0;
+	public int tpNewRow = 0;
 	public int doorObjectIndex = 999;
 	
 	//Entity Types:

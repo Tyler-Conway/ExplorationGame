@@ -24,6 +24,8 @@ public class TeleportDoor extends Entity{
 		this.doorMapNum = targetMapNum;
 		this.newCol = newCol;
 		this.newRow = newRow;
+		this.tpNewCol = newCol;
+		this.tpNewRow = newRow;
 		
 		solidArea.x = 0;
 		solidArea.y = -1;
