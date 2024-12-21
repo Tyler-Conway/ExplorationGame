@@ -21,6 +21,7 @@ public class TeleportDoor extends Entity{
 		collision = true;
 		type = type_Obstacle;
 		this.targetMapNum = targetMapNum;
+		this.doorMapNum = targetMapNum;
 		this.newCol = newCol;
 		this.newRow = newRow;
 		
