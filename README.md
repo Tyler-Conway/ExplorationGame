@@ -8,7 +8,7 @@
   * To parry a monster's attacks: press SPACE just before they attack. You will knock them back and can do **extra damage** following a parry.
   * To equip a different weapon or shield: open your inventory and press ENTER on the weapon/shield you want to equip.
   * Equip the lantern to light up your surroundings at night.
-  * To sleep through the night, select the Tent item from your inventory
+  * To sleep through the night, select the Tent item from your inventory.
   * The peasant class is like the wretch/deprived class from Elden Ring/Dark Souls: it's a weak character class.
   * To avoid **potential audio issues** that may crash the game, I recommend playing this game on Windows or MacOS.
   * You can see more about this project on my [personal website repository](https://github.com/Tyler-Conway/Personal-Website).
