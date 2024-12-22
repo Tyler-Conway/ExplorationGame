@@ -10,13 +10,14 @@ import main.GamePanel;
 public class ColorfulDoor extends Entity{
 	
 	GamePanel gp; 
+	public static final String objectName = "ColorfulDoor";
 	int targetMapNum, newCol, newRow;
 	
 	public ColorfulDoor(GamePanel gp, int targetMapNum, int newCol, int newRow) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "ColorfulDoor";
+		name = objectName;
 		down1 = setup("/objects/ColorfulDoor", gp.tileSize, gp.tileSize);
 		collision = true;
 		type = type_Obstacle;

@@ -219,6 +219,7 @@ public class AssetSetter {
 		i = 0;
 		mapNum = gp.world04;
 		placeAsset(gp.obj, mapNum, i, new ColorfulDoor(gp, gp.world05 ,19, 47), 19, 0); i++;
+		
 
 		i = 0;
 		mapNum = gp.world05;

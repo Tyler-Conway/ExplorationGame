@@ -5,11 +5,13 @@ import main.GamePanel;
 
 public class Lance extends Entity{
 
+	public static final String objectName = "Lance";
+
 	public Lance(GamePanel gp) {
 		super(gp);
 		
 		type = type_Weapon;
-		name = "Lance";
+		name = objectName;
 		price = 20;
 		down1 = setup("/objects/Lance", gp.tileSize, gp.tileSize);
 		attackValue = 1;

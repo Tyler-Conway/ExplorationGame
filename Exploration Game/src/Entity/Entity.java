@@ -144,6 +144,18 @@ public class Entity {
 	public void interact() {}
 	public void checkDrop() {}
 	
+	public void resetAllCounters(){
+		actionLockCounter = 0;
+		spriteCounter = 0;
+		invincibleCounter = 0;
+		dyingCounter = 0;
+		hpBarCounter = 0;
+		shotAvailableCounter = 0;
+		knockBackCounter = 0;
+		guardCounter = 0;
+		offBalanceCounter = 0;
+	}
+
 	public BufferedImage setup(String imagePath, int width, int height) {
 		UtilityTool uTool = new UtilityTool();
 		BufferedImage image = null;

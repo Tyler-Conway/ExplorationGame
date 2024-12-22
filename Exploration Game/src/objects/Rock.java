@@ -9,12 +9,13 @@ import main.GamePanel;
 public class Rock extends Projectile {
 
 	GamePanel gp;
+	public static final String objectName = "Rock";
 	
 	public Rock(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "Rock";
+		name = objectName;
 		type = type_pickUpOnly;
 		value = 1;
 		speed = (gp.tileSize/8);

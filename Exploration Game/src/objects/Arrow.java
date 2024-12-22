@@ -9,12 +9,13 @@ import main.GamePanel;
 public class Arrow extends Projectile {
 
 	GamePanel gp;
+	public static final String objectName = "Arrow";
 	
 	public Arrow(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "Arrow";
+		name = objectName;
 		type = type_pickUpOnly;
 		value = 1;
 		image = setup("/projectile/ArrowDown", gp.tileSize, gp.tileSize);

@@ -9,12 +9,14 @@ import main.GamePanel;
 
 public class BlueDoor extends Entity{
 	
+	public static final String objectName = "BlueDoor";
+
 	GamePanel gp; 
 	public BlueDoor(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "BlueDoor";
+		name = objectName;
 		down1 = setup("/objects/BlueDoor", gp.tileSize, gp.tileSize);
 		collision = true;
 		type = type_Obstacle;

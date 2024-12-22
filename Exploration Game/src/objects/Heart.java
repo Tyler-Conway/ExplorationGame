@@ -9,11 +9,12 @@ import main.GamePanel;
 
 public class Heart extends Entity{
 
+	public static final String objectName = "Heart";
 	GamePanel gp;
 	public Heart(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
-		name = "Heart";
+		name = objectName;
 		type = type_pickUpOnly;
 		value = 2;
 		down1 = setup("/objects/FullHeart", gp.tileSize, gp.tileSize);

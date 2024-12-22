@@ -218,6 +218,26 @@ public class Player extends Entity{
 					attackRight1 = setup("/player/FighterLanceAttackRight1", gp.tileSize*2, gp.tileSize);
 					attackRight2 = setup("/player/FighterLanceAttackRight2", gp.tileSize*2, gp.tileSize);
 				}
+				else if(currentWeapon.name.equals("PaperClip")) {
+					attackUp1 = setup("/player/FighterLanceAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/FighterPaperClipAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/FighterLanceAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/FighterPaperClipAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/FighterLanceAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/FighterPaperClipAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/FighterLanceAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/FighterPaperClipAttackRight", gp.tileSize*2, gp.tileSize);
+				}
+				else if(currentWeapon.name.equals("Staff")) {
+					attackUp1 = setup("/player/FighterLanceAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/FighterStaffAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/FighterLanceAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/FighterStaffAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/FighterLanceAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/FighterStaffAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/FighterLanceAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/FighterStaffAttackRight", gp.tileSize*2, gp.tileSize);
+				}
 			}
 			if(currentWeapon.type == type_Axe) {
 				attackUp1 = setup("/player/FighterAxeAttackUp1", gp.tileSize, gp.tileSize*2);
@@ -242,6 +262,26 @@ public class Player extends Entity{
 					attackRight1 = setup("/player/KnightLanceAttackRight1", gp.tileSize*2, gp.tileSize);
 					attackRight2 = setup("/player/KnightLanceAttackRight2", gp.tileSize*2, gp.tileSize);
 				}
+				else if(currentWeapon.name.equals("PaperClip")) {
+					attackUp1 = setup("/player/KnightLanceAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/KnightPaperClipAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/KnightLanceAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/KnightPaperClipAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/KnightLanceAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/KnightPaperClipAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/KnightLanceAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/KnightPaperClipAttackRight", gp.tileSize*2, gp.tileSize);
+				}
+				else if(currentWeapon.name.equals("Staff")) {
+					attackUp1 = setup("/player/KnightLanceAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/KnightStaffAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/KnightLanceAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/KnightStaffAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/KnightLanceAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/KnightStaffAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/KnightLanceAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/KnightStaffAttackRight", gp.tileSize*2, gp.tileSize);
+				}
 			}
 			if(currentWeapon.type == type_Axe) {
 				attackUp1 = setup("/player/KnightAxeAttackUp1", gp.tileSize, gp.tileSize*2);
@@ -265,6 +305,26 @@ public class Player extends Entity{
 					attackLeft2 = setup("/player/WizardStaffAttackLeft2", gp.tileSize*2, gp.tileSize);
 					attackRight1 = setup("/player/WizardStaffAttackRight1", gp.tileSize*2, gp.tileSize);
 					attackRight2 = setup("/player/WizardStaffAttackRight2", gp.tileSize*2, gp.tileSize);
+				}
+				else if(currentWeapon.name.equals("PaperClip")) {
+					attackUp1 = setup("/player/WizardStaffAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/WizardPaperClipAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/WizardStaffAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/WizardPaperClipAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/WizardStaffAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/WizardPaperClipAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/WizardStaffAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/WizardPaperClipAttackRight", gp.tileSize*2, gp.tileSize);
+				}
+				else if(currentWeapon.name.equals("Lance")) {
+					attackUp1 = setup("/player/WizardStaffAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/WizardLanceAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/WizardStaffAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/WizardLanceAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/WizardStaffAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/WizardLanceAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/WizardStaffAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/WizardLanceAttackRight", gp.tileSize*2, gp.tileSize);
 				}
 			}
 			if(currentWeapon.type == type_Axe) {
@@ -299,6 +359,16 @@ public class Player extends Entity{
 					attackLeft2 = setup("/player/PeasantPaperClipAttackLeft2", gp.tileSize*2, gp.tileSize);
 					attackRight1 = setup("/player/PeasantPaperClipAttackRight1", gp.tileSize*2, gp.tileSize);
 					attackRight2 = setup("/player/PeasantPaperClipAttackRight2", gp.tileSize*2, gp.tileSize);
+				}
+				else if(currentWeapon.name.equals("Staff")) {
+					attackUp1 = setup("/player/PeasantPaperClipAttackUp1", gp.tileSize, gp.tileSize*2);
+					attackUp2 = setup("/player/PeasantStaffAttackUp", gp.tileSize, gp.tileSize*2);
+					attackDown1 = setup("/player/PeasantPaperClipAttackDown1", gp.tileSize, gp.tileSize*2);
+					attackDown2 = setup("/player/PeasantStaffAttackDown", gp.tileSize, gp.tileSize*2);
+					attackLeft1 = setup("/player/PeasantPaperClipAttackLeft1", gp.tileSize*2, gp.tileSize);
+					attackLeft2 = setup("/player/PeasantStaffAttackLeft", gp.tileSize*2, gp.tileSize);
+					attackRight1 = setup("/player/PeasantPaperClipAttackRight1", gp.tileSize*2, gp.tileSize);
+					attackRight2 = setup("/player/PeasantStaffAttackRight", gp.tileSize*2, gp.tileSize);
 				}
 			}
 			if(currentWeapon.type == type_Axe) {
@@ -666,11 +736,13 @@ public class Player extends Entity{
 		return itemIndex;
 	}
 	
-	public boolean ObtainItem(Entity item) {
+	public boolean obtainItem(Entity item) {
 		boolean obtainable = false;
+		Entity newItem = gp.entityGenerator.getObject(item.name);
+
 		//Check if stackable:
-		if(item.stackable == true) {
-			int index = searchItemInInventory(item.name);
+		if(newItem.stackable == true) {
+			int index = searchItemInInventory(newItem.name);
 			if(index != 999) {
 				inventory.get(index).amount++;
 				obtainable = true;
@@ -678,7 +750,7 @@ public class Player extends Entity{
 			//New Item (check for a vacancy): 
 			else {
 				if(inventory.size() != maxInventorySize) {
-					inventory.add(item);
+					inventory.add(newItem);
 					obtainable = true;
 				}
 			}
@@ -686,7 +758,7 @@ public class Player extends Entity{
 		//NON Stackable items:
 		else {
 			if(inventory.size() != maxInventorySize) {
-				inventory.add(item);
+				inventory.add(newItem);
 				obtainable = true;
 			}
 		}
@@ -720,7 +792,7 @@ public class Player extends Entity{
 			}
 			//Inventory Items:
 			else {
-				if(ObtainItem(gp.obj[gp.currentMap][i]) == true) {
+				if(obtainItem(gp.obj[gp.currentMap][i]) == true) {
 					gp.playSoundEffect(0);
 					text =  "You got a " + gp.obj[gp.currentMap][i].name + "!";
 				}

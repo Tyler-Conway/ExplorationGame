@@ -228,7 +228,7 @@ public class UI {
  					drawDialogueScreen();
  				}
  				else {
- 					if(gp.player.ObtainItem(trader.inventory.get(itemIndex)) == true) {
+ 					if(gp.player.obtainItem(trader.inventory.get(itemIndex)) == true) {
  						gp.player.coin -= trader.inventory.get(itemIndex).price;
  					}
  					else {

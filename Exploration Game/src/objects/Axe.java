@@ -5,11 +5,13 @@ import main.GamePanel;
 
 public class Axe extends Entity{
 
+	public static final String objectName = "Axe";
+
 	public Axe(GamePanel gp) {
 		super(gp);
 		
 		type = type_Axe;
-		name = "Axe";
+		name = objectName;
 		down1 = setup("/objects/axe", gp.tileSize, gp.tileSize);
 		attackValue = 2;
 		attackArea.width = gp.tileSize - (gp.tileSize/2);

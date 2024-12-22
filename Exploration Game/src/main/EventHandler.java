@@ -113,11 +113,11 @@ public class EventHandler {
 				break;
 		//World03 Events:
 			case 7: 
-				if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.world01,2,5);}
-				//road to map 01:
-				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.world01,2,6);}
-				//road to map 01:
-				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.world01,2,7);}
+				//road to map01:
+				if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.world01,3,5);}
+				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.world01,3,6);}
+				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.world01,3,7);}
+				//^^^Road to World01
 				else if(isOnTheTile(mapNum, 42, 9) == true) {changeMap(gp.lootCabin02,24,26);}
 				break;
 		//Beach01 Events:
@@ -161,6 +161,10 @@ public class EventHandler {
 				if(hit(mapNum, 19, 48, "any") == true) {changeMap(gp.world04,19,3);}
 				else if(hit(mapNum, 18, 48, "any") == true) {changeMap(gp.world04,18,3);}
 				else if(hit(mapNum, 20, 48, "any") == true) {changeMap(gp.world04,20,3);}
+				else if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.dungeon01, 19, 40);}
+				break;
+			case 17:
+				if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.world05, 19, 44);}
 				break;
 			}
 		}

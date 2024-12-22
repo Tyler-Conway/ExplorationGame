@@ -10,13 +10,14 @@ import main.GamePanel;
 public class TeleportDoor extends Entity{
 	
 	GamePanel gp; 
+	public static final String objectName = "TeleportDoor";
 	public int targetMapNum, newCol, newRow;
 	
 	public TeleportDoor(GamePanel gp, int targetMapNum, int newCol, int newRow) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "TeleportDoor";
+		name = objectName;
 		down1 = setup("/objects/Door", gp.tileSize, gp.tileSize);
 		collision = true;
 		type = type_Obstacle;

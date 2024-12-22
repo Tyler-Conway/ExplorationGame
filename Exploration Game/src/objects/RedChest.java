@@ -9,6 +9,7 @@ import main.GamePanel;
 
 public class RedChest extends Entity{
 
+	public static final String objectName = "RedChest";
 	GamePanel gp;
 	Entity loot;
 	
@@ -18,7 +19,7 @@ public class RedChest extends Entity{
 		this.loot = new RedKey(gp);
 		
 		type = type_Obstacle;
-		name = "RedChest";
+		name = objectName;
 		opened = false;
 		image = setup("/objects/RedChest", gp.tileSize, gp.tileSize);
 		image2 = setup("/objects/RedChestOpen", gp.tileSize, gp.tileSize);
@@ -41,7 +42,7 @@ public class RedChest extends Entity{
 			StringBuilder sb = new StringBuilder();
 			sb.append("You opened the chest and find: " + loot.name + "!");
 			
-			if(gp.player.ObtainItem(loot) == false) {
+			if(gp.player.obtainItem(loot) == false) {
 				sb.append("\n...But you cannot carry any more!");
 			}
 			else {

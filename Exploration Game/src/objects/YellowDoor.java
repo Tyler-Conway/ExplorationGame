@@ -10,11 +10,12 @@ import main.GamePanel;
 public class YellowDoor extends Entity{
 	
 	GamePanel gp; 
+	public static final String objectName = "YellowDoor";
 	public YellowDoor(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "YellowDoor";
+		name = objectName;
 		down1 = setup("/objects/YellowDoor", gp.tileSize, gp.tileSize);
 		collision = true;
 		type = type_Obstacle;

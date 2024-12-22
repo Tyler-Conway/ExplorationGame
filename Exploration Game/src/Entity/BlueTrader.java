@@ -3,6 +3,7 @@ package Entity;
 import main.GamePanel;
 import objects.Bark;
 import objects.BlueKey;
+import objects.Lance;
 import objects.Lantern;
 import objects.MetalShield;
 import objects.PaperClip;
@@ -43,6 +44,7 @@ public class BlueTrader extends Entity{
 		inventory.add(new Bark(gp));
 		inventory.add(new PaperClip(gp));
 		inventory.add(new Staff(gp));
+		inventory.add(new Lance(gp));
 
 	}
 	

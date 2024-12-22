@@ -5,13 +5,14 @@ import main.GamePanel;
 
 public class CoinGold extends Entity{
 
+	public static final String objectName = "Gold Coin";
 	GamePanel gp;
 	public CoinGold(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
 		type = type_pickUpOnly;
-		name = "Gold Coin";
+		name = objectName;
 		down1 = setup("/objects/GoldCoin", gp.tileSize, gp.tileSize);
 		value = 10;
 	}

@@ -5,11 +5,13 @@ import main.GamePanel;
 
 public class PaperClip extends Entity{
 
+	public static final String objectName = "PaperClip";
+
 	public PaperClip(GamePanel gp) {
 		super(gp);
 		
 		type = type_Weapon;
-		name = "PaperClip";
+		name = objectName;
 		price = 2;
 		down1 = setup("/objects/PaperClip", gp.tileSize, gp.tileSize);
 		attackValue = 1;

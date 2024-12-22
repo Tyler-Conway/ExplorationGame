@@ -43,6 +43,8 @@ public class TileManager {
 		loadMap("/maps/lootCabin01.txt", gp.lootCabin02);
 		loadMap("/maps/World04.txt", gp.world04);
 		loadMap("/maps/World05.txt", gp.world05);
+		loadMap("/maps/Dungeon01.txt", gp.dungeon01);
+		loadMap("/maps/Dungeon02.txt", gp.dungeon02);
 	}
 	
 	public void setup(int index, String imageName, boolean collision) {
@@ -127,6 +129,8 @@ public class TileManager {
 			setup(33, "DockSupportBeam", true);
 			setup(34, "DockFloorHole", false);
 			setup(35, "VerticalWoodFloor", false);
+			setup(36, "StairsUp", false);
+			setup(37, "StairsDown", false);
 			
 	}
 

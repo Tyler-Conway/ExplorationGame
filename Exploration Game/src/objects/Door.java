@@ -10,6 +10,7 @@ import main.GamePanel;
 public class Door extends Entity{
 	
 	GamePanel gp; 
+	public static final String objectName = "Door";
 	public int mapNum, objectIndex;
 	
 	public Door(GamePanel gp, int mapNum, int objectIndex) {
@@ -18,7 +19,7 @@ public class Door extends Entity{
 		this.doorMapNum = mapNum;
 		this.doorObjectIndex = objectIndex;
 		
-		name = "Door";
+		name = objectName;
 		down1 = setup("/objects/Door", gp.tileSize, gp.tileSize);
 		image = setup("/objects/Blank", gp.tileSize, gp.tileSize);
 		collision = true;

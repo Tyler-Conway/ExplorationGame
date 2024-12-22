@@ -7,80 +7,11 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import main.GamePanel;
-import objects.Arrow;
-import objects.Axe;
-import objects.Bark;
-import objects.BlueChest;
-import objects.BlueDoor;
-import objects.BlueKey;
-import objects.CoinBronze;
-import objects.CoinGold;
-import objects.CoinSilver;
-import objects.ColorfulDoor;
-import objects.Door;
-import objects.Fireball;
-import objects.Heart;
-import objects.Lance;
-import objects.Lantern;
-import objects.ManaCrystal;
-import objects.MetalShield;
-import objects.PaperClip;
-import objects.RedChest;
-import objects.RedDoor;
-import objects.RedKey;
-import objects.RedPotion;
-import objects.Rock;
-import objects.Shield;
-import objects.Staff;
-import objects.TeleportDoor;
-import objects.Tent;
-import objects.TriColorKey;
-import objects.YellowChest;
-import objects.YellowDoor;
-import objects.YellowKey;
+import objects.*;
 
 public class SaveLoad {
 
 	GamePanel gp;
-	
-	//Cant Handle TP Doors:
-	public Entity getObject(String itemName){
-		Entity object = null;
-		//case "": object = new (gp); break;
-		switch(itemName){
-			case "Axe": object = new Axe(gp); break;
-			case "Bark": object = new Bark(gp); break;
-			case "BlueKey": object = new BlueKey(gp); break;
-			case "Lance": object = new Lance(gp); break;
-			case "Lantern": object = new Lantern(gp); break;
-			case "MetalShield": object = new MetalShield(gp); break;
-			case "PaperClip": object = new PaperClip(gp); break;
-			case "RedKey": object = new RedKey(gp); break;
-			case "RedPotion": object = new RedPotion(gp); break;
-			case "Shield": object = new Shield(gp); break;
-			case "Staff": object = new Staff(gp); break;
-			case "Tent": object = new Tent(gp); break;
-			case "YellowKey": object = new YellowKey(gp); break;
-			case "BlueChest": object = new BlueChest(gp); break;
-			case "RedChest": object = new RedChest(gp); break;
-			case "YellowChest": object = new YellowChest(gp); break;
-			case "YellowDoor": object = new YellowDoor(gp); break;
-			case "TriColorKey": object = new TriColorKey(gp); break;
-			case "RedDoor": object = new RedDoor(gp); break;
-			case "BlueDoor": object = new BlueDoor(gp); break;
-			case "Arrow": object = new Arrow(gp); break;
-			case "Bronze Coin": object = new CoinBronze(gp); break;
-			case "Gold Coin": object = new CoinGold(gp); break;
-			case "Silver Coin": object = new CoinSilver(gp); break;
-			case "Heart": object = new Heart(gp); break;
-			case "ManaCrystal": object = new ManaCrystal(gp); break;
-			case "Rock": object = new Rock(gp); break;
-		}
-		if(object == null){
-			System.out.println("Returning a Null Object for: " + itemName);
-		}
-		return object;
-	}
 
 	public SaveLoad(GamePanel gp) {
 		this.gp = gp;
@@ -204,7 +135,7 @@ public class SaveLoad {
 			//Inventory:
 			gp.player.inventory.clear();
 			for(int i = 0; i < dataStorage.itemNames.size(); i++){
-				gp.player.inventory.add(getObject(dataStorage.itemNames.get(i)));
+				gp.player.inventory.add(gp.entityGenerator.getObject(dataStorage.itemNames.get(i)));
 				gp.player.inventory.get(i).amount = dataStorage.itemAmmounts.get(i);
 			}
 
@@ -231,7 +162,7 @@ public class SaveLoad {
 					!dataStorage.savedObjectNames[mapNum][i].equals("TeleportDoor") && 
 					!dataStorage.savedObjectNames[mapNum][i].equals("ColorfulDoor")){
 						gp.obj[mapNum][i] = new Entity(gp);
-						gp.obj[mapNum][i] = getObject(dataStorage.savedObjectNames[mapNum][i]);
+						gp.obj[mapNum][i] = gp.entityGenerator.getObject(dataStorage.savedObjectNames[mapNum][i]);
 						gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
 						gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];
 						gp.obj[mapNum][i].opened = dataStorage.mapObjectOpened[mapNum][i];

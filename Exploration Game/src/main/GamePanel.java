@@ -47,7 +47,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public InteractiveTile iTile[][] = new InteractiveTile[maxMap][50];
 	
 	//MAP NUMBERS:
-	public final int world01 = 0;
+	public static final int world01 = 0;
 	public final int cabin01 = 1;
 	public final int stoneBuilding01 = 2;
 	public final int stoneBuilding02 = 3;
@@ -64,6 +64,9 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int stoneBuilding05 = 14;
 	public final int world04 = 15;
 	public final int world05 = 16;
+	public final int dungeon01 = 17;
+	public final int dungeon02 = 18;
+
 	
 	//GAME STATES
 	public int gameState;
@@ -94,6 +97,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public PathFinder pathFinder = new PathFinder(this);
 	public EnviornmentManager enviornmentManager = new EnviornmentManager(this);
 	public Map map = new Map(this);
+	public EntityGenerator entityGenerator = new EntityGenerator(this); 
 	public SaveLoad saveLoad = new SaveLoad(this);
 	
 	
@@ -116,6 +120,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public void resetGame(boolean restart){
 		player.setDefaultPositions();
 		player.restoreLifeAndProjectiles();
+		player.resetAllCounters();
 		assetSetter.setNPC();
 		assetSetter.setMonster();
 
@@ -322,6 +327,8 @@ public class GamePanel extends JPanel implements Runnable{
 		case lootCabin02: tileM.loadMap("/maps/lootCabin01.txt", lootCabin02); break;
 		case world04: tileM.loadMap("/maps/World04.txt", world04); break;
 		case world05: tileM.loadMap("/maps/World05.txt", world05); break;
+		case dungeon01: tileM.loadMap("/maps/Dungeon01.txt", dungeon01); break;
+		case dungeon02: tileM.loadMap("/maps/Dungeon02.txt", dungeon02); break;
 		}
 	}
 	
@@ -343,23 +350,25 @@ public class GamePanel extends JPanel implements Runnable{
 	public String getWorldname(int worldNum){
 		String worldName = "   ???   ";
 		switch (worldNum) {
-			case world01: worldName = "World01"; break;
-			case world02: worldName = "World02"; break;
-			case world03: worldName = "World03"; break;
-			case world04: worldName = "World04"; break;
-			case world05: worldName = "World05"; break;
+			case beach01: worldName = "Beach01"; break;
+			case beach02: worldName = "Beach02"; break;
+			case cabin01: worldName = "Cabin01"; break;
+			case cabin02: worldName = "Cabin02"; break;
+			case cabin03: worldName = "Cabin03"; break;
+			case dungeon01: worldName = "Dungeon01"; break;
+			case dungeon02: worldName = "Dungeon02"; break;
+			case lootCabin01: worldName = "LootCabin01"; break;
+			case lootCabin02: worldName = "LootCabin02"; break;
 			case stoneBuilding01: worldName = "StoneBuilding01"; break;
 			case stoneBuilding02: worldName = "StoneBuilding02"; break;
 			case stoneBuilding03: worldName = "StoneBuilding03"; break;
 			case stoneBuilding04: worldName = "StoneBuilding04"; break;
 			case stoneBuilding05: worldName = "StoneBuilding05"; break;
-			case cabin01: worldName = "Cabin01"; break;
-			case cabin02: worldName = "Cabin02"; break;
-			case cabin03: worldName = "Cabin03"; break;
-			case lootCabin01: worldName = "LootCabin01"; break;
-			case lootCabin02: worldName = "LootCabin02"; break;
-			case beach01: worldName = "Beach01"; break;
-			case beach02: worldName = "Beach02"; break;
+			case world01: worldName = "World01"; break;
+			case world02: worldName = "World02"; break;
+			case world03: worldName = "World03"; break;
+			case world04: worldName = "World04"; break;
+			case world05: worldName = "World05"; break;
 			default: worldName = "   ???   "; break;
 		}
 		return worldName;

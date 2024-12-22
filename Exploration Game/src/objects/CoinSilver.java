@@ -6,12 +6,13 @@ import main.GamePanel;
 public class CoinSilver extends Entity{
 
 	GamePanel gp;
+	public static final String objectName = "Silver Coin";
 	public CoinSilver(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
 		type = type_pickUpOnly;
-		name = "Silver Coin";
+		name = objectName;
 		down1 = setup("/objects/SilverCoin", gp.tileSize, gp.tileSize);
 		value = 5;
 	}

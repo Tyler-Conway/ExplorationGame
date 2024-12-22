@@ -5,11 +5,13 @@ import main.GamePanel;
 
 public class Staff extends Entity{
 
+	public static final String objectName = "Staff";
+
 	public Staff(GamePanel gp) {
 		super(gp);
 		
 		type = type_Weapon;
-		name = "Staff";
+		name = objectName;
 		price = 20;
 		down1 = setup("/objects/Staff", gp.tileSize, gp.tileSize);
 		attackValue = 1;

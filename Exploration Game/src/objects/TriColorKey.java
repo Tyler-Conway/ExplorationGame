@@ -10,12 +10,13 @@ import main.GamePanel;
 public class TriColorKey extends Entity{
 
 	GamePanel gp;
+	public static final String objectName = "TriColorKey";
 	
 	public TriColorKey(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "TriColorKey";
+		name = objectName;
 		type = type_Consumable;
 		price = 100;
 		down1 = setup("/objects/TriColorKey", gp.tileSize, gp.tileSize);

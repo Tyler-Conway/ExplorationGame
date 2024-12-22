@@ -6,13 +6,14 @@ import main.GamePanel;
 public class RedPotion extends Entity{
 
 	GamePanel gp;
+	public static final String objectName = "RedPotion";
 	
 	public RedPotion(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
 		type = type_Consumable;
-		name = "RedPotion";
+		name = objectName;
 		price = 25;
 		value = 5;
 		down1 = setup("/objects/RedPotion", gp.tileSize, gp.tileSize);

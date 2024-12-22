@@ -10,12 +10,13 @@ import main.GamePanel;
 public class BlueKey extends Entity{
 
 	GamePanel gp;
+	public static final String objectName = "BlueKey";
 	
 	public BlueKey(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		
-		name = "BlueKey";
+		name = objectName;
 		type = type_Consumable;
 		price = 100;
 		down1 = setup("/objects/BlueKey", gp.tileSize, gp.tileSize);
