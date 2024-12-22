@@ -18,7 +18,6 @@ public class SaveLoad {
 	}
 	
 	public void save() {
-		
 		try {
 			ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
 			GameDataStorage dataStorage = new GameDataStorage();
@@ -48,12 +47,9 @@ public class SaveLoad {
 				dataStorage.itemNames.add(gp.player.inventory.get(i).name); //store the names of the items.
 				dataStorage.itemAmmounts.add(gp.player.inventory.get(i).amount); //store the amount of that item a player has.
 			}
-
 			//Equiped Items:
 			dataStorage.currentWeaponSlot = gp.player.getCurrentWeaponSlot();
 			dataStorage.currentShieldSlot = gp.player.getCurrentShieldSlot();
-
-
 			//Map Items:
 			dataStorage.savedObjectNames = new String[gp.maxMap][gp.obj[1].length];
 			dataStorage.savedObjectsWorldX = new int[gp.maxMap][gp.obj[1].length];
@@ -88,11 +84,11 @@ public class SaveLoad {
 							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
 							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
 							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+							dataStorage.ColorfulDoorLocked = gp.obj[mapNum][i].locked;
 						}
 					}
 				}
 			}
-
 			OS.writeObject(dataStorage);
 		} catch (Exception e) {
 			System.out.println("Save Error.");
@@ -138,19 +134,12 @@ public class SaveLoad {
 				gp.player.inventory.add(gp.entityGenerator.getObject(dataStorage.itemNames.get(i)));
 				gp.player.inventory.get(i).amount = dataStorage.itemAmmounts.get(i);
 			}
-
 			//Equiped Items:
 			gp.player.currentWeapon = gp.player.inventory.get(dataStorage.currentWeaponSlot);
 			gp.player.currentShield = gp.player.inventory.get(dataStorage.currentShieldSlot);
 			gp.player.getAttack();
 			gp.player.getDefense();
 			gp.player.getPlayerAttackImage();
-
-
-			// for(int i = 0; i < gp.obj[1].length; i++){
-			// 	System.out.println("("+i+") "+dataStorage.TeleportDoorCol[0][i]+", "+dataStorage.TeleportDoorRow[0][i]);
-			// }
-
 			//Map Objects:
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
 				for(int i = 0; i < gp.obj[1].length; i++){
@@ -183,6 +172,7 @@ public class SaveLoad {
 						else if(dataStorage.savedObjectNames[mapNum][i].equals("ColorfulDoor")){
 							gp.obj[mapNum][i] = new ColorfulDoor(gp, dataStorage.mapNums[mapNum][i], 
 								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i]);
+							gp.obj[mapNum][i].locked = dataStorage.ColorfulDoorLocked;
 						}
 						gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
 						gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];

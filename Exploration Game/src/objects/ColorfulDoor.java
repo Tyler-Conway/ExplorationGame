@@ -1,9 +1,5 @@
 package objects;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import Entity.Entity;
 import main.GamePanel;
 
@@ -22,8 +18,11 @@ public class ColorfulDoor extends Entity{
 		collision = true;
 		type = type_Obstacle;
 		this.targetMapNum = targetMapNum;
+		this.doorMapNum = targetMapNum;
 		this.newCol = newCol;
 		this.newRow = newRow;
+		this.tpNewCol = newCol;
+		this.tpNewRow = newRow;
 		
 		solidArea.x = 0;
 		solidArea.y = -1;

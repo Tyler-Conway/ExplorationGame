@@ -533,7 +533,7 @@ public class Entity {
 				break;
 			}
 			//Monster HP bar:
-			if(type == type_Monster && hpBarOn == true) {
+			if(type == type_Monster && hpBarOn == true && dying == false) {
 				double oneScale = (double)gp.tileSize/maxLife;
 				double hpBarValue = oneScale*life;
 				g2.setColor(new Color(35,35,35));

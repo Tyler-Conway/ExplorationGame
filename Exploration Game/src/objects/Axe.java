@@ -14,8 +14,8 @@ public class Axe extends Entity{
 		name = objectName;
 		down1 = setup("/objects/axe", gp.tileSize, gp.tileSize);
 		attackValue = 2;
-		attackArea.width = gp.tileSize - (gp.tileSize/2);
-		attackArea.height = gp.tileSize - (gp.tileSize/2);
+		attackArea.width = gp.tileSize - (gp.tileSize/8);
+		attackArea.height = gp.tileSize - (gp.tileSize/8);
 		description = "[" + name + "]\nCut down trees!\n(and monsters)";
 		price = 75;
 		knockBackPower = 10;

@@ -2,7 +2,6 @@ package GameData;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import Entity.Entity;
 
 
 public class GameDataStorage implements Serializable{
@@ -45,13 +44,7 @@ public class GameDataStorage implements Serializable{
 	int mapNums[][];
 	int TeleportDoorCol[][];
 	int TeleportDoorRow[][];
+	boolean ColorfulDoorLocked;
 
-
-
-	
-	
-	public GameDataStorage() {
-		
-	}
-
+	public GameDataStorage() {}
 }
