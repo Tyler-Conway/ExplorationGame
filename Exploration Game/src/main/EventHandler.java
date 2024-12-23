@@ -144,27 +144,33 @@ public class EventHandler {
 			case 10:
 				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.beach02,10,2);}
 				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);} break;
-			//LootCabin01:
+		//LootCabin01:
 			case 11: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,38,17);} break;
-			//LootCabin02:
+		//LootCabin02:
 			case 12: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world03,42,11);} break;
 			//StoneBuilding05:
 			case 14: if(hit(mapNum,24,22,"up") == true) {speak(gp.npc[mapNum][0]);} break;
-			//World04
+		//World04
 			case 15:
 				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world02,46,33);}
 				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world02,46,32);}
 				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world02,46,31);}
 				break;
-			//World05
+		//World05
 			case 16:
 				if(hit(mapNum, 19, 48, "any") == true) {changeMap(gp.world04,19,3);}
 				else if(hit(mapNum, 18, 48, "any") == true) {changeMap(gp.world04,18,3);}
 				else if(hit(mapNum, 20, 48, "any") == true) {changeMap(gp.world04,20,3);}
 				else if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.dungeon01, 19, 40);}
 				break;
+		//Dungeon01
 			case 17:
 				if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.world05, 19, 44);}
+				else if(hit(mapNum, 30, 1, "any") == true) {changeMap(gp.dungeon02, 24, 46);}
+				break;
+		//Dungeon02
+			case 18:
+				if(hit(mapNum, 24, 48, "any") == true) {changeMap(gp.dungeon01, 30, 3);}
 				break;
 			}
 		}

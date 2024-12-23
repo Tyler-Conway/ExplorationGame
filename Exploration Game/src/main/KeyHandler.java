@@ -92,6 +92,7 @@ public class KeyHandler implements KeyListener{
 					gp.saveLoad.load();
 					gp.playMusic(12);
 					gp.gameState = gp.playState;
+					gp.ui.commandNum = 0;
 				}
 				//Exit Program
 				else if(gp.ui.commandNum == 2) {
@@ -139,7 +140,6 @@ public class KeyHandler implements KeyListener{
 			gp.player.getPlayerImage();
 			
 			if(code == KeyEvent.VK_ENTER) {
-				
 				gp.currentMap = gp.world01;
 				gp.enviornmentManager.lighting.resetEnviornmentLighting();
 
@@ -147,19 +147,17 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum != 4) {
 					gp.gameState = gp.playState;
 					gp.playMusic(12);
-					//Set Player's Images and initial eqipment:
 					gp.player.setDefaultValues();
 					gp.player.getPlayerImage();
 					gp.player.getPlayerAttackImage();
 					gp.player.setItems();
 					gp.assetSetter.setNPC();
-					//EQUIP Initial Objects:
 					gp.player.equipInitialObjects();
 					gp.assetSetter.setObjects();
+					gp.ui.commandNum = 0;
 				}
 				//Exit to title:
 				else if(gp.ui.commandNum == 4) {
-					//gp.player.playerClass = "Fighter";
 					gp.ui.titleScreenState = 0;
 					gp.ui.commandNum = 0;
 				}	
@@ -181,23 +179,15 @@ public class KeyHandler implements KeyListener{
 		if(code == KeyEvent.VK_M) {gp.gameState = gp.mapState;}
 		if(code == KeyEvent.VK_ESCAPE) {gp.gameState = gp.optionsState;}
 		if(code == KeyEvent.VK_X) {
-			if(gp.map.miniMapOn == false) {
-				gp.map.miniMapOn = true;
-			}
-			else {
-				gp.map.miniMapOn = false;
-			}
+			if(gp.map.miniMapOn == false) {gp.map.miniMapOn = true;}
+			else {gp.map.miniMapOn = false;}
 		}
 		
 		//DEBUG
 		if(code == KeyEvent.VK_T) {
 			gp.player.debuggingMode = !gp.player.debuggingMode;
-			if(showDebugText == false) {
-				showDebugText = true;
-			}
-			else if(showDebugText == true) {
-				showDebugText = false;
-			}
+			if(showDebugText == false) {showDebugText = true;}
+			else if(showDebugText == true) {showDebugText = false;}
 		}
 		if(code == KeyEvent.VK_R) {
 			gp.assetSetter.setNPC();
@@ -403,9 +393,7 @@ public class KeyHandler implements KeyListener{
 				else if(gp.ui.commandNum == 1) {
 					gp.ui.titleScreenState = 0;
 					gp.gameState = gp.titleState;
-					
 					gp.resetGame(true);
-					
 				}
 			}
 		}
@@ -485,32 +473,13 @@ public class KeyHandler implements KeyListener{
 	
 	public void keyReleased(KeyEvent e) {
 		int code = e.getKeyCode();
-		
-		if(code == KeyEvent.VK_W) {
-			upPressed = false;
-		}
-		if(code == KeyEvent.VK_S) {
-			downPressed = false;
-		}
-		if(code == KeyEvent.VK_A) {
-			leftPressed = false;
-		}
-		if(code == KeyEvent.VK_D) {
-			rightPressed = false;
-		}
-		if(code == KeyEvent.VK_F) {
-			shotKeyPressed = false;
-		}
-		if(code == KeyEvent.VK_ENTER) {
-			enterPressed = false;
-		}
-		if(code == KeyEvent.VK_SPACE) {
-			spacePressed = false;
-		}
-		if(code == KeyEvent.VK_ESCAPE) {
-			escapePressed = false;
-		}
+		if(code == KeyEvent.VK_W) {upPressed = false;}
+		if(code == KeyEvent.VK_S) {downPressed = false;}
+		if(code == KeyEvent.VK_A) {leftPressed = false;}
+		if(code == KeyEvent.VK_D) {rightPressed = false;}
+		if(code == KeyEvent.VK_F) {shotKeyPressed = false;}
+		if(code == KeyEvent.VK_ENTER) {enterPressed = false;}
+		if(code == KeyEvent.VK_SPACE) {spacePressed = false;}
+		if(code == KeyEvent.VK_ESCAPE) {escapePressed = false;}
 	}
-
-
 }

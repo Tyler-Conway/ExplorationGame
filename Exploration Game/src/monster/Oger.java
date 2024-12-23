@@ -38,8 +38,8 @@ public class Oger extends Entity{
 		solidArea.height = (gp.tileSize/3);
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
-		attackArea.width = gp.tileSize + (gp.tileSize/8);
-		attackArea.height = gp.tileSize + (gp.tileSize/8);
+		attackArea.width = gp.tileSize;
+		attackArea.height = gp.tileSize;
 		
 		
 		getImage();

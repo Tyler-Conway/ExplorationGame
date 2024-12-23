@@ -47,7 +47,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public InteractiveTile iTile[][] = new InteractiveTile[maxMap][50];
 	
 	//MAP NUMBERS:
-	public static final int world01 = 0;
+	public final int world01 = 0;
 	public final int cabin01 = 1;
 	public final int stoneBuilding01 = 2;
 	public final int stoneBuilding02 = 3;

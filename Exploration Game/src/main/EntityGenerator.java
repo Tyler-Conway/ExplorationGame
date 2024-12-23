@@ -35,11 +35,8 @@ public class EntityGenerator {
     public EntityGenerator(GamePanel gp){
         this.gp = gp;
     }
-
-    //Cant Handle TP Doors && Normal Doors:
 	public Entity getObject(String itemName){
 		Entity object = null;
-		//case "": object = new (gp); break;
 		switch(itemName){
 			case Axe.objectName: object = new Axe(gp); break;
 			case Bark.objectName: object = new Bark(gp); break;
