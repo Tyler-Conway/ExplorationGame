@@ -34,9 +34,9 @@ public class AssetSetter {
 
 		int mapNum = gp.world01;
 		int i = 0;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding01, 24, 23), 38, 44); i++;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding03, 24, 23), 31, 28); i++;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding02, 24, 23), 47, 44); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding01, 24, 23,gp.inside), 38, 44); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding03, 24, 23,gp.inside), 31, 28); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding02, 24, 23,gp.inside), 47, 44); i++;
 		placeAsset(gp.obj, mapNum, i, new Tent(gp), 24, 39); i++;
 		placeAsset(gp.obj, mapNum, i, new Lantern(gp), 12, 46); i++;
 		placeAsset(gp.obj, mapNum, i, new YellowDoor(gp), 5, 4); i++;
@@ -73,12 +73,12 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 30, 16); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 30, 15); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 30, 14); i++;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 38, 46), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 38, 46,gp.outside), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 19, 17); i++;
 		
 		i = 0;
 		mapNum = gp.stoneBuilding02;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 47, 46), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 47, 46,gp.outside), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 18, 14); i++;
@@ -91,7 +91,7 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.stoneBuilding03;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 31, 31), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world01, 31, 31,gp.outside), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 17); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 28, 20); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 30, 14); i++;
@@ -131,7 +131,7 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.stoneBuilding04;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 5, 5), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 5, 5,gp.outside), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new BlueDoor(gp), 24, 21); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 28, 18); i++;
@@ -164,7 +164,7 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.stoneBuilding05;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 11, 5), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world03, 11, 5,gp.outside), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 17); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 19); i++;
 		placeAsset(gp.obj, mapNum, i, new BlueChest(gp), 29, 14); i++;	
@@ -178,8 +178,8 @@ public class AssetSetter {
 		
 		i = 0;
 		mapNum = gp.world03;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding04, 24, 24), 5, 3); i++;
-		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding05, 24, 24), 11, 3); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding04, 24, 24,gp.inside), 5, 3); i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding05, 24, 24,gp.inside), 11, 3); i++;
 		placeAsset(gp.obj, mapNum, i, new RedDoor(gp), 7, 39); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 36); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 38); i++;
@@ -215,7 +215,7 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.world04;
-		placeAsset(gp.obj, mapNum, i, new ColorfulDoor(gp, gp.world05 ,19, 47), 19, 0); i++;
+		placeAsset(gp.obj, mapNum, i, new ColorfulDoor(gp, gp.world05 ,19, 47,gp.outside), 19, 0); i++;
 		
 
 		i = 0;

@@ -9,7 +9,7 @@ public class ColorfulDoor extends Entity{
 	public static final String objectName = "ColorfulDoor";
 	int targetMapNum, newCol, newRow;
 	
-	public ColorfulDoor(GamePanel gp, int targetMapNum, int newCol, int newRow) {
+	public ColorfulDoor(GamePanel gp, int targetMapNum, int newCol, int newRow, int area) {
 		super(gp);
 		this.gp = gp;
 		
@@ -23,6 +23,7 @@ public class ColorfulDoor extends Entity{
 		this.newRow = newRow;
 		this.tpNewCol = newCol;
 		this.tpNewRow = newRow;
+		newArea = area;
 		
 		solidArea.x = 0;
 		solidArea.y = -1;
@@ -36,7 +37,7 @@ public class ColorfulDoor extends Entity{
 
 		if(locked == false){
 			gp.playSoundEffect(1);
-			gp.eventHandler.changeMap(targetMapNum, newCol, newRow);
+			gp.eventHandler.changeMap(targetMapNum, newCol, newRow, newArea);
 		}
 		else{
 			gp.gameState = gp.dialogueState;

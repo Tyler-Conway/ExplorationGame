@@ -105,6 +105,7 @@ public class Entity {
 	public int tpNewCol = 0;
 	public int tpNewRow = 0;
 	public int doorObjectIndex = 999;
+	public int newArea;
 	
 	//Entity Types:
 	public int type;
@@ -546,7 +547,7 @@ public class Entity {
 					hpBarOn = false;
 				}
 			}
-			if(invincible == true && destructable == false) {
+			if(invincible == true && destructable == false && dying == false) {
 				hpBarOn = true;
 				hpBarCounter = 0;
 				changeAlpha(g2, 0.4f);

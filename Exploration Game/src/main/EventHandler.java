@@ -64,21 +64,21 @@ public class EventHandler {
 				else if(hit(mapNum,16, 48, "right") == true) {teleport(10, 9);}
 				else if(hit(mapNum,8, 48, "left") == true) {teleport(45, 32);}
 				//World01 Blue Trader Cabin:
-				else if(isOnTheTile(mapNum, 16, 3) == true) {changeMap(gp.cabin01,24,26);}
+				else if(isOnTheTile(mapNum, 16, 3) == true) {changeMap(gp.cabin01,24,26,gp.inside);}
 				//road to map 02:
-				else if(hit(mapNum, 49, 33, "any") == true) {changeMap(gp.world02,2,32);}
-				else if(hit(mapNum, 49, 32, "any") == true) {changeMap(gp.world02,2,32);}
-				else if(hit(mapNum, 49, 31, "any") == true) {changeMap(gp.world02,2,32);}
+				else if(hit(mapNum, 49, 33, "any") == true) {changeMap(gp.world02,2,32,gp.outside);}
+				else if(hit(mapNum, 49, 32, "any") == true) {changeMap(gp.world02,2,32,gp.outside);}
+				else if(hit(mapNum, 49, 31, "any") == true) {changeMap(gp.world02,2,32,gp.outside);}
 				//^^^road to map 02:
 				//road to map 03:
-				else if(hit(mapNum, 0, 5, "any") == true) {changeMap(gp.world03,47,5);}
-				else if(hit(mapNum, 0, 6, "any") == true) {changeMap(gp.world03,47,6);}
-				else if(hit(mapNum, 0, 7, "any") == true) {changeMap(gp.world03,47,7);}
+				else if(hit(mapNum, 0, 5, "any") == true) {changeMap(gp.world03,47,5,gp.outside);}
+				else if(hit(mapNum, 0, 6, "any") == true) {changeMap(gp.world03,47,6,gp.outside);}
+				else if(hit(mapNum, 0, 7, "any") == true) {changeMap(gp.world03,47,7,gp.outside);}
 				//^^^road to map 03:
 				break;
 		//CABIN01 EVNENTS:	
 			case 1:
-				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world01,16,5);}
+				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world01,16,5, gp.outside);}
 				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
 				break;
 		//StoneBuilding02:
@@ -88,89 +88,89 @@ public class EventHandler {
 		//World02 Events:
 			case 5:
 				//road to map 01:
-				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world01,47,32);}
-				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world01,47,32);}
-				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world01,47,32);}
+				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world01,47,32,gp.outside);}
+				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world01,47,32,gp.outside);}
+				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world01,47,32,gp.outside);}
 				//^^^road to map 01:
 				//Enter Cabin02
-				else if(isOnTheTile(mapNum, 4, 27) == true) {changeMap(gp.cabin02,24,26);}
+				else if(isOnTheTile(mapNum, 4, 27) == true) {changeMap(gp.cabin02,24,26,gp.inside);}
 				//Enter the loot cabin:
-				else if(isOnTheTile(mapNum, 38, 15) == true) {changeMap(gp.lootCabin01,24,26);}
+				else if(isOnTheTile(mapNum, 38, 15) == true) {changeMap(gp.lootCabin01,24,26,gp.inside);}
 				//road to Beach01:
-				else if(hit(mapNum, 20, 49, "any") == true) {changeMap(gp.beach01,23,2);}
-				else if(hit(mapNum, 21, 49, "any") == true) {changeMap(gp.beach01,24,2);}
-				else if(hit(mapNum, 22, 49, "any") == true) {changeMap(gp.beach01,25,2);}
+				else if(hit(mapNum, 20, 49, "any") == true) {changeMap(gp.beach01,23,2,gp.outside);}
+				else if(hit(mapNum, 21, 49, "any") == true) {changeMap(gp.beach01,24,2,gp.outside);}
+				else if(hit(mapNum, 22, 49, "any") == true) {changeMap(gp.beach01,25,2,gp.outside);}
 				//^^^road toBeach01:
 				//Road to World04: 
-				else if(hit(mapNum, 49, 33, "any") == true) {changeMap(gp.world04,3,33);}
-				else if(hit(mapNum, 49, 32, "any") == true) {changeMap(gp.world04,3,32);}
-				else if(hit(mapNum, 49, 31, "any") == true) {changeMap(gp.world04,3,31);}
+				else if(hit(mapNum, 49, 33, "any") == true) {changeMap(gp.world04,3,33,gp.outside);}
+				else if(hit(mapNum, 49, 32, "any") == true) {changeMap(gp.world04,3,32,gp.outside);}
+				else if(hit(mapNum, 49, 31, "any") == true) {changeMap(gp.world04,3,31,gp.outside);}
 				break;
 		//Cabin02 Events:
 			case 6: 
-				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,4,29);}
+				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,4,29,gp.outside);}
 				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
 				break;
 		//World03 Events:
 			case 7: 
 				//road to map01:
-				if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.world01,3,5);}
-				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.world01,3,6);}
-				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.world01,3,7);}
+				if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.world01,3,5,gp.outside);}
+				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.world01,3,6,gp.outside);}
+				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.world01,3,7,gp.outside);}
 				//^^^Road to World01
-				else if(isOnTheTile(mapNum, 42, 9) == true) {changeMap(gp.lootCabin02,24,26);}
+				else if(isOnTheTile(mapNum, 42, 9) == true) {changeMap(gp.lootCabin02,24,26,gp.inside);}
 				break;
 		//Beach01 Events:
 			case 8:
 				//road to World02:
-				if(hit(mapNum, 23, 0, "any") == true) {changeMap(gp.world02,20,47);}
-				else if(hit(mapNum, 24, 0, "any") == true) {changeMap(gp.world02,21,47);}
-				else if(hit(mapNum, 25, 0, "any") == true) {changeMap(gp.world02,22,47);}
+				if(hit(mapNum, 23, 0, "any") == true) {changeMap(gp.world02,20,47,gp.outside);}
+				else if(hit(mapNum, 24, 0, "any") == true) {changeMap(gp.world02,21,47,gp.outside);}
+				else if(hit(mapNum, 25, 0, "any") == true) {changeMap(gp.world02,22,47,gp.outside);}
 				//^^^Road to World02
 				//road to Beach02:
-				else if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.beach02,2,5);}
-				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.beach02,2,6);}
-				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.beach02,2,7);}break;
+				else if(hit(mapNum, 49, 5, "any") == true) {changeMap(gp.beach02,2,5,gp.outside);}
+				else if(hit(mapNum, 49, 6, "any") == true) {changeMap(gp.beach02,2,6,gp.outside);}
+				else if(hit(mapNum, 49, 7, "any") == true) {changeMap(gp.beach02,2,7,gp.outside);}break;
 				//^^^Road to Beach02
 		//Beach02 Events:
 			case 9:
 				//road to Beach01:
-				if(hit(mapNum, 0, 5, "any") == true) {changeMap(gp.beach01,47,5);}
-				else if(hit(mapNum, 0, 6, "any") == true) {changeMap(gp.beach01,47,6);}
-				else if(hit(mapNum, 0, 7, "any") == true) {changeMap(gp.beach01,47,7);}
+				if(hit(mapNum, 0, 5, "any") == true) {changeMap(gp.beach01,47,5,gp.outside);}
+				else if(hit(mapNum, 0, 6, "any") == true) {changeMap(gp.beach01,47,6,gp.outside);}
+				else if(hit(mapNum, 0, 7, "any") == true) {changeMap(gp.beach01,47,7,gp.outside);}
 				//^^^ Road to Beach01:
-				else if(hit(mapNum, 10, 0, "any") == true) {changeMap(gp.cabin03, 24, 26);} break;
+				else if(hit(mapNum, 10, 0, "any") == true) {changeMap(gp.cabin03, 24, 26,gp.inside);} break;
 		//Cabin03 Events:
 			case 10:
-				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.beach02,10,2);}
+				if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.beach02,10,2,gp.outside);}
 				else if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);} break;
 		//LootCabin01:
-			case 11: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,38,17);} break;
+			case 11: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world02,38,17,gp.outside);} break;
 		//LootCabin02:
-			case 12: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world03,42,11);} break;
+			case 12: if(hit(mapNum, 24, 28, "any") == true) {changeMap(gp.world03,42,11,gp.outside);} break;
 			//StoneBuilding05:
 			case 14: if(hit(mapNum,24,22,"up") == true) {speak(gp.npc[mapNum][0]);} break;
 		//World04
 			case 15:
-				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world02,46,33);}
-				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world02,46,32);}
-				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world02,46,31);}
+				if(hit(mapNum, 0, 33, "any") == true) {changeMap(gp.world02,46,33,gp.outside);}
+				else if(hit(mapNum, 0, 32, "any") == true) {changeMap(gp.world02,46,32,gp.outside);}
+				else if(hit(mapNum, 0, 31, "any") == true) {changeMap(gp.world02,46,31,gp.outside);}
 				break;
 		//World05
 			case 16:
-				if(hit(mapNum, 19, 48, "any") == true) {changeMap(gp.world04,19,3);}
-				else if(hit(mapNum, 18, 48, "any") == true) {changeMap(gp.world04,18,3);}
-				else if(hit(mapNum, 20, 48, "any") == true) {changeMap(gp.world04,20,3);}
-				else if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.dungeon01, 19, 40);}
+				if(hit(mapNum, 19, 48, "any") == true) {changeMap(gp.world04,19,3,gp.outside);}
+				else if(hit(mapNum, 18, 48, "any") == true) {changeMap(gp.world04,18,3,gp.outside);}
+				else if(hit(mapNum, 20, 48, "any") == true) {changeMap(gp.world04,20,3,gp.outside);}
+				else if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.dungeon01, 19, 40,gp.dungeon);}
 				break;
 		//Dungeon01
 			case 17:
-				if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.world05, 19, 44);}
-				else if(hit(mapNum, 30, 1, "any") == true) {changeMap(gp.dungeon02, 24, 46);}
+				if(hit(mapNum, 19, 42, "any") == true) {changeMap(gp.world05, 19, 44,gp.outside);}
+				else if(hit(mapNum, 30, 1, "any") == true) {changeMap(gp.dungeon02, 24, 46,gp.dungeon);}
 				break;
 		//Dungeon02
 			case 18:
-				if(hit(mapNum, 24, 48, "any") == true) {changeMap(gp.dungeon01, 30, 3);}
+				if(hit(mapNum, 24, 48, "any") == true) {changeMap(gp.dungeon01, 30, 3,gp.dungeon);}
 				break;
 			}
 		}
@@ -246,9 +246,10 @@ public class EventHandler {
 		gp.player.worldY = gp.tileSize*row;
 	}
 	
-	public void changeMap(int map, int col, int row) {
+	public void changeMap(int map, int col, int row, int area) {
 		previousMap = gp.currentMap;
 		gp.gameState = gp.transitionState;
+		gp.nextArea = area;
 		tempMap = map;
 		if(tempMap == gp.cabin01 || tempMap == gp.cabin02 || tempMap == gp.cabin03 || (tempMap == gp.beach02 && gp.eventHandler.previousMap == gp.cabin03) || 
 				(gp.currentMap == gp.beach01 && tempMap != gp.beach02) || (gp.currentMap == gp.world02 && tempMap == gp.beach01)) {

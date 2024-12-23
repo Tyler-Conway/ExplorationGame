@@ -153,9 +153,12 @@ public class Lighting {
 	}
 	
 	public void draw(Graphics2D g2) {
-		//Set Alpha for the darkness filter:
-		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, filterAlpha));
-		g2.drawImage(darknessFilter, 0, 0, null);
+		if(gp.currentArea == gp.outside){
+			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, filterAlpha));
+		}
+		if(gp.currentArea == gp.outside || gp.currentArea == gp.dungeon){
+			g2.drawImage(darknessFilter, 0, 0, null);
+		}
 		
 		
 		//Set alpha for the Morning/Day/Evening/Night Text:

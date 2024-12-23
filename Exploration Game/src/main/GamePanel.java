@@ -82,6 +82,14 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int sleepState = 9;
 	public final int mapState = 10;
 	public final int travelState = 11;
+
+	//Area State:
+	public int currentArea;
+	public int nextArea;
+	public final int outside = 0;
+	public final int inside = 1;
+	public final int dungeon = 2;
+	
 	
 	//SYSTEM
 	public String worldName = "N/A";
@@ -123,6 +131,7 @@ public class GamePanel extends JPanel implements Runnable{
 		player.resetAllCounters();
 		assetSetter.setNPC();
 		assetSetter.setMonster();
+		currentArea = outside;
 
 		if(restart == true){
 			player.setDefaultValues();
@@ -374,4 +383,7 @@ public class GamePanel extends JPanel implements Runnable{
 		return worldName;
 	}
 	
+	public void changeArea(){
+		currentArea = nextArea;
+	}
 }

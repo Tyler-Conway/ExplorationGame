@@ -59,6 +59,7 @@ public class SaveLoad {
 			dataStorage.TeleportDoorRow = new int[gp.maxMap][gp.obj[1].length];
 			dataStorage.mapObjectOpened = new boolean[gp.maxMap][gp.obj[1].length];
 			dataStorage.doorObjectIndex = new int[gp.maxMap][gp.obj[1].length];
+			dataStorage.TeleportDoorNewArea = new int[gp.maxMap][gp.obj[1].length];
 
 
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
@@ -79,11 +80,13 @@ public class SaveLoad {
 							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
 							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
 							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+							dataStorage.TeleportDoorNewArea[mapNum][i] = gp.obj[mapNum][i].newArea;
 						}
 						else if(gp.obj[mapNum][i].name.equals("ColorfulDoor")){
 							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
 							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
 							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+							dataStorage.TeleportDoorNewArea[mapNum][i] = gp.obj[mapNum][i].newArea;
 							dataStorage.ColorfulDoorLocked = gp.obj[mapNum][i].locked;
 						}
 					}
@@ -167,11 +170,13 @@ public class SaveLoad {
 						}
 						else if(dataStorage.savedObjectNames[mapNum][i].equals("TeleportDoor")){
 							gp.obj[mapNum][i] = new TeleportDoor(gp, dataStorage.mapNums[mapNum][i], 
-								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i]);
+								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i],
+								dataStorage.TeleportDoorNewArea[mapNum][i]);
 						}
 						else if(dataStorage.savedObjectNames[mapNum][i].equals("ColorfulDoor")){
 							gp.obj[mapNum][i] = new ColorfulDoor(gp, dataStorage.mapNums[mapNum][i], 
-								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i]);
+								dataStorage.TeleportDoorCol[mapNum][i], dataStorage.TeleportDoorRow[mapNum][i],
+								dataStorage.TeleportDoorNewArea[mapNum][i]);
 							gp.obj[mapNum][i].locked = dataStorage.ColorfulDoorLocked;
 						}
 						gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
