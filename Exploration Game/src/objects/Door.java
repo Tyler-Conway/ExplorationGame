@@ -11,7 +11,7 @@ public class Door extends Entity{
 	
 	GamePanel gp; 
 	public static final String objectName = "Door";
-	public int mapNum, objectIndex;
+	public int objectIndex;
 	
 	public Door(GamePanel gp, int mapNum, int objectIndex) {
 		super(gp);
@@ -36,7 +36,7 @@ public class Door extends Entity{
 	
 	public void interact() {
 		gp.playSoundEffect(1);
-		gp.obj[mapNum][objectIndex] = null;
+		gp.obj[doorMapNum][objectIndex] = null;
 	}
 
 }
