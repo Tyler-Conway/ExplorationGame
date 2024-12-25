@@ -11,11 +11,13 @@ import objects.CoinBronze;
 import objects.CoinGold;
 import objects.CoinSilver;
 import objects.Heart;
+import objects.IronDoor;
 import objects.Lance;
 import objects.Lantern;
 import objects.ManaCrystal;
 import objects.MetalShield;
 import objects.PaperClip;
+import objects.Pickaxe;
 import objects.RedChest;
 import objects.RedDoor;
 import objects.RedKey;
@@ -65,6 +67,8 @@ public class EntityGenerator {
 			case Heart.objectName: object = new Heart(gp); break;
 			case ManaCrystal.objectName: object = new ManaCrystal(gp); break;
 			case Rock.objectName: object = new Rock(gp); break;
+			case Pickaxe.objectName: object = new Pickaxe(gp); break;
+			case IronDoor.objectName: object = new IronDoor(gp); break;
 		}
 		return object;
 	}

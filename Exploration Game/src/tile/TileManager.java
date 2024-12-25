@@ -131,6 +131,7 @@ public class TileManager {
 			setup(35, "VerticalWoodFloor", false);
 			setup(36, "StairsUp", false);
 			setup(37, "StairsDown", false);
+			setup(38, "DirtTree", true);
 			
 	}
 

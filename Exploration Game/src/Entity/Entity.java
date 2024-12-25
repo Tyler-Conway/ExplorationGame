@@ -23,6 +23,7 @@ public class Entity {
 	public Rectangle attackArea;
 	public String dialogues[];
 	public Entity attacker;
+	public Entity linkedEntity;
 	
 	//Character Attributes:
 	public int maxLife;
@@ -110,7 +111,7 @@ public class Entity {
 	//Entity Types:
 	public int type;
 	public final int type_Player = 0, type_NPC = 1, type_Monster = 2, type_Weapon = 3, type_Axe = 4, type_Shield = 5, type_Consumable = 6,
-			type_pickUpOnly = 7, type_Obstacle = 8, type_Light = 9, type_Trader = 10;
+			type_pickUpOnly = 7, type_Obstacle = 8, type_Light = 9, type_Trader = 10, type_Pickaxe = 11;
 	
 	
 	public Entity(GamePanel gp) {
@@ -144,6 +145,7 @@ public class Entity {
 	public void damageReaction() {}
 	public void interact() {}
 	public void checkDrop() {}
+	public void move(String direction) {}
 	
 	public void resetAllCounters(){
 		actionLockCounter = 0;

@@ -22,6 +22,9 @@ public class SaveLoad {
 			ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
 			GameDataStorage dataStorage = new GameDataStorage();
 			
+			//Lighting:
+			dataStorage.currentArea = gp.currentArea;
+
 			//Player's Stats && Position:
 			dataStorage.life = gp.player.life;
 			dataStorage.maxLife = gp.player.maxLife;
@@ -105,6 +108,9 @@ public class SaveLoad {
 			ObjectInputStream IS = new ObjectInputStream(new FileInputStream(new File("save.dat")));
 			GameDataStorage dataStorage = (GameDataStorage)IS.readObject();
 
+			//Lighting:
+			gp.currentArea = dataStorage.currentArea;
+			
 			//Seting player's stats to what we read from the save file:
 			gp.player.life = dataStorage.life;
 			gp.player.maxLife = dataStorage.maxLife;

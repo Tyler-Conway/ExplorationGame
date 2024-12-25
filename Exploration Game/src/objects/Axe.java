@@ -22,5 +22,4 @@ public class Axe extends Entity{
 		motion1Duration = 20;
 		motion2Duration = 40;
 	}
-
 }

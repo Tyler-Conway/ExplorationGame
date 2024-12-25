@@ -93,6 +93,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	//SYSTEM
 	public String worldName = "N/A";
+	public Graphics2D graphics;
 	public TileManager tileM = new TileManager(this);
 	Thread gameThread;
 	Config config = new Config(this);
@@ -233,6 +234,7 @@ public class GamePanel extends JPanel implements Runnable{
 		super.paintComponent(g); //invokes the paintComponent method in JPanel
 		
 		Graphics2D g2 = (Graphics2D)g;
+		graphics = g2;
 		//DEBUG
 		long drawStart = 0;
 		if(keyH.showDebugText == true) {
@@ -385,5 +387,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	public void changeArea(){
 		currentArea = nextArea;
+		assetSetter.setupBoulders();
 	}
+
 }

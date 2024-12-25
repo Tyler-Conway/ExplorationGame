@@ -249,6 +249,16 @@ public class Player extends Entity{
 				attackRight1 = setup("/player/FighterAxeAttackRight1", gp.tileSize*2, gp.tileSize);
 				attackRight2 = setup("/player/FighterAxeAttackRight2", gp.tileSize*2, gp.tileSize);
 			}
+			if(currentWeapon.type == type_Pickaxe){
+				attackUp1 = setup("/player/FighterPickaxeUp1", gp.tileSize, gp.tileSize*2);
+				attackUp2 = setup("/player/FighterPickaxeUp2", gp.tileSize, gp.tileSize*2);
+				attackDown1 = setup("/player/FighterPickaxeDown1", gp.tileSize, gp.tileSize*2);
+				attackDown2 = setup("/player/FighterPickaxeDown2", gp.tileSize, gp.tileSize*2);
+				attackLeft1 = setup("/player/FighterPickaxeLeft1", gp.tileSize*2, gp.tileSize);
+				attackLeft2 = setup("/player/FighterPickaxeLeft2", gp.tileSize*2, gp.tileSize);
+				attackRight1 = setup("/player/FighterPickaxeRight1", gp.tileSize*2, gp.tileSize);
+				attackRight2 = setup("/player/FighterPickaxeRight2", gp.tileSize*2, gp.tileSize);
+			}
 			break;
 		case "Knight":
 			if(currentWeapon.type == type_Weapon) {
@@ -292,6 +302,16 @@ public class Player extends Entity{
 				attackLeft2 = setup("/player/KnightAxeAttackLeft2", gp.tileSize*2, gp.tileSize);
 				attackRight1 = setup("/player/KnightAxeAttackRight1", gp.tileSize*2, gp.tileSize);
 				attackRight2 = setup("/player/KnightAxeAttackRight2", gp.tileSize*2, gp.tileSize);
+			}
+			if(currentWeapon.type == type_Pickaxe){
+				attackUp1 = setup("/player/KnightPickaxeUp1", gp.tileSize, gp.tileSize*2);
+				attackUp2 = setup("/player/KnightPickaxeUp2", gp.tileSize, gp.tileSize*2);
+				attackDown1 = setup("/player/KnightPickaxeDown1", gp.tileSize, gp.tileSize*2);
+				attackDown2 = setup("/player/KnightPickaxeDown2", gp.tileSize, gp.tileSize*2);
+				attackLeft1 = setup("/player/KnightPickaxeLeft1", gp.tileSize*2, gp.tileSize);
+				attackLeft2 = setup("/player/KnightPickaxeLeft2", gp.tileSize*2, gp.tileSize);
+				attackRight1 = setup("/player/KnightPickaxeRight1", gp.tileSize*2, gp.tileSize);
+				attackRight2 = setup("/player/KnightPickaxeRight2", gp.tileSize*2, gp.tileSize);
 			}
 			break;
 		case "Wizard":
@@ -337,6 +357,16 @@ public class Player extends Entity{
 				attackRight1 = setup("/player/WizardAxeAttackRight1", gp.tileSize*2, gp.tileSize);
 				attackRight2 = setup("/player/WizardAxeAttackRight2", gp.tileSize*2, gp.tileSize);
 			}
+			if(currentWeapon.type == type_Pickaxe){
+				attackUp1 = setup("/player/WizardPickaxeUp1", gp.tileSize, gp.tileSize*2);
+				attackUp2 = setup("/player/WizardPickaxeUp2", gp.tileSize, gp.tileSize*2);
+				attackDown1 = setup("/player/WizardPickaxeDown1", gp.tileSize, gp.tileSize*2);
+				attackDown2 = setup("/player/WizardPickaxeDown2", gp.tileSize, gp.tileSize*2);
+				attackLeft1 = setup("/player/WizardPickaxeLeft1", gp.tileSize*2, gp.tileSize);
+				attackLeft2 = setup("/player/WizardPickaxeLeft2", gp.tileSize*2, gp.tileSize);
+				attackRight1 = setup("/player/WizardPickaxeRight1", gp.tileSize*2, gp.tileSize);
+				attackRight2 = setup("/player/WizardPickaxeRight2", gp.tileSize*2, gp.tileSize);
+			}
 			break;
 		case "Peasant":
 			if(currentWeapon.type == type_Weapon) {
@@ -380,6 +410,16 @@ public class Player extends Entity{
 				attackLeft2 = setup("/player/PeasantAxeAttackLeft2", gp.tileSize*2, gp.tileSize);
 				attackRight1 = setup("/player/PeasantAxeAttackRight1", gp.tileSize*2, gp.tileSize);
 				attackRight2 = setup("/player/PeasantAxeAttackRight2", gp.tileSize*2, gp.tileSize);	
+			}
+			if(currentWeapon.type == type_Pickaxe){
+				attackUp1 = setup("/player/PeasantPickaxeUp1", gp.tileSize, gp.tileSize*2);
+				attackUp2 = setup("/player/PeasantPickaxeUp2", gp.tileSize, gp.tileSize*2);
+				attackDown1 = setup("/player/PeasantPickaxeDown1", gp.tileSize, gp.tileSize*2);
+				attackDown2 = setup("/player/PeasantPickaxeDown2", gp.tileSize, gp.tileSize*2);
+				attackLeft1 = setup("/player/PeasantPickaxeLeft1", gp.tileSize*2, gp.tileSize);
+				attackLeft2 = setup("/player/PeasantPickaxeLeft2", gp.tileSize*2, gp.tileSize);
+				attackRight1 = setup("/player/PeasantPickaxeRight1", gp.tileSize*2, gp.tileSize);
+				attackRight2 = setup("/player/PeasantPickaxeRight2", gp.tileSize*2, gp.tileSize);
 			}
 			break;
 		}
@@ -627,6 +667,9 @@ public class Player extends Entity{
 				gp.npc[gp.currentMap][i].speak();	
 			}
 		}
+		if(i != 999){
+			gp.npc[gp.currentMap][i].move(direction);
+		}
 	}
 	
 	public void contactMonster(int i) {
@@ -701,7 +744,7 @@ public class Player extends Entity{
 		int itemIndex = gp.ui.getItemIndex(gp.ui.playerSlotCol, gp.ui.playerSlotRow);
 		if(itemIndex < inventory.size()) {
 			Entity selectedItem = inventory.get(itemIndex);
-			if(selectedItem.type == type_Weapon || selectedItem.type == type_Axe) {
+			if(selectedItem.type == type_Weapon || selectedItem.type == type_Axe || selectedItem.type == type_Pickaxe) {
 				currentWeapon = selectedItem;
 				attack = getAttack();
 				getPlayerAttackImage();

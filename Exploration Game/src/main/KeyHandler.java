@@ -198,6 +198,7 @@ public class KeyHandler implements KeyListener{
 			if(showDebugText == true){
 				gp.obj = new Entity[gp.maxMap][50];
 				gp.assetSetter.setObjects();
+				gp.assetSetter.setInteractiveTiles();
 				gp.monster = new Entity[gp.maxMap][20];
 				
 			}

@@ -1,6 +1,6 @@
 package main;
 
-import Entity.Entity;
+import Entity.*;
 
 import java.util.GregorianCalendar;
 
@@ -9,7 +9,9 @@ import Entity.GreenNPC;
 import Entity.NPCWizard;
 import Entity.RedTrader;
 import Entity.YellowTrader;
+import InteractiveTiles.DamagedWall;
 import InteractiveTiles.DryTree;
+import InteractiveTiles.MetalPlate;
 import monster.Oger;
 import monster.Slime;
 import objects.*;
@@ -232,6 +234,13 @@ public class AssetSetter {
 		//Any additional objects in a loot cabin should come first:
 		placeAsset(gp.obj, mapNum, i, new RedChest(gp), 24, 23); i++;
 		setupLootCabin(gp.lootCabin02, i);
+
+		i = 0;
+		mapNum = gp.dungeon01;
+		placeAsset(gp.obj, mapNum, i, new Pickaxe(gp), 19, 37); i++;
+		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 21, 5); i++;
+		
+
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {
@@ -271,6 +280,16 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding02, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding05, i, new GreenNPC(gp), 24, 20); i++; i = 0;
+
+		setupBoulders();
+	}
+
+	public void setupBoulders(){
+		int mapNum = gp.dungeon01;
+		int i = 0;
+		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 6, 2); i++;
+		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 24, 6); i++;
+		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 18, 17); i++;
 	}
 	
 	public void setMonster() {
@@ -302,49 +321,19 @@ public class AssetSetter {
 	public void setInteractiveTiles() {
 		int i = 0;
 		int mapNum = 0;
-		
-		//Tree Tile DryTrees:
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 29);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 28);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 27);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 26);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 25);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 24);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 23);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 22);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 21);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 29);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 28);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 27);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 26);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 25);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 24);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 23);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 22);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 8, 21);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 24, 34);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 18, 45);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 19, 45);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 20, 45);i++;
-		//non-tree tile dry trees:
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 13);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 12, 12);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 15, 33);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 15, 32);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 15, 31);i++;
 
-		gp.iTile[mapNum][i] = new DryTree(gp, 2, 7);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 2, 5);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 12, 28);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 8, 28);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 24, 34);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 12, 13);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 12, 11);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 15, 32);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 2, 6);i++;
 		
 		mapNum = gp.world02;
 		i = 0;
 		gp.iTile[mapNum][i] = new DryTree(gp, 45, 7);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 26, 16);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 27, 16);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 28, 16);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 29, 16);i++;
-		gp.iTile[mapNum][i] = new DryTree(gp, 30, 16);i++;
 		
 		mapNum = gp.world03;
 		i = 0;
@@ -352,5 +341,30 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 42, 19);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 42, 12);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 8, 17);i++;
+
+		mapNum = gp.dungeon01;
+		i = 0;
+		//gp.iTile[mapNum][i] = new DamagedWall(gp, );i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 19, 32);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 16, 36);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 22, 36);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 25, 4);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 40, 26);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 45, 26);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 14, 22);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 22, 22);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 41, 42);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 18, 6);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 35, 14);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 3, 16);i++;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 38, 4);i++;
+		//MetalPlates:
+		gp.iTile[mapNum][i] = new MetalPlate(gp, 15, 2);i++;
+		gp.iTile[mapNum][i] = new MetalPlate(gp, 18, 14);i++;
+		gp.iTile[mapNum][i] = new MetalPlate(gp, 25, 6);i++;
+
+		mapNum = gp.dungeon02;
+		i = 0;
+		gp.iTile[mapNum][i] = new DamagedWall(gp, 24, 17);i++;
 	}
 }

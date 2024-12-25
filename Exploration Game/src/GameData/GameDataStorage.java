@@ -45,6 +45,7 @@ public class GameDataStorage implements Serializable{
 	int TeleportDoorCol[][];
 	int TeleportDoorRow[][];
 	int TeleportDoorNewArea[][];
+	int currentArea;
 	boolean ColorfulDoorLocked;
 
 	public GameDataStorage() {}

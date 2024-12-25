@@ -1,12 +1,14 @@
 package Entity;
 
 import main.GamePanel;
+import objects.Axe;
 import objects.Bark;
 import objects.BlueKey;
 import objects.Lance;
 import objects.Lantern;
 import objects.MetalShield;
 import objects.PaperClip;
+import objects.Pickaxe;
 import objects.RedPotion;
 import objects.Shield;
 import objects.Staff;
@@ -45,6 +47,8 @@ public class BlueTrader extends Entity{
 		inventory.add(new PaperClip(gp));
 		inventory.add(new Staff(gp));
 		inventory.add(new Lance(gp));
+		inventory.add(new Pickaxe(gp));
+		inventory.add(new Axe(gp));
 
 	}
 	
