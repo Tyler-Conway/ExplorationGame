@@ -93,7 +93,7 @@ public class BigRock extends Entity{
             int yDistance = Math.abs(worldY - plateList.get(i).worldY);
             int distance = Math.max(xDistance, yDistance);
 
-            if(distance < 8){
+            if(distance < gp.tileSize/2){
 
                 if(linkedEntity == null){
                     linkedEntity = plateList.get(i);

@@ -155,6 +155,7 @@ public class KeyHandler implements KeyListener{
 					gp.player.equipInitialObjects();
 					gp.assetSetter.setObjects();
 					gp.ui.commandNum = 0;
+					gp.currentArea = gp.outside;
 				}
 				//Exit to title:
 				else if(gp.ui.commandNum == 4) {

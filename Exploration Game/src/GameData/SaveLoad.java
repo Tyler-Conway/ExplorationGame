@@ -149,7 +149,7 @@ public class SaveLoad {
 			gp.player.getAttack();
 			gp.player.getDefense();
 			gp.player.getPlayerAttackImage();
-			//Map Objects:
+
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
 				for(int i = 0; i < gp.obj[1].length; i++){
 					if(dataStorage.savedObjectNames[mapNum][i].equals("NA")){
