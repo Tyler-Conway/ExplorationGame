@@ -144,6 +144,11 @@ public class CollisionDetection {
 	public int checkObject(Entity entity, boolean player) {
 		
 		int index = 999;
+		//Temporary collision checking when entity is being Knocked back:
+		String direction = entity.direction;
+		if(entity.knockBack == true) {
+			direction = entity.knockBackDirection;
+		}
 		
 		for(int i = 0; i < gp.obj[0].length; i++) {
 			if(gp.obj[gp.currentMap][i] != null) {
@@ -156,7 +161,7 @@ public class CollisionDetection {
 				gp.obj[gp.currentMap][i].solidArea.x += gp.obj[gp.currentMap][i].worldX;
 				gp.obj[gp.currentMap][i].solidArea.y += gp.obj[gp.currentMap][i].worldY;
 				
-				switch(entity.direction) {
+				switch(direction) {
 				case "up":
 					entity.solidArea.y -= entity.speed;
 					break;

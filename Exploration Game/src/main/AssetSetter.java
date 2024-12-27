@@ -12,8 +12,7 @@ import Entity.YellowTrader;
 import InteractiveTiles.DamagedWall;
 import InteractiveTiles.DryTree;
 import InteractiveTiles.MetalPlate;
-import monster.Oger;
-import monster.Slime;
+import monster.*;
 import objects.*;
 
 public class AssetSetter {
@@ -316,6 +315,14 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 10, 46); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 6, 46); i++;
 		placeAsset(gp.monster, mapNum, i, new Oger(gp), 8, 20); i++;
+
+		mapNum = gp.dungeon01;
+		i = 0;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 10, 35); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 39, 44); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 42, 19); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 43, 3); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 1, 13); i++;
 	}
 
 	public void setInteractiveTiles() {

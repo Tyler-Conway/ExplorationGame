@@ -326,9 +326,9 @@ public class Entity {
 		if(getTileDistance(target) < distance) {onPath = true;}
 	}
 	
-	public void generateDirection(){
+	public void generateDirection(int interval){
 		actionLockCounter++;
-		if(actionLockCounter == 120) {
+		if(actionLockCounter == interval) {
 			Random random = new Random();
 			int i = random.nextInt(100) + 1;
 			if(i <= 25) {direction = "up";}

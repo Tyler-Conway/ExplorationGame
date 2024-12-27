@@ -12,26 +12,23 @@ import objects.Heart;
 import objects.ManaCrystal;
 import objects.Rock;
 
-public class Slime extends Entity{
+public class Bat extends Entity{
 	
 	GamePanel gp;
 
-	public Slime(GamePanel gp) {
+	public Bat(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
 		type = type_Monster;
-		name = "Slime";
-		defaultSpeed = 2;
+		name = "Bat";
+		defaultSpeed = 4;
 		speed = defaultSpeed;
-		maxLife = 4;
+		maxLife = 7;
 		life = maxLife;
 		attack = 5;
 		defense = 0;
-		exp = 2;
-		projectile = new Rock(gp);
+		exp = 5;
 		
-		//solidArea.x = 3;
-		//solidArea.y = 18;
 		solidArea.x  = (gp.tileSize/8);
 		solidArea.y = gp.tileSize - (gp.tileSize/2);
 		solidArea.width = gp.tileSize - (gp.tileSize/8);
@@ -43,34 +40,33 @@ public class Slime extends Entity{
 	}
 
 	public void getImage() {
-		up1 = setup("/monster/SlimeDown1", gp.tileSize, gp.tileSize);
-		up2 = setup("/monster/SlimeDown2", gp.tileSize, gp.tileSize);
-		left1 = setup("/monster/SlimeDown1", gp.tileSize, gp.tileSize);
-		left2 = setup("/monster/SlimeDown2", gp.tileSize, gp.tileSize);
-		right1 = setup("/monster/SlimeDown1", gp.tileSize, gp.tileSize);
-		right2 = setup("/monster/SlimeDown2", gp.tileSize, gp.tileSize);
-		down1 = setup("/monster/SlimeDown1", gp.tileSize, gp.tileSize);
-		down2 = setup("/monster/SlimeDown2", gp.tileSize, gp.tileSize);
+		up1 = setup("/monster/Bat1", gp.tileSize, gp.tileSize);
+		up2 = setup("/monster/Bat2", gp.tileSize, gp.tileSize);
+		left1 = setup("/monster/Bat1", gp.tileSize, gp.tileSize);
+		left2 = setup("/monster/Bat2", gp.tileSize, gp.tileSize);
+		right1 = setup("/monster/Bat1", gp.tileSize, gp.tileSize);
+		right2 = setup("/monster/Bat2", gp.tileSize, gp.tileSize);
+		down1 = setup("/monster/Bat1", gp.tileSize, gp.tileSize);
+		down2 = setup("/monster/Bat2", gp.tileSize, gp.tileSize);
 	}
 	
 	public void setAction() {
 		
 		if(onPath == true) {
-			checkStopChasing(gp.player, 10, 100);
-			searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
-			checkShootProjectile(200, 120);
+			// checkStopChasing(gp.player, 10, 100);
+			// searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
+			// checkShootProjectile(200, 120);
 		}
 		else {
-			generateDirection(100);
-			checkStartChasing(gp.player, 5);
+			generateDirection(10);
+			//checkStartChasing(gp.player, 5);
 		}
 	}
 	
 	public void damageReaction() {
 		actionLockCounter = 0;
-		//direction = gp.player.direction;
 		//It becomes Agressive and charges at player:
-		onPath = true;
+		//onPath = true;
 	}
 	
 	public void checkDrop() {

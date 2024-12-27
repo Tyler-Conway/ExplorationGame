@@ -76,7 +76,7 @@ public class Oger extends Entity{
 			searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
 		}
 		else {
-			generateDirection();
+			generateDirection(120);
 			checkStartChasing(gp.player, 7);
 		}
 		
