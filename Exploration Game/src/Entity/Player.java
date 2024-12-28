@@ -128,7 +128,6 @@ public class Player extends Entity{
 		inventory.add(currentWeapon);
 		inventory.add(currentShield);
 		inventory.add(new TriColorKey(gp));
-		//equipInitialObjects();
 	}
 
 	public int getCurrentWeaponSlot(){
@@ -647,7 +646,7 @@ public class Player extends Entity{
 		if(mana > maxMana) {mana = maxMana;}
 		if(ammo > maxAmmo) {ammo = maxAmmo;}
 		if(arrows > maxArrows) {arrows = maxArrows;}
-		if(life <= 0) {
+		if(life <= 0 && gp.keyH.showDebugText == false) {
 			gp.gameState = gp.gameOverState;
 			gp.stopMusic();
 			//Smashing enter as you die would have caused you to instantly retry:

@@ -10,7 +10,8 @@ import objects.Rock;
 public class KeyHandler implements KeyListener{
 	
 	GamePanel gp;
-	public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, keyPressed, showDebugText = false, shotKeyPressed, spacePressed, escapePressed;
+	public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed,
+		keyPressed, showDebugText = false, shotKeyPressed, spacePressed, escapePressed;
 	
 	public KeyHandler(GamePanel gp) {
 		this.gp = gp;
@@ -188,7 +189,8 @@ public class KeyHandler implements KeyListener{
 		if(code == KeyEvent.VK_T) {
 			gp.player.debuggingMode = !gp.player.debuggingMode;
 			if(showDebugText == false) {showDebugText = true;}
-			else if(showDebugText == true) {showDebugText = false;}
+			else{showDebugText = false;}
+			if(gp.player.life < 1){gp.player.life = 1;}
 		}
 		if(code == KeyEvent.VK_R) {
 			gp.assetSetter.setNPC();
