@@ -19,7 +19,7 @@ public class Fireball extends Projectile {
 		speed = (gp.tileSize/8);
 		maxLife = 80;
 		life = maxLife;
-		attack = 4;
+		attack = 2;
 		useCost = 1;
 		alive = false;
 		isProjectile = true;

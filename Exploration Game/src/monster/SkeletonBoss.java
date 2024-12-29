@@ -9,16 +9,18 @@ import objects.CoinBronze;
 import objects.Heart;
 import objects.ManaCrystal;
 import objects.Rock;
-
 public class SkeletonBoss extends Entity{
 	
 	GamePanel gp;
-    public static final String objectName = "SkeletonBoss";
+    public static final String objectName = "Skeleton Giant";
     int imageScale = 5;
 
 	public SkeletonBoss(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
+
+		boss = true;
+		sleeping = true;
 		type = type_Monster;
 		name = objectName;
 		defaultSpeed = 1;
@@ -71,6 +73,19 @@ public class SkeletonBoss extends Entity{
 		attackLeft2 = setup("/monster/BossAttackLeft2", gp.tileSize*2 * imageScale, gp.tileSize * imageScale);
 		attackRight1 = setup("/monster/BossAttackRight1", gp.tileSize*2 * imageScale, gp.tileSize * imageScale);
 		attackRight2 = setup("/monster/BossAttackRight2", gp.tileSize*2 * imageScale, gp.tileSize * imageScale);
+	}
+
+	public void setDialogue(){
+		dialogues[0] = "No one will steal my treasure!\nWho goes there?";
+		if(gp.player.level < 2){
+			dialogues[1] = "Ha, You were foolish enough to face me\n at a meager level "+gp.player.level+"!?";
+			dialogues[2] = "You will surely die here!";
+		}
+		else{
+			dialogues[1] = "Ah, its one of the many greedy fools who\nhave disturbed my slumber over the years.";
+			dialogues[2] = "I'll not part with a single coin,\nNot one piece of it!";
+		}
+		dialogues[3] = null;
 	}
 	
 	public void setAction() {
