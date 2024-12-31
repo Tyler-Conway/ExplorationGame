@@ -26,7 +26,7 @@ ____
   * **Buildings** to enter, and **map transitions**.
   * An 8-minute **day/night cycle**.
   * Player **inventory system** and **interactive objects**.
-  * **Monsters** (Slime blobs and Ogers).
+  * **Monsters** (Slime blobs, Ogers, Bats, and the Giant Skeleton).
 
 ### Controls: 
   * WASD to move
