@@ -18,8 +18,13 @@ public class Tent extends Entity{
 		description = "["+name+"]\nYou can sleep through\nthe night.";
 		price = 300;
 		stackable = true;
+		setDialogue();
 	}
 	
+	public void setDialogue(){
+		dialogues[0][0] = "You cannot sleep during day time";
+	}
+
 	public boolean use(Entity entity) {
 		if(gp.enviornmentManager.lighting.dayState == gp.enviornmentManager.lighting.evening ||
 				gp.enviornmentManager.lighting.dayState == gp.enviornmentManager.lighting.night) {
@@ -34,8 +39,7 @@ public class Tent extends Entity{
 			return true;
 		}
 		else {
-			gp.gameState = gp.dialogueState;
-			gp.ui.currentDialogue = "You cannot sleep when the sun is out.";
+			startDialogue(this, 0);
 			return false;
 		}
 	}

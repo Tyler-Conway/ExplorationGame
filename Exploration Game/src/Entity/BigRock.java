@@ -22,7 +22,6 @@ public class BigRock extends Entity{
 		name = objectName;
 		random = new Random();
 		getImage();
-		setDialogue();
 
         solidArea.x = 2;
         solidArea.y = 6; 
@@ -43,19 +42,10 @@ public class BigRock extends Entity{
 		right2 = setup("/NPC/RockObstacle", gp.tileSize, gp.tileSize);
 	}
 
-	public void setDialogue() {
-		dialogues[0] = "It's a big rock.\nWalk into it to push it around.";
-		dialogues[1] = null;
-	}
-
     //disables the update method
     public void update(){
 
     }
-	
-	public void speak() {
-		super.speak();
-	}
 
     public void move(String d){
         this.direction = d;

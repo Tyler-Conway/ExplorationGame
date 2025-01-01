@@ -2,10 +2,11 @@ package main;
 
 import Entity.Entity;
 
-public class EventHandler {
+public class EventHandler{
 
 	GamePanel gp;
 	EventRect eventRect[][][];
+	Entity eventDialogueHandler;
 	int tempMap, tempCol, tempRow, previousMap;	
 	int previousEventX, previousEventY;
 	boolean canTouchEvent = true;
@@ -13,6 +14,8 @@ public class EventHandler {
 	public EventHandler(GamePanel gp) {
 		this.gp = gp;
 		eventRect = new EventRect[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
+		eventDialogueHandler = new Entity(gp);
+		setDialouge();
 		int row = 0, col = 0, map = 0;
 		
 		while(map < gp.maxMap && col < gp.maxWorldCol && row < gp.maxWorldRow) {
@@ -34,6 +37,14 @@ public class EventHandler {
 				}
 			}
 		}
+	}
+
+	public void setDialouge(){
+		eventDialogueHandler.dialogues[0][0] = "You fall into a Pit.";
+
+		eventDialogueHandler.dialogues[1][0] = "You drank the water (Health Restored)";	
+
+		eventDialogueHandler.dialogues[2][0] = "Teleport Triggered!";
 	}
 	
 	public void checkEvent() {
@@ -171,6 +182,7 @@ public class EventHandler {
 		//Dungeon02
 			case 18:
 				if(hit(mapNum, 24, 48, "any") == true) {changeMap(gp.dungeon01, 30, 3,gp.dungeon);}
+				else if(hit(mapNum, 24, 37, "any") == true) {skeletonGiantCutScene();}
 				break;
 			}
 		}
@@ -216,7 +228,7 @@ public class EventHandler {
 	
 	public void damagePit(int map, int col, int row, int gameState) {
 		gp.gameState = gameState;
-		gp.ui.currentDialogue = "You fall into a Pit ";
+		eventDialogueHandler.startDialogue(eventDialogueHandler, 0);
 		gp.player.life -= 1;
 		eventRect[map][col][row].eventDone = true;
 		canTouchEvent = false;
@@ -228,8 +240,7 @@ public class EventHandler {
 		
 		if(gp.keyH.enterPressed == true) {
 			gp.player.attackCanceled = true;
-			gp.gameState = gp.dialogueState;
-			gp.ui.currentDialogue = "You drank the water (Health Restored)";
+			eventDialogueHandler.startDialogue(eventDialogueHandler, 1);
 			gp.player.life = gp.player.maxLife;
 			gp.player.mana = gp.player.maxMana;
 			gp.player.ammo = gp.player.maxAmmo;
@@ -240,8 +251,7 @@ public class EventHandler {
 	}
 	
 	public void teleport(int col, int row) {
-		gp.gameState = gp.dialogueState;
-		gp.ui.currentDialogue = "Teleport Triggered!";
+		eventDialogueHandler.startDialogue(eventDialogueHandler, 2);
 		gp.player.worldX = gp.tileSize*col;
 		gp.player.worldY = gp.tileSize*row;
 	}
@@ -273,4 +283,10 @@ public class EventHandler {
 		}
 	}
 
+	public void skeletonGiantCutScene(){
+		if(gp.bossBattle == false){
+			gp.gameState = gp.cutsceneState;
+			gp.cutsceneManager.sceneNum = gp.cutsceneManager.skeletonGiant;
+		}
+	}
 }

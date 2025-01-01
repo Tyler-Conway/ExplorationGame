@@ -27,11 +27,16 @@ public class IronDoor extends Entity{
 		solidArea.height = gp.tileSize;
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
+		setDialogue();
+	}
+
+	public void setDialogue(){
+		dialogues[0][0] = "It wont budge.\n(push the boulders onto the metal plates)";
 	}
 	
 	public void interact() {
 		gp.gameState = gp.dialogueState;
-		gp.ui.currentDialogue = "It wont budge.\n(push the boulders onto the metal plates)";
+		startDialogue(this, 0);
 		
 	}
 

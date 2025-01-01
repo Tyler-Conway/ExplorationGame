@@ -82,6 +82,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int sleepState = 9;
 	public final int mapState = 10;
 	public final int travelState = 11;
+	public final int cutsceneState = 12;
 
 	//Area State:
 	public int currentArea;
@@ -92,6 +93,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	
 	//SYSTEM
+	public boolean bossBattle = false;
 	public String worldName = "N/A";
 	public Graphics2D graphics;
 	public TileManager tileM = new TileManager(this);
@@ -108,6 +110,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public Map map = new Map(this);
 	public EntityGenerator entityGenerator = new EntityGenerator(this); 
 	public SaveLoad saveLoad = new SaveLoad(this);
+	public CutsceneManager cutsceneManager = new CutsceneManager(this);
 	
 	
 	public GamePanel() {
@@ -127,6 +130,8 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	
 	public void resetGame(boolean restart){
+		removeTempEntities();
+		bossBattle = false;
 		player.setDefaultPositions();
 		player.restoreLifeAndProjectiles();
 		player.resetAllCounters();
@@ -298,6 +303,7 @@ public class GamePanel extends JPanel implements Runnable{
 			entityList.clear(); //Reset Entity List
 			enviornmentManager.draw(g2); // needs to be before UI, so UI is above enviornmental effects.
 			map.drawMiniMap(g2); // draws minimap above the Enviornmental effects.
+			cutsceneManager.draw(g2);
 			ui.draw(g2); 
 			
 			if(keyH.showDebugText == true) {
@@ -390,4 +396,11 @@ public class GamePanel extends JPanel implements Runnable{
 		assetSetter.setupBoulders();
 	}
 
+	public void removeTempEntities(){
+		for(int i = 0; i < obj[1].length; i++){
+			if(obj[dungeon02][i] != null){
+				obj[dungeon02][i] = null;
+			}
+		}
+	}
 }

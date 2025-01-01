@@ -26,12 +26,15 @@ public class YellowDoor extends Entity{
 		solidArea.height = gp.tileSize;
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
+		setDialogue();
+	}
+
+	public void setDialogue(){
+		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Yellow Key to open this";
 	}
 	
 	public void interact() {
-		gp.gameState = gp.dialogueState;
-		gp.ui.currentDialogue = "You need to use a Yellow Key to open this";
-		
+		startDialogue(this, 0);
 	}
 
 }

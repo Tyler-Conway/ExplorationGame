@@ -31,6 +31,7 @@ public class ColorfulDoor extends Entity{
 		solidArea.height = gp.tileSize;
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
+		dialogues[0][0] = "You must use the TriColorKey to unlock this door.";
 	}
 	
 	public void interact() {
@@ -40,8 +41,7 @@ public class ColorfulDoor extends Entity{
 			gp.eventHandler.changeMap(targetMapNum, newCol, newRow, newArea);
 		}
 		else{
-			gp.gameState = gp.dialogueState;
-			gp.ui.currentDialogue = "You must use the TriColorKey to unlock this door.";
+			startDialogue(this, 0);
 		}
 	}
 

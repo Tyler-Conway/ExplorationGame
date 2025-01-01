@@ -12,8 +12,9 @@ import objects.Rock;
 public class SkeletonBoss extends Entity{
 	
 	GamePanel gp;
-    public static final String objectName = "Skeleton Giant";
+    public static final String objectName = "SkeletonGiant";
     int imageScale = 5;
+	int dialogueIndex = 0;
 
 	public SkeletonBoss(GamePanel gp) {
 		super(gp);
@@ -49,7 +50,7 @@ public class SkeletonBoss extends Entity{
 		
 		getImage();
 		getAttackImage();
-		
+		setDialogue();
 	}
 
 	public void getImage() {
@@ -76,16 +77,18 @@ public class SkeletonBoss extends Entity{
 	}
 
 	public void setDialogue(){
-		dialogues[0] = "No one will steal my treasure!\nWho goes there?";
+		dialogues[0][0] = "No one will steal my treasure!\nWho goes there?";
 		if(gp.player.level < 2){
-			dialogues[1] = "Ha, You were foolish enough to face me\n at a meager level "+gp.player.level+"!?";
-			dialogues[2] = "You will surely die here!";
+			dialogues[0][1] = "Ha, You were foolish enough to face me\nat a meager level "+gp.player.level+"!?";
+			dialogues[0][2] = "You will surely die here!";
 		}
 		else{
-			dialogues[1] = "Ah, its one of the many greedy fools who\nhave disturbed my slumber over the years.";
-			dialogues[2] = "I'll not part with a single coin,\nNot one piece of it!";
+			dialogues[0][1] = "Ah, its one of the many greedy fools who\nhave disturbed my slumber over the years.";
+			dialogues[0][2] = "I'll not part with a single coin,\nNot one piece of it!";
 		}
-		dialogues[3] = null;
+	}
+	public void speak(){
+
 	}
 	
 	public void setAction() {

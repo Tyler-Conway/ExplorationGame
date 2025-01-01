@@ -33,7 +33,11 @@ public class BlueTrader extends Entity{
 	}
 
 	public void setDialogue() {
-		dialogues[0] = "Finally, a customer! Do you want to trade?";
+		dialogues[0][0] = "Finally, a customer! Do you want to trade?";
+		dialogues[1][0] = "Come Again, hehe!";
+		dialogues[2][0] = "You need more coins to buy that!";
+		dialogues[3][0] = "You have no more room in your inventory!";
+		dialogues[4][0] = "You cannot sell equiped items!";
 	}
 	
 	public void setItems() {
@@ -53,8 +57,9 @@ public class BlueTrader extends Entity{
 	}
 	
 	public void speak() {
-		super.speak();
+		gp.ui.commandNum = 2;
 		gp.gameState = gp.tradeState;
 		gp.ui.trader = this;
+		gp.ui.npc = this;
 	}
 }

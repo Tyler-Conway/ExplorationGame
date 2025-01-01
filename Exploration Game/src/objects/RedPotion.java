@@ -19,11 +19,15 @@ public class RedPotion extends Entity{
 		down1 = setup("/objects/RedPotion", gp.tileSize, gp.tileSize);
 		description = "["+name+"]\nRestores +" + value + " HP.";
 		stackable = true;
+		setDialogue();
+	}
+
+	public void setDialogue(){
+		dialogues[0][0] = "You drink the "+name+":\n +"+value+" health.";
 	}
 
 	public boolean use(Entity entity) {
-		gp.gameState = gp.dialogueState;
-		gp.ui.currentDialogue = "You drink the "+name+":\n +"+value+" health.";
+		startDialogue(this, 0);
 		entity.life += value;
 		gp.playSoundEffect(9);
 		return true;

@@ -3,6 +3,7 @@ package objects;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.tools.StandardLocation;
 
 import Entity.Entity;
 import main.GamePanel;
@@ -23,21 +24,26 @@ public class BlueKey extends Entity{
 		collision = true;
 		description = "[" + name + "]\nIt opens a door.";
 		stackable = true;
+		setDialogue();
+	}
+
+	public void setDialogue(){
+		dialogues[0][0] = "You used the key ["+name+"] to open the door";
+		dialogues[1][0] = "What are you trying to unlock?";
 	}
 
 	public boolean use(Entity entity) {
-		gp.gameState = gp.dialogueState;
 		
 		int objIndex = getDetected(entity, gp.obj, "BlueDoor");
 		
 		if(objIndex != 999) {
-			gp.ui.currentDialogue = "You used the key ["+name+"] to open the door";
+			startDialogue(this, 0);
 			gp.playSoundEffect(1);
 			gp.obj[gp.currentMap][objIndex] = null;
 			return true;
 		}
 		else {
-			gp.ui.currentDialogue = "What are you trying to unlock?";
+			startDialogue(this, 1);
 			return false;
 			
 		}

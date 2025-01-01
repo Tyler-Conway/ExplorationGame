@@ -24,14 +24,14 @@ public class GreenNPC extends Entity{
 	}
 
 	public void setDialogue() {
-		dialogues[0] = "Hello stranger! Welcome to the Traveler's Express!\nWould you like to fast travel to annother location?";
+		dialogues[0][0] = "Hello stranger! Welcome to the Traveler's Express!\nWould you like to fast travel to annother location?";
 	}
 	
 	public void speak() {
-		super.speak();
+		gp.ui.commandNum = 1;
 		gp.gameState = gp.travelState;
-		
-		
+		gp.ui.fastTravelNPC = this;
+		gp.ui.npc = this;
 	}
 	
 }

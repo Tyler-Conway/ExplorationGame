@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import main.GamePanel;
 import main.KeyHandler;
+import monster.SkeletonBoss;
 import objects.Bark;
 import objects.Lance;
 import objects.Lantern;
@@ -97,6 +98,7 @@ public class Player extends Entity{
 		attack = getAttack(); // total attack = strength * weapon.
 		defense = getDefense(); //total defense = shield * dexterity.
 		getPlayerImage();
+		setDialogue();
 		getPlayerAttackImage();
 		getPlayerGuardImage();
 		setItems();
@@ -106,6 +108,9 @@ public class Player extends Entity{
 		gp.currentMap = 0;		
 		worldX = gp.tileSize * 12;
 		worldY = gp.tileSize * 44;
+		// gp.currentMap = gp.dungeon02;
+		// worldX = gp.tileSize * 24;
+		// worldY = gp.tileSize * 42;
 		direction = "down";
 	}
 	
@@ -660,10 +665,9 @@ public class Player extends Entity{
 	}
 	
 	public void interactNPC(int i) {
-		if(gp.keyH.enterPressed== true) {
-			if(i != 999) {
+		if(gp.keyH.enterPressed == true) {
+			if(i != 999 && !gp.ui.npc.name.equals(SkeletonBoss.objectName)) {
 				attackCanceled = true;
-				gp.gameState = gp.dialogueState;
 				gp.npc[gp.currentMap][i].speak();	
 			}
 		}
@@ -735,9 +739,13 @@ public class Player extends Entity{
 			defense = getDefense();
 			gp.playSoundEffect(7);
 			gp.gameState = gp.dialogueState;
-			gp.ui.currentDialogue = "Level Up: Level " + gp.player.level + "!\nYou feel stronger!";
+			startDialogue(this, 0);
 			gp.ui.addMessage("LevelUp: Level"+ gp.player.level);
 		}
+	}
+
+	public void setDialogue(){
+		dialogues[0][0] ="Level Up: Level " + level + "!\nYou feel stronger!";
 	}
 	
 	public void selectItem() {
@@ -896,7 +904,7 @@ public class Player extends Entity{
 			if(guarding == true) {image = guardRight;} break;
 		}
 		if(transparent == true) {g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));}
-		g2.drawImage(image, tempScreenX, tempScreenY, null);
+		if(drawing == true){g2.drawImage(image, tempScreenX, tempScreenY, null);}
 		//Reset Alpha (Opacity)
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1F));
 	}

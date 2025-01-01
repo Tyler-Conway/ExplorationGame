@@ -326,7 +326,7 @@ public class AssetSetter {
 
 		mapNum = gp.dungeon02;
 		i = 0;
-		placeAsset(gp.monster, mapNum, i, new SkeletonBoss(gp), 24, 27); i++;
+		placeAsset(gp.monster, mapNum, i, new SkeletonBoss(gp), 22, 19); i++;
 	}
 
 	public void setInteractiveTiles() {

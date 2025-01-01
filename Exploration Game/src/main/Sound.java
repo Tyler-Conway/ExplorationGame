@@ -37,6 +37,7 @@ public class Sound {
 		soundURL[17] = getClass().getResource("/Sound/BeachSounds(Louder).wav");
 		soundURL[18] = getClass().getResource("/Sound/TraderSong(Simple).wav");
 		soundURL[19] = getClass().getResource("/Sound/DoorOpen.wav");
+		soundURL[20] = getClass().getResource("/Sound/Talking.wav");
 	}
 
 	public void setFile(int i) {

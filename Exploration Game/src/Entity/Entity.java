@@ -21,7 +21,7 @@ public class Entity {
 	//Solid Area Must Always be Less than the Tile Size:
 	public Rectangle solidArea;
 	public Rectangle attackArea;
-	public String dialogues[];
+	public String dialogues[][];
 	public Entity attacker;
 	public Entity linkedEntity;
 	
@@ -64,6 +64,7 @@ public class Entity {
 	public int offBalanceCounter = 0;
 	
 	//State:
+	public int dialogueSet = 0;
 	public int spriteNum = 1;
 	public String direction = "down";
 	public boolean collisionOn = false;
@@ -86,6 +87,8 @@ public class Entity {
 	public boolean locked = true;
 	public boolean boss = false;
 	public boolean sleeping = false;
+	public boolean temp = false;
+	public boolean drawing = true;
 	
 	//Item Attributes:
 	public int ID = -1;
@@ -120,7 +123,7 @@ public class Entity {
 		this.gp = gp;
 		solidArea = new Rectangle(0,0,gp.tileSize - 1, gp.tileSize -1);
 		attackArea = new Rectangle(0,0,0,0);
-		dialogues = new String[20];
+		dialogues = new String[20][20];
 	}
 	//Mutator Methods:
 	public void changeAlpha(Graphics2D g2, float alpha) {g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));}
@@ -152,6 +155,7 @@ public class Entity {
 	public void interact() {}
 	public void checkDrop() {}
 	public void move(String direction) {}
+	public void setDialogue(){}
 	
 	public void resetAllCounters(){
 		actionLockCounter = 0;
@@ -179,7 +183,10 @@ public class Entity {
 	}
 
 	public void speak() {
-		if(dialogues[dialogueIndex] == null) {dialogueIndex = 0;}
+
+	}
+
+	public void facePlayer(){
 		if(type != type_Trader) {
 			//NPC faces player during dialogue if they are not a trader:
 			switch(gp.player.direction) {
@@ -189,8 +196,12 @@ public class Entity {
 			case "right": this.direction = "left"; break;
 			}
 		}
-		gp.ui.currentDialogue = dialogues[dialogueIndex];
-		dialogueIndex++;
+	}
+
+	public void startDialogue(Entity entity, int setNum){
+		gp.gameState = gp.dialogueState;
+		gp.ui.npc = entity;
+		dialogueSet = setNum;
 	}
 	
 	public void checkInBounds(Entity entity) {

@@ -35,7 +35,7 @@ public class KeyHandler implements KeyListener{
 		else if(gp.gameState == gp.pauseState) {
 			pauseState(code);
 		}
-		else if(gp.gameState == gp.dialogueState) {
+		else if(gp.gameState == gp.dialogueState || gp.gameState == gp.cutsceneState) {
 			dialogueState(code);
 		}
 		else if(gp.gameState == gp.characterState) {
@@ -301,7 +301,13 @@ public class KeyHandler implements KeyListener{
 	
 	public void dialogueState(int code) {
 		if(code == KeyEvent.VK_ENTER) {
-			gp.gameState = gp.playState;
+			enterPressed = true;
+		}
+		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+			upPressed = true;
+		}
+		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+			downPressed = true;
 		}
 	}
 	
@@ -427,7 +433,6 @@ public class KeyHandler implements KeyListener{
 				gp.gameState = gp.playState;
 			}
 		}
-		
 		if(gp.ui.substate == 1) {
 			npcInventory(code);
 			if(code == KeyEvent.VK_ESCAPE) {
