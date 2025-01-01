@@ -327,7 +327,12 @@ public class UI {
  			gp.eventHandler.previousEventY = gp.player.worldY;
 			gp.changeArea();
 			gp.saveLoad.save();
-			gp.ui.addMessage("Progress Saved");
+			if(gp.currentMap != gp.dungeon02){
+				gp.ui.addMessage("Progress Saved");
+			}
+			else{
+				gp.ui.addMessage("Progress Saved (no saving during boss fight)");
+			}
  			
  			if(gp.currentMap == gp.beach01 && gp.eventHandler.previousMap != gp.beach02) {
  				gp.stopMusic();

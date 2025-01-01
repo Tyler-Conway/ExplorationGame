@@ -1,6 +1,8 @@
 package main;
 
 import Entity.Entity;
+import monster.SkeletonBoss;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import objects.Arrow;

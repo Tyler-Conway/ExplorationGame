@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import main.GamePanel;
+import monster.SkeletonBoss;
 import objects.*;
 
 public class SaveLoad {
@@ -116,6 +117,10 @@ public class SaveLoad {
 			gp.currentArea = dataStorage.currentArea;
 			gp.currentMap = dataStorage.currentMap;
 			gp.skeletonGiantDefeated = dataStorage.skeletonGiantDefeated;
+			if(gp.skeletonGiantDefeated == false){
+				gp.bossBattle = false;
+				gp.bossCutSceneOver = false;
+			}
 			
 			//Seting player's stats to what we read from the save file:
 			gp.player.life = dataStorage.life;
@@ -193,6 +198,11 @@ public class SaveLoad {
 						gp.obj[mapNum][i].worldX = dataStorage.savedObjectsWorldX[mapNum][i];
 						gp.obj[mapNum][i].worldY = dataStorage.savedObjectsWorldY[mapNum][i];
 					}
+				}
+			}
+			for(int i = 0; i < gp.monster[0].length; i++){
+				if(gp.monster[gp.dungeon02][i] != null && gp.monster[gp.dungeon02][i].name.equals(SkeletonBoss.objectName)){
+					gp.monster[gp.dungeon02][i] = null;
 				}
 			}
 		} catch (Exception e) {

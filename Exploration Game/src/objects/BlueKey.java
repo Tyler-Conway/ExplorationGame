@@ -3,7 +3,6 @@ package objects;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.tools.StandardLocation;
 
 import Entity.Entity;
 import main.GamePanel;
