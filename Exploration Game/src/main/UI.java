@@ -326,6 +326,8 @@ public class UI {
  			gp.eventHandler.previousEventX = gp.player.worldX;
  			gp.eventHandler.previousEventY = gp.player.worldY;
 			gp.changeArea();
+			gp.saveLoad.save();
+			gp.ui.addMessage("Progress Saved");
  			
  			if(gp.currentMap == gp.beach01 && gp.eventHandler.previousMap != gp.beach02) {
  				gp.stopMusic();
@@ -369,7 +371,7 @@ public class UI {
 		
 		//Retry:
 		g2.setFont(g2.getFont().deriveFont(50f));
-		text = "Retry";
+		text = "Load Save";
 		x = getXForCenteredText(text);
 		y += gp.tileSize*4;
 		g2.drawString(text, x, y);
@@ -378,7 +380,7 @@ public class UI {
 		}
 		
 		//Back to title:
-		text = "Quit";
+		text = "Back to Menu";
 		x = getXForCenteredText(text);
 		y += 55;
 		g2.drawString(text, x, y);

@@ -111,8 +111,8 @@ public class CollisionDetection {
 						index = i;
 					}
 				}
-				//Non-player entities cannot go off the map:
-				if(entity != gp.player) {
+				//Non-player and Non-Projectiles entities cannot go off the map:
+				if(entity != gp.player && !(entity.isProjectile == true)) {
 					
 					if(entity.worldX < gp.tileSize) {
 						entity.worldX = gp.tileSize;

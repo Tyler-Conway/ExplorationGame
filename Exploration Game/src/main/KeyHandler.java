@@ -393,12 +393,24 @@ public class KeyHandler implements KeyListener{
 				}
 			}
 			if(code == KeyEvent.VK_ENTER) {
+				//Load Last Save:
 				if(gp.ui.commandNum == 0) {
-					gp.gameState = gp.playState;
-					gp.currentMap = gp.world01;
-					gp.player.speed = gp.player.defaultSpeed;
-					gp.resetGame(false);
-					gp.playMusic(12);
+					try{
+						gp.resetGame(true);
+						gp.saveLoad.load();
+						gp.gameState = gp.playState;
+					}catch(Exception e){
+						//There is no load:
+						gp.resetGame(true);
+					}
+
+
+
+					// gp.gameState = gp.playState;
+					// gp.currentMap = gp.world01;
+					// gp.player.speed = gp.player.defaultSpeed;
+					// gp.resetGame(false);
+					// gp.playMusic(12);
 				}
 				else if(gp.ui.commandNum == 1) {
 					gp.ui.titleScreenState = 0;
