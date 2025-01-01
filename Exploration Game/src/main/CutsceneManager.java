@@ -73,18 +73,17 @@ public class CutsceneManager{
             gp.ui.npc.startDialogue(gp.ui.npc, 0);
         }
         if(phase == 4){
-            for(int i = 0; i < gp.npc[1].length; i++){
-                if(gp.npc[gp.dungeon02][i] == null){System.out.println(i+" null.");}
-                else{ 
-                    System.out.println(i+gp.npc[gp.dungeon02][i].name);
-                    System.out.println(gp.npc[gp.dungeon02][i].worldX);
-                    System.out.println(gp.npc[gp.dungeon02][i].worldY);
-                }
-            }
+            // for(int i = 0; i < gp.npc[1].length; i++){
+            //     if(gp.npc[gp.dungeon02][i] == null){System.out.println(i+" null.");}
+            //     else{ 
+            //         System.out.println(i+gp.npc[gp.dungeon02][i].name);
+            //         System.out.println(gp.npc[gp.dungeon02][i].worldX);
+            //         System.out.println(gp.npc[gp.dungeon02][i].worldY);
+            //     }
+            // }
 
             for(int i = 0; i < gp.npc[1].length; i++){
                 if(gp.npc[gp.currentMap][i] != null && gp.npc[gp.currentMap][i].name.equals(PlayerDummy.objectName)){
-                    System.out.println("Found it");
                     gp.player.worldX = gp.npc[gp.currentMap][i].worldX;
                     gp.player.worldY = gp.npc[gp.currentMap][i].worldY;
                     gp.player.direction = gp.npc[gp.currentMap][i].direction;
@@ -92,6 +91,7 @@ public class CutsceneManager{
                     break;
                 }
             }
+            gp.bossCutSceneOver = true;
             gp.player.drawing = true;
             sceneNum = noCutScene;
             phase = noCutScene;

@@ -666,7 +666,7 @@ public class Player extends Entity{
 	
 	public void interactNPC(int i) {
 		if(gp.keyH.enterPressed == true) {
-			if(i != 999 && !gp.ui.npc.name.equals(SkeletonBoss.objectName)) {
+			if(i != 999) {
 				attackCanceled = true;
 				gp.npc[gp.currentMap][i].speak();	
 			}
@@ -739,6 +739,7 @@ public class Player extends Entity{
 			defense = getDefense();
 			gp.playSoundEffect(7);
 			gp.gameState = gp.dialogueState;
+			setDialogue();
 			startDialogue(this, 0);
 			gp.ui.addMessage("LevelUp: Level"+ gp.player.level);
 		}

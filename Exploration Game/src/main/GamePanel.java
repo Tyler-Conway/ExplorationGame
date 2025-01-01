@@ -94,6 +94,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	//SYSTEM
 	public boolean bossBattle = false;
+	public boolean bossCutSceneOver = false;
 	public String worldName = "N/A";
 	public Graphics2D graphics;
 	public TileManager tileM = new TileManager(this);

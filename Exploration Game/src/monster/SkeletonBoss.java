@@ -7,6 +7,7 @@ import main.GamePanel;
 import objects.Arrow;
 import objects.CoinBronze;
 import objects.Heart;
+import objects.IronDoor;
 import objects.ManaCrystal;
 import objects.Rock;
 public class SkeletonBoss extends Entity{
@@ -111,6 +112,18 @@ public class SkeletonBoss extends Entity{
 	}
 	
 	public void checkDrop() {
+
+		gp.bossBattle = false;
+		//gp.stopMusic();
+		//gp.playMusic();
+		for(int i = 0; i < gp.obj[1].length; i++){
+			if(gp.obj[gp.dungeon02][i] != null && gp.obj[gp.dungeon02][i].name.equals(IronDoor.objectName)){
+				gp.playSoundEffect(19); //Door Open
+				gp.obj[gp.dungeon02][i] = null;
+			}
+		}
+
+
 		int i = new Random().nextInt(100)+1;
 
 		if(i < 50) {

@@ -1144,9 +1144,14 @@ public class UI {
 				gp.gameState = gp.playState;
 			}
 			if(gp.bossBattle == true){
-				gp.cutsceneManager.phase++;
-				gp.gameState = gp.cutsceneState;
-				System.out.println("hello");
+				//Drinking Potions durring the boss fight needs to send you
+				//back into playState:
+				if(gp.bossCutSceneOver == true){
+					gp.gameState = gp.playState;
+				}
+				else{
+					gp.cutsceneManager.phase++;
+				}
 			}
 		}
 
