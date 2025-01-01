@@ -183,6 +183,7 @@ public class EventHandler{
 			case 18:
 				if(hit(mapNum, 24, 48, "any") == true) {changeMap(gp.dungeon01, 30, 3,gp.dungeon);}
 				else if(hit(mapNum, 24, 37, "any") == true) {skeletonGiantCutScene();}
+				else if(hit(mapNum, 24, 41, "any") == true) {saveGame(gp.dungeon02, 24, 41);}
 				break;
 			}
 		}
@@ -284,9 +285,17 @@ public class EventHandler{
 	}
 
 	public void skeletonGiantCutScene(){
-		if(gp.bossBattle == false && gp.skeletonGiantDefeated == false){
+		if(gp.bossBattle == false && gp.skeletonGiantDefeated == false && gp.bossCutSceneOver == false){
+			gp.bossBattle = true;
 			gp.gameState = gp.cutsceneState;
 			gp.cutsceneManager.sceneNum = gp.cutsceneManager.skeletonGiant;
 		}
+	}
+
+	public void saveGame(int map, int col, int row){
+		gp.saveLoad.save();
+		gp.ui.addMessage("Game Saved (no saving during boss fight)");
+		eventRect[map][col][row].eventDone = true;
+		canTouchEvent = false;
 	}
 }

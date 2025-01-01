@@ -18,88 +18,91 @@ public class SaveLoad {
 	}
 	
 	public void save() {
-		try {
-			ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
-			GameDataStorage dataStorage = new GameDataStorage();
-			
-			//Game State:
-			dataStorage.currentArea = gp.currentArea;
-			dataStorage.currentMap = gp.currentMap;
-			dataStorage.skeletonGiantDefeated = gp.skeletonGiantDefeated;
+		//Game does not save durring boss battle:
+		if(gp.bossBattle == false){
+			try {
+				ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
+				GameDataStorage dataStorage = new GameDataStorage();
+				
+				//Game State:
+				dataStorage.currentArea = gp.currentArea;
+				dataStorage.currentMap = gp.currentMap;
+				dataStorage.skeletonGiantDefeated = gp.skeletonGiantDefeated;
 
-			//Player's Stats && Position:
-			dataStorage.life = gp.player.life;
-			dataStorage.maxLife = gp.player.maxLife;
-			dataStorage.coin = gp.player.coin;
-			dataStorage.maxArrows = gp.player.maxArrows;
-			dataStorage.arrows = gp.player.arrows;
-			dataStorage.maxAmmo = gp.player.maxAmmo;
-			dataStorage.ammo = gp.player.ammo;
-			dataStorage.maxMana = gp.player.maxMana;
-			dataStorage.mana = gp.player.mana;
-			dataStorage.level = gp.player.level;
-			dataStorage.strength = gp.player.strength;
-			dataStorage.dexterity = gp.player.dexterity;
-			dataStorage.exp = gp.player.exp;
-			dataStorage.nextLevelExp = gp.player.nextLevelExp;
-			dataStorage.playerClass = gp.player.playerClass;
-			dataStorage.worldX = gp.player.worldX;
-			dataStorage.worldY = gp.player.worldY;
+				//Player's Stats && Position:
+				dataStorage.life = gp.player.life;
+				dataStorage.maxLife = gp.player.maxLife;
+				dataStorage.coin = gp.player.coin;
+				dataStorage.maxArrows = gp.player.maxArrows;
+				dataStorage.arrows = gp.player.arrows;
+				dataStorage.maxAmmo = gp.player.maxAmmo;
+				dataStorage.ammo = gp.player.ammo;
+				dataStorage.maxMana = gp.player.maxMana;
+				dataStorage.mana = gp.player.mana;
+				dataStorage.level = gp.player.level;
+				dataStorage.strength = gp.player.strength;
+				dataStorage.dexterity = gp.player.dexterity;
+				dataStorage.exp = gp.player.exp;
+				dataStorage.nextLevelExp = gp.player.nextLevelExp;
+				dataStorage.playerClass = gp.player.playerClass;
+				dataStorage.worldX = gp.player.worldX;
+				dataStorage.worldY = gp.player.worldY;
 
-			//Player's Items:
-			for (int i = 0; i < gp.player.inventory.size(); i++) {
-				dataStorage.itemNames.add(gp.player.inventory.get(i).name); //store the names of the items.
-				dataStorage.itemAmmounts.add(gp.player.inventory.get(i).amount); //store the amount of that item a player has.
-			}
-			//Equiped Items:
-			dataStorage.currentWeaponSlot = gp.player.getCurrentWeaponSlot();
-			dataStorage.currentShieldSlot = gp.player.getCurrentShieldSlot();
-			//Map Items:
-			dataStorage.savedObjectNames = new String[gp.maxMap][gp.obj[1].length];
-			dataStorage.savedObjectsWorldX = new int[gp.maxMap][gp.obj[1].length];
-			dataStorage.savedObjectsWorldY = new int[gp.maxMap][gp.obj[1].length];
-			dataStorage.mapNums = new int[gp.maxMap][gp.obj[1].length];
-			dataStorage.TeleportDoorCol = new int[gp.maxMap][gp.obj[1].length];
-			dataStorage.TeleportDoorRow = new int[gp.maxMap][gp.obj[1].length];
-			dataStorage.mapObjectOpened = new boolean[gp.maxMap][gp.obj[1].length];
-			dataStorage.doorObjectIndex = new int[gp.maxMap][gp.obj[1].length];
-			dataStorage.TeleportDoorNewArea = new int[gp.maxMap][gp.obj[1].length];
+				//Player's Items:
+				for (int i = 0; i < gp.player.inventory.size(); i++) {
+					dataStorage.itemNames.add(gp.player.inventory.get(i).name); //store the names of the items.
+					dataStorage.itemAmmounts.add(gp.player.inventory.get(i).amount); //store the amount of that item a player has.
+				}
+				//Equiped Items:
+				dataStorage.currentWeaponSlot = gp.player.getCurrentWeaponSlot();
+				dataStorage.currentShieldSlot = gp.player.getCurrentShieldSlot();
+				//Map Items:
+				dataStorage.savedObjectNames = new String[gp.maxMap][gp.obj[1].length];
+				dataStorage.savedObjectsWorldX = new int[gp.maxMap][gp.obj[1].length];
+				dataStorage.savedObjectsWorldY = new int[gp.maxMap][gp.obj[1].length];
+				dataStorage.mapNums = new int[gp.maxMap][gp.obj[1].length];
+				dataStorage.TeleportDoorCol = new int[gp.maxMap][gp.obj[1].length];
+				dataStorage.TeleportDoorRow = new int[gp.maxMap][gp.obj[1].length];
+				dataStorage.mapObjectOpened = new boolean[gp.maxMap][gp.obj[1].length];
+				dataStorage.doorObjectIndex = new int[gp.maxMap][gp.obj[1].length];
+				dataStorage.TeleportDoorNewArea = new int[gp.maxMap][gp.obj[1].length];
 
 
-			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
-				for(int i = 0; i < gp.obj[1].length; i++){
-					if(gp.obj[mapNum][i] == null){
-						dataStorage.savedObjectNames[mapNum][i] = "NA";
-					}
-					else{
-						dataStorage.savedObjectNames[mapNum][i] = gp.obj[mapNum][i].name;
-						dataStorage.savedObjectsWorldX[mapNum][i] = gp.obj[mapNum][i].worldX;
-						dataStorage.savedObjectsWorldY[mapNum][i] = gp.obj[mapNum][i].worldY;
-						dataStorage.mapObjectOpened[mapNum][i] = gp.obj[mapNum][i].opened;
-						if(gp.obj[mapNum][i].name.equals("Door")){
-							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
-							dataStorage.doorObjectIndex[mapNum][i] = gp.obj[mapNum][i].doorObjectIndex;
+				for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){
+					for(int i = 0; i < gp.obj[1].length; i++){
+						if(gp.obj[mapNum][i] == null){
+							dataStorage.savedObjectNames[mapNum][i] = "NA";
 						}
-						else if(gp.obj[mapNum][i].name.equals("TeleportDoor")){
-							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
-							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
-							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
-							dataStorage.TeleportDoorNewArea[mapNum][i] = gp.obj[mapNum][i].newArea;
-						}
-						else if(gp.obj[mapNum][i].name.equals("ColorfulDoor")){
-							dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
-							dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
-							dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
-							dataStorage.TeleportDoorNewArea[mapNum][i] = gp.obj[mapNum][i].newArea;
-							dataStorage.ColorfulDoorLocked = gp.obj[mapNum][i].locked;
+						else{
+							dataStorage.savedObjectNames[mapNum][i] = gp.obj[mapNum][i].name;
+							dataStorage.savedObjectsWorldX[mapNum][i] = gp.obj[mapNum][i].worldX;
+							dataStorage.savedObjectsWorldY[mapNum][i] = gp.obj[mapNum][i].worldY;
+							dataStorage.mapObjectOpened[mapNum][i] = gp.obj[mapNum][i].opened;
+							if(gp.obj[mapNum][i].name.equals("Door")){
+								dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
+								dataStorage.doorObjectIndex[mapNum][i] = gp.obj[mapNum][i].doorObjectIndex;
+							}
+							else if(gp.obj[mapNum][i].name.equals("TeleportDoor")){
+								dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
+								dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
+								dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+								dataStorage.TeleportDoorNewArea[mapNum][i] = gp.obj[mapNum][i].newArea;
+							}
+							else if(gp.obj[mapNum][i].name.equals("ColorfulDoor")){
+								dataStorage.mapNums[mapNum][i] = gp.obj[mapNum][i].doorMapNum;
+								dataStorage.TeleportDoorCol[mapNum][i] = gp.obj[mapNum][i].tpNewCol;
+								dataStorage.TeleportDoorRow[mapNum][i] = gp.obj[mapNum][i].tpNewRow;
+								dataStorage.TeleportDoorNewArea[mapNum][i] = gp.obj[mapNum][i].newArea;
+								dataStorage.ColorfulDoorLocked = gp.obj[mapNum][i].locked;
+							}
 						}
 					}
 				}
+				OS.writeObject(dataStorage);
+			} catch (Exception e) {
+				System.out.println("Save Error.");
+				e.printStackTrace();
 			}
-			OS.writeObject(dataStorage);
-		} catch (Exception e) {
-			System.out.println("Save Error.");
-			e.printStackTrace();
 		}
 	}
 	
