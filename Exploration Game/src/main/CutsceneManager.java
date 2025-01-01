@@ -49,6 +49,12 @@ public class CutsceneManager{
                     break;
                 }
             }
+            for(int i = 0; i < gp.monster[1].length; i++){
+                if(gp.monster[gp.dungeon02][i] == null){
+                    gp.assetSetter.placeAsset(gp.monster, gp.dungeon02, i, new SkeletonBoss(gp), 22, 19);
+                    break;
+                }
+            }
             gp.player.drawing = false;
             phase++;
         }

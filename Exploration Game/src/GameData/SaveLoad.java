@@ -22,8 +22,10 @@ public class SaveLoad {
 			ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
 			GameDataStorage dataStorage = new GameDataStorage();
 			
-			//Lighting:
+			//Game State:
 			dataStorage.currentArea = gp.currentArea;
+			dataStorage.currentMap = gp.currentMap;
+			dataStorage.skeletonGiantDefeated = gp.skeletonGiantDefeated;
 
 			//Player's Stats && Position:
 			dataStorage.life = gp.player.life;
@@ -43,7 +45,6 @@ public class SaveLoad {
 			dataStorage.playerClass = gp.player.playerClass;
 			dataStorage.worldX = gp.player.worldX;
 			dataStorage.worldY = gp.player.worldY;
-			dataStorage.currentMap = gp.currentMap;
 
 			//Player's Items:
 			for (int i = 0; i < gp.player.inventory.size(); i++) {
@@ -108,8 +109,10 @@ public class SaveLoad {
 			ObjectInputStream IS = new ObjectInputStream(new FileInputStream(new File("save.dat")));
 			GameDataStorage dataStorage = (GameDataStorage)IS.readObject();
 
-			//Lighting:
+			//Game State:
 			gp.currentArea = dataStorage.currentArea;
+			gp.currentMap = dataStorage.currentMap;
+			gp.skeletonGiantDefeated = dataStorage.skeletonGiantDefeated;
 			
 			//Seting player's stats to what we read from the save file:
 			gp.player.life = dataStorage.life;
@@ -129,7 +132,6 @@ public class SaveLoad {
 			gp.player.playerClass = dataStorage.playerClass;
 			gp.player.worldX = dataStorage.worldX;
 			gp.player.worldY = dataStorage.worldY;
-			gp.currentMap = dataStorage.currentMap;
 
 			switch(gp.player.playerClass){
 				case "Fighter": gp.player.projectile = new Arrow(gp); break;

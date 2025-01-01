@@ -238,8 +238,10 @@ public class AssetSetter {
 		mapNum = gp.dungeon01;
 		placeAsset(gp.obj, mapNum, i, new Pickaxe(gp), 19, 37); i++;
 		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 21, 5); i++;
-		
 
+		i = 0;
+		mapNum = gp.dungeon02;
+		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 24, 17);i++;
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {
@@ -326,7 +328,7 @@ public class AssetSetter {
 
 		mapNum = gp.dungeon02;
 		i = 0;
-		placeAsset(gp.monster, mapNum, i, new SkeletonBoss(gp), 22, 19); i++;
+		//placeAsset(gp.monster, mapNum, i, new SkeletonBoss(gp), 22, 19); i++;
 	}
 
 	public void setInteractiveTiles() {
@@ -376,6 +378,5 @@ public class AssetSetter {
 
 		mapNum = gp.dungeon02;
 		i = 0;
-		gp.iTile[mapNum][i] = new DamagedWall(gp, 24, 17);i++;
 	}
 }

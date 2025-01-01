@@ -284,7 +284,7 @@ public class EventHandler{
 	}
 
 	public void skeletonGiantCutScene(){
-		if(gp.bossBattle == false){
+		if(gp.bossBattle == false && gp.skeletonGiantDefeated == false){
 			gp.gameState = gp.cutsceneState;
 			gp.cutsceneManager.sceneNum = gp.cutsceneManager.skeletonGiant;
 		}

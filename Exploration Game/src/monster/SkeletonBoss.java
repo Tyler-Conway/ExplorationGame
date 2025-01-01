@@ -94,7 +94,7 @@ public class SkeletonBoss extends Entity{
 	
 	public void setAction() {
 		
-		if(getTileDistance(gp.player) < 10) {
+		if(getTileDistance(gp.player) < 12) {
             moveTowardPlayer(gp.FPS);
 		}
 		else {
@@ -102,7 +102,7 @@ public class SkeletonBoss extends Entity{
 		}
 		
 		if(attacking == false) {
-			checkAttack(gp.FPS*2, gp.tileSize*5, gp.tileSize*4);
+			checkAttack((int)(gp.FPS*1.5), gp.tileSize*5, gp.tileSize*4);
 		}
 	}
 	
@@ -114,6 +114,7 @@ public class SkeletonBoss extends Entity{
 	public void checkDrop() {
 
 		gp.bossBattle = false;
+		gp.skeletonGiantDefeated = true;
 		//gp.stopMusic();
 		//gp.playMusic();
 		for(int i = 0; i < gp.obj[1].length; i++){
