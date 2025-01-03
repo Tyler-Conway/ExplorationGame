@@ -15,7 +15,7 @@ public class Staff extends Entity{
 		price = 20;
 		down1 = setup("/objects/Staff", gp.tileSize, gp.tileSize);
 		attackValue = 1;
-		description = "[" + name + "]\nEvery Wizard needs\n a Staff.";
+		description = "[" + name + "]\nEvery Wizard needs\na Staff.";
 		attackArea.width = gp.tileSize;
 		attackArea.height = gp.tileSize;
 		knockBackPower = 5;

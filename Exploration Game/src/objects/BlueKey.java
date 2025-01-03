@@ -21,13 +21,13 @@ public class BlueKey extends Entity{
 		price = 100;
 		down1 = setup("/objects/BlueKey", gp.tileSize, gp.tileSize);
 		collision = true;
-		description = "[" + name + "]\nIt opens a door.";
+		description = "[" + name + "]\nIt opens Blue Doors.";
 		stackable = true;
 		setDialogue();
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = "You used the key ["+name+"] to open the door";
+		dialogues[0][0] = "You used the Blue Key to open the door.";
 		dialogues[1][0] = "What are you trying to unlock?";
 	}
 

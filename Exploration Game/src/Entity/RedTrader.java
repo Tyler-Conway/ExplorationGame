@@ -46,7 +46,6 @@ public class RedTrader extends Entity{
 	public void speak() {
 		gp.ui.commandNum = 2;
 		gp.gameState = gp.tradeState;
-		gp.ui.trader = this;
 		gp.ui.npc = this;
 	}
 }

@@ -109,6 +109,7 @@ public class SkeletonBoss extends Entity{
 	public void damageReaction() {
 		actionLockCounter = 0;
 		onPath = true;
+		life = maxLife;
 	}
 	
 	public void checkDrop() {

@@ -30,7 +30,7 @@ public class RedDoor extends Entity{
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Red Key to open this";
+		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Red Key to open this.";
 	}
 	
 	public void interact() {

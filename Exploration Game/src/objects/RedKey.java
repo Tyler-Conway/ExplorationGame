@@ -21,13 +21,13 @@ public class RedKey extends Entity{
 		price = 100;
 		down1 = setup("/objects/RedKey", gp.tileSize, gp.tileSize);
 		collision = true;
-		description = "[" + name + "]\nIt opens a door.";
+		description = "[" + name + "]\nIt opens Red Doors.";
 		stackable = true;
 		setDialogue();
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = "You used the key ["+name+"] to open the door";
+		dialogues[0][0] = "You used the Red Key to open the door.";
 		dialogues[1][0] = "What are you trying to unlock?";
 	}
 

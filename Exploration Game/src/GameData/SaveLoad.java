@@ -22,6 +22,7 @@ public class SaveLoad {
 		//Game does not save durring boss battle:
 		if(gp.bossBattle == false){
 			try {
+				System.out.println("Saving Game");
 				ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
 				GameDataStorage dataStorage = new GameDataStorage();
 				
@@ -31,6 +32,8 @@ public class SaveLoad {
 				dataStorage.skeletonGiantDefeated = gp.skeletonGiantDefeated;
 
 				//Player's Stats && Position:
+				dataStorage.direction = gp.player.direction;
+				dataStorage.speed = gp.player.defaultSpeed;
 				dataStorage.life = gp.player.life;
 				dataStorage.maxLife = gp.player.maxLife;
 				dataStorage.coin = gp.player.coin;
@@ -110,6 +113,7 @@ public class SaveLoad {
 	public void load() {
 		
 		try {
+			System.out.println("Loading Game");
 			ObjectInputStream IS = new ObjectInputStream(new FileInputStream(new File("save.dat")));
 			GameDataStorage dataStorage = (GameDataStorage)IS.readObject();
 
@@ -123,6 +127,8 @@ public class SaveLoad {
 			}
 			
 			//Seting player's stats to what we read from the save file:
+			gp.player.speed = dataStorage.speed;
+			gp.player.direction = dataStorage.direction;
 			gp.player.life = dataStorage.life;
 			gp.player.maxLife = dataStorage.maxLife;
 			gp.player.coin = dataStorage.coin;
@@ -158,6 +164,8 @@ public class SaveLoad {
 			gp.player.currentShield = gp.player.inventory.get(dataStorage.currentShieldSlot);
 			gp.player.getAttack();
 			gp.player.getDefense();
+			gp.player.getPlayerImage();
+			gp.player.getPlayerGuardImage();
 			gp.player.getPlayerAttackImage();
 
 			for(int mapNum = 0; mapNum < gp.maxMap; mapNum++){

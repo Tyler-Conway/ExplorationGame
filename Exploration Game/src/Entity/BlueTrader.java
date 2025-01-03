@@ -9,10 +9,12 @@ import objects.Lantern;
 import objects.MetalShield;
 import objects.PaperClip;
 import objects.Pickaxe;
+import objects.RedKey;
 import objects.RedPotion;
 import objects.Shield;
 import objects.Staff;
 import objects.Tent;
+import objects.YellowKey;
 
 public class BlueTrader extends Entity{
 
@@ -47,19 +49,11 @@ public class BlueTrader extends Entity{
 		inventory.add(new Tent(gp));
 		inventory.add(new Lantern(gp));
 		inventory.add(new Shield(gp));
-		inventory.add(new Bark(gp));
-		inventory.add(new PaperClip(gp));
-		inventory.add(new Staff(gp));
-		inventory.add(new Lance(gp));
-		inventory.add(new Pickaxe(gp));
-		inventory.add(new Axe(gp));
-
 	}
 	
 	public void speak() {
 		gp.ui.commandNum = 2;
 		gp.gameState = gp.tradeState;
-		gp.ui.trader = this;
 		gp.ui.npc = this;
 	}
 }

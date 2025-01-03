@@ -270,8 +270,10 @@ public class EventHandler{
 		gp.playSoundEffect(14);
 		canTouchEvent = false;
 
+		
 		String text = "";
 		text = gp.getWorldname(map);
+		text += " (Progress Saved)";
 		gp.ui.addMessage(text);
 	}
 	

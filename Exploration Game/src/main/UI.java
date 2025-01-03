@@ -28,7 +28,6 @@ public class UI {
 	public ArrayList<String> message = new ArrayList<>();
 	public ArrayList<Integer> messageCounter = new ArrayList<>();
 	public Entity npc;
-	public Entity fastTravelNPC;
 	
 	
 	public boolean gameFinished = false;
@@ -43,10 +42,6 @@ public class UI {
 	public int counter = 0;
 	public int charIndex = 0;
 	public String combinedText = "";
-	public Entity trader;
-	
-	
-	
 	
 	
 	public UI(GamePanel gp) {
@@ -151,7 +146,6 @@ public class UI {
  	
  	public void tradeSelect() {
 		npc.dialogueSet = 0;
-		trader.dialogueSet = 0;
  		drawDialogueScreen();
  		
  		int x = gp.tileSize * 15;
@@ -185,16 +179,16 @@ public class UI {
  		g2.drawString("Leave", x, y);
  		if(commandNum == 2) {
  			g2.drawString(">", x-25, y);
- 			if(gp.keyH.enterPressed == true) {
+ 			if(gp.keyH.enterPressed == true || gp.keyH.escapePressed == true) {
  				commandNum = 0;
-				 gp.keyH.enterPressed = false;
-				trader.startDialogue(trader, 1);
+				gp.keyH.enterPressed = false;
+				npc.startDialogue(npc, 1);
  			}
  		}
  	}
  	
  	public void tradeBuy() {
- 		drawInventory(trader, true);
+ 		drawInventory(npc, true);
  		drawInventory(gp.player, false);
  		
  		//Hint Window:
@@ -214,7 +208,7 @@ public class UI {
  		
  		//Draw Price Window:
  		int itemIndex = getItemIndex(npcSlotCol, npcSlotRow);
- 		if(itemIndex < trader.inventory.size()) {
+ 		if(itemIndex < npc.inventory.size()) {
  			x = (int)(gp.tileSize*5.5);
  			y = (int)(gp.tileSize*5.5);
  			width = (int)(gp.tileSize*2.5);
@@ -222,7 +216,7 @@ public class UI {
  			drawSubWindow(x,y,width,height);
  			g2.drawImage(coin, x+10, y+gp.tileSize/4, gp.tileSize/2, gp.tileSize/2, null);
  			
- 			int price = trader.inventory.get(itemIndex).price;
+ 			int price = npc.inventory.get(itemIndex).price;
  			String text = ""+price;
  			x = getXForRightText(text, gp.tileSize*8);
  			g2.drawString(text, x-15, y+40);
@@ -230,19 +224,19 @@ public class UI {
  			
  			//Buy an Item
  			if(gp.keyH.enterPressed == true) {
- 				if(trader.inventory.get(itemIndex).price > gp.player.coin) {
+ 				if(npc.inventory.get(itemIndex).price > gp.player.coin) {
  					substate = 0;
- 					trader.startDialogue(trader, 2);
+ 					npc.startDialogue(npc, 2);
 					gp.keyH.enterPressed = false;
  					drawDialogueScreen();
  				}
  				else {
- 					if(gp.player.obtainItem(trader.inventory.get(itemIndex)) == true) {
- 						gp.player.coin -= trader.inventory.get(itemIndex).price;
+ 					if(gp.player.obtainItem(npc.inventory.get(itemIndex)) == true) {
+ 						gp.player.coin -= npc.inventory.get(itemIndex).price;
  					}
  					else {
  						substate = 0;
-						trader.startDialogue(trader, 3);
+						npc.startDialogue(npc, 3);
 						gp.keyH.enterPressed = false;
  	 					drawDialogueScreen();
  					}
@@ -254,7 +248,7 @@ public class UI {
  	
  	public void tradeSell() {
  		drawInventory(gp.player, true);
- 		drawInventory(trader, false);
+ 		drawInventory(npc, false);
  		
  		//Hint Window:
  		int x = gp.tileSize*2;
@@ -294,7 +288,7 @@ public class UI {
  					
  					commandNum = 0;
  					substate = 0;
-					trader.startDialogue(trader, 4);
+					npc.startDialogue(npc, 4);
 					gp.keyH.enterPressed = false;
  					drawDialogueScreen();
  				}
@@ -326,14 +320,7 @@ public class UI {
  			gp.eventHandler.previousEventX = gp.player.worldX;
  			gp.eventHandler.previousEventY = gp.player.worldY;
 			gp.changeArea();
-			gp.saveLoad.save();
-			if(gp.currentMap != gp.dungeon02){
-				gp.ui.addMessage("Progress Saved");
-			}
-			else{
-				gp.ui.addMessage("Progress Saved (no saving during boss fight)");
-			}
- 			
+
  			if(gp.currentMap == gp.beach01 && gp.eventHandler.previousMap != gp.beach02) {
  				gp.stopMusic();
  				gp.playMusic(gp.sound.beachMusic);
@@ -354,6 +341,9 @@ public class UI {
  				gp.stopMusic();
  				gp.playMusic(gp.sound.beachMusic);
  			}
+
+			//Game Saves after Map Transition is Complete.
+			gp.saveLoad.save();
  		}
  	}
  	
@@ -1111,7 +1101,7 @@ public class UI {
 	}
 
 	public void drawDialogueScreen() {
-		
+
 		int x = gp.tileSize *3, y = gp.tileSize/2;
 		int width = gp.screenWidth -(gp.tileSize * 6);
 		int height = gp.tileSize * 4;
@@ -1122,23 +1112,26 @@ public class UI {
 		g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 28));
 		
 		if(npc.dialogues[npc.dialogueSet][npc.dialogueIndex] != null){
+			npc.setDialogue();
+
 			//All at once dialogue:
-			//currentDialouge = npc.dialogues[npc.dialogueSet][npc.dialogueIndex];
+				currentDialogue = npc.dialogues[npc.dialogueSet][npc.dialogueIndex];
 
 			//Letter By Letter Dialouge:
-			char characters[] = npc.dialogues[npc.dialogueSet][npc.dialogueIndex].toCharArray();
-			if(charIndex < characters.length){
-				//UnComment to play the dialouge/speaking/talking sound:
-				//gp.playSoundEffect(20);
-				String s = String.valueOf(characters[charIndex]);
-				combinedText = combinedText + s;
-				currentDialogue = combinedText;
-				charIndex++;
-			}
+				// char characters[] = npc.dialogues[npc.dialogueSet][npc.dialogueIndex].toCharArray();
+				// if(charIndex < characters.length){
+				// 	//Un-comment to play the talking sound:
+				// 	//gp.playSoundEffect(20);
+				// 	String s = String.valueOf(characters[charIndex]);
+				// 	combinedText = combinedText + s;
+				// 	currentDialogue = combinedText;
+				// 	charIndex++;
+				// }
 
-			if(gp.keyH.enterPressed == true){
+			if(gp.keyH.enterPressed == true || gp.keyH.escapePressed == true){
 				charIndex = 0;
 				combinedText = "";
+				currentDialogue = "";
 				if(gp.gameState == gp.dialogueState || gp.gameState == gp.cutsceneState){
 					npc.dialogueIndex++;
 					gp.keyH.enterPressed = false;

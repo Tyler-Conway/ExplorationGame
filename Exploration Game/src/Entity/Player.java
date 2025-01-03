@@ -695,11 +695,16 @@ public class Player extends Entity{
 				gp.playSoundEffect(5);
 				if(knockBackPower > 0) {setKnockBack(gp.monster[gp.currentMap][i], attacker, gp.player.knockBackPower);}
 				if(gp.monster[gp.currentMap][i].offBalance == true) {attack *= 5;}
+
 				int damage = attack - gp.monster[gp.currentMap][i].defense;
-				if(damage < 0) {damage  = 0;}
+				if(damage < 0){
+					damage  = 0;
+					gp.ui.addMessage("Hit Blocked.");
+				}
 				gp.monster[gp.currentMap][i].life -= damage;
 				gp.monster[gp.currentMap][i].invincible = true;
 				gp.monster[gp.currentMap][i].damageReaction();
+
 				if(gp.monster[gp.currentMap][i].life  <= 0) {
 					gp.monster[gp.currentMap][i].dying = true;
 					gp.ui.addMessage(gp.monster[gp.currentMap][i].name + " Killed!" + " (+"+gp.monster[gp.currentMap][i].exp+" Exp)");
@@ -769,6 +774,7 @@ public class Player extends Entity{
 				lightUpdated = true;
 			}
 			if(selectedItem.type == type_Consumable) {
+				gp.ui.npc = selectedItem;
 				if(selectedItem.use(this) == true) {
 					if(selectedItem.amount > 1) {selectedItem.amount--;}
 					else {inventory.remove(itemIndex);}

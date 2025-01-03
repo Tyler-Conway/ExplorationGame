@@ -27,7 +27,7 @@ public class TriColorKey extends Entity{
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = "You used the key ["+name+"] to open the door";
+		dialogues[0][0] = "You used the TriColorKey to open the door";
 		dialogues[1][0] = "What are you trying to unlock?";
 	}
 

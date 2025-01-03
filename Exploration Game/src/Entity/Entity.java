@@ -10,6 +10,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import main.GamePanel;
 import main.UtilityTool;
+import monster.SkeletonBoss;
 
 public class Entity {
 
@@ -133,8 +134,10 @@ public class Entity {
 	public int getRightX() {return worldX + solidArea.x + solidArea.width;}
 	public int getTopY() {return worldY + solidArea.y;}
 	public int getBottomY() {return worldY + solidArea.y + solidArea.height;}
+
 	public int getCol() {return (worldX + solidArea.x)/gp.tileSize;}
 	public int getRow() {return (worldY + solidArea.y)/gp.tileSize;}
+
 	public int getScreenX(){return (worldX - gp.player.worldX + gp.player.screenX);}
 	public int getScreenY(){return (worldY - gp.player.worldY + gp.player.screenY);}
 	public int getXDistance(Entity target) {return Math.abs(getCenterX() - target.getCenterX());}
@@ -142,8 +145,6 @@ public class Entity {
 	public int getCenterX(){return (worldX + left1.getWidth()/2);}
 	public int getCenterY(){return (worldY + up1.getHeight()/2);}
 	public int getTileDistance(Entity target) {return (getXDistance(target) + getYDistance(target))/gp.tileSize;}
-	public int getGoalCol(Entity target) {return (gp.player.worldX+gp.player.solidArea.x)/gp.tileSize;}
-	public int getGoalRow(Entity target) {return (gp.player.worldY+gp.player.solidArea.y)/gp.tileSize;}
 	public Color getParticleColor() {Color color = null; return color;}
 	public int getParticleSize() {int size = 0; return size;}
 	public int getParticleSpeed() {int speed = 0; return speed;}
@@ -271,7 +272,6 @@ public class Entity {
  	
 	
 	public void update() {
-
 		if(sleeping == false){
 			if(this != gp.player) {checkInBounds(this);}
 			if(knockBack == true) {  
@@ -509,7 +509,6 @@ public class Entity {
 		this.attacker = attacker;
 		target.knockBackDirection = attacker.direction;
 		target.speed += knockBackPower;
-		target.knockBack = true;
 	}
  	
 	public boolean inView(){

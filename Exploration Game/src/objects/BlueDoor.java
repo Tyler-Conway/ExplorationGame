@@ -31,7 +31,7 @@ public class BlueDoor extends Entity{
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Blue Key to open this";
+		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Blue Key to open this.";
 	}
 	
 	public void interact() {

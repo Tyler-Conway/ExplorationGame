@@ -28,9 +28,8 @@ public class GreenNPC extends Entity{
 	}
 	
 	public void speak() {
-		gp.ui.commandNum = 1;
-		gp.gameState = gp.travelState;
-		gp.ui.fastTravelNPC = this;
+		gp.ui.commandNum = 2;
+		gp.gameState = gp.tradeState;
 		gp.ui.npc = this;
 	}
 	

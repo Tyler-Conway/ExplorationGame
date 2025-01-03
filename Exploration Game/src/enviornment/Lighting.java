@@ -181,7 +181,7 @@ public class Lighting {
 				break;
 			case night:
 				situation = "Night";
-				g2.setColor(Color.red); 
+				g2.setColor(Color.cyan); 
 				g2.setFont(g2.getFont().deriveFont(40f));
 				break;
 			}

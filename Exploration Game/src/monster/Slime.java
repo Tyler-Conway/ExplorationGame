@@ -57,7 +57,7 @@ public class Slime extends Entity{
 		
 		if(onPath == true) {
 			checkStopChasing(gp.player, 10, 100);
-			searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
+			searchPath(gp.player.getCol(),gp.player.getRow());
 			checkShootProjectile(200, 120);
 		}
 		else {

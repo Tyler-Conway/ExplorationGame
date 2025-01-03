@@ -82,16 +82,11 @@ public class KeyHandler implements KeyListener{
 				}
 				//Load Game
 				else if(gp.ui.commandNum == 1) {
-					
-					//Set Player's Images and initial eqipment:
 					gp.player.setDefaultValues();
 					gp.player.getPlayerImage();
 					gp.player.getPlayerAttackImage();
 					gp.player.setItems();
-					//EQUIP Initial Objects:
 					gp.player.equipInitialObjects();
-					//Load the player's previous stats:
-					//gp.assetSetter.setObjects();
 					gp.saveLoad.load();
 					gp.playMusic(12);
 					gp.gameState = gp.playState;
@@ -205,7 +200,6 @@ public class KeyHandler implements KeyListener{
 				gp.assetSetter.setObjects();
 				gp.assetSetter.setInteractiveTiles();
 				gp.monster = new Entity[gp.maxMap][20];
-				
 			}
 		}
 	}
@@ -400,6 +394,7 @@ public class KeyHandler implements KeyListener{
 					try{
 						gp.resetGame(true);
 						gp.saveLoad.load();
+						gp.playMusic(12);
 						gp.gameState = gp.playState;
 					}catch(Exception e){
 						//There is no load:

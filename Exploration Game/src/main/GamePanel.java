@@ -165,6 +165,7 @@ public class GamePanel extends JPanel implements Runnable{
 			//Draw the Newly Updated Screen (invokes the paintComponent method):
 			//"repaint()" is the proper name for the paintComponent method instead of "paintComponent()"
 			repaint();
+			System.out.println(gameState);
 			
 			try {
 				double remainingTime = nextDrawTime - System.nanoTime();

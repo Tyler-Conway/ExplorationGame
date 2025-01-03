@@ -30,7 +30,7 @@ public class YellowDoor extends Entity{
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Yellow Key to open this";
+		dialogues[0][0] = gp.ui.currentDialogue = "You need to use a Yellow Key to open this.";
 	}
 	
 	public void interact() {

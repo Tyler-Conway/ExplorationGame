@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class GameDataStorage implements Serializable{
 
 	//Player Info:
+	int speed;
 	int life;
 	int maxLife;
 	int level; 
@@ -25,6 +26,7 @@ public class GameDataStorage implements Serializable{
 	int worldY;
 	int currentMap;
 	String playerClass;
+	String direction;
 
 	//Item Inventory Data:
 	ArrayList<String> itemNames = new ArrayList<>();

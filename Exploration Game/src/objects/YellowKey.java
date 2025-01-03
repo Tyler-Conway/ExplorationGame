@@ -21,19 +21,21 @@ public class YellowKey extends Entity{
 		price = 100;
 		down1 = setup("/objects/YellowKey", gp.tileSize, gp.tileSize);
 		collision = true;
-		description = "[" + name + "]\nIt opens a door.";
+		description = "[" + name + "]\nIt opens Yellow Doors.";
 		stackable = true;
 		setDialogue();
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = "You used the key ["+name+"] to open the door";
+		dialogues[0][0] = "You used the Yellow Key to open the door.";
 		dialogues[1][0] = "What are you trying to unlock?";
 	}
 
 	public boolean use(Entity entity) {
 		
 		int objIndex = getDetected(entity, gp.obj, "YellowDoor");
+		gp.ui.npc = this;
+		setDialogue();
 		
 		if(objIndex != 999) {
 			startDialogue(this, 0);
