@@ -584,10 +584,10 @@ public class UI {
 		g2.drawString("Move", textX, textY);
 		if(commandNum == 0) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
-		g2.drawString("Confirm/Attack", textX, textY);
+		g2.drawString("Confirm / Attack", textX, textY);
 		if(commandNum == 1) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
-		g2.drawString("Shoot/Cast", textX, textY);
+		g2.drawString("Shoot / Cast", textX, textY);
 		if(commandNum == 2) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		g2.drawString("Inventory Screen", textX, textY);
@@ -596,10 +596,10 @@ public class UI {
 		g2.drawString("Pause", textX, textY);
 		if(commandNum == 4) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
-		g2.drawString("Options", textX, textY);
+		g2.drawString("Options / Back", textX, textY);
 		if(commandNum == 5) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
-		g2.drawString("MiniMap/Map", textX, textY);
+		g2.drawString("Minimap / Map", textX, textY);
 		if(commandNum == 6) {g2.drawString(">", textX-25, textY);}
 		textY += gp.tileSize;
 		
@@ -608,10 +608,10 @@ public class UI {
 		g2.drawString("WASD", textX, textY); textY += gp.tileSize;
 		g2.drawString("ENTER", textX, textY); textY += gp.tileSize;
 		g2.drawString("F", textX, textY); textY += gp.tileSize;
-		g2.drawString("C", textX, textY); textY += gp.tileSize;
+		g2.drawString("C / E", textX, textY); textY += gp.tileSize;
 		g2.drawString("P", textX, textY); textY += gp.tileSize;
 		g2.drawString("ESC", textX, textY); textY += gp.tileSize;
-		g2.drawString("X/M", textX, textY); textY += gp.tileSize;
+		g2.drawString("X / M", textX, textY); textY += gp.tileSize;
 		
 		//BACK
 		textX = frameX + gp.tileSize;
@@ -628,10 +628,11 @@ public class UI {
 	}
 
 	public void optionsEndGameConfirmation(int frameX, int frameY) {
-		int textX = frameX + gp.tileSize;
+		g2.setFont(g2.getFont().deriveFont(32F));
+		int textX = frameX + gp.tileSize + gp.tileSize/8;
 		int textY = frameY + gp.tileSize;
 		
-		currentDialogue = "Save & Quit the game and \nreturn to the title screen?";
+		currentDialogue = "Save & Quit the game and \n return to the title screen?";
 		for(String line: currentDialogue.split("\n")) {
 			g2.drawString(line, textX, textY);
 			textY += 40;
@@ -663,7 +664,6 @@ public class UI {
 				commandNum = 4;
 			}
 		}
-		
 	}
  	
 	public void drawCharacterScreen() {
@@ -997,12 +997,12 @@ public class UI {
 			
 			//Title
 			g2.setFont(g2.getFont().deriveFont(Font.BOLD, 64F));
-			String text = "2D Adventure Game";
+			String text = "2D Exploration Game";
 			int x = getXForCenteredText(text);
 			int y = gp.tileSize * 3;
 			//shadow
 			g2.setColor(Color.gray);
-			g2.drawString(text, x+5, y+5);
+			g2.drawString(text, x+3, y+3);
 			//main color:
 			g2.setColor(Color.white);
 			g2.drawString(text, x, y);

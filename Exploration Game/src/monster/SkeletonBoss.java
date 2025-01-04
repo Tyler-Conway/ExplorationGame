@@ -29,7 +29,7 @@ public class SkeletonBoss extends Entity{
 		maxLife = 50;
 		life = maxLife;
 		attack = 10;
-		defense = 2;
+		defense = 4;
 		exp = 50;
 		monsterHasWeapon = true;
 		knockBackPower = 5;

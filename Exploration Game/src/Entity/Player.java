@@ -6,10 +6,8 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import main.GamePanel;
 import main.KeyHandler;
-import monster.SkeletonBoss;
 import objects.Bark;
 import objects.Lance;
-import objects.Lantern;
 import objects.MetalShield;
 import objects.PaperClip;
 import objects.Shield;
@@ -694,7 +692,7 @@ public class Player extends Entity{
 			if(gp.monster[gp.currentMap][i].invincible == false) {
 				gp.playSoundEffect(5);
 				if(knockBackPower > 0) {setKnockBack(gp.monster[gp.currentMap][i], attacker, gp.player.knockBackPower);}
-				if(gp.monster[gp.currentMap][i].offBalance == true) {attack *= 5;}
+				if(gp.monster[gp.currentMap][i].offBalance == true) {attack *= 3;}
 
 				int damage = attack - gp.monster[gp.currentMap][i].defense;
 				if(damage < 0){
