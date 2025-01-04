@@ -10,7 +10,6 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import main.GamePanel;
 import main.UtilityTool;
-import monster.SkeletonBoss;
 
 public class Entity {
 
@@ -509,6 +508,7 @@ public class Entity {
 		this.attacker = attacker;
 		target.knockBackDirection = attacker.direction;
 		target.speed += knockBackPower;
+		target.knockBack = true;
 	}
  	
 	public boolean inView(){

@@ -8,8 +8,8 @@ public class PlayerDummy extends Entity{
     public static String objectName = "PlayerDummy";
 
     public PlayerDummy(GamePanel gp){
-        this.gp = gp;
         super(gp);
+		this.gp = gp;
 
 		name = objectName;
 

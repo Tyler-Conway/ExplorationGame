@@ -1,7 +1,6 @@
 package main;
 
 import Entity.Entity;
-import monster.SkeletonBoss;
 
 public class CollisionDetection {
 
