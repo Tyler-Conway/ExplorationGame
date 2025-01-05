@@ -137,6 +137,9 @@ public class Entity {
 	public int getCol() {return (worldX + solidArea.x)/gp.tileSize;}
 	public int getRow() {return (worldY + solidArea.y)/gp.tileSize;}
 
+
+
+
 	public int getScreenX(){return (worldX - gp.player.worldX + gp.player.screenX);}
 	public int getScreenY(){return (worldY - gp.player.worldY + gp.player.screenY);}
 	public int getXDistance(Entity target) {return Math.abs(getCenterX() - target.getCenterX());}

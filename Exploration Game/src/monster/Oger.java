@@ -1,8 +1,7 @@
 package monster;
 
-import java.util.Random;
-
 import Entity.Entity;
+import java.util.Random;
 import main.GamePanel;
 import objects.Arrow;
 import objects.CoinBronze;
@@ -20,6 +19,7 @@ public class Oger extends Entity{
 		type = type_Monster;
 		name = "Oger";
 		defaultSpeed = 1;
+		//defaultSpeed = 0;
 		speed = defaultSpeed;
 		maxLife = 12;
 		life = maxLife;
@@ -33,9 +33,9 @@ public class Oger extends Entity{
 		motion2Duration = 85;
 		
 		solidArea.x  = (gp.tileSize/8);
-		solidArea.y = gp.tileSize - (gp.tileSize/4);
+		solidArea.y = (gp.tileSize/4);
 		solidArea.width = gp.tileSize - (gp.tileSize/8);
-		solidArea.height = (gp.tileSize/3);
+		solidArea.height = gp.tileSize - (gp.tileSize/7);
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		attackArea.width = gp.tileSize+(gp.tileSize/4);
@@ -74,6 +74,8 @@ public class Oger extends Entity{
 		if(onPath == true) {
 			checkStopChasing(gp.player, 10, 1);
 			searchPath(gp.player.getCol(),gp.player.getRow());
+			System.out.println(gp.player.getCol()+ ", " + gp.player.getRow());
+
 		}
 		else {
 			generateDirection(120);
