@@ -66,6 +66,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int world05 = 16;
 	public final int dungeon01 = 17;
 	public final int dungeon02 = 18;
+	public final int keyForge = 19;
 
 	
 	//GAME STATES
@@ -83,6 +84,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int mapState = 10;
 	public final int travelState = 11;
 	public final int cutsceneState = 12;
+	public final int forgeState = 13;
 
 	//Area State:
 	public int currentArea;
@@ -326,7 +328,7 @@ public class GamePanel extends JPanel implements Runnable{
 			g2.dispose();
 		}
 	}
-	
+
 	public void ReloadCurrentMap(){
 		switch(currentMap) {
 		case world01: tileM.loadMap("/maps/World01.txt", world01); break;
@@ -348,6 +350,7 @@ public class GamePanel extends JPanel implements Runnable{
 		case world05: tileM.loadMap("/maps/World05.txt", world05); break;
 		case dungeon01: tileM.loadMap("/maps/Dungeon01.txt", dungeon01); break;
 		case dungeon02: tileM.loadMap("/maps/Dungeon02.txt", dungeon02); break;
+		case keyForge: tileM.loadMap("/maps/KeyForge.txt", keyForge); break;
 		}
 	}
 	
@@ -392,6 +395,7 @@ public class GamePanel extends JPanel implements Runnable{
 			case world03: worldName = "World03"; break;
 			case world04: worldName = "World04"; break;
 			case world05: worldName = "World05"; break;
+			case keyForge: worldName = "KeyForge"; break;
 			default: worldName = "   ???   "; break;
 		}
 		return worldName;

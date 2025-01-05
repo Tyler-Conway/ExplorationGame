@@ -1,9 +1,5 @@
 package objects;
 
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
 import Entity.Entity;
 import main.GamePanel;
 
@@ -27,7 +23,7 @@ public class TriColorKey extends Entity{
 	}
 
 	public void setDialogue(){
-		dialogues[0][0] = "You used the TriColorKey to open the door";
+		dialogues[0][0] = "You used the TriColorKey to unlock the TriColorDoor.";
 		dialogues[1][0] = "What are you trying to unlock?";
 	}
 

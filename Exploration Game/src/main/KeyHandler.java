@@ -56,6 +56,9 @@ public class KeyHandler implements KeyListener{
 		else if(gp.gameState == gp.travelState) {
 			travelState(code);
 		}
+		else if(gp.gameState == gp.forgeState){
+			forgeState(code);
+		}
 	}
 	
 	public void titleState(int code) {
@@ -475,6 +478,31 @@ public class KeyHandler implements KeyListener{
 				gp.ui.substate = 0;
 			}
 		}
+	}
+
+	public void forgeState(int code){
+		if(code == KeyEvent.VK_ENTER) {
+			enterPressed = true;
+		}
+		if(code == KeyEvent.VK_ESCAPE) {
+			gp.ui.commandNum = 0;
+			gp.gameState = gp.playState;
+		}
+		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
+			gp.ui.commandNum--;
+			if(gp.ui.commandNum < 0) {
+				gp.ui.commandNum = 1;
+			}
+			gp.playSoundEffect(8);
+		}
+		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
+			gp.ui.commandNum++;
+			if(gp.ui.commandNum > 1) {
+				gp.ui.commandNum = 0;
+			}
+			gp.playSoundEffect(8);
+		}
+
 	}
 	
 	public void keyReleased(KeyEvent e) {

@@ -184,6 +184,10 @@ public class EventHandler{
 				if(hit(mapNum, 24, 48, "any") == true) {changeMap(gp.dungeon01, 30, 3,gp.dungeon);}
 				else if(hit(mapNum, 24, 37, "any") == true) {skeletonGiantCutScene();}
 				break;
+		//KeyForge:
+			case 19:
+				if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
+				break;
 			}
 		}
 	}
@@ -262,7 +266,7 @@ public class EventHandler{
 		gp.nextArea = area;
 		tempMap = map;
 
-		if(tempMap == gp.dungeon01 || tempMap == gp.dungeon02 || tempMap == gp.cabin01 || tempMap == gp.cabin02 ||
+		if((tempMap == gp.world04 && previousMap == gp.keyForge) ||tempMap == gp.keyForge || tempMap == gp.dungeon01 || tempMap == gp.dungeon02 || tempMap == gp.cabin01 || tempMap == gp.cabin02 ||
 		 	tempMap == gp.cabin03 || (tempMap == gp.beach02 && gp.eventHandler.previousMap == gp.cabin03) || 
 			(gp.currentMap == gp.beach01 && tempMap != gp.beach02) || (gp.currentMap == gp.world02 && tempMap == gp.beach01) ||
 			gp.currentMap == gp.cabin01 || gp.currentMap == gp.cabin02 || gp.currentMap == gp.cabin03) 

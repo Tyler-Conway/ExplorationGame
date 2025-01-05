@@ -209,10 +209,11 @@ public class AssetSetter {
 		i = 0;
 		mapNum = gp.world04;
 		placeAsset(gp.obj, mapNum, i, new ColorfulDoor(gp, gp.world05 ,19, 47,gp.outside), 19, 0); i++;
-		
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.keyForge, 24, 23,gp.inside), 31, 27); i++;
 
 		i = 0;
-		mapNum = gp.world05;
+		mapNum = gp.keyForge;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world04, 31, 29, gp.outside), 24, 25); i++;
 
 
 		i = 0;
@@ -273,6 +274,8 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding02, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding05, i, new GreenNPC(gp), 24, 20); i++; i = 0;
+		placeAsset(gp.npc, gp.keyForge, i, new KeyForger(gp), 24, 19); i++; i = 0;
+		
 
 		setupBoulders();
 	}
@@ -319,10 +322,10 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 1, 13); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 25, 26); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 10, 3); i++;
-
-		mapNum = gp.dungeon02;
-		i = 0;
-		//placeAsset(gp.monster, mapNum, i, new SkeletonBoss(gp), 22, 19); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 23, 36); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 28, 13); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 38, 32); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 24, 9); i++;
 	}
 
 	public void setInteractiveTiles() {

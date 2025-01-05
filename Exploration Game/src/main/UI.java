@@ -13,10 +13,14 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import objects.Arrow;
+import objects.BlueKey;
 import objects.CoinBronze;
 import objects.Heart;
 import objects.ManaCrystal;
+import objects.RedKey;
 import objects.Rock;
+import objects.TriColorKey;
+import objects.YellowKey;
 
 public class UI {
 
@@ -126,6 +130,98 @@ public class UI {
 		}
 		if(gp.gameState == gp.travelState) {
 			drawTravelScreen();
+		}
+		if (gp.gameState == gp.forgeState) {
+			drawForgeScreen();
+		}
+	}
+
+	public void drawForgeScreen(){
+		npc.dialogueSet = 0;
+ 		drawDialogueScreen();
+
+		int x = gp.tileSize * 13;
+ 		int y = gp.tileSize * 4;
+ 		int width = gp.tileSize * 5;
+ 		int height = (int)(gp.tileSize * 3);
+ 		drawSubWindow(x,y,width,height);
+
+		//Draw Texts
+		x += gp.tileSize;
+		y += gp.tileSize;
+		g2.drawString("Forge TriColorKey", x, y);
+		if(commandNum == 0) {
+			g2.drawString(">", x-25, y);
+			if(gp.keyH.enterPressed == true) {
+				gp.keyH.enterPressed = false;
+				boolean redKey = false;
+				boolean blueKey = false;
+				boolean yellowKey = false;
+
+				for (int j = 0; j < gp.player.inventory.size(); j++) {
+					if(gp.player.inventory.get(j).name.equals(RedKey.objectName)) {
+						redKey = true;
+						break;
+					}
+				}
+				for (int j = 0; j < gp.player.inventory.size(); j++) {
+					if(gp.player.inventory.get(j).name.equals(BlueKey.objectName)) {
+						blueKey = true;
+						break;
+					}
+				}
+				for (int j = 0; j < gp.player.inventory.size(); j++) {
+					if(gp.player.inventory.get(j).name.equals(YellowKey.objectName)) {
+						yellowKey = true;
+						break;
+					}
+				}
+
+				if (redKey == true && blueKey == true && yellowKey == true) {
+					for (int j = 0; j < gp.player.inventory.size(); j++) {
+						if(gp.player.inventory.get(j).name.equals(YellowKey.objectName)) {
+							yellowKey = false;
+							if (gp.player.inventory.get(j).amount > 1) {gp.player.inventory.get(j).amount--;}
+							else{gp.player.inventory.remove(j);}
+							break;
+						}
+					}
+					for (int j = 0; j < gp.player.inventory.size(); j++) {
+						if(gp.player.inventory.get(j).name.equals(BlueKey.objectName)) {
+							blueKey = false;
+							if (gp.player.inventory.get(j).amount > 1) {gp.player.inventory.get(j).amount--;}
+							else{gp.player.inventory.remove(j);}
+							break;
+						}
+					}
+					for (int j = 0; j < gp.player.inventory.size(); j++) {
+						if(gp.player.inventory.get(j).name.equals(RedKey.objectName)) {
+							redKey = false;
+							if (gp.player.inventory.get(j).amount > 1) {gp.player.inventory.get(j).amount--;}
+							else{gp.player.inventory.remove(j);}
+							break;
+						}
+					}
+					commandNum = 0;
+					gp.player.inventory.add(new TriColorKey(gp));
+					npc.startDialogue(npc, 2);	
+				}
+				else {
+					npc.startDialogue(npc, 3);
+				}
+
+			}
+		}
+		y += gp.tileSize;
+		g2.drawString("Leave", x, y);
+		if(commandNum == 1) {
+			g2.drawString(">", x-25, y);
+			if(gp.keyH.enterPressed == true || gp.keyH.escapePressed == true) {
+				commandNum = 0;
+			    gp.keyH.enterPressed = false;
+			    npc.startDialogue(npc, 1);
+			}
+			
 		}
 	}
  	
@@ -356,6 +452,14 @@ public class UI {
 			else if(gp.currentMap == gp.dungeon02 && gp.skeletonGiantDefeated == true) {
 				gp.stopMusic();
 				gp.playMusic(gp.sound.victoryMusic);
+			}
+			else if(gp.currentMap == gp.keyForge) {
+				gp.stopMusic();
+				gp.playMusic(gp.sound.cabinMusic);
+			}
+			else if(gp.currentMap == gp.world04 && gp.eventHandler.previousMap == gp.keyForge) {
+				gp.stopMusic();
+				gp.playMusic(gp.sound.worldMusic);
 			}
 
 			//Game Saves after Map Transition is Complete.
