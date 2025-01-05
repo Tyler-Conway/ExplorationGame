@@ -13,7 +13,7 @@
   * To push the boulders onto the metal plates in the dungeon puzzle, just walk into them.
   * If you get one of the boulders stuck in the dungeon puzzle, leave the dungeon and come back to reset boulder positions.
   * To avoid **potential audio issues** that may crash the game, I recommend playing this game on Windows or MacOS.
-  * You can see more about this project on my [personal website repository](https://github.com/Tyler-Conway/Personal-Website).
+  * You can see more about this project on my [personal website repository](https://github.com/Tyler-Conway/Personal-Website). (once I make it public).
 
 ____
 
