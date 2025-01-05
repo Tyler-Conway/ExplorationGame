@@ -16,7 +16,7 @@ public class Pickaxe extends Entity{
 		attackValue = 1;
 		attackArea.width = (gp.tileSize/2) - 1;
 		attackArea.height = (gp.tileSize/2) - 1;
-		description = "[" + name + "]\nBreak Down Damaged Walls";
+		description = "[" + name + "]\nBreak down damaged\nwalls blocking paths.";
 		price = 75;
 		knockBackPower = 0;
 		motion1Duration = 20;

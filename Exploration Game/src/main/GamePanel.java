@@ -359,7 +359,9 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	
 	public void stopMusic() {
-		music.stop();
+		if (sound.currentMusic != sound.noMusic) {
+			music.stop();
+		}
 		sound.currentMusic = sound.noMusic;
 	}
 	

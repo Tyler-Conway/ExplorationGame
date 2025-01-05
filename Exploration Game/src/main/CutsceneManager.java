@@ -32,6 +32,7 @@ public class CutsceneManager{
             for(int i = 0; i < gp.obj[0].length; i++){
                 if(gp.obj[gp.dungeon02][i] == null){
                     gp.assetSetter.placeAsset(gp.obj, gp.dungeon02, i, new IronDoor(gp), 24, 39);
+                    gp.obj[gp.dungeon02][i].bossRoomDoor = true;
                     gp.obj[gp.dungeon02][i].temp = true;
                     gp.playSoundEffect(19);
                     break;

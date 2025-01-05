@@ -1,14 +1,6 @@
 package main;
 
 import Entity.*;
-
-import java.util.GregorianCalendar;
-
-import Entity.BlueTrader;
-import Entity.GreenNPC;
-import Entity.NPCWizard;
-import Entity.RedTrader;
-import Entity.YellowTrader;
 import InteractiveTiles.DamagedWall;
 import InteractiveTiles.DryTree;
 import InteractiveTiles.MetalPlate;
@@ -241,7 +233,7 @@ public class AssetSetter {
 
 		i = 0;
 		mapNum = gp.dungeon02;
-		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 24, 17);i++;
+		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 24, 17); gp.obj[mapNum][i].bossRoomDoor = true; i++;
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {
@@ -288,7 +280,7 @@ public class AssetSetter {
 	public void setupBoulders(){
 		int mapNum = gp.dungeon01;
 		int i = 0;
-		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 6, 2); i++;
+		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 7, 4); i++;
 		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 24, 6); i++;
 		placeAsset(gp.npc, mapNum, i, new BigRock(gp), 18, 17); i++;
 	}
@@ -325,6 +317,8 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 42, 19); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 43, 3); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 1, 13); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 25, 26); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 10, 3); i++;
 
 		mapNum = gp.dungeon02;
 		i = 0;

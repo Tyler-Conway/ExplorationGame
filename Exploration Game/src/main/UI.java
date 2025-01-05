@@ -353,6 +353,10 @@ public class UI {
 				gp.stopMusic();
 				gp.playMusic(gp.sound.dungeonMusic);
 			}
+			else if(gp.currentMap == gp.dungeon02 && gp.skeletonGiantDefeated == true) {
+				gp.stopMusic();
+				gp.playMusic(gp.sound.victoryMusic);
+			}
 
 			//Game Saves after Map Transition is Complete.
 			gp.saveLoad.save();

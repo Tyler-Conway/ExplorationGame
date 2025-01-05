@@ -91,7 +91,7 @@ public class Entity {
 	public boolean drawing = true;
 	
 	//Item Attributes:
-	public int ID = -1;
+	public boolean bossRoomDoor = false;
 	public int attackValue;
 	public int defenseValue;
 	public String description = "";

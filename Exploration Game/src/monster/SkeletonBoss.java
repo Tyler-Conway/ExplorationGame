@@ -78,12 +78,10 @@ public class SkeletonBoss extends Entity{
 		}
 		else{
 			dialogues[0][1] = "Ah, its one of the many greedy fools who\nhave disturbed my slumber over the years.";
-			dialogues[0][2] = "I'll not part with a single coin,\nNot one piece of it!";
+			dialogues[0][2] = "I'll not part with my treasure easily,\nNot one piece of it!";
 		}
 	}
-	public void speak(){
-
-	}
+	public void speak(){}
 	
 	public void setAction() {
 		
@@ -115,7 +113,7 @@ public class SkeletonBoss extends Entity{
 				gp.obj[gp.dungeon02][i] = null;
 			}
 		}
-		//Game saves as soon as you kill the final boss to be safe:
+		//Game saves as soon as you kill the final boss to be extra safe:
 		gp.saveLoad.save();
 	}
 	
