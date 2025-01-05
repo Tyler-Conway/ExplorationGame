@@ -14,6 +14,8 @@ public class CutsceneManager{
     public final int noCutScene = 0; 
     public final int skeletonGiant = 1;
 
+    boolean turnMinimapBackOn = false;
+
     public CutsceneManager(GamePanel gp){
         this.gp = gp;
 
@@ -29,6 +31,12 @@ public class CutsceneManager{
     public void skeletonGiant(){
         if(phase == 0){
             gp.bossBattle = true;
+
+            if (gp.map.miniMapOn == true) {
+                gp.map.miniMapOn = false;
+                turnMinimapBackOn = true;
+            }
+
             for(int i = 0; i < gp.obj[0].length; i++){
                 if(gp.obj[gp.dungeon02][i] == null){
                     gp.assetSetter.placeAsset(gp.obj, gp.dungeon02, i, new IronDoor(gp), 24, 39);
@@ -100,6 +108,10 @@ public class CutsceneManager{
             sceneNum = noCutScene;
             phase = noCutScene;
             gp.playMusic(gp.sound.bossMusic);
+            if (turnMinimapBackOn == true) {
+                gp.map.miniMapOn = true;
+                turnMinimapBackOn = false;
+            }
             gp.gameState = gp.playState;
         }
     }
