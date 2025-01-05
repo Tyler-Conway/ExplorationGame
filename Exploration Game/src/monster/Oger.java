@@ -74,8 +74,6 @@ public class Oger extends Entity{
 		if(onPath == true) {
 			checkStopChasing(gp.player, 10, 1);
 			searchPath(gp.player.getCol(),gp.player.getRow());
-			System.out.println(gp.player.getCol()+ ", " + gp.player.getRow());
-
 		}
 		else {
 			generateDirection(120);
