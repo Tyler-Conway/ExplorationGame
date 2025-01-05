@@ -326,6 +326,7 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 28, 13); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 38, 32); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 24, 9); i++;
+		placeAsset(gp.monster, mapNum, i, new Bat(gp), 13, 18); i++;
 	}
 
 	public void setInteractiveTiles() {
