@@ -1,10 +1,7 @@
 package main;
 
-import java.awt.Graphics2D;
-import java.rmi.server.Skeleton;
-
-import Entity.Player;
 import Entity.PlayerDummy;
+import java.awt.Graphics2D;
 import monster.SkeletonBoss;
 import objects.IronDoor;
 
@@ -101,6 +98,7 @@ public class CutsceneManager{
             gp.player.drawing = true;
             sceneNum = noCutScene;
             phase = noCutScene;
+            gp.playMusic(gp.sound.bossMusic);
             gp.gameState = gp.playState;
         }
     }

@@ -12,9 +12,14 @@ public class Sound {
 	FloatControl fc;
 	int volumeScale = 3;
 	float volume;
+	public int currentMusic;
 	public final int worldMusic = 12;
 	public final int beachMusic = 17;
 	public final int cabinMusic = 18;
+	public final int dungeonMusic = 23;
+	public final int bossMusic = 21;
+	public final int victoryMusic = 22;
+	public final int noMusic = 29;
 
 	public Sound() {
 		soundURL[0] = getClass().getResource("/Sound/PickUp1.wav");
@@ -38,6 +43,13 @@ public class Sound {
 		soundURL[18] = getClass().getResource("/Sound/TraderSong(Simple).wav");
 		soundURL[19] = getClass().getResource("/Sound/DoorOpen.wav");
 		soundURL[20] = getClass().getResource("/Sound/Talking.wav");
+		soundURL[21] = getClass().getResource("/Sound/BossFightSong.wav");
+		soundURL[22] = getClass().getResource("/Sound/VictorySong.wav");
+		soundURL[23] = getClass().getResource("/Sound/DungeonMusic.wav");
+
+
+		//No music:
+		soundURL[29] = null;
 	}
 
 	public void setFile(int i) {

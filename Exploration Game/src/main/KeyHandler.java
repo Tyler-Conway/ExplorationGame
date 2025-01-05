@@ -1,8 +1,6 @@
 package main;
 
 import Entity.Entity;
-import monster.SkeletonBoss;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import objects.Arrow;
@@ -88,7 +86,6 @@ public class KeyHandler implements KeyListener{
 					gp.player.setItems();
 					gp.player.equipInitialObjects();
 					gp.saveLoad.load();
-					gp.playMusic(12);
 					gp.gameState = gp.playState;
 					gp.ui.commandNum = 0;
 				}
@@ -278,15 +275,7 @@ public class KeyHandler implements KeyListener{
 					
 				}
 			}
-		} 
-		
-		if(code == KeyEvent.VK_ENTER) {
-			if(gp.ui.substate == 2 && gp.ui.commandNum == 0) {
-				gp.stopMusic();
-			}
-		} 
-		
-		
+		} 	
 	}
 	
 	public void pauseState(int code) {
@@ -394,7 +383,6 @@ public class KeyHandler implements KeyListener{
 					try{
 						gp.resetGame(true);
 						gp.saveLoad.load();
-						gp.playMusic(12);
 						gp.gameState = gp.playState;
 					}catch(Exception e){
 						//There is no load:

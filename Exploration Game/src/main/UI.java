@@ -341,6 +341,18 @@ public class UI {
  				gp.stopMusic();
  				gp.playMusic(gp.sound.beachMusic);
  			}
+			else if(gp.currentMap == gp.dungeon01 && gp.eventHandler.previousMap == gp.dungeon02) {
+				gp.stopMusic();
+				gp.playMusic(gp.sound.dungeonMusic);
+			}
+			else if(gp.currentMap == gp.dungeon01 && gp.eventHandler.previousMap == gp.dungeon02) {
+				gp.stopMusic();
+				gp.playMusic(gp.sound.dungeonMusic);
+			}
+			else if(gp.currentMap == gp.dungeon01 && gp.eventHandler.previousMap == gp.world05) {
+				gp.stopMusic();
+				gp.playMusic(gp.sound.dungeonMusic);
+			}
 
 			//Game Saves after Map Transition is Complete.
 			gp.saveLoad.save();
@@ -647,6 +659,7 @@ public class UI {
 			g2.drawString(">", textX - 25, textY);
 			if(gp.keyH.enterPressed == true) {
 				gp.saveLoad.save();
+				gp.stopMusic();
 				substate = 0;
 				gp.gameState = gp.titleState;
 				titleScreenState = 0;

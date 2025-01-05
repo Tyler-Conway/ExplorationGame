@@ -27,6 +27,7 @@ public class SaveLoad {
 				GameDataStorage dataStorage = new GameDataStorage();
 				
 				//Game State:
+				dataStorage.gameMusic = gp.sound.currentMusic;
 				dataStorage.currentArea = gp.currentArea;
 				dataStorage.currentMap = gp.currentMap;
 				dataStorage.skeletonGiantDefeated = gp.skeletonGiantDefeated;
@@ -118,6 +119,10 @@ public class SaveLoad {
 			GameDataStorage dataStorage = (GameDataStorage)IS.readObject();
 
 			//Game State:
+			gp.sound.currentMusic = dataStorage.gameMusic;
+			if (gp.sound.currentMusic != gp.sound.noMusic) {
+				gp.playMusic(gp.sound.currentMusic);
+			}
 			gp.currentArea = dataStorage.currentArea;
 			gp.currentMap = dataStorage.currentMap;
 			gp.skeletonGiantDefeated = dataStorage.skeletonGiantDefeated;

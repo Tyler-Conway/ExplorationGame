@@ -1,14 +1,8 @@
 package monster;
 
 import Entity.Entity;
-import java.util.Random;
 import main.GamePanel;
-import objects.Arrow;
-import objects.CoinBronze;
-import objects.Heart;
 import objects.IronDoor;
-import objects.ManaCrystal;
-import objects.Rock;
 public class SkeletonBoss extends Entity{
 	
 	GamePanel gp;
@@ -111,39 +105,18 @@ public class SkeletonBoss extends Entity{
 	}
 	
 	public void checkDrop() {
-
 		gp.bossBattle = false;
 		gp.skeletonGiantDefeated = true;
-		//gp.stopMusic();
-		//gp.playMusic();
+		gp.stopMusic();
+		gp.playMusic(gp.sound.victoryMusic);
 		for(int i = 0; i < gp.obj[1].length; i++){
 			if(gp.obj[gp.dungeon02][i] != null && gp.obj[gp.dungeon02][i].name.equals(IronDoor.objectName)){
 				gp.playSoundEffect(19); //Door Open
 				gp.obj[gp.dungeon02][i] = null;
 			}
 		}
-
-
-		int i = new Random().nextInt(100)+1;
-
-		if(i < 50) {
-			dropItem(new CoinBronze(gp));
-		}
-		if(i >= 50 && i < 75) {
-			dropItem(new Heart(gp));
-		}
-		if(i >= 75 && i < 100) {
-			if(gp.player.playerClass.equals("Fighter")) {
-				dropItem(new Arrow(gp));
-			}
-			if(gp.player.playerClass.equals("Wizard")) {
-				dropItem(new ManaCrystal(gp));
-			}
-			if(gp.player.playerClass.equals("Peasant")) {
-				dropItem(new Rock(gp));
-			}
-			
-		}
+		//Game saves as soon as you kill the final boss to be safe:
+		gp.saveLoad.save();
 	}
 	
 }

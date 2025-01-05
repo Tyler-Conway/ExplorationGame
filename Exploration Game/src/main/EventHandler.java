@@ -261,10 +261,15 @@ public class EventHandler{
 		gp.gameState = gp.transitionState;
 		gp.nextArea = area;
 		tempMap = map;
-		if(tempMap == gp.cabin01 || tempMap == gp.cabin02 || tempMap == gp.cabin03 || (tempMap == gp.beach02 && gp.eventHandler.previousMap == gp.cabin03) || 
-				(gp.currentMap == gp.beach01 && tempMap != gp.beach02) || (gp.currentMap == gp.world02 && tempMap == gp.beach01)) {
+
+		if(tempMap == gp.dungeon01 || tempMap == gp.dungeon02 || tempMap == gp.cabin01 || tempMap == gp.cabin02 ||
+		 	tempMap == gp.cabin03 || (tempMap == gp.beach02 && gp.eventHandler.previousMap == gp.cabin03) || 
+			(gp.currentMap == gp.beach01 && tempMap != gp.beach02) || (gp.currentMap == gp.world02 && tempMap == gp.beach01) ||
+			gp.currentMap == gp.cabin01 || gp.currentMap == gp.cabin02 || gp.currentMap == gp.cabin03) 
+		{
 			gp.stopMusic();
 		}
+		
 		tempCol = col;
 		tempRow = row;
 		gp.playSoundEffect(14);

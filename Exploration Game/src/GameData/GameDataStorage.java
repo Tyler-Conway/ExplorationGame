@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class GameDataStorage implements Serializable{
 
+	int gameMusic;
+
 	//Player Info:
 	int speed;
 	int life;
