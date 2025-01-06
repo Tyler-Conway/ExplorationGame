@@ -30,6 +30,7 @@ import objects.TriColorKey;
 import objects.YellowChest;
 import objects.YellowDoor;
 import objects.YellowKey;
+import objects.Amethyst;
 
 public class EntityGenerator {
     GamePanel gp;
@@ -69,6 +70,7 @@ public class EntityGenerator {
 			case Rock.objectName: object = new Rock(gp); break;
 			case Pickaxe.objectName: object = new Pickaxe(gp); break;
 			case IronDoor.objectName: object = new IronDoor(gp); break;
+			case Amethyst.objectName: object = new Amethyst(gp); break;
 		}
 		return object;
 	}

@@ -107,7 +107,7 @@ public class Player extends Entity{
 		worldY = gp.tileSize * 44;
 		// gp.currentMap = gp.dungeon02;
 		// worldX = gp.tileSize * 24;
-		// worldY = gp.tileSize * 42;
+		// worldY = gp.tileSize * 13;
 		direction = "down";
 	}
 	

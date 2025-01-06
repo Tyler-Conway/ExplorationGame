@@ -1,8 +1,12 @@
 package main;
 
 import Entity.PlayerDummy;
+
+import java.awt.AlphaComposite;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import monster.SkeletonBoss;
+import objects.Amethyst;
 import objects.IronDoor;
 
 public class CutsceneManager{
@@ -10,21 +14,31 @@ public class CutsceneManager{
     Graphics2D g2;
     public int sceneNum;
     public int phase;
+    int counter = 0;
+    float alpha = 0f;
+    int y;
+    String endCredits;
 
     public final int noCutScene = 0; 
     public final int skeletonGiant = 1;
+    public final int finalScene = 2;
 
     boolean turnMinimapBackOn = false;
 
     public CutsceneManager(GamePanel gp){
         this.gp = gp;
 
+        endCredits = "Code/Music/Artwork\n"
+                    +"      Tyler Conway"
+                    +"\n\n\n\n\n\n\n\n\n"
+                    +"Thank you for playing";
     }
 
     public void draw(Graphics2D g2){
         this.g2 = g2;
         switch(sceneNum){
             case skeletonGiant: skeletonGiant(); break;
+            case finalScene: finalScene(); break;
         }
     }
 
@@ -114,5 +128,141 @@ public class CutsceneManager{
             }
             gp.gameState = gp.playState;
         }
+    }
+
+    public void finalScene(){
+        if(phase == 0){
+            gp.finalScene = true;
+            gp.map.miniMapOn = false;
+            gp.stopMusic();
+            gp.ui.npc = new Amethyst(gp);
+            phase++;
+        }
+        if(phase == 1){
+            gp.ui.npc.startDialogue(gp.ui.npc, 0);
+        }
+        if(phase == 2){
+            gp.playSoundEffect(2);
+            phase++;
+        }
+        if(phase == 3){
+            //wait 3 seconds for the prior sound effect:
+            if(counterReached(gp.FPS*3) == true){
+                phase++;
+            }
+        }
+        if(phase == 4){
+            alpha += 0.005f;
+            if(alpha > 1f){
+                alpha = 1f;
+            }
+            drawBlackScreen(alpha);
+            if(alpha == 1f){
+                alpha = 0;
+                phase++;
+            }
+        }
+        if(phase == 5){
+            drawBlackScreen(1f);
+            alpha += 0.005f;
+            if(alpha > 1f){
+                alpha = 1f;
+            }
+            String text = "After defeating the Skeleton Giant, the Adventurer\n"
+                        + "found the legendary treasure: a beautiful Amethyst.\n"
+                        + "    Well done Adventurer, and congratulations!";
+            drawString(alpha, 38f, gp.tileSize*4, gp.tileSize*3, text, (gp.tileSize + gp.tileSize/2));
+            
+            if(counterReached(gp.FPS*12)){
+                gp.playMusic(gp.sound.worldMusic);
+                phase++;
+            }
+        }
+        if(phase == 6){
+            drawBlackScreen(1f);
+            drawString(1F, 100f, gp.screenHeight/2, gp.tileSize*2 + (gp.tileSize/4), "2D Exploration Game", (gp.tileSize + gp.tileSize/2));
+            if(counterReached(gp.FPS*8)){
+                phase++;
+            }
+        }
+        if(phase == 7){
+            drawBlackScreen(1F);
+            y = gp.screenHeight/2;
+            drawCenteredString(1F, 38f, y, endCredits, (gp.tileSize + gp.tileSize/2));
+
+            if(counterReached(gp.FPS*5)){
+                phase++;
+            }
+        }
+        if(phase == 8){
+            drawBlackScreen(1F);
+            y--;
+            drawCenteredString(1f, 38f, y, endCredits, (gp.tileSize + gp.tileSize/2));
+            if(counterReached(gp.FPS*13)){
+                phase++;
+            }
+            // if(counterReached(gp.FPS*13)){
+            //     gp.stopMusic();
+            //     gp.ui.substate = 0;
+            //     gp.gameState = gp.titleState;
+            // }
+        }
+        if(phase == 9){
+            drawBlackScreen(alpha);
+            drawCenteredString(1f, 38f, y, endCredits, (gp.tileSize + gp.tileSize/2));
+            if(counterReached(gp.FPS*5 - (gp.FPS/2))){
+                gp.stopMusic();
+                sceneNum = noCutScene;
+                phase = 0;
+                gp.finalScene = false;
+                gp.resetGame(true);
+                gp.ui.titleScreenState = 0;
+                gp.gameState = gp.titleState;
+            }
+        }
+    }
+
+    public void drawString(float alpha, float fontSize, int y, int x, String text, int lineHeight){
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(fontSize));
+        for(String line: text.split("\n")){
+            g2.drawString(line, x, y);
+            y += lineHeight;
+        }
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+    }
+
+    public void drawCenteredString(float alpha, float fontSize, int y, String text, int lineHeight){
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(fontSize));
+        for(String line: text.split("\n")){
+            int x = gp.ui.getXForCenteredText(line);
+            g2.drawString(line, x-gp.tileSize*3 + (gp.tileSize/2), y);
+            y += lineHeight;
+        }
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+    }
+
+    public void drawBlackScreen(float alpha){
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+        g2.setColor(Color.black);
+        g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+
+    }
+
+    public boolean counterReached(int target){
+        boolean counterReached = false;
+        if(counter > target){
+            counterReached = true;
+            counter = 0;
+        }
+        else{
+            counter++;
+        }
+
+        return counterReached;
     }
 }

@@ -95,6 +95,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	
 	//SYSTEM
+	public boolean finalScene = false;
 	public boolean bossBattle = false;
 	public boolean bossCutSceneOver = false;
 	public boolean skeletonGiantDefeated = false;

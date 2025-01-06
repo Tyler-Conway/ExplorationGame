@@ -282,6 +282,7 @@ public class AssetSetter {
 		i = 0;
 		mapNum = gp.dungeon02;
 		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 24, 17); gp.obj[mapNum][i].bossRoomDoor = true; i++;
+		placeAsset(gp.obj, mapNum, i, new Amethyst(gp), 24, 11);
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {

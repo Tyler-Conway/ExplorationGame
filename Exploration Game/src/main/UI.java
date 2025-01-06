@@ -1261,7 +1261,7 @@ public class UI {
 		}
 		else{
 			npc.dialogueIndex = 0;
-			if(gp.gameState == gp.dialogueState && gp.bossBattle == false){
+			if(gp.gameState == gp.dialogueState && gp.bossBattle == false && gp.finalScene == false){
 				gp.gameState = gp.playState;
 			}
 			if(gp.bossBattle == true){
@@ -1273,6 +1273,10 @@ public class UI {
 				else{
 					gp.cutsceneManager.phase++;
 				}
+			}
+			if(gp.finalScene == true){
+				gp.cutsceneManager.phase++;
+				gp.gameState = gp.cutsceneState;
 			}
 		}
 
