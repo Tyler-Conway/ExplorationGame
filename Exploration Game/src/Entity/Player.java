@@ -22,6 +22,7 @@ public class Player extends Entity{
 	public boolean lightUpdated = false;
 	public boolean debuggingMode = false;
 	int originalDexterity;
+	int maxLevel = 4;
 	
 	public KeyHandler keyH;
 	
@@ -735,9 +736,11 @@ public class Player extends Entity{
 	}
 	
 	public void checkLevelUp() {
-		if(exp >= nextLevelExp) {
+		if(exp >= nextLevelExp && level < maxLevel) {
 			level++;
-			nextLevelExp = nextLevelExp * 3;
+			if(level != maxLevel){
+				nextLevelExp = nextLevelExp * 3;
+			}
 			maxLife += 2;
 			strength++;
 			dexterity++;
