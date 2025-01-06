@@ -231,6 +231,53 @@ public class AssetSetter {
 		mapNum = gp.dungeon01;
 		placeAsset(gp.obj, mapNum, i, new Pickaxe(gp), 19, 37); i++;
 		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 21, 5); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 20, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 30, 19); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 4, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 47, 16); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 48, 5); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 41, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 24); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 44, 28); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 41, 28); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 48, 5); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 1, 43); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 1, 44); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 42, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 26, 38); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 28, 38); i++;
+		switch(gp.player.playerClass){
+			case "Fighter": 
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 46, 40); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 25, 45); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 5, 36); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 11, 46); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 6, 11); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 2, 2); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 35, 6); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 45, 13); i++;
+				break;
+			case "Wizard":
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 46, 40); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 25, 45); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 5, 36); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 11, 46); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 6, 11); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 2, 2); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 35, 6); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 45, 13); i++;
+				break;
+			case "Peasant":
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 46, 40); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 25, 45); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 5, 36); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 11, 46); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 6, 11); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 2, 2); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 35, 6); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 45, 13); i++;
+				break;
+		}
 
 		i = 0;
 		mapNum = gp.dungeon02;
