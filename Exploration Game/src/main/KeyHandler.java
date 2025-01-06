@@ -144,7 +144,7 @@ public class KeyHandler implements KeyListener{
 				//New Character:
 				if(gp.ui.commandNum != 4) {
 					gp.gameState = gp.playState;
-					gp.playMusic(12);
+					gp.playMusic(gp.sound.worldMusic);
 					gp.player.setDefaultValues();
 					gp.player.getPlayerImage();
 					gp.player.getPlayerAttackImage();
@@ -152,6 +152,9 @@ public class KeyHandler implements KeyListener{
 					gp.assetSetter.setNPC();
 					gp.player.equipInitialObjects();
 					gp.assetSetter.setObjects();
+					gp.assetSetter.setMonster();
+					gp.assetSetter.setInteractiveTiles();
+					gp.assetSetter.setNPC();
 					gp.ui.commandNum = 0;
 					gp.currentArea = gp.outside;
 				}

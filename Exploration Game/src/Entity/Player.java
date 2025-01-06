@@ -6,6 +6,7 @@ import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import main.GamePanel;
 import main.KeyHandler;
+import monster.SkeletonBoss;
 import objects.Bark;
 import objects.Lance;
 import objects.MetalShield;
@@ -706,6 +707,9 @@ public class Player extends Entity{
 					gp.monster[gp.currentMap][i].dying = true;
 					gp.ui.addMessage(gp.monster[gp.currentMap][i].name + " Killed!" + " (+"+gp.monster[gp.currentMap][i].exp+" Exp)");
 					exp += gp.monster[gp.currentMap][i].exp;
+					if(gp.monster[gp.currentMap][i].name.equals(SkeletonBoss.objectName)){
+						gp.stopMusic();
+					}
 					checkLevelUp();
 				}
 			}
