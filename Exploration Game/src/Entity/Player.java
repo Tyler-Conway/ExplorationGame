@@ -696,7 +696,7 @@ public class Player extends Entity{
 				if(gp.monster[gp.currentMap][i].offBalance == true) {attack *= 3;}
 
 				int damage = attack - gp.monster[gp.currentMap][i].defense;
-				if(damage < 0){
+				if(damage <= 0){
 					damage  = 0;
 					gp.ui.addMessage("Hit Blocked.");
 				}

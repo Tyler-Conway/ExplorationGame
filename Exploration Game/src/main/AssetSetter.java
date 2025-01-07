@@ -282,7 +282,33 @@ public class AssetSetter {
 		i = 0;
 		mapNum = gp.dungeon02;
 		placeAsset(gp.obj, mapNum, i, new IronDoor(gp), 24, 17); gp.obj[mapNum][i].bossRoomDoor = true; i++;
-		placeAsset(gp.obj, mapNum, i, new Amethyst(gp), 24, 11);
+		placeAsset(gp.obj, mapNum, i, new Amethyst(gp), 24, 11);i++;
+
+		i = 0;
+		mapNum = gp.beach01;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 30, 7);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 42, 10);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 30, 12);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 20, 14);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 17, 8);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 10, 3);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 20, 6);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 3, 4);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 9);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 10, 10);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 37, 9);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 44, 2);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 45, 1);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 36, 4);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 13, 11);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 40, 4);i++;
+
+		mapNum = gp.beach02;
+		i = 0;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 6, 3);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 8);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 14, 5);i++;
+
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {
@@ -317,6 +343,7 @@ public class AssetSetter {
 	public void setNPC() {
 		int i = 0;
 		placeAsset(gp.npc, gp.world01, i, new NPCWizard(gp), 12, 42); i++; i = 0;
+		placeAsset(gp.npc, gp.world02, i, new SkeletonStatue(gp), 20, 18); i++; i = 0;
 		placeAsset(gp.npc, gp.cabin01, i, new BlueTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.cabin02, i, new RedTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
@@ -375,6 +402,17 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 38, 32); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 24, 9); i++;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 13, 18); i++;
+
+		mapNum = gp.beach01;
+		i = 0;
+		placeAsset(gp.monster, mapNum, i, new Crab(gp), 25, 10);i++;
+		placeAsset(gp.monster, mapNum, i, new Crab(gp), 43, 9);i++;
+		placeAsset(gp.monster, mapNum, i, new Crab(gp), 7, 14);i++;
+		placeAsset(gp.monster, mapNum, i, new Crab(gp), 10, 3);i++;
+		
+		mapNum = gp.beach02;
+		i = 0;
+		placeAsset(gp.monster, mapNum, i, new Crab(gp), 10, 4);i++;
 	}
 
 	public void setInteractiveTiles() {

@@ -22,7 +22,7 @@ public class SaveLoad {
 		//Game does not save durring boss battle:
 		if(gp.bossBattle == false){
 			try {
-				System.out.println("Saving Game");
+				//System.out.println("Saving Game");
 				ObjectOutputStream OS = new ObjectOutputStream(new FileOutputStream(new File("save.dat")));
 				GameDataStorage dataStorage = new GameDataStorage();
 				
@@ -114,7 +114,7 @@ public class SaveLoad {
 	public void load() {
 		
 		try {
-			System.out.println("Loading Game");
+			//System.out.println("Loading Game");
 			ObjectInputStream IS = new ObjectInputStream(new FileInputStream(new File("save.dat")));
 			GameDataStorage dataStorage = (GameDataStorage)IS.readObject();
 

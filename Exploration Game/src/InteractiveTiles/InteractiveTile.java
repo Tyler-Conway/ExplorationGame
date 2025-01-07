@@ -16,6 +16,7 @@ public class InteractiveTile extends Entity{
 		
 		
 	}
+	//Overwritten in specific Interactive Tiles:
 	public boolean isCorrectItem(Entity entity) {
 		boolean isCorrectItem = false;
 		return isCorrectItem;

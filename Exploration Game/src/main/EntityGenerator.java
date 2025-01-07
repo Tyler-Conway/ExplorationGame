@@ -23,6 +23,7 @@ import objects.RedDoor;
 import objects.RedKey;
 import objects.RedPotion;
 import objects.Rock;
+import objects.Seaweed;
 import objects.Shield;
 import objects.Staff;
 import objects.Tent;
@@ -71,6 +72,7 @@ public class EntityGenerator {
 			case Pickaxe.objectName: object = new Pickaxe(gp); break;
 			case IronDoor.objectName: object = new IronDoor(gp); break;
 			case Amethyst.objectName: object = new Amethyst(gp); break;
+			case Seaweed.objectName: object = new Seaweed(gp); break;
 		}
 		return object;
 	}
