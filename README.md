@@ -20,7 +20,7 @@ ____
 
 ### Key features:
   * **Player Classes** (The Fighter, Knight, Wizard, and Peasant Classes).
-  * Explore **Forests**, **Beaches**, **Dungeons** and **Buildings**. 
+  * Explore **Forests**, **Beaches** and **Dungeons**. 
   * **Saving** and **loading** your progress with the java.io.Serializable interface.
   * __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
   * **Full map** and **mini-map** displays.
