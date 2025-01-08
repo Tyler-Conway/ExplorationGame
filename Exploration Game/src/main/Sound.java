@@ -21,6 +21,9 @@ public class Sound {
 	public final int victoryMusic = 22;
 	public final int noMusic = 29;
 
+	public final int buySound = 24;
+	public final int SellSound = 25;
+
 	public Sound() {
 		soundURL[0] = getClass().getResource("/Sound/PickUp1.wav");
 		soundURL[1] = getClass().getResource("/Sound/Door.wav");
@@ -46,6 +49,9 @@ public class Sound {
 		soundURL[21] = getClass().getResource("/Sound/BossFightSong.wav");
 		soundURL[22] = getClass().getResource("/Sound/VictorySong.wav");
 		soundURL[23] = getClass().getResource("/Sound/DungeonMusic.wav");
+		soundURL[24] = getClass().getResource("/Sound/BuySound.wav");
+		soundURL[25] = getClass().getResource("/Sound/SellSound.wav");
+
 
 
 		//No music:

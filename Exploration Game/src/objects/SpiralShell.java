@@ -12,12 +12,12 @@ public class SpiralShell extends Entity{
 		super(gp);
 		this.gp = gp;
 		
-		type = type_pickUpOnly;
+		type = type_Inventory;
 		name = objectName;
-		price = 20;
+		price = 50; // sells for 25
 		value = 1;
 		down1 = setup("/objects/RedSpiralShell", gp.tileSize, gp.tileSize);
-		description = "["+name+"]\nLooks pretty.";
+		description = "["+name+"]\nLooks pretty.\nIt could be worth something.";
 		stackable = true;
 	}
 

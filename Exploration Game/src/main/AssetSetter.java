@@ -297,19 +297,22 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 9);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 10, 10);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 37, 9);i++;
-		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 44, 2);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 45, 1);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 36, 4);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 13, 11);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 40, 4);i++;
+		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 44, 2);i++;
+		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 27, 3);i++;
+		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 2, 2);i++;
+		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 40, 12);i++;
 
 		mapNum = gp.beach02;
 		i = 0;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 6, 3);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 8);i++;
-		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 14, 5);i++;
-		placeAsset(gp.obj, mapNum, i, new ClamShell(gp), 14, 7);i++;
-		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 14, 9);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 13, 5);i++;
+		placeAsset(gp.obj, mapNum, i, new ClamShell(gp), 14, 2);i++;
+		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 10, 8);i++;
 		
 
 	}

@@ -12,9 +12,9 @@ public class ClamShell extends Entity{
 		super(gp);
 		this.gp = gp;
 		
-		type = type_pickUpOnly;
+		type = type_Inventory;
 		name = objectName;
-		price = 100;
+		price = 500; //sells for 250.
 		value = 1;
 		down1 = setup("/objects/ClamShell", gp.tileSize, gp.tileSize);
 		description = "["+name+"]\nValuable and beautiful.";

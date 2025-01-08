@@ -329,6 +329,7 @@ public class UI {
  				else {
  					if(gp.player.obtainItem(npc.inventory.get(itemIndex)) == true) {
  						gp.player.coin -= npc.inventory.get(itemIndex).price;
+						gp.playSoundEffect(gp.sound.buySound);
  					}
  					else {
  						substate = 0;
@@ -395,7 +396,7 @@ public class UI {
  					else {
  	 					gp.player.inventory.remove(itemIndex);
  	 				}
- 					
+ 					gp.playSoundEffect(gp.sound.SellSound);
  					gp.player.coin += price;
  				}
  			}
