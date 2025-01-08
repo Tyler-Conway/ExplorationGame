@@ -7,6 +7,7 @@ import objects.Bark;
 import objects.BlueChest;
 import objects.BlueDoor;
 import objects.BlueKey;
+import objects.ClamShell;
 import objects.CoinBronze;
 import objects.CoinGold;
 import objects.CoinSilver;
@@ -25,6 +26,7 @@ import objects.RedPotion;
 import objects.Rock;
 import objects.Seaweed;
 import objects.Shield;
+import objects.SpiralShell;
 import objects.Staff;
 import objects.Tent;
 import objects.TriColorKey;
@@ -73,6 +75,8 @@ public class EntityGenerator {
 			case IronDoor.objectName: object = new IronDoor(gp); break;
 			case Amethyst.objectName: object = new Amethyst(gp); break;
 			case Seaweed.objectName: object = new Seaweed(gp); break;
+			case ClamShell.objectName: object = new ClamShell(gp); break;
+			case SpiralShell.objectName: object = new SpiralShell(gp); break;
 		}
 		return object;
 	}

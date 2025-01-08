@@ -116,7 +116,7 @@ public class Entity {
 	//Entity Types:
 	public int type;
 	public final int type_Player = 0, type_NPC = 1, type_Monster = 2, type_Weapon = 3, type_Axe = 4, type_Shield = 5, type_Consumable = 6,
-			type_pickUpOnly = 7, type_Obstacle = 8, type_Light = 9, type_Trader = 10, type_Pickaxe = 11;
+			type_pickUpOnly = 7, type_Obstacle = 8, type_Light = 9, type_Trader = 10, type_Pickaxe = 11, type_Inventory = 12;
 	
 	
 	public Entity(GamePanel gp) {

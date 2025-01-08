@@ -308,6 +308,9 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 6, 3);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 8);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 14, 5);i++;
+		placeAsset(gp.obj, mapNum, i, new ClamShell(gp), 14, 7);i++;
+		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 14, 9);i++;
+		
 
 	}
 	
