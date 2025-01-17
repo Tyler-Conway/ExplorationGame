@@ -93,7 +93,9 @@ public class Sound {
 		case 3: volume = -5f; break;
 		case 4: volume = 1f; break;
 		case 5: volume = 6f; break;}
-		fc.setValue(volume);
+		if(this.fc != null){
+			fc.setValue(volume);
+		}
 	}
 }
 

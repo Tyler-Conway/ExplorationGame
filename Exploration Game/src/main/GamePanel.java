@@ -94,11 +94,13 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int dungeon = 2;
 	
 	
-	//SYSTEM
+	//EndGameStates:
 	public boolean finalScene = false;
 	public boolean bossBattle = false;
 	public boolean bossCutSceneOver = false;
 	public boolean skeletonGiantDefeated = false;
+
+	//SYSTEM:
 	public String worldName = "N/A";
 	public Graphics2D graphics;
 	public TileManager tileM = new TileManager(this);
@@ -413,5 +415,12 @@ public class GamePanel extends JPanel implements Runnable{
 				obj[dungeon02][i] = null;
 			}
 		}
+	}
+
+	public void resetEndGameStates(){
+		finalScene = false;
+		bossBattle = false;
+		bossCutSceneOver = false;
+		skeletonGiantDefeated = false;
 	}
 }

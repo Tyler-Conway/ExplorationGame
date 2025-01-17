@@ -450,6 +450,10 @@ public class UI {
 				gp.stopMusic();
 				gp.playMusic(gp.sound.dungeonMusic);
 			}
+			else if(gp.currentMap == gp.world05 && gp.eventHandler.previousMap == gp.dungeon01){
+				gp.stopMusic();
+				gp.playMusic(gp.sound.worldMusic);
+			}
 			else if(gp.currentMap == gp.dungeon02 && gp.skeletonGiantDefeated == true) {
 				gp.stopMusic();
 				gp.playMusic(gp.sound.victoryMusic);

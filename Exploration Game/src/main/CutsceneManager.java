@@ -134,6 +134,8 @@ public class CutsceneManager{
         if(phase == 0){
             gp.finalScene = true;
             gp.map.miniMapOn = false;
+            gp.player.inventory.add(new Amethyst(gp));
+            gp.saveLoad.save();
             gp.stopMusic();
             gp.ui.npc = new Amethyst(gp);
             phase++;

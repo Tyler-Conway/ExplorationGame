@@ -143,6 +143,7 @@ public class KeyHandler implements KeyListener{
 
 				//New Character:
 				if(gp.ui.commandNum != 4) {
+					gp.resetEndGameStates();
 					gp.gameState = gp.playState;
 					gp.playMusic(gp.sound.worldMusic);
 					gp.player.setDefaultValues();

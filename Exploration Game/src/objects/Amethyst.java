@@ -14,6 +14,8 @@ public class Amethyst extends Entity{
 
         type = type_pickUpOnly;
         name = objectName;
+        description = "["+name+"]\nThe Skeleton Giant's\nLegendary Treasure!";
+        price = 2000;
         down1 = setup("/objects/Amethyst2", gp.tileSize, gp.tileSize);
 
         setDialogue();
