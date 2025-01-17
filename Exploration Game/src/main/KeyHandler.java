@@ -145,17 +145,20 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum != 4) {
 					gp.resetEndGameStates();
 					gp.gameState = gp.playState;
+
 					gp.playMusic(gp.sound.worldMusic);
 					gp.player.setDefaultValues();
 					gp.player.getPlayerImage();
 					gp.player.getPlayerAttackImage();
 					gp.player.setItems();
-					gp.assetSetter.setNPC();
 					gp.player.equipInitialObjects();
+
+					gp.assetSetter.setNPC();
 					gp.assetSetter.setObjects();
 					gp.assetSetter.setMonster();
 					gp.assetSetter.setInteractiveTiles();
 					gp.assetSetter.setNPC();
+					
 					gp.ui.commandNum = 0;
 					gp.currentArea = gp.outside;
 				}
