@@ -311,8 +311,16 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 6, 3);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 8);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 13, 5);i++;
-		placeAsset(gp.obj, mapNum, i, new ClamShell(gp), 14, 2);i++;
+		placeAsset(gp.obj, mapNum, i, new ClamShell(gp), 17, 2);i++;
 		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 10, 8);i++;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding06, 24, 23,gp.inside), 14, 1); i++;
+
+		mapNum = gp.stoneBuilding06;
+		i = 0;
+		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.beach02, 14, 3,gp.outside), 24, 25); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 18); i++;
+
 		
 
 	}
@@ -355,6 +363,7 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding02, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding05, i, new GreenNPC(gp), 24, 20); i++; i = 0;
+		placeAsset(gp.npc, gp.stoneBuilding06, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.keyForge, i, new KeyForger(gp), 24, 19); i++; i = 0;
 		
 

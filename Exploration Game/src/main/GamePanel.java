@@ -33,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	//WORLD SETTINGS:
 	public final int maxWorldCol = 50, maxWorldRow = 50;
-	public final int maxMap = 20;
+	public final int maxMap = 25;
 	public int currentMap = 0;
 	
 	//ENTITY AND OBJECTS
@@ -67,6 +67,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int dungeon01 = 17;
 	public final int dungeon02 = 18;
 	public final int keyForge = 19;
+	public final int stoneBuilding06 = 20;
 
 	
 	//GAME STATES
@@ -354,6 +355,7 @@ public class GamePanel extends JPanel implements Runnable{
 		case dungeon01: tileM.loadMap("/maps/Dungeon01.txt", dungeon01); break;
 		case dungeon02: tileM.loadMap("/maps/Dungeon02.txt", dungeon02); break;
 		case keyForge: tileM.loadMap("/maps/KeyForge.txt", keyForge); break;
+		case stoneBuilding06: tileM.loadMap("/maps/StoneBuilding06.txt", stoneBuilding06); break;
 		}
 	}
 	
@@ -393,6 +395,7 @@ public class GamePanel extends JPanel implements Runnable{
 			case stoneBuilding03: worldName = "StoneBuilding03"; break;
 			case stoneBuilding04: worldName = "StoneBuilding04"; break;
 			case stoneBuilding05: worldName = "StoneBuilding05"; break;
+			case stoneBuilding06: worldName = "StoneBuilding06"; break;
 			case world01: worldName = "World01"; break;
 			case world02: worldName = "World02"; break;
 			case world03: worldName = "World03"; break;

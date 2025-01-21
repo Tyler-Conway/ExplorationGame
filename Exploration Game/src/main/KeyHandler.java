@@ -484,6 +484,20 @@ public class KeyHandler implements KeyListener{
 			if(code == KeyEvent.VK_ESCAPE) {
 				gp.ui.substate = 0;
 			}
+			if(code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
+				gp.ui.commandNum--;
+				if(gp.ui.commandNum < 0) {
+					gp.ui.commandNum = 2;
+				}
+				gp.playSoundEffect(8);
+			}
+			if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
+				gp.ui.commandNum++;
+				if(gp.ui.commandNum > 2) {
+					gp.ui.commandNum = 0;
+				}
+				gp.playSoundEffect(8);
+			}
 		}
 	}
 

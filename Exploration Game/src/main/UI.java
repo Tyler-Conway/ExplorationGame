@@ -554,7 +554,7 @@ public class UI {
 	
 	public void fastTravelScreen() {
 		g2.setColor(Color.white);
- 		g2.setFont(g2.getFont().deriveFont(24F));
+ 		g2.setFont(g2.getFont().deriveFont(40F));
  		
  		//Fast Travel SubWindow:
  		int frameX = gp.tileSize*2;
@@ -562,10 +562,53 @@ public class UI {
  		int frameWidth = gp.tileSize*16;
  		int frameHeight = gp.tileSize*9;
  		drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+		int x = gp.tileSize*3-(gp.tileSize/6);
+		int y = gp.tileSize*5;
+
+		g2.drawString("World01", x, y);
+		if(commandNum == 0) {
+			g2.drawString(">", x-25, y);
+			if(gp.keyH.enterPressed == true) {
+				if(gp.currentMap == gp.stoneBuilding02){
+					commandNum = 0;
+					substate = 0;
+					npc.startDialogue(npc, 1);
+				}
+			}
+		}
+		x+=gp.tileSize*6;
+		g2.drawString("World03", x, y);
+		if(commandNum == 1) {
+			g2.drawString(">", x-25, y);
+			if(gp.keyH.enterPressed == true) {
+				if(gp.currentMap == gp.stoneBuilding05){
+					commandNum = 0;
+					substate = 0;
+					npc.startDialogue(npc, 1);
+				}
+			}
+		}
+
+		x+=gp.tileSize*6;
+		g2.drawString("Beach02", x, y);
+		if(commandNum == 2) {
+			g2.drawString(">", x-25, y);
+			if(gp.keyH.enterPressed == true) {
+				if(gp.currentMap == gp.stoneBuilding06){
+					commandNum = 0;
+					substate = 0;
+					npc.startDialogue(npc, 1);
+				}
+			}
+		}
+
+
  		
  		//Hint Window:
- 		int x = gp.tileSize*2;
- 		int y = gp.tileSize*10;
+		g2.setFont(g2.getFont().deriveFont(24F));
+ 		x = gp.tileSize*2;
+ 		y = gp.tileSize*10;
  		int width = gp.tileSize*6;
  		int height = gp.tileSize*2;
  		drawSubWindow(x,y,width,height);

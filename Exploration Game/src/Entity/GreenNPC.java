@@ -25,12 +25,14 @@ public class GreenNPC extends Entity{
 
 	public void setDialogue() {
 		dialogues[0][0] = "Hello stranger! Welcome to the Traveler's Express!\nWould you like to fast travel to annother location?";
+		dialogues[1][0] = "You cannot fast travel to that location becuase you\nare already there!";
 	}
 	
 	public void speak() {
 		gp.ui.commandNum = 2;
-		gp.gameState = gp.tradeState;
+		gp.gameState = gp.travelState;
 		gp.ui.npc = this;
+		gp.ui.commandNum = 1;
 	}
 	
 }

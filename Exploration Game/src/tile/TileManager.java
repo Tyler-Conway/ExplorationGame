@@ -33,6 +33,7 @@ public class TileManager {
 		loadMap("/maps/StoneBuilding03.txt", gp.stoneBuilding03);
 		loadMap("/maps/StoneBuilding04.txt", gp.stoneBuilding04);
 		loadMap("/maps/StoneBuilding05.txt", gp.stoneBuilding05);
+		loadMap("/maps/StoneBuilding06.txt", gp.stoneBuilding06);
 		loadMap("/maps/World02.txt", gp.world02);
 		loadMap("/maps/Cabin02.txt", gp.cabin02);
 		loadMap("/maps/World03.txt", gp.world03);

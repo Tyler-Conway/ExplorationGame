@@ -188,6 +188,10 @@ public class EventHandler{
 			case 19:
 				if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
 				break;
+		//StoneBuilding06
+			case 20:
+				if(hit(mapNum,24,21,"up") == true) {speak(gp.npc[mapNum][0]);}
+				break;
 			}
 		}
 	}
