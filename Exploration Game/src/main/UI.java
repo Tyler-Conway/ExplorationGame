@@ -571,10 +571,13 @@ public class UI {
 			g2.drawString(">", x-25, y);
 			if(gp.keyH.enterPressed == true) {
 				if(gp.currentMap == gp.stoneBuilding02){
-					commandNum = 0;
-					substate = 0;
 					npc.startDialogue(npc, 1);
 				}
+				else{
+					gp.eventHandler.changeMap(gp.stoneBuilding02, 24, 23, gp.inside);
+				}
+				commandNum = 0;
+				substate = 0;
 			}
 		}
 		x+=gp.tileSize*6;
@@ -583,10 +586,13 @@ public class UI {
 			g2.drawString(">", x-25, y);
 			if(gp.keyH.enterPressed == true) {
 				if(gp.currentMap == gp.stoneBuilding05){
-					commandNum = 0;
-					substate = 0;
 					npc.startDialogue(npc, 1);
 				}
+				else{
+					gp.eventHandler.changeMap(gp.stoneBuilding05, 24, 23, gp.inside);
+				}
+				commandNum = 0;
+				substate = 0;
 			}
 		}
 
@@ -596,10 +602,13 @@ public class UI {
 			g2.drawString(">", x-25, y);
 			if(gp.keyH.enterPressed == true) {
 				if(gp.currentMap == gp.stoneBuilding06){
-					commandNum = 0;
-					substate = 0;
 					npc.startDialogue(npc, 1);
 				}
+				else{
+					gp.eventHandler.changeMap(gp.stoneBuilding06, 24, 23, gp.inside);
+				}
+				commandNum = 0;
+				substate = 0;
 			}
 		}
 
