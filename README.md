@@ -26,6 +26,7 @@ ____
   * **Full map** and **mini-map** displays.
   * NPC's to **trade** and **talk** to.
   * **Buildings** to enter, and **map transitions**.
+  * **Fast-Travel**.
   * 8-minute **day/night cycle**.
   * Player **inventory system** and **interactive objects**.
   * **Monsters** (Slime Blobs, Ogers, Bats, Crabs, and the Giant Skeleton).
