@@ -311,6 +311,7 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 6, 3);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 8, 8);i++;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 13, 5);i++;
+		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 14, 10);i++;
 		placeAsset(gp.obj, mapNum, i, new ClamShell(gp), 17, 2);i++;
 		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 10, 8);i++;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding06, 24, 23,gp.inside), 14, 1); i++;
@@ -320,6 +321,29 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.beach02, 14, 3,gp.outside), 24, 25); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 20, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new Door(gp, mapNum, i), 29, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 25, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 23, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 18, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 19, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 18, 15); i++;
+
+		switch(gp.player.playerClass){
+			case "Fighter": 
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 30, 14); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 29, 14); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 30, 15); i++;
+				break;
+			case "Wizard":
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 30, 14); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 29, 14); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 30, 15); i++;
+				break;
+			case "Peasant":
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 30, 14); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 29, 14); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 30, 15); i++;
+				break;
+		}
 
 		
 
@@ -428,6 +452,7 @@ public class AssetSetter {
 		mapNum = gp.beach02;
 		i = 0;
 		placeAsset(gp.monster, mapNum, i, new Crab(gp), 10, 4);i++;
+		placeAsset(gp.monster, mapNum, i, new Crab(gp), 14, 7);i++;
 	}
 
 	public void setInteractiveTiles() {
