@@ -10,6 +10,7 @@
   * To equip a different weapon or shield: open your inventory and press ENTER on the weapon/shield you want to equip.
   * Equip the lantern to light up your surroundings at night.
   * To sleep through the night, select the Tent item from your inventory.
+  * Trade with the traders located in cabins throughout the world. The Blue Trader is in World01, the Red Trader is in World02, and the Yellow Trader is in Beach02.
   * The peasant class is like the wretch/deprived class from Elden Ring/Dark Souls: it's a weak character class.
   * To push the boulders onto the metal plates in the dungeon puzzle, just walk into them.
   * If you get one of the boulders stuck in the dungeon puzzle, leave the dungeon and come back to reset boulder positions.
