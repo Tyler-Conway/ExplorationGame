@@ -73,8 +73,10 @@ public class Map extends TileManager{
 		g2.drawImage(gp.player.down1, playerX, playerY, playerSize, playerSize, null);
 		
 		//Hint
-		g2.setFont(gp.ui.arial.deriveFont(18F));
+		g2.setFont(gp.ui.arial.deriveFont(24F));
 		g2.setColor(Color.white);
+		g2.drawString(""+gp.getWorldname(gp.currentMap), gp.tileSize*17, gp.tileSize*12 - (gp.tileSize/2) - miniMapXYOffset);
+		g2.setFont(gp.ui.arial.deriveFont(18F));
 		g2.drawString("(Press M to Close)", gp.tileSize*17, gp.tileSize*12 - miniMapXYOffset);
 
 	}
@@ -99,7 +101,7 @@ public class Map extends TileManager{
 			//Hint
 			g2.setFont(gp.ui.arial.deriveFont(18F));
 			g2.setColor(Color.white);
-			g2.drawString("(Press X to Close)", x, y + height + gp.tileSize/3);
+			g2.drawString("(Press X to Close)   -   "+gp.getWorldname(gp.currentMap), x, y + height + gp.tileSize/3);
 			
 			//Reset Alpha:
 			//g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
