@@ -305,6 +305,10 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 27, 3);i++;
 		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 2, 2);i++;
 		placeAsset(gp.obj, mapNum, i, new SpiralShell(gp), 40, 12);i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 45, 26);i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 45, 27);i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 26);i++;
+
 
 		mapNum = gp.beach02;
 		i = 0;
@@ -389,6 +393,7 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.stoneBuilding05, i, new GreenNPC(gp), 24, 20); i++; i = 0;
 		placeAsset(gp.npc, gp.stoneBuilding06, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.keyForge, i, new KeyForger(gp), 24, 19); i++; i = 0;
+		placeAsset(gp.npc, gp.beach01, i, new Fisher(gp), 40, 28); i++; i = 0;
 		
 
 		setupBoulders();
