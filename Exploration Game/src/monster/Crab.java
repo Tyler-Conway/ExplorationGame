@@ -27,7 +27,7 @@ public class Crab extends Entity{
 		maxLife = 5;
 		life = maxLife;
 		attack = 3;
-		defense = 2;
+		defense = 1;
 		exp = 1;
 		
 		solidArea.x  = (gp.tileSize/8);
