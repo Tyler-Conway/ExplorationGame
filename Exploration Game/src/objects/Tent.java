@@ -22,11 +22,16 @@ public class Tent extends Entity{
 	}
 	
 	public void setDialogue(){
-		dialogues[0][0] = "You cannot sleep during day time";
+		dialogues[0][0] = "You cannot sleep during day time.";
+		dialogues[1][0] = "You cannot sleep during a boss fight.";
 	}
 
 	public boolean use(Entity entity) {
-		if(gp.enviornmentManager.lighting.dayState == gp.enviornmentManager.lighting.evening ||
+		if(gp.bossBattle == true){
+			startDialogue(this, 1);
+			return false;
+		}
+		else if(gp.enviornmentManager.lighting.dayState == gp.enviornmentManager.lighting.evening ||
 				gp.enviornmentManager.lighting.dayState == gp.enviornmentManager.lighting.night) {
 			gp.player.attackCanceled = true;
 			gp.gameState = gp.sleepState;
