@@ -210,6 +210,9 @@ public class AssetSetter {
 		mapNum = gp.world04;
 		placeAsset(gp.obj, mapNum, i, new ColorfulDoor(gp, gp.world05 ,19, 47,gp.outside), 19, 0); i++;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.keyForge, 24, 23,gp.inside), 31, 27); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 3, 22); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 3, 23); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 4, 22); i++;
 
 		i = 0;
 		mapNum = gp.keyForge;
@@ -431,6 +434,11 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 10, 46); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 6, 46); i++;
 		placeAsset(gp.monster, mapNum, i, new Oger(gp), 8, 20); i++;
+
+		mapNum = gp.world04;
+		i = 0;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 10, 25); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 6, 25); i++;
 
 		mapNum = gp.dungeon01;
 		i = 0;
