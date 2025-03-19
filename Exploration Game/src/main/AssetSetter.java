@@ -213,6 +213,11 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 3, 22); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 3, 23); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 4, 22); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 13, 28); i++;
+		placeAsset(gp.obj, mapNum, i, new BlueChest(gp), 8, 16); i++;
+		placeAsset(gp.obj, mapNum, i, new Heart(gp), 11, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 2, 6); i++;
+
 
 		i = 0;
 		mapNum = gp.keyForge;
@@ -397,6 +402,7 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.stoneBuilding06, i, new GreenNPC(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.keyForge, i, new KeyForger(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.beach01, i, new Fisher(gp), 40, 28); i++; i = 0;
+		placeAsset(gp.npc, gp.world04, i, new Fisher(gp), 32, 6); i++; i = 0;
 		
 
 		setupBoulders();
@@ -439,6 +445,8 @@ public class AssetSetter {
 		i = 0;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 10, 25); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 6, 25); i++;
+		placeAsset(gp.monster, mapNum, i, new Oger(gp), 3, 9); i++;
+
 
 		mapNum = gp.dungeon01;
 		i = 0;
@@ -491,6 +499,13 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 42, 19);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 42, 12);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 8, 17);i++;
+
+		mapNum = gp.world04;
+		i = 0;
+		gp.iTile[mapNum][i] = new DryTree(gp, 5, 14);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 2, 7);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 36, 4);i++;
+
 
 		mapNum = gp.dungeon01;
 		i = 0;

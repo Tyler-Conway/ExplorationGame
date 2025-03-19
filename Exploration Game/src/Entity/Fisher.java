@@ -35,7 +35,7 @@ public class Fisher extends Entity{
 	}
 
 	public void setDialogue() {
-		dialogues[0][0] = "You approach and try to talk to the fisherman sitting on the\nedge of the dock . . .";
+		dialogues[0][0] = "You approach and try to talk to the fisherman sitting on the\nedge of the water . . .";
 		dialogues[0][1] = "But he seems to be ignoring you.\nFishing requires a lot of concentration, afterall.";
 
 
