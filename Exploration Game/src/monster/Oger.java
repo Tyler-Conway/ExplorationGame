@@ -77,7 +77,7 @@ public class Oger extends Entity{
 		}
 		else {
 			generateDirection(120);
-			checkStartChasing(gp.player, 7);
+			checkStartChasing(gp.player, 5);
 		}
 		
 		//Check if Oger should attack: 

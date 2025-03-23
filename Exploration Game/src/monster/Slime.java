@@ -5,9 +5,7 @@ import java.util.Random;
 import Entity.Entity;
 import main.GamePanel;
 import objects.Arrow;
-import objects.CoinBronze;
 import objects.CoinGold;
-import objects.CoinSilver;
 import objects.Heart;
 import objects.ManaCrystal;
 import objects.Rock;
@@ -30,16 +28,13 @@ public class Slime extends Entity{
 		exp = 2;
 		projectile = new Rock(gp);
 		
-		//solidArea.x = 3;
-		//solidArea.y = 18;
 		solidArea.x  = (gp.tileSize/8);
-		solidArea.y = gp.tileSize - (gp.tileSize/2);
+		solidArea.y = (gp.tileSize/8);
 		solidArea.width = gp.tileSize - (gp.tileSize/8);
-		solidArea.height = (gp.tileSize/3);
+		solidArea.height = gp.tileSize - (gp.tileSize/8);
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		getImage();
-		
 	}
 
 	public void getImage() {

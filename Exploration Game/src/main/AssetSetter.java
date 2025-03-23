@@ -217,6 +217,38 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new BlueChest(gp), 8, 16); i++;
 		placeAsset(gp.obj, mapNum, i, new Heart(gp), 11, 18); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 2, 6); i++;
+		placeAsset(gp.obj, mapNum, i, new RedChest(gp), 46, 2); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 47, 17); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 42, 34); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 43, 34); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 34); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 17, 38); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 3, 43); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 7, 41); i++;
+		placeAsset(gp.obj, mapNum, i, new Tent(gp), 10, 46); i++;
+		switch(gp.player.playerClass){
+			case "Fighter": 
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 13, 22); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 12, 22); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 13, 23); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 15, 13); i++;
+				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 28, 39); i++;
+				break;
+			case "Wizard":
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 13, 22); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 12, 22); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 13, 23); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 15, 13); i++;
+				placeAsset(gp.obj, mapNum, i, new ManaCrystal(gp), 28, 39); i++;
+				break;
+			case "Peasant":
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 13, 22); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 12, 22); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 13, 23); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 15, 13); i++;
+				placeAsset(gp.obj, mapNum, i, new Rock(gp), 28, 39); i++;
+				break;
+		}
 
 
 		i = 0;
@@ -446,6 +478,9 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 10, 25); i++;
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 6, 25); i++;
 		placeAsset(gp.monster, mapNum, i, new Oger(gp), 3, 9); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 41, 10); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 41, 3); i++;
+		placeAsset(gp.monster, mapNum, i, new Oger(gp), 43, 37); i++;
 
 
 		mapNum = gp.dungeon01;
@@ -505,6 +540,12 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 5, 14);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 2, 7);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 36, 4);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 44, 6);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 44, 12);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 19, 34);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 43, 43);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 43, 36);i++;
+
 
 
 		mapNum = gp.dungeon01;
