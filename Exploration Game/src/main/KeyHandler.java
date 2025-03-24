@@ -153,7 +153,7 @@ public class KeyHandler implements KeyListener{
 					gp.player.setItems();
 					gp.player.equipInitialObjects();
 
-					gp.assetSetter.setNPC();
+					gp.removeAllObjects();
 					gp.assetSetter.setObjects();
 					gp.assetSetter.setMonster();
 					gp.assetSetter.setInteractiveTiles();
@@ -398,14 +398,6 @@ public class KeyHandler implements KeyListener{
 						//There is no load:
 						gp.resetGame(true);
 					}
-
-
-
-					// gp.gameState = gp.playState;
-					// gp.currentMap = gp.world01;
-					// gp.player.speed = gp.player.defaultSpeed;
-					// gp.resetGame(false);
-					// gp.playMusic(12);
 				}
 				else if(gp.ui.commandNum == 1) {
 					gp.ui.titleScreenState = 0;
