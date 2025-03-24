@@ -51,6 +51,14 @@ public class AssetSetter {
 		i = 0;
 		mapNum = gp.world02;
 		placeAsset(gp.obj, mapNum, i, new YellowChest(gp), 45, 2); i++;
+		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 25, 27); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 18, 8); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 10, 12); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 4, 14); i++;
+		placeAsset(gp.obj, mapNum, i, new Tent(gp), 7, 18); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 4, 39); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 5, 39); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 6, 39); i++;
 		
 		i = 0;
 		mapNum = gp.stoneBuilding01;
@@ -226,6 +234,7 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 3, 43); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinBronze(gp), 7, 41); i++;
 		placeAsset(gp.obj, mapNum, i, new Tent(gp), 10, 46); i++;
+		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 23, 18); i++;
 		switch(gp.player.playerClass){
 			case "Fighter": 
 				placeAsset(gp.obj, mapNum, i, new Arrow(gp), 13, 22); i++;
@@ -425,7 +434,10 @@ public class AssetSetter {
 	public void setNPC() {
 		int i = 0;
 		placeAsset(gp.npc, gp.world01, i, new NPCWizard(gp), 12, 42); i++; i = 0;
-		placeAsset(gp.npc, gp.world02, i, new SkeletonStatue(gp), 20, 18); i++; i = 0;
+		
+		placeAsset(gp.npc, gp.world02, i, new SkeletonStatue(gp), 20, 18); i++;
+		placeAsset(gp.npc, gp.world02, i, new Fisher(gp), 35, 41); i++; i = 0;
+		
 		placeAsset(gp.npc, gp.cabin01, i, new BlueTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.cabin02, i, new RedTrader(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.cabin03, i, new YellowTrader(gp), 24, 19); i++; i = 0;
@@ -462,6 +474,11 @@ public class AssetSetter {
 		mapNum = gp.world02;
 		i = 0;
 		placeAsset(gp.monster, mapNum, i, new Oger(gp), 43, 11); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 25, 3); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 25, 8); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 3, 42); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 5, 42); i++;
+		placeAsset(gp.monster, mapNum, i, new Slime(gp), 7, 42); i++;
 
 		mapNum = gp.world03;
 		i = 0;
@@ -527,6 +544,10 @@ public class AssetSetter {
 		i = 0;
 		gp.iTile[mapNum][i] = new DryTree(gp, 45, 7);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 26, 16);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 20, 6);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 14, 34);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 9, 43);i++;
+		gp.iTile[mapNum][i] = new DryTree(gp, 5, 41);i++;
 		
 		mapNum = gp.world03;
 		i = 0;
