@@ -313,10 +313,7 @@ public class KeyHandler implements KeyListener{
 		if(code == KeyEvent.VK_ENTER) {
 			gp.player.selectItem();
 		}
-		playerInventory(code);
-		
-		
-		
+		playerInventory(code);	
 	}
 	
 	public void playerInventory(int code) {
@@ -515,7 +512,6 @@ public class KeyHandler implements KeyListener{
 			}
 			gp.playSoundEffect(8);
 		}
-
 	}
 	
 	public void keyReleased(KeyEvent e) {

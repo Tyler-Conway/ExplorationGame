@@ -1,39 +1,7 @@
 package main;
 
 import Entity.Entity;
-import objects.Arrow;
-import objects.Axe;
-import objects.Bark;
-import objects.BlueChest;
-import objects.BlueDoor;
-import objects.BlueKey;
-import objects.ClamShell;
-import objects.CoinBronze;
-import objects.CoinGold;
-import objects.CoinSilver;
-import objects.Heart;
-import objects.IronDoor;
-import objects.Lance;
-import objects.Lantern;
-import objects.ManaCrystal;
-import objects.MetalShield;
-import objects.PaperClip;
-import objects.Pickaxe;
-import objects.RedChest;
-import objects.RedDoor;
-import objects.RedKey;
-import objects.RedPotion;
-import objects.Rock;
-import objects.Seaweed;
-import objects.Shield;
-import objects.SpiralShell;
-import objects.Staff;
-import objects.Tent;
-import objects.TriColorKey;
-import objects.YellowChest;
-import objects.YellowDoor;
-import objects.YellowKey;
-import objects.Amethyst;
+import objects.*;
 
 public class EntityGenerator {
     GamePanel gp;

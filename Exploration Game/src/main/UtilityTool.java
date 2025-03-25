@@ -15,9 +15,5 @@ public class UtilityTool {
 		return scaledImage;
 	}
 	
-	
-	public UtilityTool() {
-		
-	}
-
+	public UtilityTool() {}
 }

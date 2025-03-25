@@ -23,8 +23,6 @@ public class AssetSetter {
 	}
 
 	public void setObjects() {
-		//placeAsset(gp.obj, mapNum, i, new ); i++;
-
 		int mapNum = gp.world01;
 		int i = 0;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.stoneBuilding01, 24, 23,gp.inside), 38, 44); i++;
@@ -259,11 +257,9 @@ public class AssetSetter {
 				break;
 		}
 
-
 		i = 0;
 		mapNum = gp.keyForge;
 		placeAsset(gp.obj, mapNum, i, new TeleportDoor(gp, gp.world04, 31, 29, gp.outside), 24, 25); i++;
-
 
 		i = 0;
 		mapNum = gp.lootCabin01;
@@ -358,7 +354,6 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 45, 27);i++;
 		placeAsset(gp.obj, mapNum, i, new CoinSilver(gp), 44, 26);i++;
 
-
 		mapNum = gp.beach02;
 		i = 0;
 		placeAsset(gp.obj, mapNum, i, new Seaweed(gp), 6, 3);i++;
@@ -397,13 +392,9 @@ public class AssetSetter {
 				placeAsset(gp.obj, mapNum, i, new Rock(gp), 30, 15); i++;
 				break;
 		}
-
-		
-
 	}
 	
 	public void setupLootCabin(int mapNum, int i) {
-
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 27, 26); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 21, 26); i++;
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 21, 19); i++;
@@ -428,7 +419,6 @@ public class AssetSetter {
 		placeAsset(gp.obj, mapNum, i, new CoinGold(gp), 24, 22); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 26, 26); i++;
 		placeAsset(gp.obj, mapNum, i, new RedPotion(gp), 22, 26); i++;
-
 	}
 	
 	public void setNPC() {
@@ -447,8 +437,9 @@ public class AssetSetter {
 		placeAsset(gp.npc, gp.keyForge, i, new KeyForger(gp), 24, 19); i++; i = 0;
 		placeAsset(gp.npc, gp.beach01, i, new Fisher(gp), 40, 28); i++; i = 0;
 		placeAsset(gp.npc, gp.world04, i, new Fisher(gp), 32, 6); i++; i = 0;
-		
 
+		//Boulders are considered NPC's for Collision and to detect
+		//if their solid areas intersect with the metal plates.
 		setupBoulders();
 	}
 
@@ -499,7 +490,6 @@ public class AssetSetter {
 		placeAsset(gp.monster, mapNum, i, new Slime(gp), 41, 3); i++;
 		placeAsset(gp.monster, mapNum, i, new Oger(gp), 43, 37); i++;
 
-
 		mapNum = gp.dungeon01;
 		i = 0;
 		placeAsset(gp.monster, mapNum, i, new Bat(gp), 10, 35); i++;
@@ -531,7 +521,6 @@ public class AssetSetter {
 	public void setInteractiveTiles() {
 		int i = 0;
 		int mapNum = 0;
-
 		gp.iTile[mapNum][i] = new DryTree(gp, 12, 28);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 8, 28);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 24, 34);i++;
@@ -567,11 +556,8 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DryTree(gp, 43, 43);i++;
 		gp.iTile[mapNum][i] = new DryTree(gp, 43, 36);i++;
 
-
-
 		mapNum = gp.dungeon01;
 		i = 0;
-		//gp.iTile[mapNum][i] = new DamagedWall(gp, );i++;
 		gp.iTile[mapNum][i] = new DamagedWall(gp, 19, 32);i++;
 		gp.iTile[mapNum][i] = new DamagedWall(gp, 16, 36);i++;
 		gp.iTile[mapNum][i] = new DamagedWall(gp, 22, 36);i++;
@@ -585,12 +571,8 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new DamagedWall(gp, 35, 14);i++;
 		gp.iTile[mapNum][i] = new DamagedWall(gp, 3, 16);i++;
 		gp.iTile[mapNum][i] = new DamagedWall(gp, 38, 4);i++;
-		//MetalPlates:
 		gp.iTile[mapNum][i] = new MetalPlate(gp, 15, 2);i++;
 		gp.iTile[mapNum][i] = new MetalPlate(gp, 18, 14);i++;
 		gp.iTile[mapNum][i] = new MetalPlate(gp, 25, 6);i++;
-
-		mapNum = gp.dungeon02;
-		i = 0;
 	}
 }

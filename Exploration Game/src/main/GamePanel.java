@@ -18,6 +18,8 @@ import tile.TileManager;
 
 public class GamePanel extends JPanel implements Runnable{
 	
+	public KeyHandler keyH = new KeyHandler(this);
+
 	//Basic Game Settings:
 	final int originalTileSize = 32; //32x32 Tiles
 	final int scale = 2; //scales up the pixels to 64x64
@@ -28,8 +30,6 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int screenHeight = tileSize * maxScreenRows; //960 pixels
 	//FPS
 	public int FPS = 60;
-
-	public KeyHandler keyH = new KeyHandler(this);
 	
 	//WORLD SETTINGS:
 	public final int maxWorldCol = 50, maxWorldRow = 50;
@@ -69,7 +69,6 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int keyForge = 19;
 	public final int stoneBuilding06 = 20;
 
-	
 	//GAME STATES
 	public int gameState;
 	public final int titleState = 0;
@@ -87,13 +86,12 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int cutsceneState = 12;
 	public final int forgeState = 13;
 
-	//Area State:
+	//Area State (used for lighting):
 	public int currentArea;
 	public int nextArea;
 	public final int outside = 0;
 	public final int inside = 1;
 	public final int dungeon = 2;
-	
 	
 	//EndGameStates:
 	public boolean finalScene = false;
@@ -380,7 +378,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 
 	public String getWorldname(int worldNum){
-		String worldName = "   ???   ";
+		String worldName;
 		switch (worldNum) {
 			case beach01: worldName = "Beach01"; break;
 			case beach02: worldName = "Beach02"; break;

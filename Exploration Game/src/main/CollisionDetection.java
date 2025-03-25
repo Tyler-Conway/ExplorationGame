@@ -11,7 +11,6 @@ public class CollisionDetection {
 	}
 
 	public void checkTile(Entity e) {
-		
 		//identifying the bounds of an entity's collision rectangle:
 		int entityLeftWorldX = e.worldX + e.solidArea.x;
 		int entityRightWorldX = e.worldX + e.solidArea.x + e.solidArea.width;
@@ -71,7 +70,6 @@ public class CollisionDetection {
 	
 	//NPC OR MONSTER COLLISION:
 	public int checkEntity(Entity entity, Entity[][] target) {
-		
 		int index = 999;
 		
 		//Temporary collision checking when entity is being Knocked back:
