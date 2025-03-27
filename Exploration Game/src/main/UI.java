@@ -396,7 +396,7 @@ public class UI {
  					else {
  	 					gp.player.inventory.remove(itemIndex);
  	 				}
- 					gp.playSoundEffect(gp.sound.SellSound);
+ 					gp.playSoundEffect(gp.sound.sellSound);
  					gp.player.coin += price;
  				}
  			}
