@@ -678,7 +678,7 @@ public class Player extends Entity{
 	public void contactMonster(int i) {
 		if(i != 999) {
 			if(invincible == false && gp.monster[gp.currentMap][i].dying == false && gp.monster[gp.currentMap][i].alive == true) {
-				gp.playSoundEffect(6);
+				gp.playSoundEffect(gp.sound.recieveDamage);
 				int damage = gp.monster[gp.currentMap][i].attack - defense;
 				if(damage < 1) {damage  = 1;}
 				life -= damage;

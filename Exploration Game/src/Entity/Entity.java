@@ -495,7 +495,7 @@ public class Entity {
  				}
  			}
  			else {
- 				gp.playSoundEffect(6);
+ 				gp.playSoundEffect(gp.sound.recieveDamage);
  				if(damage < 1) {damage  = 1;}
  			}
  			if(damage != 0) {
