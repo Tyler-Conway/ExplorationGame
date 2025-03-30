@@ -691,7 +691,7 @@ public class Player extends Entity{
 	public void damageMonster(int i, Entity attacker, int attack, int knockBackPower) {
 		if(i != 999) {
 			if(gp.monster[gp.currentMap][i].invincible == false) {
-				gp.playSoundEffect(5);
+				gp.playSoundEffect(gp.sound.hitMonster);
 				if(knockBackPower > 0) {setKnockBack(gp.monster[gp.currentMap][i], attacker, gp.player.knockBackPower);}
 				if(gp.monster[gp.currentMap][i].offBalance == true) {attack *= 3;}
 
