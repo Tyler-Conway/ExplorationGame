@@ -630,7 +630,7 @@ public class Player extends Entity{
 				for(int i = 0; i < gp.projectile[0].length; i++) {
 					if(gp.projectile[gp.currentMap][i] == null) {gp.projectile[gp.currentMap][i] = projectile;break;}
 				}
-				gp.playSoundEffect(10);
+				gp.playSoundEffect(gp.sound.projectile);
 				//reset Counter for next time:
 				shotAvailableCounter = 0;
 			}

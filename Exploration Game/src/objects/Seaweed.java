@@ -29,7 +29,7 @@ public class Seaweed extends Entity{
 	public boolean use(Entity entity) {
 		startDialogue(this, 0);
 		entity.life += value;
-		gp.playSoundEffect(9);
+		gp.playSoundEffect(gp.sound.healing);
 		return true;
 	}
 }
