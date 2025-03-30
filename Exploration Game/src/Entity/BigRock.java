@@ -87,7 +87,7 @@ public class BigRock extends Entity{
 
                 if(linkedEntity == null){
                     linkedEntity = plateList.get(i);
-                    gp.playSoundEffect(1);
+                    gp.playSoundEffect(gp.sound.door);
                 }
             }
             else{

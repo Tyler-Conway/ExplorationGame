@@ -35,7 +35,7 @@ public class Door extends Entity{
 	}
 	
 	public void interact() {
-		gp.playSoundEffect(1);
+		gp.playSoundEffect(gp.sound.door);
 		gp.obj[doorMapNum][objectIndex] = null;
 	}
 

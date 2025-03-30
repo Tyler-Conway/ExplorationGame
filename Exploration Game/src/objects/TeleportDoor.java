@@ -38,7 +38,7 @@ public class TeleportDoor extends Entity{
 	}
 	
 	public void interact() {
-		gp.playSoundEffect(1);
+		gp.playSoundEffect(gp.sound.door);
 		//Causes player to enter structure:
 		gp.eventHandler.changeMap(targetMapNum, newCol, newRow, newArea);
 	

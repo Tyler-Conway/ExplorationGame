@@ -37,7 +37,7 @@ public class ColorfulDoor extends Entity{
 	public void interact() {
 
 		if(locked == false || gp.keyH.showDebugText == true){
-			gp.playSoundEffect(1);
+			gp.playSoundEffect(gp.sound.door);
 			gp.eventHandler.changeMap(targetMapNum, newCol, newRow, newArea);
 		}
 		else{

@@ -39,7 +39,7 @@ public class YellowKey extends Entity{
 		
 		if(objIndex != 999) {
 			startDialogue(this, 0);
-			gp.playSoundEffect(1);
+			gp.playSoundEffect(gp.sound.door);
 			gp.obj[gp.currentMap][objIndex] = null;
 			return true;
 		}
