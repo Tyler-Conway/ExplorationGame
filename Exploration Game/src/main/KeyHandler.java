@@ -244,14 +244,14 @@ public class KeyHandler implements KeyListener{
 		}
 		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
 			gp.ui.commandNum--;
-			gp.playSoundEffect(8);
+			gp.playSoundEffect(gp.sound.cursor);
 			if(gp.ui.commandNum < 0) {
 				gp.ui.commandNum = maxCommandNum;
 			}
 		}
 		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 			gp.ui.commandNum++;
-			gp.playSoundEffect(8);
+			gp.playSoundEffect(gp.sound.cursor);
 			if(gp.ui.commandNum > maxCommandNum) {
 				gp.ui.commandNum = 0;
 			}
@@ -262,12 +262,12 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum == 0 && gp.music.volumeScale > 0) {
 					gp.music.volumeScale--;
 					gp.music.checkVolume();
-					gp.playSoundEffect(8);
+					gp.playSoundEffect(gp.sound.cursor);
 					
 				}
 				if(gp.ui.commandNum == 1 && gp.sound.volumeScale > 0) {
 					gp.sound.volumeScale--;
-					gp.playSoundEffect(8);
+					gp.playSoundEffect(gp.sound.cursor);
 					
 				}
 			}
@@ -277,11 +277,11 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum == 0 && gp.music.volumeScale < 5) {
 					gp.music.volumeScale++;
 					gp.music.checkVolume();
-					gp.playSoundEffect(8);
+					gp.playSoundEffect(gp.sound.cursor);
 				}
 				if(gp.ui.commandNum == 1 && gp.sound.volumeScale < 5) {
 					gp.sound.volumeScale++;
-					gp.playSoundEffect(8);
+					gp.playSoundEffect(gp.sound.cursor);
 					
 				}
 			}
@@ -320,25 +320,25 @@ public class KeyHandler implements KeyListener{
 		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
 			if(gp.ui.playerSlotRow != 0) {
 				gp.ui.playerSlotRow--;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 		if(code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
 			if(gp.ui.playerSlotCol != 0) {
 				gp.ui.playerSlotCol--;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 			if(gp.ui.playerSlotRow != 3) {
 				gp.ui.playerSlotRow++;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
 			if(gp.ui.playerSlotCol != 4) {
 				gp.ui.playerSlotCol++;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 	}
@@ -347,25 +347,25 @@ public class KeyHandler implements KeyListener{
 		if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {
 			if(gp.ui.npcSlotRow != 0) {
 				gp.ui.npcSlotRow--;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 		if(code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
 			if(gp.ui.npcSlotCol != 0) {
 				gp.ui.npcSlotCol--;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 			if(gp.ui.npcSlotRow != 3) {
 				gp.ui.npcSlotRow++;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
 			if(gp.ui.npcSlotCol != 4) {
 				gp.ui.npcSlotCol++;
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 	}
@@ -415,14 +415,14 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum < 0) {
 					gp.ui.commandNum = 2;
 				}
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 			if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 				gp.ui.commandNum++;
 				if(gp.ui.commandNum > 2) {
 					gp.ui.commandNum = 0;
 				}
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 			if(code == KeyEvent.VK_ESCAPE) {
 				gp.ui.commandNum = 0;
@@ -454,14 +454,14 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum < 0) {
 					gp.ui.commandNum = 1;
 				}
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 			if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 				gp.ui.commandNum++;
 				if(gp.ui.commandNum > 1) {
 					gp.ui.commandNum = 0;
 				}
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 			if(code == KeyEvent.VK_ESCAPE) {
 				gp.ui.commandNum = 0;
@@ -478,14 +478,14 @@ public class KeyHandler implements KeyListener{
 				if(gp.ui.commandNum < 0) {
 					gp.ui.commandNum = 2;
 				}
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 			if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
 				gp.ui.commandNum++;
 				if(gp.ui.commandNum > 2) {
 					gp.ui.commandNum = 0;
 				}
-				gp.playSoundEffect(8);
+				gp.playSoundEffect(gp.sound.cursor);
 			}
 		}
 	}
@@ -503,14 +503,14 @@ public class KeyHandler implements KeyListener{
 			if(gp.ui.commandNum < 0) {
 				gp.ui.commandNum = 1;
 			}
-			gp.playSoundEffect(8);
+			gp.playSoundEffect(gp.sound.cursor);
 		}
 		if(code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 			gp.ui.commandNum++;
 			if(gp.ui.commandNum > 1) {
 				gp.ui.commandNum = 0;
 			}
-			gp.playSoundEffect(8);
+			gp.playSoundEffect(gp.sound.cursor);
 		}
 	}
 	

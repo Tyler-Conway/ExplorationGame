@@ -746,7 +746,7 @@ public class Player extends Entity{
 			dexterity++;
 			attack = getAttack();
 			defense = getDefense();
-			gp.playSoundEffect(7);
+			gp.playSoundEffect(gp.sound.levelUp);
 			gp.gameState = gp.dialogueState;
 			setDialogue();
 			startDialogue(this, 0);
