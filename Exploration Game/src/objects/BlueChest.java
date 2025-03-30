@@ -35,7 +35,7 @@ public class BlueChest extends Entity{
 	
 	public void interact() {
 		if(opened == false) {
-			gp.playSoundEffect(2);
+			gp.playSoundEffect(gp.sound.chestOpen);
 			
 			StringBuilder sb = new StringBuilder();
 			sb.append("You opened the chest and find: " + loot.name + "!");

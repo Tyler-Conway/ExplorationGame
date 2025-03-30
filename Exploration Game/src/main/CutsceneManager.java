@@ -135,7 +135,7 @@ public class CutsceneManager{
             gp.ui.npc.startDialogue(gp.ui.npc, 0);
         }
         if(phase == 2){
-            gp.playSoundEffect(2);
+            gp.playSoundEffect(gp.sound.chestOpen);
             phase++;
         }
         if(phase == 3){
