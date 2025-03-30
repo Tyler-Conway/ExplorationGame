@@ -528,7 +528,7 @@ public class UI {
 		if (counter >= 120) {
 			gp.enviornmentManager.lighting.filterAlpha -= 0.01f;
 			if(gp.enviornmentManager.lighting.filterAlpha <= 0f) {
-				gp.playSoundEffect(14);
+				gp.playSoundEffect(gp.sound.enter);
 				gp.player.getPlayerImage();
 				gp.player.getPlayerAttackImage();
 				gp.enviornmentManager.lighting.filterAlpha = 0f;

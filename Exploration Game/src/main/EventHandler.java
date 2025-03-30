@@ -280,7 +280,7 @@ public class EventHandler{
 		
 		tempCol = col;
 		tempRow = row;
-		gp.playSoundEffect(14);
+		gp.playSoundEffect(gp.sound.enter);
 		canTouchEvent = false;
 
 		

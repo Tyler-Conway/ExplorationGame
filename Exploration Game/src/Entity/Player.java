@@ -655,7 +655,7 @@ public class Player extends Entity{
 			gp.stopMusic();
 			//Smashing enter as you die would have caused you to instantly retry:
 			gp.ui.commandNum = -1;
-			gp.playSoundEffect(13);	
+			gp.playSoundEffect(gp.sound.death);	
 		}
 		if(guarding == true && keyH.spacePressed == false) {
 			guarding = false;

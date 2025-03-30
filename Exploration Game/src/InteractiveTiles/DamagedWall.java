@@ -28,7 +28,7 @@ public class DamagedWall extends InteractiveTile{
 	}
 	
 	public void playSoundEffect() {
-		gp.playSoundEffect(11);
+		gp.playSoundEffect(gp.sound.cutTree);
 	}
 	
 	public InteractiveTile getDestroyedForm() {
