@@ -482,7 +482,7 @@ public class Entity {
  				//PARRY (pressed guard key less than 15 frames before attack hits you):
  				if(gp.player.guardCounter < 15 && monsterHasWeapon == true) {
  					damage = 0;
- 					gp.playSoundEffect(16);
+ 					gp.playSoundEffect(gp.sound.parry);
  					setKnockBack(this, gp.player, knockBackPower);
  					offBalance = true;
  					//Attacker gets put back into their "wind up phase" for 60 frames becasue they are stunned:
@@ -490,7 +490,7 @@ public class Entity {
  				}
  				else {
  					//Normal Guard:
- 	 				gp.playSoundEffect(15);
+ 	 				gp.playSoundEffect(gp.sound.block);
  	 				damage /= 3;
  				}
  			}

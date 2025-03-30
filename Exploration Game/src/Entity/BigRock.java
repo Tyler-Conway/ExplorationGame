@@ -105,7 +105,7 @@ public class BigRock extends Entity{
             for(int i = 0; i < gp.obj[1].length; i++){
                 if(gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].name.equals(IronDoor.objectName)){
                     gp.obj[gp.currentMap][i] = null;
-                    gp.playSoundEffect(19);
+                    gp.playSoundEffect(gp.sound.ironDoorOpen);
                 }
             }
         }

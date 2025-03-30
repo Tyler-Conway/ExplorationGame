@@ -109,7 +109,7 @@ public class SkeletonBoss extends Entity{
 		gp.playMusic(gp.sound.victoryMusic);
 		for(int i = 0; i < gp.obj[1].length; i++){
 			if(gp.obj[gp.dungeon02][i] != null && gp.obj[gp.dungeon02][i].name.equals(IronDoor.objectName)){
-				gp.playSoundEffect(19); //Door Open
+				gp.playSoundEffect(gp.sound.ironDoorOpen); //Door Open
 				gp.obj[gp.dungeon02][i] = null;
 			}
 		}

@@ -35,7 +35,7 @@ public class Tent extends Entity{
 				gp.enviornmentManager.lighting.dayState == gp.enviornmentManager.lighting.night) {
 			gp.player.attackCanceled = true;
 			gp.gameState = gp.sleepState;
-			gp.playSoundEffect(14);
+			gp.playSoundEffect(gp.sound.enter);
 			gp.player.restoreLifeAndProjectiles();
 
 			//Save Game: 

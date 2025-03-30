@@ -56,7 +56,7 @@ public class CutsceneManager{
                     gp.assetSetter.placeAsset(gp.obj, gp.dungeon02, i, new IronDoor(gp), 24, 39);
                     gp.obj[gp.dungeon02][i].bossRoomDoor = true;
                     gp.obj[gp.dungeon02][i].temp = true;
-                    gp.playSoundEffect(19);
+                    gp.playSoundEffect(gp.sound.ironDoorOpen);
                     break;
                 }
             }
