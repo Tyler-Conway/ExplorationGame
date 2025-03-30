@@ -417,7 +417,7 @@ public class Entity {
 		if(spriteCounter > motion1Duration && spriteCounter <= motion2Duration) {
 			spriteNum = 2;
 			if(alreadyPlayedAttackSound == false) {
-				gp.playSoundEffect(4);
+				gp.playSoundEffect(gp.sound.weaponSwing);
 				alreadyPlayedAttackSound = true;
 			}
 			//Save Current worldx, worldy, solidArea:
