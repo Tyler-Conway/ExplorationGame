@@ -52,7 +52,7 @@ public class Rock extends Projectile {
 	}
 	
 	public boolean use(Entity entity) {
-		gp.playSoundEffect(0);
+		gp.playSoundEffect(gp.sound.pickUp);
 		gp.ui.addMessage("+"+value+ " Rock");
 		entity.ammo += value;
 		return true;

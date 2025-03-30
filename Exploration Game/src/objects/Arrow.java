@@ -53,7 +53,7 @@ public class Arrow extends Projectile {
 	}
 	
 	public boolean use(Entity entity) {
-		gp.playSoundEffect(0);
+		gp.playSoundEffect(gp.sound.pickUp);
 		gp.ui.addMessage("Arrows +"+value);
 		entity.arrows += value;
 		return true;

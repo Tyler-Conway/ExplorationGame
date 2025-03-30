@@ -855,7 +855,7 @@ public class Player extends Entity{
 			//Inventory Items:
 			else {
 				if(obtainItem(gp.obj[gp.currentMap][i]) == true) {
-					gp.playSoundEffect(0);
+					gp.playSoundEffect(gp.sound.pickUp);
 					text =  "You got a " + gp.obj[gp.currentMap][i].name + "!";
 				}
 				else {text = "You cannot carry any more!";}

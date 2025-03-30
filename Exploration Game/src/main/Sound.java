@@ -22,6 +22,12 @@ public class Sound {
 	public final int victoryMusic = 22;
 	public final int noMusic = 29;
 
+
+	public final int pickUp = 0, door = 1, chestOpen = 2, weaponswing = 4,
+		hitMonster = 5, recieveDamage = 6, levelUp = 7, cursor = 8, healing = 9, fireball = 10,
+		cutTree = 11, death = 13, enter = 14, block = 15, parry = 16, ironDoorOpen = 19,
+		talking = 20, buySound = 24, sellSound = 25;
+
 	public Sound() {
 		soundURL[0] = getClass().getResource("/Sound/PickUp1.wav");
 		soundURL[1] = getClass().getResource("/Sound/Door.wav");

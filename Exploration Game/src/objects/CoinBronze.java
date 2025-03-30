@@ -19,7 +19,7 @@ public class CoinBronze extends Entity{
 	}
 
 	public boolean use(Entity entity) {
-		gp.playSoundEffect(0);
+		gp.playSoundEffect(gp.sound.pickUp);
 		gp.ui.addMessage("Coin +"+value);
 		gp.player.coin += value;
 		return true;

@@ -24,7 +24,7 @@ public class Heart extends Entity{
 	}
 
 	public boolean use(Entity entity) {
-		gp.playSoundEffect(0);
+		gp.playSoundEffect(gp.sound.pickUp);
 		gp.ui.addMessage("Life +"+value);
 		entity.life += value;
 		return true;
