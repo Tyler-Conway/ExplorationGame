@@ -19,7 +19,7 @@
 
 ### Secrets/Debugging Features:
   * press ENTER on the right side of the World01 pool to level up quickly. =)
-  * press T to turn on Debug Mode, which turns off collisions, lets you see your world position and frame times in nanoseconds.
+  * press T to turn on Debug Mode, which turns off collisions, resets objects, and lets you see your world position and frame times in nanoseconds.
   * you can bypass the TriColorDoor to access the end game area without the TriColorKey if you are in Debug Mode and you press ENTER on the TriColorDoor.
 
 ____
