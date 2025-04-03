@@ -15,8 +15,12 @@
   * To push the boulders onto the metal plates in the dungeon puzzle, just walk into them.
   * If you get one of the boulders stuck in the dungeon puzzle, leave the dungeon and come back to reset boulder positions.
   * To avoid **potential audio issues** that may crash the game, I recommend playing this game on Windows or MacOS.
-  * [Secret: press ENTER on the right side of the World01 pool to level up quickly =) ]
   * You can see more about this project on my [personal website repository](https://github.com/Tyler-Conway/Personal-Website). (once/if I make it public).
+
+### Secrets/Debugging Features:
+  * press ENTER on the right side of the World01 pool to level up quickly. =)
+  * press T to turn on Debug Mode, which turns off collisions, lets you see your world position and frame times in nanoseconds.
+  * you can bypass the TriColorDoor to access the end game area without the TriColorKey if you are in Debug Mode and you press ENTER on the TriColorDoor.
 
 ____
 
