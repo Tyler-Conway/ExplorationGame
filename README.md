@@ -19,9 +19,9 @@
   * You can see more about this project on my [personal website repository](https://github.com/Tyler-Conway/Personal-Website). (once/if I make it public).
 
 ### Secrets/Debugging Features:
-  * press ENTER on the right side of the World01 pool to level up quickly. =)
-  * press T to turn on Debug Mode, which turns off collisions, lets you reset objects and clear all monsters by pressing R, and lets you see your world position and frame times in nanoseconds.
-  * press R outside of Debug Mode to reset monsters.
+  * Press ENTER on the right side of the World01 pool to level up quickly. =)
+  * Press T to turn on Debug Mode, which turns off collisions (be careful not to walk outside the map), lets you reset objects and clear all monsters by pressing R, and displays your world position and frame times in nanoseconds.
+  * Press R outside of Debug Mode to reset monsters.
   * you can bypass the TriColorDoor to access the end game area without the TriColorKey if you are in Debug Mode and you press ENTER on the TriColorDoor.
 
 ____
@@ -37,7 +37,7 @@ ____
   * **Fast-Travel**.
   * 8-minute **day/night cycle**.
   * Player **inventory system** and **interactive objects**.
-  * **Monsters** (Slime Blobs, Ogers, Bats, Crabs, and the Giant Skeleton).
+  * **Monsters** (Slime Blobs, Ogres, Bats, Crabs, and the Giant Skeleton).
 
 ### Controls: 
   * WASD to move
