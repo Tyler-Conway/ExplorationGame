@@ -466,6 +466,14 @@ public class UI {
 				gp.stopMusic();
 				gp.playMusic(gp.sound.worldMusic);
 			}
+			else if(gp.currentMap == gp.beach02 && gp.eventHandler.previousMap == gp.stoneBuilding06){
+				gp.stopMusic();
+				gp.playMusic(gp.sound.beachMusic);
+			}
+			else if(gp.currentMap == gp.stoneBuilding06 && gp.eventHandler.previousMap == gp.beach02){
+				gp.stopMusic();
+				gp.playMusic(gp.sound.worldMusic);
+			}
 
 			//Game Saves after Map Transition is Complete.
 			gp.saveLoad.save();
