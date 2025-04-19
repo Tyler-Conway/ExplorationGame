@@ -27,7 +27,7 @@ public class SkeletonBoss extends Entity{
 		exp = 0;
 		monsterHasWeapon = true;
 		knockBackPower = 5;
-		
+
 		motion1Duration = gp.FPS - (gp.FPS/3);
 		motion2Duration = gp.FPS + (gp.FPS/2);
 		
@@ -40,8 +40,6 @@ public class SkeletonBoss extends Entity{
 		solidAreaDefaultY = solidArea.y;
 		attackArea.width = gp.tileSize*4;
 		attackArea.height = gp.tileSize*4;
-		
-		
 		getImage();
 		getAttackImage();
 		setDialogue();

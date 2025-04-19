@@ -5,9 +5,7 @@ import java.util.Random;
 import Entity.Entity;
 import main.GamePanel;
 import objects.Arrow;
-import objects.CoinBronze;
 import objects.CoinGold;
-import objects.CoinSilver;
 import objects.Heart;
 import objects.ManaCrystal;
 import objects.Rock;
@@ -36,7 +34,6 @@ public class Bat extends Entity{
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		getImage();
-		
 	}
 
 	public void getImage() {
@@ -51,22 +48,11 @@ public class Bat extends Entity{
 	}
 	
 	public void setAction() {
-		
-		if(onPath == true) {
-			// checkStopChasing(gp.player, 10, 100);
-			// searchPath(getGoalCol(gp.player),getGoalRow(gp.player));
-			// checkShootProjectile(200, 120);
-		}
-		else {
-			generateDirection(10);
-			//checkStartChasing(gp.player, 5);
-		}
+		generateDirection(10);
 	}
 	
 	public void damageReaction() {
 		actionLockCounter = 0;
-		//It becomes Agressive and charges at player:
-		//onPath = true;
 	}
 	
 	public void checkDrop() {

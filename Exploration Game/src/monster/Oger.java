@@ -19,7 +19,6 @@ public class Oger extends Entity{
 		type = type_Monster;
 		name = "Oger";
 		defaultSpeed = 1;
-		//defaultSpeed = 0;
 		speed = defaultSpeed;
 		maxLife = 12;
 		life = maxLife;
@@ -28,7 +27,6 @@ public class Oger extends Entity{
 		exp = 10;
 		monsterHasWeapon = true;
 		knockBackPower = 5;
-		
 		motion1Duration = 40;
 		motion2Duration = 85;
 		
@@ -40,11 +38,8 @@ public class Oger extends Entity{
 		solidAreaDefaultY = solidArea.y;
 		attackArea.width = gp.tileSize+(gp.tileSize/4);
 		attackArea.height = gp.tileSize+(gp.tileSize/4);
-		
-		
 		getImage();
 		getAttackImage();
-		
 	}
 
 	public void getImage() {
@@ -92,10 +87,8 @@ public class Oger extends Entity{
 	}
 	
 	public void checkDrop() {
-		//Cast a die
 		int i = new Random().nextInt(100)+1;
 		
-		//Set Monster Drops
 		if(i < 50) {
 			dropItem(new CoinBronze(gp));
 		}
@@ -111,9 +104,7 @@ public class Oger extends Entity{
 			}
 			if(gp.player.playerClass.equals("Peasant")) {
 				dropItem(new Rock(gp));
-			}
-			
+			}	
 		}
 	}
-	
 }

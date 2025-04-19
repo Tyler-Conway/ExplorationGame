@@ -63,8 +63,6 @@ public class Slime extends Entity{
 	
 	public void damageReaction() {
 		actionLockCounter = 0;
-		//direction = gp.player.direction;
-		//It becomes Agressive and charges at player:
 		onPath = true;
 	}
 	
