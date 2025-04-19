@@ -46,7 +46,7 @@ ____
   * X to toggle mini-map
   * P to pause/unpause
   * SPACE to bring up your shield/parry
-  * ENTER to select/use/attack
+  * ENTER to select/use/attack/open
   * ESCAPE to bring up the options menu/go back
 
 ____
