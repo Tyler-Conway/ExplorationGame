@@ -31,12 +31,12 @@ public class Sound {
 	public Sound() {
 		soundURL[0] = getClass().getResource("/Sound/PickUp1.wav");
 		soundURL[1] = getClass().getResource("/Sound/Door.wav");
-		soundURL[2] = getClass().getResource("/Sound/chestOpen.wav");
+		soundURL[2] = getClass().getResource("/Sound/ChestOpen.wav");
 		soundURL[3] = getClass().getResource("/Sound/ExplorationGameSong(Guitar).wav");
-		soundURL[4] = getClass().getResource("/Sound/weaponswing.wav");
-		soundURL[5] = getClass().getResource("/Sound/hitmonster.wav");
-		soundURL[6] = getClass().getResource("/Sound/receivedamage.wav");
-		soundURL[7] = getClass().getResource("/Sound/levelUp.wav");
+		soundURL[4] = getClass().getResource("/Sound/WeaponSwing.wav");
+		soundURL[5] = getClass().getResource("/Sound/HitMonster.wav");
+		soundURL[6] = getClass().getResource("/Sound/ReceiveDamage.wav");
+		soundURL[7] = getClass().getResource("/Sound/LevelUp.wav");
 		soundURL[8] = getClass().getResource("/Sound/Cursor.wav");
 		soundURL[9] = getClass().getResource("/Sound/Healing.wav");
 		soundURL[10] = getClass().getResource("/Sound/Fireball.wav");
