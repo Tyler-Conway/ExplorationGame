@@ -1,6 +1,6 @@
 package main;
 
-import Entity.Entity;
+import entity.Entity;
 import objects.*;
 
 public class EntityGenerator {

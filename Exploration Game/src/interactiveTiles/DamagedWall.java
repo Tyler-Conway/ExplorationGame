@@ -1,27 +1,27 @@
-package InteractiveTiles;
+package interactiveTiles;
 
 import java.awt.Color;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 
-public class DryTree extends InteractiveTile {
+public class DamagedWall extends InteractiveTile{
 
-	public DryTree(GamePanel gp, int col, int row) {
+    public DamagedWall(GamePanel gp, int col, int row) {
 		super(gp, col, row);
 		this.gp = gp;
 		this.worldX = gp.tileSize* col;
 		this.worldY = gp.tileSize * row;
-		name = "DryTree";
+		name = "DamagedWall";
 		
-		down1 = setup("/Interactive/DryTree", gp.tileSize, gp.tileSize);
+		down1 = setup("/Interactive/DamagedWall", gp.tileSize, gp.tileSize);
 		destructable = true;
 		life = 3;
 	}
 
 	public boolean isCorrectItem(Entity entity) {
 		boolean isCorrectItem = false;
-		if(entity.currentWeapon.type == type_Axe) {
+		if(entity.currentWeapon.type == type_Pickaxe) {
 			isCorrectItem = true;
 		}
 		return isCorrectItem;
@@ -32,13 +32,11 @@ public class DryTree extends InteractiveTile {
 	}
 	
 	public InteractiveTile getDestroyedForm() {
-		//passes the cut down tree's coordinates into the truck's constructor:
-		InteractiveTile tile = new Trunk(gp, worldX/gp.tileSize, worldY/gp.tileSize);
-		return tile;
+		return null;
 	}
 
 	public Color getParticleColor() {
-		Color color = new Color(65,50,30);
+		Color color = new Color(47,47,47);
 		return color;
 	}
 	public int getParticleSize() {

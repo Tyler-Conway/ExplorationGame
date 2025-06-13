@@ -1,8 +1,9 @@
 package main;
 
-import Entity.Entity;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import entity.Entity;
 import objects.Arrow;
 import objects.Fireball;
 import objects.Rock;

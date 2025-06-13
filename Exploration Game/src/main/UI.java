@@ -1,6 +1,5 @@
 package main;
 
-import Entity.Entity;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -12,6 +11,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+
+import entity.Entity;
 import objects.Arrow;
 import objects.BlueKey;
 import objects.CoinBronze;

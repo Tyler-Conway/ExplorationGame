@@ -1,10 +1,9 @@
 package main;
 
-import Entity.Entity;
-import Entity.Player;
-import GameData.SaveLoad;
-import InteractiveTiles.InteractiveTile;
 import enviornment.EnviornmentManager;
+import gameData.SaveLoad;
+import interactiveTiles.InteractiveTile;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -12,6 +11,9 @@ import java.awt.Graphics2D;
 import java.lang.*;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+
+import entity.Entity;
+import entity.Player;
 import pathfinding.PathFinder;
 import tile.Map;
 import tile.TileManager;

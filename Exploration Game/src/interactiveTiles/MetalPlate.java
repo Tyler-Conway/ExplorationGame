@@ -1,6 +1,6 @@
-package InteractiveTiles;
+package interactiveTiles;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 
 public class MetalPlate extends InteractiveTile {

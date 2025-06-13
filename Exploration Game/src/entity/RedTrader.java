@@ -1,18 +1,18 @@
-package Entity;
+package entity;
 
 import java.util.Random;
 
 import main.GamePanel;
 import objects.RedPotion;
 import objects.Tent;
-import objects.YellowKey;
 import objects.BlueKey;
 import objects.Lantern;
 import objects.MetalShield;
+import objects.RedKey;
 
-public class YellowTrader extends Entity{
+public class RedTrader extends Entity{
 
-	public YellowTrader(GamePanel gp) {
+	public RedTrader(GamePanel gp) {
 		super(gp);
 		
 		direction = "down";
@@ -24,8 +24,8 @@ public class YellowTrader extends Entity{
 	}
 	
 	public void getImage() {
-		down1 = setup("/NPC/YellowTrader1", gp.tileSize, gp.tileSize);
-		down2 = setup("/NPC/YellowTrader2", gp.tileSize, gp.tileSize);
+		down1 = setup("/NPC/RedTrader1", gp.tileSize, gp.tileSize);
+		down2 = setup("/NPC/RedTrader2", gp.tileSize, gp.tileSize);
 	}
 
 	public void setDialogue() {
@@ -37,7 +37,7 @@ public class YellowTrader extends Entity{
 	}
 	
 	public void setItems() {
-		inventory.add(new YellowKey(gp));
+		inventory.add(new RedKey(gp));
 		inventory.add(new RedPotion(gp));
 		inventory.add(new Tent(gp));
 		inventory.add(new Lantern(gp));

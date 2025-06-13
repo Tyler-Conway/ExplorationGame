@@ -1,8 +1,8 @@
-package InteractiveTiles;
+package interactiveTiles;
 
 import java.awt.Graphics2D;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 
 public class InteractiveTile extends Entity{

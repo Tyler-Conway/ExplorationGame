@@ -1,6 +1,6 @@
 package objects;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 
 public class CoinSilver extends Entity{

@@ -1,10 +1,10 @@
 package main;
 
-import Entity.PlayerDummy;
-
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics2D;
+
+import entity.PlayerDummy;
 import monster.SkeletonBoss;
 import objects.Amethyst;
 import objects.IronDoor;

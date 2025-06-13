@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.management.ObjectName;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 
 public class Boots extends Entity{

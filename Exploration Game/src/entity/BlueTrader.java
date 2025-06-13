@@ -1,18 +1,24 @@
-package Entity;
-
-import java.util.Random;
+package entity;
 
 import main.GamePanel;
-import objects.RedPotion;
-import objects.Tent;
+import objects.Axe;
+import objects.Bark;
 import objects.BlueKey;
+import objects.Lance;
 import objects.Lantern;
 import objects.MetalShield;
+import objects.PaperClip;
+import objects.Pickaxe;
 import objects.RedKey;
+import objects.RedPotion;
+import objects.Shield;
+import objects.Staff;
+import objects.Tent;
+import objects.YellowKey;
 
-public class RedTrader extends Entity{
+public class BlueTrader extends Entity{
 
-	public RedTrader(GamePanel gp) {
+	public BlueTrader(GamePanel gp) {
 		super(gp);
 		
 		direction = "down";
@@ -24,8 +30,8 @@ public class RedTrader extends Entity{
 	}
 	
 	public void getImage() {
-		down1 = setup("/NPC/RedTrader1", gp.tileSize, gp.tileSize);
-		down2 = setup("/NPC/RedTrader2", gp.tileSize, gp.tileSize);
+		down1 = setup("/NPC/BlueTrader1", gp.tileSize, gp.tileSize);
+		down2 = setup("/NPC/BlueTrader2", gp.tileSize, gp.tileSize);
 	}
 
 	public void setDialogue() {
@@ -37,10 +43,12 @@ public class RedTrader extends Entity{
 	}
 	
 	public void setItems() {
-		inventory.add(new RedKey(gp));
+		inventory.add(new BlueKey(gp));
 		inventory.add(new RedPotion(gp));
+		inventory.add(new MetalShield(gp));
 		inventory.add(new Tent(gp));
 		inventory.add(new Lantern(gp));
+		inventory.add(new Shield(gp));
 	}
 	
 	public void speak() {

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 
 public class RedKey extends Entity{

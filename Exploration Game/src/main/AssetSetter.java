@@ -1,9 +1,9 @@
 package main;
 
-import Entity.*;
-import InteractiveTiles.DamagedWall;
-import InteractiveTiles.DryTree;
-import InteractiveTiles.MetalPlate;
+import entity.*;
+import interactiveTiles.DamagedWall;
+import interactiveTiles.DryTree;
+import interactiveTiles.MetalPlate;
 import monster.*;
 import objects.*;
 

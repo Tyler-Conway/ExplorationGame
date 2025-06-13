@@ -1,6 +1,6 @@
 package monster;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 import objects.IronDoor;
 public class SkeletonBoss extends Entity{

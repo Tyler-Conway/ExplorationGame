@@ -1,4 +1,4 @@
-package GameData;
+package gameData;
 
 import java.io.Serializable;
 import java.util.ArrayList;

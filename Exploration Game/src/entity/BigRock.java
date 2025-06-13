@@ -1,10 +1,10 @@
-package Entity;
+package entity;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import InteractiveTiles.InteractiveTile;
-import InteractiveTiles.MetalPlate;
+import interactiveTiles.InteractiveTile;
+import interactiveTiles.MetalPlate;
 import main.GamePanel;
 import objects.IronDoor;
 

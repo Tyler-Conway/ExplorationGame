@@ -2,7 +2,7 @@ package monster;
 
 import java.util.Random;
 
-import Entity.Entity;
+import entity.Entity;
 import main.GamePanel;
 import objects.Arrow;
 import objects.CoinGold;
