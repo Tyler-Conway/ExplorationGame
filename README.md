@@ -7,6 +7,7 @@
   * To open normal doors: go up to the door and press ENTER.
   * Use WASD to navigate your inventory.
   * To open colorful doors: go up to the door, open your inventory, and press ENTER on the key that matches the door's color.
+  * To find colorful keys: buy them from traders or walk up to red, yellow, and blue chests and press ENTER.
   * To parry a monster's attacks: press SPACE just before they attack. You will knock them back and can do **extra damage** following a parry.
   * To equip a different weapon or shield: open your inventory and press ENTER on the weapon/shield you want to equip.
   * Equip the lantern to light up your surroundings at night.
