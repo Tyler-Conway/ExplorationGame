@@ -5,7 +5,7 @@
 
 ### Project Information:
 
-This is a 2D, grid-based action/exploration RPG written in Java. As the player, you explore forests, beaches, and a dungeon, collect gear, interact with NPCs, and fight monsters using real-time combat mechanics. This was built entirely from scratch as a solo project over 7 months. I wrote all the code with VS Code, created all the music and sounds using BeepBox, and created all the pixel art for the game assets with Piskel.
+This is a 2D, grid-based action/exploration RPG written in Java. As the player, you explore forests, beaches, and a dungeon, collect gear, interact with NPCs, and fight monsters using real-time combat mechanics. This was built entirely from scratch as a solo project over ~7 months. I wrote all the code with VS Code, created all the music and sounds using BeepBox, and created all the pixel art for the game assets with Piskel.
 
 ____
 
