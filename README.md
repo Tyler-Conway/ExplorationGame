@@ -3,6 +3,12 @@
 <img width="1113" alt="Game Screenshot 2" src="https://github.com/user-attachments/assets/389d9058-7aa8-42ae-8713-77dfb5de146f"/>
 <img width="1049" alt="Game Screenshot 3" src="https://github.com/user-attachments/assets/e5e1721a-1ba2-43e1-9ea9-e9d5244f1373" />
 
+### Project Information:
+
+This is a 2D, grid-based action/exploration RPG written in Java. As the player, you explore forests, beaches, and a dungeon, collect gear, interact with NPCs, and fight monsters using real-time combat mechanics. This was built entirely from scratch as a solo project over 6 months. I wrote all the code with VS Code, created all the music and sounds using BeepBox, and created all the pixel art for the game assets with Piskel.
+
+____
+
 ### Instructions:
   * To open normal doors: go up to the door and press ENTER.
   * Use WASD to navigate your inventory.
@@ -33,7 +39,7 @@ ____
   * **Saving** and **loading** your progress with the java.io.Serializable interface.
   * __A* pathfinding algorithm__ for the monsters to run towards and attack the player.
   * **Full map** and **mini-map** displays.
-  * NPC's to **trade** and **talk** to.
+  * NPC's to **trade** with and **talk** to.
   * **Buildings** to enter, and **map transitions**.
   * **Fast-Travel**.
   * 8-minute **day/night cycle**.
