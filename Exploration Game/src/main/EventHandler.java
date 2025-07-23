@@ -273,7 +273,8 @@ public class EventHandler{
 		if((tempMap == gp.world05 && previousMap == gp.dungeon01)||(tempMap == gp.world04 && previousMap == gp.keyForge) ||tempMap == gp.keyForge || tempMap == gp.dungeon01 || tempMap == gp.dungeon02 || tempMap == gp.cabin01 || tempMap == gp.cabin02 ||
 		 	tempMap == gp.cabin03 || (tempMap == gp.beach02 && gp.eventHandler.previousMap == gp.cabin03) || 
 			(gp.currentMap == gp.beach01 && tempMap != gp.beach02) || (gp.currentMap == gp.world02 && tempMap == gp.beach01) ||
-			gp.currentMap == gp.cabin01 || gp.currentMap == gp.cabin02 || gp.currentMap == gp.cabin03) 
+			gp.currentMap == gp.cabin01 || gp.currentMap == gp.cabin02 || gp.currentMap == gp.cabin03
+			|| (tempMap == gp.beach02 && previousMap == gp.stoneBuilding06) || (tempMap == gp.stoneBuilding06 && previousMap == gp.beach02)) 
 		{
 			gp.stopMusic();
 		}
